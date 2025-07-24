@@ -1,0 +1,258 @@
+/* 기본 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/*
+    head 세부 클래스명
+    .logo : 홈페이지 로고
+    .top-menu : 챗봇 / 고객센터 / 회원가입 메뉴 묶음
+        .top-menu-list : 메뉴별(통합)
+*/
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.top-menu {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9em;
+    align-items: center;
+}
+
+.top-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.top-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/*
+    category 세부 클래스명
+    category-list : 개별 카테고리(통합)
+        .reg : 수강 신청
+        .lec-require : 강의 요청
+        .community : 커뮤니티
+        .mypage : 마이페이지
+*/
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #e7f4e7;
+    padding: 15px 0;
+    gap: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+}
+.category-list:hover {
+    background-color: #d2e8d2;
+}
+
+/*
+    banner-list 세부 클래스명
+    .banner : 배너 이미지란. 추후 이미지 자동으로 넘어가는 기능 등 만들기.
+    .login : 로그인. 아이디, 비밀번호 입력, 아이디/비밀번호 찾기 등.
+*/
+.banner-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 90%;
+    margin: 40px auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.banner {
+    background-image: url('https://dk2dv4ezy246u.cloudfront.net/widgets/sMuS2wu6Alq5_large.jpg');
+    width: 60%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.login {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 35%;
+    min-width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login label {
+    display: block;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.find-info {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #666;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5b9b5b;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.login button:hover {
+    background-color: #498449;
+}
+
+/*
+    contents-list 세부 클래스명
+    .contents-line : 각 행(통합)
+    .contents-card : 강의 카드(통합)
+    .card-img : 카드 배너 이미지(통합, 추후 개별로 분리)
+    .card-info : 강의 정보 요약 작성
+        .card-name : 강의명
+        .card-loc : 장소
+        .card-pnum : 수강 정원
+        .card-outline : 강의 개요
+*/
+.contents-list {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.contents-line {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contents-card {
+    background-color: #ffffff;
+    border: 1px solid #cce0cc;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 280px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.contents-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    background-image: url('https://piktochart.com/wp-content/uploads/2022/11/large-18-600x338.jpg');
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    padding: 15px;
+    font-size: 0.85em;
+    text-align: left;
+}
+
+.card-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/*
+    footer : 홈페이지 정보
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .top-menu {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .category {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner,
+    .login {
+        width: 90%;
+    }
+
+    .contents-line {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contents-card {
+        width: 90%;
+    }
+}
