@@ -1,0 +1,206 @@
+/* 기본 설정 */
+body {
+    margin: 0px;
+    background-color: #f9f9f9;
+}
+.login_main {
+    width: 500px;
+    margin: 50px auto 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 300px;
+    height: 250px;
+}
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+.find_back {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 700px;
+    margin: 20px auto 100px;
+    padding: 50px 50px 100px;
+    box-shadow: 0px 0px 10px rgb(0,0,0,0.1);
+}
+
+.find {
+    text-align: center;
+    margin: 30px 0px;
+}
+.find_id, .find_pw {
+    border: 1px solid black;
+    display: inline-block;
+    font-size: 24px;
+    line-height: 45px;
+    width: 300px;
+    height: 50px;
+}
+.h3 {
+    margin: 30px;
+    text-align: center;
+}
+.phone, .email {
+    border-bottom: 1px solid gray;
+    padding: 20px 0px; 
+}
+.phone {
+    border-top: 3px solid black;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.li_1, .li_2 {
+    background-color: rgb(212, 212, 212);
+    height: 100px;
+    list-style: none;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+.li button {
+    width: 100px;
+    height: 33px;
+}
+.id {
+    margin-bottom: 20px; 
+}
+.id_1, .id_2 {
+    display: inline-block;
+    width: 100px;
+}
+.id_1_text,
+.id_2_text,
+.id_1_text_2,
+.id_2_text_2,
+.id_2_text_1 {
+    display: inline-block;
+}
+.id_1_text input,
+.id_1_text_2 input,
+.id_2_text input,
+.id_2_text_1 input,
+.id_2_text_2 input {
+    width: 100%;
+    height: 25px;
+    box-sizing: border-box;
+}
+.id_2_sel {
+    width: 100px;
+    height: 30px;
+}
+.footer {
+    height: 50px;
+    text-align: center;
+}
+
+/* 480 */
+@media screen and (max-width: 480px) {
+    .login_main {
+        width: 90%;
+        margin: 30px auto 0px;
+        padding: 15px;
+    }
+    
+    .logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+    
+    .find_back {
+        min-width: 300px;
+        width: 90%;
+        padding: 30px 20px 50px;
+    }
+
+    .find_id, .find_pw {
+        display: inline-block;
+        font-size: 18px;
+        width: 40%;
+    }
+
+    .id_1_text input,
+    .id_1_text_2 input,
+    .id_2_text input,
+    .id_2_text_1 input,
+    .id_2_text_2 input {
+        width: 100%;
+    }
+
+    .id_2_sel {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    ul {
+        flex-direction: column;
+    }
+}
+
+/* 481~767 */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .login_main {
+        width: 90%;
+        margin: 40px auto 0px;
+        padding: 20px;
+    }
+    
+    .logo img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .find_back {
+        max-width: 500px;
+        width: 95%;
+        padding: 40px 30px 60px;
+    }
+
+    .find_id, .find_pw {
+        display: inline-block;
+        font-size: 20px;
+        width: 40%;
+    }
+
+    ul {
+        flex-wrap: wrap;
+    }
+}
+
+/* 768~1024 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .login_main {
+        width: 80%;
+        padding: 25px;
+    }
+
+    .find_back {
+        max-width: 500px;
+        width: 90%;
+    }
+
+    .find_id, .find_pw {
+        display: inline-block;
+        font-size: 20px;
+        width: 40%;
+    }
+
+    .logo img {
+        width: 280px;
+        height: auto;
+    }
+}
