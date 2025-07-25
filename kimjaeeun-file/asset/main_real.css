@@ -19,7 +19,7 @@ body {
             .lec-require : 강의 요청
             .community : 커뮤니티
             .mypage : 마이페이지
-    .top-menu : 챗봇 / 고객센터 / 회원가입 메뉴 묶음
+    .top-menu : 챗봇 / 고객센터 메뉴 묶음
         .top-menu-list : 메뉴별(통합)
 */
 .head {
@@ -72,6 +72,7 @@ body {
         .login-menu
             .find-id : id 찾기
             .find-pw : 비밀번호 찾기
+            .login-gaip : 회원 가입
 
     */
 .banner-list {
@@ -125,7 +126,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.find-id, .find-pw {
+.find-id, .find-pw, .login-gaip {
     margin: 10px 5%;
     font-size: 0.9em;
     color: #666;

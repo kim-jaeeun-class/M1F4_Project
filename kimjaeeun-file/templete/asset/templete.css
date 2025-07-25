@@ -19,7 +19,7 @@ body {
             .lec-require : 강의 요청
             .community : 커뮤니티
             .mypage : 마이페이지
-    .top-menu : 챗봇 / 고객센터 / 회원가입 메뉴 묶음
+    .top-menu : 챗봇 / 고객센터 메뉴 묶음
         .top-menu-list : 메뉴별(통합)
 */
 
@@ -99,3 +99,4 @@ body {
         margin-right: auto;
         gap: 10px;
     }
+}
