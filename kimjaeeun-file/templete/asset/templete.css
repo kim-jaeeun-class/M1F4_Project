@@ -1,0 +1,101 @@
+/* 기본 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+    font-family: 'Noto Sans KR';
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/*
+    head 세부 클래스명
+    .logo : 홈페이지 로고
+    .category
+        .category-list : 개별 카테고리(통합)
+            .reg : 수강 신청
+            .lec-require : 강의 요청
+            .community : 커뮤니티
+            .mypage : 마이페이지
+    .top-menu : 챗봇 / 고객센터 / 회원가입 메뉴 묶음
+        .top-menu-list : 메뉴별(통합)
+*/
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.top-menu {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9em;
+    align-items: center;
+}
+
+.top-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.top-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/*
+    footer : 홈페이지 정보
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .top-menu {
+        margin: 10px auto;
+        justify-content: center;
+    }
+
+    .category {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 10px;
+    }

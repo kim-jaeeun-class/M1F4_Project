@@ -13,6 +13,12 @@ body {
 /*
     head 세부 클래스명
     .logo : 홈페이지 로고
+    .category
+        .category-list : 개별 카테고리(통합)
+            .reg : 수강 신청
+            .lec-require : 강의 요청
+            .community : 커뮤니티
+            .mypage : 마이페이지
     .top-menu : 챗봇 / 고객센터 / 회원가입 메뉴 묶음
         .top-menu-list : 메뉴별(통합)
 */
@@ -30,6 +36,20 @@ body {
     margin-right: 5px;
 }
 
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
 .top-menu {
     display: flex;
     gap: 15px;
@@ -43,28 +63,6 @@ body {
 }
 .top-menu-list:hover {
     color: #5b9b5b;
-}
-
-/*
-    category 세부 클래스명
-    category-list : 개별 카테고리(통합)
-        .reg : 수강 신청
-        .lec-require : 강의 요청
-        .community : 커뮤니티
-        .mypage : 마이페이지
-*/
-.category {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 15px 0;
-    gap: 20px;
-}
-
-.category-list {
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0 20px;
 }
 
 /*
@@ -206,12 +204,13 @@ body {
     padding: 15px;
     font-size: 0.85em;
     text-align: left;
+    line-height: 1.5em;
 }
 
 .card-name {
     font-size: 1.1em;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 1em;
 }
 
 /*
@@ -237,13 +236,14 @@ body {
     .top-menu {
         margin: 10px auto;
         justify-content: center;
-        /* width: 90%; */
     }
 
     .category {
-        /* flex-direction: column; */
+        flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
         gap: 10px;
     }
 
