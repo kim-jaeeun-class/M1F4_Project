@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <style>
+
+      
+        div {
+            border :1px solid black;
+        }
+
+        #phone_number{
+            width : 10%;
+        }
+        .user_info{
+            width : 60%;
+            height : 500px;
+            position : grid;
+            margin-top : 10px;
+            margin: 0 auto;
+        }
+
+        .user_info *{
+            width : 60%;
+           
+            position : grid;
+        
+        }
+
+        
+
+        .agree_text{
+            width : 60%;
+            /* text-align: center; */
+            margin-left: 10%;
+        }
+
+        .useragree {
+            width : 60%;
+            margin: 0 auto;
+        
+        }
+
+        .check_list{
+            width : 60%;
+            margin: 0 auto;
+        }
+
+        .birth{
+
+            display: grid;
+            width : 50%;
+        }
+
+        #domain{
+            width : 20%;
+        }
+        
+
+
+
+        </style>
+
+    </head>
+
+
+<body>
+    <!--약관 시작-->   
+    <div class = "useragree" style = "text-align: center;">약관<br><hr>
+        <div>
+            <input type = "checkbox" class = "all_agree" >전부 선택<br>
+        
+            </div>
+        
+            <ui>실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.</div>
+        <div class = "check_list">
+            <ul>
+                                
+                <input type = "checkbox">아침
+                <div class = "agree_text">
+                    실명 인증된 아이디로 가입하시면 본인인증이 필요한 서비스(네이버 페이, 쇼핑, 멤버십 등)를 가입 후 바로 이용하실 수 있어요.<br>
+                    </div>
+                <input type = "checkbox">아침
+                <div class = "agree_text">
+                    실명 인증된 아이디로 가입하시면 본인인증이 필요한 서비스(네이버 페이, 쇼핑, 멤버십 등)를 가입 후 바로 이용하실 수 있어요.<br>
+                    </div>
+                <input type = "checkbox">아침
+                <div class = "agree_text">
+                    실명 인증된 아이디로 가입하시면 본인인증이 필요한 서비스(네이버 페이, 쇼핑, 멤버십 등)를 가입 후 바로 이용하실 수 있어요.<br>
+                    </div>
+                <input type = "checkbox">아침
+                <div class = "agree_text">
+                    실명 인증된 아이디로 가입하시면 본인인증이 필요한 서비스(네이버 페이, 쇼핑, 멤버십 등)를 가입 후 바로 이용하실 수 있어요.<br>
+                    </div>
+              
+            
+            
+                
+            </ul>
+            </div>
+        </div>
+
+    <div class = "user_info">유저정보
+        <div style = "align-content: left;">
+            <label><input type="checkbox" name="user_type" value="봉사자"> 봉사자</label><br>
+            <label><input type="checkbox" name="user_type" value="수강자"> 수강자</label>
+        </div>
+        <div class = "name">이름 <input type = "text"> </div>
+        <div class = "birth">
+            <label for="year">출생년도</label>
+                <select name="year" id="year"> <!--출생 년도를 전부 처리할수 없기떄문에 JS로 처리 할것-->
+                    <option value="1999">1999</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                </select>
+
+
+            <label for="month">출생월</label>
+            <select name="month" id="month"> <!--출생 년도를 전부 처리할수 없기떄문에 JS로 처리 할것-->
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+
+
+            <label for="day">출생일</label>
+            <select name="day" id="day"> <!--출생 년도를 전부 처리할수 없기떄문에 JS로 처리 할것-->
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+
+
+            
+            
+            
+        </div>
+
+           
+            
+        <div class = "phone">전화번호 <input type = "text" id = "phone_number"> - 
+            <input type = "text" id = "phone_number"> - <input type = "text" id = "phone_number">
+
+
+        </div>
+        <div class = "email">이메일 : 
+            <input type = "text">@
+            <select name="domain" id="domain"> <!--출생 년도를 전부 처리할수 없기떄문에 JS로 처리 할것-->
+                <option value="naver">naver.com</option>
+                <option value="google">gmail.com</option>
+                <option value="daum">daum.net</option>
+                    
+            </select>
+            
+            <input type = "checkbox"><input type = "button" style = "width : 20%" value="중복 체크">
+            
+
+        </div>
+
+        <div class = "pw">
+            비밀번호 : <input  type = "text"><br>
+            비밀번호 확인 : <input  type = "text">
+
+
+            </div>
+    </div>
+
+    <!-- <input type = "button"> -->
+
+
+
+
+
+    </body>
+
+
+
+<footer>
+
+
+    </footer>
+
+</html>
