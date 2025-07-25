@@ -1,6 +1,6 @@
 //head와 header를 로드하는 자바 스크립트 입니다.
 
-fetch("../templete/templete.html")
+fetch("kimjaeeun-file/templete/templete.html")
 .then(res => res.text())
 .then(html => {
     const parser = new DOMParser();
