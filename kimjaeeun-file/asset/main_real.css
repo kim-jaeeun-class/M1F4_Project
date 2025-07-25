@@ -23,8 +23,6 @@ body {
             .lec-require : 강의 요청
             .community : 커뮤니티
             .mypage : 마이페이지
-    .top-menu : 챗봇 / 고객센터 메뉴 묶음
-        .top-menu-list : 메뉴별(통합)
 */
 .head {
     display: flex;
@@ -111,12 +109,17 @@ body {
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: 'ChosunGu';
+}
+.login input[type="checkbox"] {
+    transform: scale(0.9);
 }
 
 .login label {
     display: block;
     margin: 5px 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
+    color: #666;
 }
 
 .login-menu {
@@ -137,6 +140,7 @@ body {
     background-color: #5b9b5b;
     border: none;
     color: white;
+    font-family: 'ChosunGu';
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
