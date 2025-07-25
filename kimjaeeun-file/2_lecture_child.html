@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>강의 게시판 :: 상세</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="asset/2_lecture_child.css">
+    </head>
+    <body>
+        <div class="head">
+            <div class="main-logo">
+                <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
+                <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
+            </div>
+            <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+            <div class="category" id="category-menu">
+                <div class="category-list reg">
+                    수강신청
+                </div>
+                <div class="category-list lec-require">
+                    강의 요청
+                </div>
+                <div class="category-list community">
+                    커뮤니티
+                </div>
+                <div class="category-list mypage">
+                    마이페이지
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="nav">메인 > 수강 신청 > 강의 상세</div>
+            <div class = "banner"></div>
+            <form class = "tab-list">
+                <div class = "tab-list-child">
+                    <button type = "button" class = "tab tab-info">강의 정보</button>
+                    <button type = "button" class = "tab tab-inquery">질문 사항</button>
+                    <button type = "button" class = "tab tab-review">후기</button>
+                </div>
+                <button type = "button" class = "apply">신청</button>
+            </form>
+            <div class = "contents">
+                <div class = "contents-info">정보 내용 : 강의 정보 / 질문 / 후기의 내용 출력.
+                탭을 누르면 나머지 내용은 display none이 되어 사라짐</div>
+                <div class = "contents-inquery">문의 내용</div>
+                <div class = "contents-review">리뷰 내용</div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul type="none" class="bottom-menu">
+                <li class="bottom-menu-list">챗봇</li>
+                <li class="bottom-menu-list">고객센터</li>
+                <li class="bottom-menu-list">광고 문의</li>
+                <li class="bottom-menu-list">개인 정보 이용 방침</li>
+            </ul>
+            <div class = "copyright">© 2025 M1F4</div>
+        </div>
+        <script src="asset/2_lecture_child.js"></script>
+    </body>
+</html>

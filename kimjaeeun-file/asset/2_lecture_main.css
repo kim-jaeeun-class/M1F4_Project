@@ -1,0 +1,266 @@
+/* 기본 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ChosunGu';
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+    head 세부 클래스명
+    .logo : 홈페이지 로고
+    .category
+        .category-list : 개별 카테고리(통합)
+            .reg : 수강 신청
+            .lec-require : 강의 요청
+            .community : 커뮤니티
+            .mypage : 마이페이지
+    .top-menu : 챗봇 / 고객센터 메뉴 묶음
+        .top-menu-list : 메뉴별(통합)
+*/
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+/* 
+    nav : 내비게이터
+    contents-list 세부 클래스명
+    .contents-title : 제목
+    .contents-filter : 강의 조건 필터링
+    .contents-line : 각 행(통합)
+    .contents-card : 강의 카드(통합)
+    .card-img : 카드 배너 이미지(통합, 추후 개별로 분리)
+    .card-info : 강의 정보 요약 작성
+        .card-name : 강의명
+        .card-loc : 장소
+        .card-pnum : 수강 정원
+        .card-outline : 강의 개요
+    .more : 버튼용 form 클래스명
+        .more-btn : 더 보기 버튼
+*/
+
+.nav {
+    width: 90%;
+    margin: 40px auto;
+}
+.contents-list {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.contents-title {
+    text-align: left;
+    font-weight: 900;
+    font-size: 1.6em;
+    margin: 2% auto;
+}
+
+.contents-filter {
+    width: 90%;
+    padding: 2% 0;
+}
+
+.contents-line {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contents-card {
+    background-color: #ffffff;
+    border: 1px solid #cce0cc;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 280px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.contents-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    background-image: url('https://piktochart.com/wp-content/uploads/2022/11/large-18-600x338.jpg');
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    padding: 15px;
+    font-size: 0.85em;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.card-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.more {
+    width: 90%;
+    margin: 5% auto;
+}
+
+.more-btn {
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    height: 4em;
+    border: none;
+    color: white;
+    font-family: 'ChosunGu';
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+}
+
+/*
+    footer : 홈페이지 정보
+    .bottom-menu : footer 내부 요소 묶음
+        .copyright : 카피라이트
+        .bottom-menu-list : 하단 메뉴 묶음(개별)
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    margin: auto;
+    text-align: center;
+}
+
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+.bottom-menu-list:first-child::before {
+    content: "  "
+}
+.bottom-menu-list::before {
+    content: " | "
+}
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+    
+    .nav {
+        width: 90%;
+        margin: 30px 10%;
+    }
+
+    .contents-title {
+        margin: 30px auto;
+        width: 90%;
+    }
+    .contents-filter {
+        margin: 30px auto 10px;
+        width: 90%;
+    }
+    .contents-line {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contents-card {
+        width: 90%;
+    }
+}

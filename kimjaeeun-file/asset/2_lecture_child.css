@@ -1,0 +1,244 @@
+/* 기본 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ChosunGu';
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+    head 세부 클래스명
+    .logo : 홈페이지 로고
+    .category
+        .category-list : 개별 카테고리(통합)
+            .reg : 수강 신청
+            .lec-require : 강의 요청
+            .community : 커뮤니티
+            .mypage : 마이페이지
+    .top-menu : 챗봇 / 고객센터 메뉴 묶음
+        .top-menu-list : 메뉴별(통합)
+*/
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+/* 
+body 
+    .nav : 내비게이션
+    .banner : 배너 이미지
+    .tab-list : contents 위의 tab 및 버튼 묶음
+        .tab : tab 3개(개별)
+            .tab-info
+            .tab-inquery
+            .tab-review
+        .apply : 신청 버튼
+    .contents : 내용 출력란. tab 클릭에 따라 내용이 변경.
+        .contents-info : 강의 정보
+        .contents-inquery : 문의 내용
+        .contents-review : 리뷰 내용 
+
+*/
+
+button {
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    color: #333;
+}
+.nav {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.banner, .tab-list, .contents {
+    width: 90%;
+    margin: 2% auto;
+}
+.banner {
+    background-image: url('https://as2.ftcdn.net/jpg/04/91/16/31/1000_F_491163105_W7Gasr6WEv2KAIkKmuy4x7eLX3sZCZoU.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 300px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tab-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-list-child {
+    display: inline-block;
+    width: 40%;
+}
+
+.tab {
+    margin: auto 2%;
+    width: 20%;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+}
+
+.apply {
+    width: 5%;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+}
+
+.contents {
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.contents-info, .contents-inquery, .contents-review {
+    padding: 3%;
+}
+
+/*
+    footer : 홈페이지 정보
+    .bottom-menu : footer 내부 요소 묶음
+        .copyright : 카피라이트
+        .bottom-menu-list : 하단 메뉴 묶음(개별)
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    margin: auto;
+    text-align: center;
+}
+
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+.bottom-menu-list:first-child::before {
+    content: "  "
+}
+.bottom-menu-list::before {
+    content: " | "
+}
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    .tab-list-child {
+        width: 70%;
+    }
+    .tab {
+        width: 25%;
+        height: 40px;
+    }
+
+    .apply {
+        width: 20%;
+        height: 40px;
+    }
+}
