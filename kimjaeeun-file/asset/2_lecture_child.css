@@ -87,12 +87,26 @@ button {
     color: #333;
 }
 .nav {
-    width: 90%;
+    width: 80%;
     margin: 40px auto;
 }
 
+/* 나중에 a href로 링크 걸 경우에 색상 변경 */
+.nav a {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
 .banner, .tab-list, .contents {
-    width: 90%;
+    width: 80%;
     margin: 2% auto;
 }
 .banner {
@@ -100,7 +114,6 @@ button {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 90%;
     height: 300px;
     border-radius: 10px;
     border: none;
@@ -113,19 +126,31 @@ button {
 }
 
 .tab-list-child {
-    display: inline-block;
+    display: flex;
+    gap: 10px;
     width: 40%;
 }
 
 .tab {
     margin: auto 2%;
-    width: 20%;
+    width: auto;
+    flex-grow: 1;
+    flex: 1 1 0;
+    margin: 0;  
+    min-width: 0;
     height: 3em;
     border-radius: 10px;
     border: none;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     background-color: #5b9b5b;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.tab:hover {
+    background-color: #3e6b3e;
 }
 
 .apply {
@@ -136,17 +161,35 @@ button {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     background-color: #5b9b5b;
     color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.apply:hover {
+    background-color: #3e6b3e;
 }
 
 .contents {
-    width: 90%;
     background-color: #ffffff;
     border-radius: 10px;
     border: none;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
 .contents-info, .contents-inquery, .contents-review {
     padding: 3%;
+}
+
+.contents-info {
+    line-height: 1.8em;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
 }
 
 /*

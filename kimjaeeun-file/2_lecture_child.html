@@ -35,17 +35,21 @@
             <div class = "banner"></div>
             <form class = "tab-list">
                 <div class = "tab-list-child">
-                    <button type = "button" class = "tab tab-info">강의 정보</button>
-                    <button type = "button" class = "tab tab-inquery">질문 사항</button>
-                    <button type = "button" class = "tab tab-review">후기</button>
+                    <button type = "button" class = "tab tab-info">📘 강의 정보</button>
+                    <button type = "button" class = "tab tab-inquery">❓ 질문 사항</button>
+                    <button type = "button" class = "tab tab-review">📝 후기</button>
                 </div>
                 <button type = "button" class = "apply">신청</button>
             </form>
             <div class = "contents">
-                <div class = "contents-info">정보 내용 : 강의 정보 / 질문 / 후기의 내용 출력.
-                탭을 누르면 나머지 내용은 display none이 되어 사라짐</div>
-                <div class = "contents-inquery">문의 내용</div>
-                <div class = "contents-review">리뷰 내용</div>
+                <div class = "contents-info tab-content active">정보 내용 : 강의 정보 / 질문 / 후기의 내용 출력.
+                탭을 누르면 나머지 내용은 display none이 되어 사라짐<br>
+                장소, 수강 정원, 강의 개요 요약이랑 하단에는 간단 프로필 게시 필요.<br>
+                지금은 html에 작성하지만, 나중에는 에디터 등으로 작성된 걸 옮기는 거니까... 그쪽에서 지정한 양식에 맞춰 올릴 수 있도록 설정도 해야 함.<br>
+                지금 화면 줄이면 후기 버튼만 미묘하게 내려가는데, 그것도 해결하기.
+                </div>
+                <div class = "contents-inquery tab-content">문의 내용</div>
+                <div class = "contents-review tab-content">리뷰 내용</div>
             </div>
         </div>
         <div class="footer">

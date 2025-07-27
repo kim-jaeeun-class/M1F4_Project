@@ -62,7 +62,11 @@ body {
 
 /*
     banner-list 세부 클래스명
-    .banner : 배너 이미지란. 추후 이미지 자동으로 넘어가는 기능 등 만들기.
+    .banner-block : 배너 이미지란. 추후 이미지 자동으로 넘어가는 기능 등 만들기.
+        .img1, .img2, .img3 : 실제 이미지란. 이미지 추가 시, js도 확인하기.
+        .slide-btn ::슬라이드 버튼
+            .prev-btn / .next-btn : 이전 / 이후
+            #prevBtn / #nextBtn : 이전 / 이후
     .login : 로그인. 아이디, 비밀번호 입력, 아이디/비밀번호 찾기 등.
         .login-menu
             .find-id : id 찾기
@@ -74,32 +78,93 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    width: 90%;
+    width: 80%;
     margin: 40px auto;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.banner {
-    background-image: url('https://dk2dv4ezy246u.cloudfront.net/widgets/sMuS2wu6Alq5_large.jpg');
+.banner-block {
     width: 65%;
     height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img1, .img2, .img3 {
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+.banner-block .active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.img1 {
+    background-image: url('https://dk2dv4ezy246u.cloudfront.net/widgets/sMuS2wu6Alq5_large.jpg');
+}
+
+.img2 {
+    background-image: url('https://i.pinimg.com/736x/97/3c/7e/973c7eb2b2010905ddc01944c641e34a.jpg');
+}
+
+.img3 {
+    background-image: url('https://dw9to29mmj727.cloudfront.net/promo/2016/6081-SeriesHeaders_KirbyArtbook_2000x800_jpg');
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(91, 155, 91, 0.3);
+    border: none;
+    color: white;  
+    font-family: 'ChosunGu';
+    font-size: 1.8em;
+    padding: 0.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.slide-btn:hover {
+    background: rgba(73, 132, 73, 0.9);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
 }
 
 .login {
     background-color: #ffffff;
-    padding: 20px;
     border-radius: 10px;
     width: 32%;
     min-width: 300px;
     height: 300px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: left;
+    text-align: center;
     box-sizing: border-box;
+}
+
+.login-block {
+    margin: auto;
+    padding: 5%;
 }
 
 .login input[type="text"],
@@ -110,6 +175,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: 'ChosunGu';
+    box-sizing: content-box;
 }
 .login input[type="checkbox"] {
     transform: scale(0.9);
@@ -120,14 +186,16 @@ body {
     margin: 5px 0;
     font-size: 0.8em;
     color: #666;
+    text-align: left;
 }
 
 .login-menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
+
 .find-id, .find-pw, .login-gaip {
-    margin: 10px 5%;
+    margin: 10px auto;
     font-size: 0.9em;
     color: #666;
     cursor: pointer;
@@ -135,8 +203,8 @@ body {
 }
 
 .login button {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 15px;
     background-color: #5b9b5b;
     border: none;
     color: white;
@@ -145,6 +213,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    box-sizing: content-box;
 }
 .login button:hover {
     background-color: #498449;
@@ -163,7 +232,7 @@ body {
         .card-outline : 강의 개요
 */
 .contents-list {
-    width: 90%;
+    width: 80%;
     margin: 40px auto;
 }
 
@@ -298,7 +367,14 @@ body {
         align-items: center;
     }
 
-    .banner,
+    .banner-block {
+        width: 90%;
+    }
+    
+    .img1, .img2, .img3 {
+        width: 100%;
+    }
+
     .login {
         width: 90%;
         box-sizing: border-box;

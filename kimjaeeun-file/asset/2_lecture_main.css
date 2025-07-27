@@ -82,11 +82,26 @@ body {
 */
 
 .nav {
-    width: 90%;
+    width: 80%;
     margin: 40px auto;
 }
+
+/* 나중에 a href로 링크 걸 경우에 색상 변경 */
+.nav a {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
 .contents-list {
-    width: 90%;
+    width: 80%;
     margin: 40px auto;
 }
 
@@ -116,6 +131,7 @@ body {
     border-radius: 10px;
     width: 30%;
     min-width: 280px;
+    cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     overflow: hidden;
     transition: transform 0.3s;
@@ -145,7 +161,7 @@ body {
 }
 
 .more {
-    width: 90%;
+    width: 80%;
     margin: 5% auto;
 }
 
