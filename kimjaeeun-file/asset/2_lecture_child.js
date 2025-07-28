@@ -2,6 +2,8 @@ window.addEventListener('load', bind);
 
 function bind() {
 
+    // 모바일에서 상단 카테고리 출력
+
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
@@ -10,6 +12,8 @@ function bind() {
             .classList
             .toggle('show');
     });
+
+    // 탭 버튼
 
     const tabs = document.querySelectorAll('.tab');
     const contentMap = {
@@ -34,6 +38,8 @@ function bind() {
         });
     });
 
+    // a 태그 css 문제 해결용
+
     window.addEventListener('pageshow', () => {
         if (document.activeElement && document.activeElement.blur) {
             document
@@ -41,6 +47,8 @@ function bind() {
                 .blur();
         }
     });
+
+    // 더 보기 버튼
 
     const moreBtn = document.querySelector('.more-btn');
     const cards = document.querySelectorAll('.review');
@@ -64,6 +72,16 @@ function bind() {
         if (visibleCount >= cards.length) {
             moreBtn.style.display = 'none';
         }
+    })
+
+    // 신청 버튼 : alert로 완료됐다는 알림창만 띄우도록
+
+    const apply = document.querySelector('.apply');
+
+    apply.addEventListener('click', () => {
+        alert(
+            '신청이 완료되었습니다.\n최종 승인은 담당자 확인 후 반영됩니다.\n승인 처리 시, 선택하신 알림 서비스로 결과를 알려드립니다.'
+        );
     })
 
 }
