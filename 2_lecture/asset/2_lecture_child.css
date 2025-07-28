@@ -71,7 +71,7 @@ body
     .tab-list : contents 위의 tab 및 버튼 묶음
         .tab : tab 3개(개별)
             .tab-info
-            .tab-inquery
+            .tab-inquiry
             .tab-review
         .apply : 신청 버튼
     .contents : 내용 출력란. tab 클릭에 따라 내용이 변경.
@@ -82,7 +82,10 @@ body
             .location : 장소
             .info : 강의 정보
             .profile : 강사 프로필
-        .contents-inquery : 문의 내용
+        .contents-inquiry : 문의 내용
+            .inquiry-block : 질문 / 답변 묶음
+                .question : 질문 클래스 묶음. -title, -content가 하위 요소
+                .answer : 답변 클래스 묶음. -title, -content가 하위 요소
         .contents-review : 리뷰 내용 
             .review : 질문별 묶음(개별). 하위 요소에 -title, -content, -date, -img을 붙여 구분.
             .more : qna가 많을 경우 더 보기로 추가 확인 가능
@@ -185,6 +188,8 @@ button {
     background-color: #3e6b3e;
 }
 
+/* 여기부터 강의 설명 */
+
 .contents {
     background-color: #ffffff;
     border-radius: 20px;
@@ -192,7 +197,7 @@ button {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.contents-info, .contents-inquery, .contents-review {
+.contents-info, .contents-inquiry, .contents-review {
     padding: 3%;
 }
 
@@ -237,6 +242,33 @@ p {
     font-weight: 600;
 }
 
+/* 여기부터 질문 사항 */
+
+.inquiry-block {
+    width: 90%;
+    background-color: #f0f0f0;
+    border: 1px dotted #cce0cc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding: 2%;
+    margin: 5% auto;
+    line-height: 2em;
+}
+
+.question-title, .answer-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #3e6b3e;
+}
+
+.question-content, .answer-content {
+    font-size: 0.9em;
+    line-height: 1.6em;
+    text-align: justify;
+}
+
+/* 여기부터 review */
 .input {
     text-align: right;
 }

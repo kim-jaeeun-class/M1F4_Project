@@ -14,6 +14,14 @@ function bind() {
             .toggle('show');
     });
 
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
+
     // 이벤트 추가 필요할 경우 이 아래로 삽입
 
 }

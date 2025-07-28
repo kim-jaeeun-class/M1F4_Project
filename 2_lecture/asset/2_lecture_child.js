@@ -18,7 +18,7 @@ function bind() {
     const tabs = document.querySelectorAll('.tab');
     const contentMap = {
         'tab-info': 'contents-info',
-        'tab-inquery': 'contents-inquery',
+        'tab-inquiry': 'contents-inquiry',
         'tab-review': 'contents-review'
     };
 
