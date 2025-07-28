@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="/project_ahra/asset/mypage_main.css">
+
+</head>
+<body>
+        <div class="head">
+            <div class="main-logo">
+                <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
+                <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
+            </div>
+            <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+            <div class="category" id="category-menu">
+                <div class="category-list reg">
+                    수강신청
+                </div>
+                <div class="category-list lec-require">
+                    강의 요청
+                </div>
+                <div class="category-list community">
+                    커뮤니티
+                </div>
+                <div class="category-list mypage">
+                    마이페이지
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <!-- 이 안에 원하는 내용 넣어주세요-->
+            <div class="my_back">
+                <div class="tab">
+                    <div class="tab_0">
+                        수강내역
+                    </div>
+                    <div class="tab_1">
+                        회원정보 수정
+                    </div>
+                
+                </div>
+                <div class="main">
+                    <div class="nav">
+                        마이페이지 > 수강내역 > 강좌상세
+                    </div>
+                    <div class="title">
+                        강좌상세
+                    </div>
+                    <div class="id_pw" style = "text-align: left; margin-left: 50px; ">
+                      <div style = 
+                      "width : 110vh ; height : 55vh; display: flex;">
+                      
+                        <div clss = "lector_prof" style = "display: block;
+                        width : 30% ; height : 100%">
+                          <div class = "prof_pic">
+                            <img src = "015.png" style = "width : 30vh;">
+                          </div>
+                          <div class = "lec_detail" >
+                            강사 소개<br>
+                            이름 : 배선생<br>
+                            뱃지 : 열혈등급<br>
+
+                          </div>
+                        
+                        
+                        </div>
+
+                        <div class = "lec_con" style = "display: block;">
+                          <div class = "lec_address" style = " width : 100%">
+                            <p><strong>강좌명 : ~~~~</strong></p><br>
+                            배우는 내용 : ~~~<br>
+                            총 인원 : ~~~<br>
+                            강좌 시간 : ~~~<br>
+                            수업 방식 : 온라인 | 오프라인 <br>
+                            강의 장소 : 휴먼 교육센터<br>
+                  
+                          </div>
+                          <!-- * 카카오맵 - 지도퍼가기 -->
+                          <!-- 1. 지도 노드 -->
+                          <div id="daumRoughmapContainer1753667793337" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+                          <!--
+                            2. 설치 스크립트
+                            * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                          -->
+                          <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                          <!-- 3. 실행 스크립트 -->
+                          <script charset="UTF-8">
+                            new daum.roughmap.Lander({
+                              "timestamp" : "1753667793337",
+                              "key" : "6e3yto85o3h",
+                              "mapWidth" : "500",
+                              "mapHeight" : "200"
+                            }).render();
+                          </script>
+
+
+
+                          <div class = "button">
+                            <button type = "submit">신청취소</button>  
+                            <button type = "submit">목록</button>  
+                          </div>
+                        </div>
+
+                    
+
+
+
+                        
+                        
+
+                        
+                      </div>
+                      
+                    </div>
+
+                      
+                      
+                    
+                    
+                    </div>
+                 
+
+
+                    <!-- <div class="id_pw">
+                        <div class="id_pw_box">
+                            <div class="id_box">
+                                <div class="id">
+                                    아이디
+                                </div>
+                                <div class="fix_id">
+                                    aaa
+                                </div>
+                            </div>
+                            <div class="pw">
+                                비밀번호
+                            </div>
+                            <div class="pw_box">
+                                <div class="pw_in">
+                                    <input type="password" placeholder="비밀번호"><br/>
+                                </div>
+                                <div class="button">
+                                    <button type="submit">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul type="none" class="bottom-menu">
+                <li class="bottom-menu-list">챗봇</li>
+                <li class="bottom-menu-list">고객센터</li>
+                <li class="bottom-menu-list">광고 문의</li>
+                <li class="bottom-menu-list">개인 정보 이용 방침</li>
+            </ul>
+            <div class = "copyright">© 2025 M1F4</div>
+        </div>
+        <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
+        <script src="asset/templete.js"></script>
+    </body>
+</html>
