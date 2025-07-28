@@ -14,6 +14,22 @@ body {
     padding: 0;
 }
 
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
+
+
 /*
     head 세부 클래스명
     .logo : 홈페이지 로고
@@ -26,6 +42,7 @@ body {
     .top-menu : 챗봇 / 고객센터 메뉴 묶음
         .top-menu-list : 메뉴별(통합)
 */
+
 .head {
     display: flex;
     justify-content: space-between;
@@ -62,18 +79,11 @@ body {
     padding: 0 20px;
 }
 
-a:link, a:visited, a:hover, a:active {
-    color: black;
-    text-decoration: none;
-}
 
-.csCategory-list a:hover {
-    color: #3e6b3e;
-}
 
 /*.body 부분 */
 .body {
-    padding: 30px 10px;
+    padding: 30px 10px 300px 10px;
     margin: 0 auto;
     width: 90%;
     height: 80vh;
@@ -103,37 +113,36 @@ a:link, a:visited, a:hover, a:active {
     color: #5b9b5b;
 }
 
-.notice-contents {
-  padding: 15px 20px;
-}
-
-.form {
+/* 게시판 글 작성 */
+.writeForm {
   padding: 20px;
 }
 
-.input {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid gray;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+.postForm{
+    width: 100%;
 }
 
-.title {
-    font-style: bold;
-    font-size: 1.3rem;
+#writeTitle{
+    width: 100%;
 }
 
-.artmain {
+input[type="text"]{
+    width: 100%;
+    height: 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
     height: 400px;
+    overflow: auto;
+    font-size: 1rem;
 }
 
 .meta {
-  padding: 6px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  font-size: 13px;
-  margin-bottom: 10px;
+    margin: 13px 0;
+    color: #555;
 }
 
 .tabs {
@@ -188,18 +197,17 @@ a:link, a:visited, a:hover, a:active {
     transition: color 0.3s;
     display: inline;
 }
-
 .bottom-menu-list:first-child::before {
     content: "  "
 }
-
 .bottom-menu-list::before {
     content: " | "
 }
-
 .bottom-menu-list:hover {
     color: #5b9b5b;
 }
+
+
 
 /* 반응형 */
 @media (max-width: 768px) {
@@ -207,11 +215,6 @@ a:link, a:visited, a:hover, a:active {
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
-    }
-
-    .top-menu {
-        margin: 10px auto;
-        justify-content: center;
     }
 
     .hamburger-menu {
@@ -229,7 +232,6 @@ a:link, a:visited, a:hover, a:active {
         display: none;
         overflow: hidden;
         flex-direction: column;
-        align-items: center;
         width: 100%;
         margin: 5% auto;
         gap: 30px;
@@ -238,13 +240,17 @@ a:link, a:visited, a:hover, a:active {
         border-top: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 10px;
     }
 
     .category.show {
         display: flex;
     }
 
+    .body {
+    padding-bottom: 300px; /* 모바일용 하단 공간 확보 */
+    }
+
+    .footer {
+    height: 100px;
+    }
 }

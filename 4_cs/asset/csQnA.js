@@ -1,8 +1,22 @@
-window.onload = function () {
-    bind();
-};
+window.addEventListener('load', bind);
 
-function bind(){
+function bind() {
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const categoryMenu = document.getElementById('category-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+        categoryMenu
+            .classList
+            .toggle('show');
+    });
+
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
     /* 게시글 표시 리스트 + 목록 */
     // 예시 게시글 데이터 25개 생성
     const posts = [];
@@ -35,7 +49,7 @@ function bind(){
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${post.number}</td>
-                <td><a href="csQnAarticle.html">${post.title}</a></td>
+                <td><a href="csQnAView.html">${post.title}</a></td>
                 <td>${post.author}</td>
                 <td>${post.time}</td>
             `;

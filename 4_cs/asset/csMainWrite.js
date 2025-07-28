@@ -39,7 +39,7 @@ function bind() {
         // 글 작성 누르면 작성된 글로 이동
         // 여기서 서버로 데이터를 보낼 수도 있고, 지금은 간단히 alert로 표시
         alert("글이 작성되었습니다!\n제목: " + title + "\n본문:\n" + content);
-        window.location.href = "csQnAView.html";
+        window.location.href = "csMainView.html";
 
         // 제출 후 폼 초기화
         this.reset();

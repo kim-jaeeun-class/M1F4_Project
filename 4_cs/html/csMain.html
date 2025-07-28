@@ -5,34 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <title>고객센터 - 공지사항</title>
-    <link rel="stylesheet" href="/asset/csMain.css">
+    <link rel="stylesheet" href="../../4_cs/asset/csMain.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="/asset/csMain.js"></script>
+    <script src="../../4_cs/asset/csMain.js"></script>
 </head>
 <body>
     <div class="head">
         <div class="main-logo">
-            <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
-            <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
-            <!-- <img style = "width: 100px" src = "111.jpg"> -->
+            <a href = "../../1_main/html/1_mainpage.html">
+                <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
+                <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
+            </a>
         </div>
-
-        <div class="category">
-                <!-- 모바일 한정 카테고리 추후 = 버튼으로 접었다 펴는 기능 만들기 -->
-            <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
-            <div class="category" id="category-menu">
-                <div class="category-list reg">
-                    수강신청
-                </div>
-                <div class="category-list lec-require">
-                    강의 요청
-                </div>
-                <div class="category-list community">
-                    커뮤니티
-                </div>
-                <div class="category-list mypage">
-                    마이페이지
-                </div>
+        <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+        <div class="category" id="category-menu">
+            <div class="category-list reg">
+                <a href="../../2_lecture/html/2_lecture_main.html">수강 신청</a>
+            </div>
+            <div class="category-list lec-require">
+                <a href="../../2_lecture/html/2_lecture_require.html">강의 요청</a>
+            </div>
+            <div class="category-list community">
+                <a href="../../5_community/html/project.html">커뮤니티</a>
+            </div>
+            <div class="category-list mypage">
+                <a href="../../3_mypage/html/mypage_main.html">마이 페이지</a>
             </div>
         </div>
     </div>
@@ -59,23 +56,29 @@
                 </tbody>
             </table>
             
-            <div class="search">
-                <input type="text" id="searchInput" placeholder="검색할 단어를 입력하세요" value="">
-                <button type="button" id="searchBtn">검색</button>
+            <div id="bottom">
+                <div class="search">
+                    <input type="text" id="searchInput" placeholder="검색할 단어를 입력하세요" value="">
+                    <button type="button" id="searchBtn">검색</button>
+                </div>
+                <div class="tabs">
+                    <a href="csMainWrite.html"><button>글쓰기</button></a>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <!-- 추후 넣어둘 정보 있으면 여기에 -->
-        © 2025 배워보다
         <ul type="none" class="bottom-menu">
             <li class="bottom-menu-list">챗봇</li>
-            <li class="bottom-menu-list">고객센터</li>
+            <li class="bottom-menu-list">
+                <a href="csMain.html">고객센터</a>
+            </li>
             <li class="bottom-menu-list">광고 문의</li>
             <li class="bottom-menu-list">개인 정보 이용 방침</li>
         </ul>
         <div class = "copyright">© 2025 M1F4</div>
     </div>
+    <script src="../../0_templete/asset/templete.js"></script>
 </body>
 </html>

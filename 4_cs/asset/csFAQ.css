@@ -14,6 +14,22 @@ body {
     padding: 0;
 }
 
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
+
+
 /*
     head 세부 클래스명
     .logo : 홈페이지 로고
@@ -26,6 +42,7 @@ body {
     .top-menu : 챗봇 / 고객센터 메뉴 묶음
         .top-menu-list : 메뉴별(통합)
 */
+
 .head {
     display: flex;
     justify-content: space-between;
@@ -62,14 +79,11 @@ body {
     padding: 0 20px;
 }
 
-a:link, a:visited, a:hover, a:active {
-    color: black;
-    text-decoration: none;
-}
+
 
 /*.body 부분 */
 .body {
-    padding: 30px 10px;
+    padding: 30px 10px 300px 10px;
     margin: 0 auto;
     width: 90%;
     height: 80%;
@@ -131,11 +145,13 @@ a:link, a:visited, a:hover, a:active {
 .tab {
     margin: auto 2%;
     width: auto;
+    min-width: 3em;
+    height: 3em;
+    min-height: 3em;
     flex-grow: 1;
     flex: 1 1 0;
     margin: 0;  
-    min-width: 0;
-    height: 3em;
+
     border-radius: 10px;
     border: none;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -190,6 +206,8 @@ a:link, a:visited, a:hover, a:active {
     
 }
 
+
+
 /*
     footer : 홈페이지 정보
     .bottom-menu : footer 내부 요소 묶음
@@ -223,15 +241,12 @@ a:link, a:visited, a:hover, a:active {
     transition: color 0.3s;
     display: inline;
 }
-
 .bottom-menu-list:first-child::before {
     content: "  "
 }
-
 .bottom-menu-list::before {
     content: " | "
 }
-
 .bottom-menu-list:hover {
     color: #5b9b5b;
 }
@@ -242,11 +257,6 @@ a:link, a:visited, a:hover, a:active {
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
-    }
-
-    .top-menu {
-        margin: 10px auto;
-        justify-content: center;
     }
 
     .hamburger-menu {
@@ -264,7 +274,6 @@ a:link, a:visited, a:hover, a:active {
         display: none;
         overflow: hidden;
         flex-direction: column;
-        align-items: center;
         width: 100%;
         margin: 5% auto;
         gap: 30px;
@@ -273,13 +282,17 @@ a:link, a:visited, a:hover, a:active {
         border-top: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 10px;
     }
 
     .category.show {
         display: flex;
     }
 
+    .body {
+    padding-bottom: 300px; /* 모바일용 하단 공간 확보 */
+    }
+
+    .footer {
+    height: 100px;
+    }
 }

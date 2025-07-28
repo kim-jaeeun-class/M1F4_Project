@@ -1,8 +1,22 @@
-window.onload = function () {
-    bind();
-};
+window.addEventListener('load', bind);
 
-function bind(){
+function bind() {
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const categoryMenu = document.getElementById('category-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+        categoryMenu
+            .classList
+            .toggle('show');
+    });
+
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
     $(document).ready(function () {
     // 현재 파일 이름 추출
     const currentPage = location.pathname.split('/').pop();
@@ -47,7 +61,7 @@ function bind(){
 
             tr.innerHTML = `
             <td>${post.number}</td>
-            <td><a href="csMainArticle.html">${post.title}</a></td>
+            <td><a href="csMainView.html">${post.title}</a></td>
             <td>${post.author}</td>
             <td>${post.time}</td>
             `;
