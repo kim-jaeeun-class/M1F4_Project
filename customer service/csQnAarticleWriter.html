@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <title>고객센터 - 공지사항</title>
-    <link rel="stylesheet" href="/asset/csMain.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="/asset/csMain.js"></script>
+    <title>고객센터 - Q&A</title>
+    <link rel="stylesheet" href="/asset/csQnAarticleWriter.css">
 </head>
 <body>
     <div class="head">
@@ -41,29 +39,22 @@
         <div class="csCategory">
             <div class="csCategory-list"><a class="notice" href="csMain.html">공지사항</a></div>|
             <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
-            <div class="csCategory-list"><a class="qna" href="csQnA.html">Q&A</a></div>
+            <div class="csCategory-list"><a class="qna active" href="csQnA.html">Q&A</a></div>
         </div>
-        
-        <div class="notice-contents">
-            <table class="content-table">
-                <thead>
-                <tr>
-                    <th class="number-col">번호</th>
-                    <th class="title-col">제목</th>
-                    <th class="author-col">작성자</th>
-                    <th class="time-col">작성시간</th>
-                </tr>
-                </thead>
-                <tbody id="tableBody">
-                <!-- 게시글이 여기 표시됩니다 -->
-                </tbody>
-            </table>
-            
-            <div class="search">
-                <input type="text" id="searchInput" placeholder="검색할 단어를 입력하세요" value="">
-                <button type="button" id="searchBtn">검색</button>
+
+        <div class="form">
+            <div class="input title">제목</div>
+
+            <div class="meta">작성자 | 작성시간</div>
+            <div class="input artmain">본문</div>
+    
+            <div class="tabs">
+                <button>목록보기</button>
+                <button>이전 글▲</button>
+                <button>다음 글▼</button>
             </div>
         </div>
+        
     </div>
 
     <div class="footer">

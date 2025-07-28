@@ -84,12 +84,27 @@ body {
     padding: 0 20px;
 }
 
-.csCategory-list:last-child {
+.csCategory-list a:hover {
+    color: #3e6b3e;
+}
+
+/* 기본 링크 스타일 */
+.csCategory-list a {
+    color: black;
+    text-decoration: none;
+}
+
+/* 현재 페이지 링크에만 초록색 적용 */
+.csCategory-list a.active {
     color: #5b9b5b;
 }
 
 .qna-contents {
-  padding: 15px 20px;
+    position: relative;
+    padding-bottom: 40px; /* 검색창 공간 확보 */
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .content-table {
@@ -133,7 +148,7 @@ body {
 }
 
 .tabs {
-  margin-top: 10px;
+  margin: 10px;
   text-align: right;
 }
 

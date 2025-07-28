@@ -6,6 +6,7 @@
     <meta name="referrer" content="no-referrer">
     <title>고객센터 - Q&A</title>
     <link rel="stylesheet" href="/asset/csQnA.css">
+    <script src="/asset/csQnA.js"></script>
 </head>
 <body>
     <div class="head">
@@ -37,9 +38,9 @@
 
     <div class="body">
         <div class="csCategory">
-            <div class="csCategory-list">공지사항</div>|
-            <div class="csCategory-list">FAQ</div>|
-            <div class="csCategory-list">Q&A</div>
+            <div class="csCategory-list"><a class="notice" href="csMain.html">공지사항</a></div>|
+            <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
+            <div class="csCategory-list"><a class="qna active" href="csQnA.html">Q&A</a></div>
         </div>
         
         <div class="qna-contents">
@@ -52,18 +53,13 @@
                     <th class="time-col">작성시간</th>
                 </tr>
                 </thead>
-                <tbody>
-                <!-- 예시 행 -->
-                <tr>
-                    <td>1</td>
-                    <td>Q&A 제목 예시</td>
-                    <td>관리자</td>
-                    <td>2025-07-25</td>
-                </tr> 
+                <tbody id="tableBody">
+                <!-- 게시글이 여기 표시됩니다 -->
                 </tbody>
             </table>
+            
             <div class="tabs">
-                    <button>글쓰기</button>
+                    <a href="csQnAWrite.html"><button>글쓰기</button></a>
             </div>
         </div>
     </div>

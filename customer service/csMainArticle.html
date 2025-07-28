@@ -6,6 +6,7 @@
     <meta name="referrer" content="no-referrer">
     <title>고객센터 - 공지사항</title>
     <link rel="stylesheet" href="/asset/csMainArticle.css">
+    <script src="/asset/csMainArticle.js"></script>
 </head>
 <body>
     <div class="head">
@@ -37,9 +38,9 @@
 
     <div class="body">
         <div class="csCategory">
-            <div class="csCategory-list">공지사항</div>|
-            <div class="csCategory-list">FAQ</div>|
-            <div class="csCategory-list">Q&A</div>
+            <div class="csCategory-list"><a class="notice active" href="csMain.html">공지사항</a></div>|
+            <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
+            <div class="csCategory-list"><a class="qna" href="csQnA.html">Q&A</a></div>
         </div>
 
         <div class="form">
@@ -49,9 +50,9 @@
             <div class="input artmain">본문</div>
     
             <div class="tabs">
-                <button>목록보기</button>
-                <button>이전 글▲</button>
-                <button>다음 글▼</button>
+                <button id="backList">목록보기</button>
+                <button id="pre">이전 글▲</button>
+                <button id="next">다음 글▼</button>
             </div>
         </div>
         

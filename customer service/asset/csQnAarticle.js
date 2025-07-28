@@ -3,6 +3,5 @@ window.onload = function () {
 };
 
 function bind(){
-    
-    
+
 }
