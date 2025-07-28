@@ -7,7 +7,7 @@
         <title>수강내역</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
-        <link rel="stylesheet" href="/project_ahra/asset/studylist_volunteer_past.css">
+        <link rel="stylesheet" href="/3_mypage/asset/studylist_student.css">
     </head>
     <body>
         <div class="head">
@@ -50,47 +50,56 @@
                         마이페이지 > 수강내역
                     </div>
                     <div class="list_tab">
-                        <div class="past_list">
+                        <div class="past_list" data-tab="past">
                             지난 수강내역
                         </div>
-                        <div class="ing_list">
+                        <div class="ing_list active" data-tab="ing">
                             진행 중인 수강내역
                         </div>  
                     </div>
-                    <div class="total_time_box">
-                        <div class="total_time">
-                            총 활동 시간 :
-                            <div class="time">
-                                ##
+                    <div class="contents-line active" id="ing">
+                        <div class="contents-card ing">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
                             </div>
-                            <div class="time_fix">
-                                시간
+                        </div>
+                        <div class="contents-card ing">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </div>
+                        <div class="contents-card ing">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
                             </div>
                         </div>
                     </div>
-                    <div class="contents-line">
-                        <div class="contents-card">
+                    <div class="contents-line" id="past">
+                        <div class="contents-card past">
                             <div class="card-img"></div>
                             <div class="card-info">
-                                <div class="card-name">강의명</div>
+                                <div class="card-name">[종료]강의명</div>
                                 <div class="card-loc">장소</div>
                                 <div class="card-pnum">수강 정원</div>
                                 <div class="card-outline">강의 개요 요약</div>
                             </div>
                         </div>
-                        <div class="contents-card">
+                        <div class="contents-card past">
                             <div class="card-img"></div>
                             <div class="card-info">
-                                <div class="card-name">강의명</div>
-                                <div class="card-loc">장소</div>
-                                <div class="card-pnum">수강 정원</div>
-                                <div class="card-outline">강의 개요 요약</div>
-                            </div>
-                        </div>
-                        <div class="contents-card">
-                            <div class="card-img"></div>
-                            <div class="card-info">
-                                <div class="card-name">강의명</div>
+                                <div class="card-name">[종료]강의명</div>
                                 <div class="card-loc">장소</div>
                                 <div class="card-pnum">수강 정원</div>
                                 <div class="card-outline">강의 개요 요약</div>
@@ -121,6 +130,6 @@
             <div class = "copyright">© 2025 M1F4</div>
         </div>
         <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
-        <script src="asset/templete.js"></script>
+        <script src="/3_mypage/asset/studylist_student.js"></script>
     </body>
 </html>

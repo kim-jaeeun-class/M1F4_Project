@@ -73,6 +73,7 @@ body {
 .tab {
     border-right: 3px solid #346334;
     border-bottom: 3px solid #346334;
+    border-radius: 10px;
     background-color: #5b9b5b;
     color: #ffffff;
     width: 200px;
@@ -98,8 +99,13 @@ body {
 .tab_0 {
     border: 3px solid #346334;
     border-right: none;
+    border-radius: 10px 10px 0 0;
     color: #555;
     background-color: #ffffff;
+}
+.tab_1 {
+    background-color: #346334;
+    font-size: 28px;
 }
 /* 메인 콘텐츠 */
 .main {
@@ -134,46 +140,32 @@ body {
     color: #000000;
     display: inline-block;
     font-weight: bold;
-    line-height: 50px;
+    line-height: 70px;
     width: 200px;
-    height: 50px;
+    height: 70px;
     margin: 30px 5px;
 }
+.list_tab .active {
+  background-color: #346334;
+  color: #ffffff;
+}
+
 .past_list:hover,
 .ing_list:hover {
     background-color: #555;
     color: #ffffff;
 }
-.total_time_box {
-    /* border: 1px solid #4a8a4a; */
-    background-color: #b8e0a6a4;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 50px;
-    width: 70%;
-    height: 50px;
-    margin: 0px 150px;
-    box-shadow: 0px 1px 10px rgb(0,0,0,0.1);
-}
-.time {
-    text-align: center;
-    width: 500px;
-}
-.time_fix {
-    text-align: right;
-}
-.total_time_box div {
-    display: inline-block;
-}
 .contents-line {
+    display: none;
+}
+.contents-line.active{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     margin: 30px 0px;
 }
+
 .contents-card {
     background-color: #ffffff;
     border: 1px solid #cce0cc;
@@ -212,7 +204,7 @@ body {
     list-style: none;
     text-align: center;
     height: 50px;
-    margin: 150px auto 50px;
+    margin: 100px auto 50px;
     padding: 0;
 }
 
