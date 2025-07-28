@@ -62,21 +62,6 @@ body {
     padding: 0 20px;
 }
 
-.top-menu {
-    display: flex;
-    gap: 15px;
-    font-size: 0.9em;
-    align-items: center;
-}
-
-.top-menu-list {
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.top-menu-list:hover {
-    color: #5b9b5b;
-}
 
 /*.body 부분 */
 .body {
