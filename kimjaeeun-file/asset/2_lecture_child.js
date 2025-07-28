@@ -34,4 +34,36 @@ function bind() {
         });
     });
 
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
+
+    const moreBtn = document.querySelector('.more-btn');
+    const cards = document.querySelectorAll('.review');
+
+    let visibleCount = 6; // 처음 보여줄 카드 개수
+    moreBtn.addEventListener('click', () => {
+        let hiddenCards = Array
+            .from(cards)
+            .filter(card => card.style.display === 'none');
+        if (hiddenCards.length === 0) {
+            alert('더 이상 카드가 없습니다.');
+            return;
+        }
+        // 다음 6개 보여주기
+        for (let i = 0; i < 6 && i < hiddenCards.length; i++) {
+            hiddenCards[i].style.display = 'flex';
+            visibleCount++;
+        }
+
+        // 더 이상 보여줄 카드가 없으면 버튼 숨기기
+        if (visibleCount >= cards.length) {
+            moreBtn.style.display = 'none';
+        }
+    })
+
 }

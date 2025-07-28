@@ -326,6 +326,17 @@ body {
 }
 
 /* 반응형 */
+
+@media (max-width: 1270px) {
+    .contents-card {
+        width: 45%;
+    }
+
+    .banner-block, .login {
+        width: 90%;
+        margin: auto;
+    }
+}
 @media (max-width: 768px) {
     .head {
         flex-direction: column;

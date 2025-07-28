@@ -75,10 +75,17 @@ body
             .tab-review
         .apply : 신청 버튼
     .contents : 내용 출력란. tab 클릭에 따라 내용이 변경.
-        .contents-info : 강의 정보
+        .tab-content : 정보 / 문의 / 리뷰 묶음(개별)
+        .contents-info : 강의 정보. 하위 요소에 -title, -content, -map을 붙여 구분.
+            .subject : 강의 카테고리
+            .people-num : 인원 수
+            .location : 장소
+            .info : 강의 정보
+            .profile : 강사 프로필
         .contents-inquery : 문의 내용
         .contents-review : 리뷰 내용 
-
+            .review : 질문별 묶음(개별). 하위 요소에 -title, -content, -date, -img을 붙여 구분.
+            .more : qna가 많을 경우 더 보기로 추가 확인 가능
 */
 
 button {
@@ -92,7 +99,7 @@ button {
 }
 
 /* 나중에 a href로 링크 걸 경우에 색상 변경 */
-.nav a {
+.navFirst {
     color: #5b9b5b;
     text-decoration: none;
     font-weight: bold;
@@ -100,7 +107,15 @@ button {
     transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.navSecond {
+    color: #aacda6;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navFirst:hover, .navSecond:hover {
     color: #3e6b3e;
     text-decoration: underline;
 }
@@ -154,7 +169,7 @@ button {
 }
 
 .apply {
-    width: 5%;
+    width: 10%;
     height: 3em;
     border-radius: 10px;
     border: none;
@@ -171,9 +186,9 @@ button {
 
 .contents {
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .contents-info, .contents-inquery, .contents-review {
@@ -182,6 +197,102 @@ button {
 
 .contents-info {
     line-height: 1.8em;
+}
+
+.input {
+    text-align: right;
+}
+.input-btn {
+    text-align: center;
+    background-color: #aacda6;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1em;
+    padding: 0.5em;
+    margin: 2% auto 0;
+    cursor: pointer;
+    width: 15%;
+
+}
+
+.review-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.review {
+    margin: 30px 0 30px;
+    gap: 20px;
+    background-color: #f0f0f0;
+    border: 1px dotted #cce0cc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s;
+    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+}
+
+.review-text {
+    width: 60%;
+}
+
+.review-title, .review-content {
+    line-height: 1.8em;
+}
+
+.review-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #3e6b3e;
+}
+
+.review-content {
+    font-size: 0.95em;
+}
+
+.review-date {
+    font-size: 0.8em;
+    color:#555;
+    margin-top: 10%;
+}
+
+.review-img {
+    border: 1px solid #aacda6;
+    border-radius: 10px;
+    background-image: url('https://i.pinimg.com/736x/1c/e2/13/1ce21377b1aa05afc411c7ab36449f32.jpg');
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.more {
+    width: 70%;
+    margin: 5% auto;
+}
+
+.more-btn {
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    height: 4em;
+    border: none;
+    color: white;
+    font-family: 'ChosunGu';
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
 }
 
 .tab-content {
@@ -236,6 +347,12 @@ button {
 }
 
 /* 반응형 */
+
+@media (max-width: 1200px) {
+    .review {
+        width: 90%;
+    }
+}
 @media (max-width: 768px) {
     .head {
         flex-direction: column;
@@ -283,5 +400,20 @@ button {
     .apply {
         width: 20%;
         height: 40px;
+    }
+
+    .input-btn {
+        width: 30%;
+        margin: 10px 5% 0;
+    }
+
+    .review-box {
+        width: 90%;
+        margin: auto;
+    }
+    .review {
+        padding: 20px;
+        width: 100%;
+        margin: 10% auto;
     }
 }

@@ -33,4 +33,12 @@ function bind() {
             moreBtn.style.display = 'none';
         }
     })
+
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
 }
