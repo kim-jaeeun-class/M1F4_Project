@@ -11,6 +11,14 @@ function bind() {
             .toggle('show');
     });
 
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
+
     // 배너 슬라이드
     const images = document.querySelectorAll(".banner-block > div");
     let index = 0;

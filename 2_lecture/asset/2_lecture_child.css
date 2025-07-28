@@ -14,6 +14,20 @@ body {
     padding: 0;
 }
 
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
 
 /*
     head 세부 클래스명
@@ -84,8 +98,11 @@ body
             .profile : 강사 프로필
         .contents-inquiry : 문의 내용
             .inquiry-block : 질문 / 답변 묶음
-                .question : 질문 클래스 묶음. -title, -content가 하위 요소
-                .answer : 답변 클래스 묶음. -title, -content가 하위 요소
+                .question : 질문 제목. -title, -content가 하위 요소
+                .answer : 질문 상세 및 답변 클래스 묶음.
+                    .question-ico : 화살표 그림
+                    .question-text : 질문 상세 txt
+                    .answer-content : 답변 txt
         .contents-review : 리뷰 내용 
             .review : 질문별 묶음(개별). 하위 요소에 -title, -content, -date, -img을 붙여 구분.
             .more : qna가 많을 경우 더 보기로 추가 확인 가능
@@ -102,7 +119,7 @@ button {
 }
 
 /* 나중에 a href로 링크 걸 경우에 색상 변경 */
-.navFirst {
+.nav a.navFirst {
     color: #5b9b5b;
     text-decoration: none;
     font-weight: bold;
@@ -110,7 +127,7 @@ button {
     transition: color 0.3s ease;
 }
 
-.navSecond {
+.nav a.navSecond {
     color: #aacda6;
     text-decoration: none;
     font-weight: bold;
@@ -256,16 +273,49 @@ p {
     line-height: 2em;
 }
 
-.question-title, .answer-title {
+.question-title {
     font-size: 1.2em;
     font-weight: 600;
     color: #3e6b3e;
 }
 
-.question-content, .answer-content {
+.question-date {
+    font-size: 0.8em;
+    color:#555;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.answer {
+    display: flex;
+    gap: 20px;
+}
+
+.question-ico {
+    background-image: url('https://i.postimg.cc/ZKxpgTQj/free-icon-arrow-10397635.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.text-block {
     font-size: 0.9em;
     line-height: 1.6em;
     text-align: justify;
+    width: 90%;
+    background-color: #ffffff;
+    border: 1px dotted #5b9b5b;
+    border-radius: 10px;
+    padding: 2%;
+}
+.text-block > hr {
+    background-color: #3e6b3e;
+    border: 1px solid #3e6b3e;
+}
+.question-text {
+    font-weight: 600;
 }
 
 /* 여기부터 review */
