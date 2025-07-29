@@ -119,19 +119,23 @@ a:active {
 
 .form {
     padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .input {
     width: 100%;
     padding: 6px;
-    border: 1px solid gray;
+    border: none;
     box-sizing: border-box;
     margin-bottom: 10px;
 }
 
 .title {
     font-style: bold;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .artmain {
@@ -140,9 +144,8 @@ a:active {
 
 .meta {
     padding: 6px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    font-size: 13px;
+    border: none;
+    font-size: 0.9em;
     margin-bottom: 10px;
 }
 

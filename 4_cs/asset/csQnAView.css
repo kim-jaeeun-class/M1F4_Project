@@ -114,19 +114,23 @@ a:active {
 }
 
 .notice-contents {
-  padding: 15px 20px;
+    padding: 15px 20px;
 }
 
 .form {
-  padding: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .input {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid gray;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+    width: 100%;
+    padding: 6px;
+    border: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .title {
@@ -139,11 +143,10 @@ a:active {
 }
 
 .meta {
-  padding: 6px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  font-size: 13px;
-  margin-bottom: 10px;
+    padding: 6px;
+    border: none;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .tabs {
