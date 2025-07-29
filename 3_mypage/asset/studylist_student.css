@@ -14,6 +14,21 @@ body {
     padding: 0;
 }
 
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
+
 
 /*
     head 세부 클래스명
@@ -200,7 +215,7 @@ body {
     font-weight: bold;
     margin-bottom: 1em;
 }
-.page {
+.pagination {
     list-style: none;
     text-align: center;
     height: 50px;
@@ -208,12 +223,12 @@ body {
     padding: 0;
 }
 
-.page li {
+.pagination li {
     display: inline-block;
     margin: 0 5px;
 }
 
-.page li a {
+.pagination li a {
     border: 1px solid #ccc;
     border-radius: 5px;
     display: inline-block;
@@ -222,7 +237,7 @@ body {
     text-decoration: none;
 }
 
-.page li a:hover {
+.pagination li a:hover {
     background-color: #f0f0f0;
     border-color: #999;
     color: #000;
