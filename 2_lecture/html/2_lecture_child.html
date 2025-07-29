@@ -270,7 +270,7 @@
             <ul type="none" class="bottom-menu">
                 <li class="bottom-menu-list">챗봇</li>
                 <li class="bottom-menu-list">
-                    <a href="../4_cs/csMain.html">고객센터</a>
+                    <a href="../../4_cs/html/csMain.html">고객센터</a>
                 </li>
                 <li class="bottom-menu-list">광고 문의</li>
                 <li class="bottom-menu-list">개인 정보 이용 방침</li>
@@ -278,32 +278,38 @@
             <div class = "copyright">© 2025 M1F4</div>
         </div>
         <div id="review-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>후기 작성</h2>
-            <form id="review-form">
-                <label for="review-title">제목</label>
-                <br>
-                    <input type="text" id="review-title" name="title" required="required">
-                        <br>
-                            <br>
-
-                                <label for="review-content">내용</label>
-                                <br>
-                                    <textarea id="review-content" name="content" rows="4" required="required"></textarea>
-                                    <br>
-                                        <br>
-
-                                            <label for="review-image">사진 첨부</label>
-                                            <br>
-                                                <input type="file" id="review-image" name="image" accept="image/*">
-                                                    <br>
-                                                        <br>
-
-                                                            <button type="submit">작성 완료</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
+            <div class="modal-content">
+                <div class="review-write-title">
+                    <h2>후기 작성</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <form id="review-form">
+                    <div class = "review-form-title">
+                        <label for="review-title">제목</label>
+                        <input type="text" id="review-title" name="title" required="required" placeholder="제목을 입력해주세요.">
+                    </div>
+                    <div class = "review-form-content">
+                        <label for="review-content">내용</label>
+                        <textarea id="review-content" name="content" rows="4" required="required" placeholder="내용을 입력해주세요."></textarea>  
+                    </div>
+                    <div class = "review-form-img">
+                        <label for="review-image">사진 첨부</label>
+                        <input type="file" id="review-image" name="image" accept="image/*">
+                    </div>
+                    <button type="submit" id = "review-done-btn">작성 완료</button>
+                </form>
+                <div class = "tos">
+                    <ul>
+                        <li>
+                            &nbsp;게시된 리뷰의 권리와 책임은 게시당사자에게 있으며, '배워보다' 이용자가 작성한 리뷰 등을 이용하여 서비스 운영 등에 활용할 수 있습니다. 이 때 리뷰는 모두 공개를 원칙으로 하되, 공개의 방법은 '배워보다'의 서비스 정책에 따라 변경될 수 있습니다.
+                        </li>
+                        <li>
+                            &nbsp;악성 댓글, 욕설, 비방, 광고성 내용 등 부적절한 후기는 삭제될 수 있습니다. 또한, 과도한 부정 후기나 허위 후기를 반복적으로 작성하는 경우 작성 제한을 받거나 계정이 정지될 수 있습니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <script src="../asset/2_lecture_child.js"></script>
     </body>
 </html>

@@ -80,10 +80,29 @@ a:active {
 }
 
 /* body 부분 */
-.text {
-    width: 90%;
-    margin: auto;
+
+.nav {
+    width: 80%;
+    margin: 40px auto;
 }
+
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.text-block {
+    width: 80%;
+    margin: auto;
+    border: 1px dotted #3e6b3e;
+    border-radius: 20px;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
 
 /*
     footer : 홈페이지 정보

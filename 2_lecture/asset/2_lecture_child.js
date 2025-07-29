@@ -84,4 +84,28 @@ function bind() {
         );
     })
 
+  // 모달 관련 바로 처리
+    const modal = document.querySelector('.modal');
+    const openModalBtn = document.querySelector('.review-btn');
+    const closeModalBtn = document.querySelector('.modal .close');
+
+    openModalBtn.addEventListener('click', () => {
+        modal
+            .classList
+            .add('show');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modal
+            .classList
+            .remove('show');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal
+                .classList
+                .remove('show');
+        }
+    });
 }
