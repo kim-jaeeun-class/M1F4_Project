@@ -261,6 +261,12 @@ p {
 
 /* 여기부터 질문 사항 */
 
+.question-input {
+    width: 95%;
+    padding: 2%;
+    text-align: right;
+}
+
 .inquiry-block {
     width: 90%;
     background-color: #f0f0f0;
@@ -271,6 +277,10 @@ p {
     padding: 2%;
     margin: 5% auto;
     line-height: 2em;
+}
+
+.question {
+    cursor: pointer;
 }
 
 .question-title {
@@ -287,8 +297,17 @@ p {
 }
 
 .answer {
-    display: flex;
+    display: none;
     gap: 20px;
+    border-top: 1px solid #3e6b3e;
+    padding-top: 2%;
+    margin-top: 2%;
+}
+
+.answer-content {
+    border-top: 1px solid #3e6b3e;
+    margin-top: 2%;
+    padding-top: 2%;
 }
 
 .question-ico {
@@ -453,13 +472,14 @@ p {
 
 .modal-content {
     margin: 10% auto;
-    padding: 20px;
+    padding: 30px;
     width: 80%;
     max-width: 600px;
     background-color: #f0f0f0;
     border: 1px dotted #cce0cc;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: auto;
 }
 
 .review-write-title {
@@ -496,6 +516,20 @@ label {
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     padding: 5px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+}
+
+#review-title:focus, #review-content:focus {
+    outline: none;
+}
+
+#review-content {
+    resize: none;
+}
+#review-image {
+    font-size: 0.8em;
+    color: #555
 }
 
 #review-done-btn {
@@ -519,7 +553,11 @@ label {
     font-weight: 100;
     color: #555;
     border-top: 1px solid #3e6b3e;
-    padding-top: 20px;
+    padding: 5%;
+}
+
+.tos ul li {
+    margin: 2% auto;
 }
 
 /*
@@ -619,6 +657,21 @@ label {
     .apply {
         width: 20%;
         height: 40px;
+    }
+
+    .question-input {
+        width: 100%;
+        text-align: right;
+    }
+
+    .question, .answer {
+        padding: 5%;
+    }
+
+    .answer-content {
+        border-top: 1px solid #3e6b3e;
+        margin-top: 5%;
+        padding-top: 5%;
     }
 
     .input-btn {

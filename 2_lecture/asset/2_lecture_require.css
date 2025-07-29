@@ -94,13 +94,51 @@ a:active {
     transition: color 0.3s ease;
 }
 
-.text-block {
+.upload {
     width: 80%;
     margin: auto;
+    text-align: right;
+}
+
+.text-block {
+    width: 80%;
+    margin: 3% auto;
     border: 1px dotted #3e6b3e;
     border-radius: 20px;
     padding: 3%;
     box-sizing: border-box;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+}
+
+thead {
+    font-weight: 600;
+    border-bottom: 1px solid #3e6b3e;
+}
+
+.table-num, .table-title, .table-date {
+    padding-bottom: 15px;
+}
+
+.table-num {
+    width: 10%;
+}
+
+.table-title {
+    width: 75%;
+}
+
+.table-date {
+    width: 15%;
+}
+
+.search {
+    width: 80%;
+    margin: 3% auto;
+    text-align: center;
 }
 
 
@@ -182,5 +220,17 @@ a:active {
 
     .category.show {
         display: flex;
+    }
+
+    .table-num {
+        width: 15%;
+    }
+
+    .table-title {
+        width: 50%;
+    }
+
+    .table-date {
+        width: 35%;
     }
 }

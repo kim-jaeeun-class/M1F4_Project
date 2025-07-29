@@ -48,6 +48,24 @@ function bind() {
         }
     });
 
+    // 질문 클릭 시 답변 열기
+    const questions = document.querySelectorAll('.question');
+
+    questions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+
+            if (answer && answer.classList.contains('answer')) {
+                // display 속성을 토글
+                const currentDisplay = getComputedStyle(answer).display;
+                answer.style.display = (currentDisplay === 'none')
+                    ? 'flex'
+                    : 'none';
+            }
+        });
+    });
+
+
     // 더 보기 버튼
 
     const moreBtn = document.querySelector('.more-btn');
@@ -108,4 +126,23 @@ function bind() {
                 .remove('show');
         }
     });
+
+    // 작성 완료 버튼 클릭 시 알림창 띄우기
+    const reviewDoneBtn = document.querySelector('#review-done-btn');
+
+    reviewDoneBtn.addEventListener('click', () => {
+        const reviewTitle = document.querySelector('#review-title').value.trim();
+        const reviewCon = document.querySelector('#review-content').value.trim();
+
+        if (reviewTitle === '' || reviewCon === '') {
+            alert('후기 내용을 입력해주세요.');
+            return;
+        }
+
+        alert('후기가 성공적으로 작성되었습니다. 게시글은 승인 후 등록됩니다.');
+        modal.classList.remove('show');
+        document.querySelector('#review-title').value = ''; // 입력창 초기화
+        document.querySelector('#review-content').value = '';
+    });
+
 }
