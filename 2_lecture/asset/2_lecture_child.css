@@ -408,7 +408,6 @@ p {
     height: 4em;
     border: none;
     color: white;
-    font-family: 'ChosunGu';
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -421,6 +420,106 @@ p {
 
 .tab-content.active {
     display: block;
+}
+
+/* + 리뷰용 모달 창 */
+
+.modal {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow: auto;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #f0f0f0;
+    border: 1px dotted #cce0cc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.review-write-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% auto 5%;
+}
+
+.review-form-title, .review-form-content, .review-form-img {
+    display: flex;
+    margin: 3% auto;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95em;
+    width: 15%;
+    text-align: left;
+    padding-top: 2px;
+}
+
+#review-title, #review-content, #review-image {
+    width: 85%;
+    font-family: 'ChosunGu';
+}
+
+#review-title, #review-content {
+    border: 1px dotted #aacda6;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 5px;
+}
+
+#review-done-btn {
+    width: 100%;
+    margin: 5% auto;
+
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    border-radius: 20px;
+    padding: 10px;
+    height: 3em;
+    border: none;
+    color: white;
+}
+
+.tos {
+    text-align: justify;
+    line-height: 1.6em;
+    font-size: 0.8em;
+    font-weight: 100;
+    color: #555;
+    border-top: 1px solid #3e6b3e;
+    padding-top: 20px;
 }
 
 /*
@@ -535,5 +634,16 @@ p {
         padding: 20px;
         width: 100%;
         margin: 10% auto;
+    }
+
+
+    label {
+        font-weight: 600;
+        width: 30%;
+        text-align: left;
+    }
+
+    #review-title, #review-content, #review-image {
+        width: 70%;
     }
 }

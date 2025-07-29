@@ -1,6 +1,7 @@
 window.addEventListener('load', bind);
 
 function bind() {
+    /* 공통 UI 부분*/
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
@@ -17,83 +18,90 @@ function bind() {
                 .blur();
         }
     });
-    /* 게시글 표시 리스트 + 목록 */
-    // 예시 게시글 데이터 25개 생성
-    const posts = [];
-    for(let i = 1; i <= 25; i++) {
-        posts.push({
-            number: i,
-            title: `Q&A 제목 예시 ${i}`,
-            author: `사용자 ${i}`,
-            time: `2025-07-${(i%30+1).toString().padStart(2,'0')}`
-        });
-    }
+
+    
+    /* 게시글 표시 리스트 + 목록 + 검색 기능 */
+    const posts = [
+        { number: 1, title: 'HTML 태그 중에 줄바꿈은 어떻게 하나요?', author: '익명', time: '2025-07-29' },
+        { number: 2, title: 'CSS에서 margin이랑 padding 차이가 뭔가요?', author: '익명', time: '2025-07-28' },
+        { number: 3, title: '로그인을 안 해도 수강 가능한 강의가 있나요?', author: '익명', time: '2025-07-26' },
+        { number: 4, title: '마이페이지에서 학습 진도를 수정할 수 있나요?', author: '익명', time: '2025-07-25' },
+        { number: 5, title: '모바일에서도 강의 수강이 가능한가요?', author: '익명', time: '2025-07-24' },
+        { number: 6, title: '자바스크립트에서 let과 var의 차이를 알고 싶어요', author: '익명', time: '2025-07-23' },
+        { number: 7, title: '수료증을 발급받을 수 있나요?', author: '익명', time: '2025-07-22' },
+        { number: 8, title: '강의 자료를 다운로드할 수 있나요', author: '익명', time: '2025-07-21' },
+        { number: 9, title: '모의고사 점수는 어디에서 확인하나요?', author: '익명', time: '2025-07-20' },
+        { number: 10, title: '포인트는 어디에 사용되나요?', author: '익명', time: '2025-07-17' },
+        { number: 11, title: '강사에게 질문은 어떻게 하나요?', author: '익명', time: '2025-07-16' },
+        { number: 12, title: '비밀번호를 잊어버렸을 때 어떻게 하나요?', author: '익명', time: '2025-07-12' },
+        { number: 13, title: '자바스크립트 문법에서 세미콜론은 꼭 필요한가요?', author: '익명', time: '2025-07-11' },
+    ];
 
     const postsPerPage = 10;
     let currentPage = 1;
+    let filteredPosts = [...posts]; // 검색된 게시글
 
-    function renderTable(page) {
-        const tableBody = document.getElementById('tableBody');
-        if (!tableBody) {
-            console.error("tableBody를 찾을 수 없습니다.");
-            return;
-        }
-        tableBody.innerHTML = '';
-
-        const sortedPosts = [...posts].sort((a, b) => b.number - a.number);
+    // ✅ 테이블 렌더링 함수
+    function renderTable(page = 1) {
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
-        const pagePosts = sortedPosts.slice(start, end);
+        const pagePosts = filteredPosts.slice(start, end);
 
-        for(const post of pagePosts) {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${post.number}</td>
-                <td><a href="csQnAView.html">${post.title}</a></td>
-                <td>${post.author}</td>
-                <td>${post.time}</td>
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = ''; // 기존 내용 초기화
+
+        pagePosts.forEach(post => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+            <td>${post.number}</td>
+            <td><a href="csQnAView.html">${post.title}</a></td>
+            <td>${post.author}</td>
+            <td>${post.time}</td>
             `;
-            tableBody.appendChild(tr);
-        }
+            tbody.appendChild(row);
+        });
+
+        currentPage = page;
         renderPagination();
     }
 
+    // ✅ 페이지네이션 렌더링 함수
     function renderPagination() {
-        let paginationDiv = document.getElementById('pagination');
-        if(!paginationDiv){
-            paginationDiv = document.createElement('div');
-            paginationDiv.id = 'pagination';
-            paginationDiv.style.textAlign = 'center';
-            paginationDiv.style.marginTop = '15px';
+        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
 
-            const container = document.querySelector('.qna-contents') || document.body;
-            container.appendChild(paginationDiv);
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i;
+            btn.className = (i === currentPage) ? 'active' : '';
+            btn.addEventListener('click', () => renderTable(i));
+            pagination.appendChild(btn);
         }
-
-        const totalPages = Math.ceil(posts.length / postsPerPage);
-        paginationDiv.innerHTML = `
-            <button id="prevBtn" ${currentPage === 1 ? 'disabled' : ''}>이전</button>
-            <span style="margin:0 10px;">${currentPage} / ${totalPages}</span>
-            <button id="nextBtn" ${currentPage === totalPages ? 'disabled' : ''}>다음</button>
-        `;
-
-        document.getElementById('prevBtn').onclick = () => {
-            if(currentPage > 1) {
-                currentPage--;
-                renderTable(currentPage);
-            }
-        };
-        document.getElementById('nextBtn').onclick = () => {
-            if(currentPage < totalPages) {
-                currentPage++;
-                renderTable(currentPage);
-            }
-        };
     }
 
-    renderTable(currentPage);
+    // ✅ 검색 함수
+    function handleSearch() {
+        const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
 
+        if (keyword === '') {
+            filteredPosts = [...posts]; // 전체 목록 복원
+        } else {
+            filteredPosts = posts.filter(post =>
+            post.title.toLowerCase().includes(keyword)
+            );
+        }
 
-    /* 게시글 제목 누르면 해당 글로 이동 */
+        renderTable(1); // 검색 시 첫 페이지로 이동
+    }
+
+    // ✅ 이벤트 연결
+    document.getElementById('searchBtn').addEventListener('click', handleSearch);
+    document.getElementById('searchInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') handleSearch();
+    });
+
+    // ✅ 초기화
+    renderTable();
 
 }
