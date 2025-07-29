@@ -1,0 +1,539 @@
+/* 기본 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ChosunGu';
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
+
+/*
+    head 세부 클래스명
+    .logo : 홈페이지 로고
+    .category
+        .category-list : 개별 카테고리(통합)
+            .reg : 수강 신청
+            .lec-require : 강의 요청
+            .community : 커뮤니티
+            .mypage : 마이페이지
+    .top-menu : 챗봇 / 고객센터 메뉴 묶음
+        .top-menu-list : 메뉴별(통합)
+*/
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+/* 
+body 
+    .nav : 내비게이션
+    .banner : 배너 이미지
+    .tab-list : contents 위의 tab 및 버튼 묶음
+        .tab : tab 3개(개별)
+            .tab-info
+            .tab-inquiry
+            .tab-review
+        .apply : 신청 버튼
+    .contents : 내용 출력란. tab 클릭에 따라 내용이 변경.
+        .tab-content : 정보 / 문의 / 리뷰 묶음(개별)
+        .contents-info : 강의 정보. 하위 요소에 -title, -content, -map을 붙여 구분.
+            .subject : 강의 카테고리
+            .people-num : 인원 수
+            .location : 장소
+            .info : 강의 정보
+            .profile : 강사 프로필
+        .contents-inquiry : 문의 내용
+            .inquiry-block : 질문 / 답변 묶음
+                .question : 질문 제목. -title, -content가 하위 요소
+                .answer : 질문 상세 및 답변 클래스 묶음.
+                    .question-ico : 화살표 그림
+                    .question-text : 질문 상세 txt
+                    .answer-content : 답변 txt
+        .contents-review : 리뷰 내용 
+            .review : 질문별 묶음(개별). 하위 요소에 -title, -content, -date, -img을 붙여 구분.
+            .more : qna가 많을 경우 더 보기로 추가 확인 가능
+*/
+
+button {
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    color: #333;
+}
+.nav {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* 나중에 a href로 링크 걸 경우에 색상 변경 */
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav a.navSecond {
+    color: #aacda6;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navFirst:hover, .navSecond:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+
+.banner, .tab-list, .contents {
+    width: 80%;
+    margin: 2% auto;
+}
+.banner {
+    background-image: url('https://as2.ftcdn.net/jpg/04/91/16/31/1000_F_491163105_W7Gasr6WEv2KAIkKmuy4x7eLX3sZCZoU.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tab-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-list-child {
+    display: flex;
+    gap: 10px;
+    width: 40%;
+}
+
+.tab {
+    margin: auto 2%;
+    width: auto;
+    flex-grow: 1;
+    flex: 1 1 0;
+    margin: 0;  
+    min-width: 0;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.tab:hover {
+    background-color: #3e6b3e;
+}
+
+.apply {
+    width: 10%;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.apply:hover {
+    background-color: #3e6b3e;
+}
+
+/* 여기부터 강의 설명 */
+
+.contents {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contents-info, .contents-inquiry, .contents-review {
+    padding: 3%;
+}
+
+.contents-info {
+    line-height: 1.8em;
+}
+
+.subject, .people-num, .location {
+    display: flex;
+    gap: 20px;
+}
+
+.subject-title, .people-num-title, .location-title, .info-title {
+    font-weight: 600;
+}
+
+.info-content {
+    margin-top: 2%;
+    text-align: justify;
+}
+
+p {
+    margin: 3% auto;
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-img {
+    border: 1px solid #aacda6;
+    border-radius: 100%;
+    background-image: url('https://i.pinimg.com/736x/1c/e2/13/1ce21377b1aa05afc411c7ab36449f32.jpg');
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.profile-content-name {
+    font-weight: 600;
+}
+
+/* 여기부터 질문 사항 */
+
+.inquiry-block {
+    width: 90%;
+    background-color: #f0f0f0;
+    border: 1px dotted #cce0cc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding: 2%;
+    margin: 5% auto;
+    line-height: 2em;
+}
+
+.question-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #3e6b3e;
+}
+
+.question-date {
+    font-size: 0.8em;
+    color:#555;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.answer {
+    display: flex;
+    gap: 20px;
+}
+
+.question-ico {
+    background-image: url('https://i.postimg.cc/ZKxpgTQj/free-icon-arrow-10397635.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.text-block {
+    font-size: 0.9em;
+    line-height: 1.6em;
+    text-align: justify;
+    width: 90%;
+    background-color: #ffffff;
+    border: 1px dotted #5b9b5b;
+    border-radius: 10px;
+    padding: 2%;
+}
+.text-block > hr {
+    background-color: #3e6b3e;
+    border: 1px solid #3e6b3e;
+}
+.question-text {
+    font-weight: 600;
+}
+
+/* 여기부터 review */
+.input {
+    text-align: right;
+}
+.input-btn {
+    text-align: center;
+    background-color: #aacda6;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1em;
+    padding: 0.5em;
+    margin: 2% auto 0;
+    cursor: pointer;
+    width: 15%;
+
+}
+
+.review-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.review {
+    margin: 30px 0 30px;
+    gap: 20px;
+    background-color: #f0f0f0;
+    border: 1px dotted #cce0cc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s;
+    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+}
+
+.review-text {
+    width: 60%;
+}
+
+.review-title, .review-content {
+    line-height: 1.8em;
+}
+
+.review-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #3e6b3e;
+}
+
+.review-content {
+    font-size: 0.95em;
+}
+
+.review-date {
+    font-size: 0.8em;
+    color:#555;
+    margin-top: 10%;
+}
+
+.review-img {
+    border: 1px solid #aacda6;
+    border-radius: 10px;
+    background-image: url('https://i.pinimg.com/736x/1c/e2/13/1ce21377b1aa05afc411c7ab36449f32.jpg');
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.more {
+    width: 70%;
+    margin: 5% auto;
+}
+
+.more-btn {
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    height: 4em;
+    border: none;
+    color: white;
+    font-family: 'ChosunGu';
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/*
+    footer : 홈페이지 정보
+    .bottom-menu : footer 내부 요소 묶음
+        .copyright : 카피라이트
+        .bottom-menu-list : 하단 메뉴 묶음(개별)
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    margin: auto;
+    text-align: center;
+}
+
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+.bottom-menu-list:first-child::before {
+    content: "  "
+}
+.bottom-menu-list::before {
+    content: " | "
+}
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/* 반응형 */
+
+@media (max-width: 1200px) {
+    .review {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    .tab-list-child {
+        width: 70%;
+    }
+    .tab {
+        width: 25%;
+        height: 40px;
+    }
+
+    .apply {
+        width: 20%;
+        height: 40px;
+    }
+
+    .input-btn {
+        width: 30%;
+        margin: 10px 5% 0;
+    }
+
+    .review-box {
+        width: 90%;
+        margin: auto;
+    }
+    .review {
+        padding: 20px;
+        width: 100%;
+        margin: 10% auto;
+    }
+}
