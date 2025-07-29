@@ -5,295 +5,289 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
-  <link rel="stylesheet" href="kimjaeeun-file/templete/asset/templete.css">
-  <script src="headfooter.js"></script>
-
-    <title>회원 가입</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 60%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        hr {
-            margin: 10px 0 20px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
-
-        .checkbox-group, .birth-group, .email-group, .phone-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .checkbox-group input,
-        .birth-group select,
-        .email-group input,
-        .email-group select,
-        .phone-group input {
-            padding: 5px;
-            font-size: 14px;
-        }
-
-        .agree_text {
-            margin-left: 24px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        input[type="text"],
-        select {
-            width: 200px;
-        }
-
-        .button {
-            margin-left: 10px;
-            padding: 6px 12px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .pw input {
-            display: block;
-            margin: 5px 0;
-        }
-    </style>
+  <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+  <script src="../../0_templete/headfooter.js"></script>
+  <title>회원 가입</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 60%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    hr {
+      margin: 10px 0 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .checkbox-group, .birth-group, .email-group, .phone-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .checkbox-group input,
+    .birth-group select,
+    .email-group input,
+    .email-group select,
+    .phone-group input {
+      padding: 5px;
+      font-size: 14px;
+    }
+    .agree_text {
+      margin-left: 24px;
+      font-size: 14px;
+      color: #555;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input[type="text"],
+    select {
+      width: 200px;
+    }
+    .button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    h2 {
+      margin-bottom: 10px;
+      background-color: #28a745;
+      height: 50px;
+      line-height: 50px;
+      color: white;
+      text-align: center;
+      margin: 0;
+    }
+    .pw input {
+      display: block;
+      margin: 5px 0;
+    }
+    .pw-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-end;
+    }
+    .pw-item {
+      display: flex;
+      flex-direction: column;
+      min-width: 150px;
+      flex: 1 1 200px;
+    }
+    .pw-toggle {
+      flex: 0 0 auto;
+      padding-top: 25px;
+    }
+  </style>
 </head>
 <body>
-<div class = "head"> </div>
-  <!-- <div class="head">
-      <div class="main-logo">
-          <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
-          <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
-           <img style = "width: 100px" src = "111.jpg">
-      </div>
-      <div class="category">
-          모바일 한정 카테고리 추후 = 버튼으로 접었다 펴는 기능 만들기 
-          <div class="category-list reg">
-              수강신청
-          </div>
-          <div class="category-list lec-require">
-              강의 요청
-          </div>
-          <div class="category-list community">
-              커뮤니티
-          </div>
-          <div class="category-list mypage">
-              마이페이지
-          </div>
-      </div>
-      <ul type="none" class="top-menu">
-          <li class="top-menu-list">챗봇</li>|
-          <li class="top-menu-list">고객센터</li>|
-          <li class="top-menu-list">회원가입</li>
-      </ul>
-  </div>  -->
+  <div class="head"></div>
 
-<div class="container">
-    <!--약관내역-->
-    <h2>약관 동의</h2> 
+  <div class="container">
+    <h2>약관 동의</h2>
+    <hr>
+    <div class="section">
+      <label><input type="checkbox" class="all_agree"> 전부 동의</label>
+      <p style="font-size: 14px; color: #555;">
+        실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.
+      </p>
+      <br><hr>
+      <ul>
+        <li>
+          <label><input type="checkbox" class="term"> 약관 1</label>
+          <div class="agree_text">실명 인증된 아이디로 가입...</div>
+        </li>
+        <li>
+          <label><input type="checkbox" class="term"> 약관 2</label>
+          <div class="agree_text">실명 인증된 아이디로 가입...</div>
+        </li>
+        <li>
+          <label><input type="checkbox" class="term"> 약관 3</label>
+          <div class="agree_text">실명 인증된 아이디로 가입...</div>
+        </li>
+      </ul>
+    </div>
+
+    <h2>유저 정보 입력</h2>
     <hr>
 
-    <div class="section">
-        <label><input type="checkbox" class="all_agree"> 전부 동의</label>
-        <p style="font-size: 14px; color: #555;">
-            실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.
-        </p>
-        <br><hr>
-
-        <ul>
-            <li>
-                <label><input type="checkbox"> 약관 1</label>
-                <div class="agree_text">
-                    실명 인증된 아이디로 가입하시면 본인인증이 필요한 서비스(네이버 페이, 쇼핑, 멤버십 등)를 가입 후 바로 이용하실 수 있어요.
-                </div>
-            </li>
-            <li>
-                <label><input type="checkbox"> 약관 2</label>
-                <div class="agree_text">
-                    실명 인증된 아이디로 가입하시면 본인인증이 필요한 서비스(네이버 페이, 쇼핑, 멤버십 등)를 가입 후 바로 이용하실 수 있어요.
-                </div>
-            </li>
-            <li>
-                <label><input type="checkbox"> 약관 3</label>
-                <div class="agree_text">
-                실명 인증된 아이디로 가입하시면 본인인증이 필요한 서비스(네이버 페이, 쇼핑, 멤버십 등)를 가입 후 바로 이용하실 수 있어요.
-                </div>
-            </li>
-        </ul>
-    </div>
-
-<h2>유저 정보 입력</h2>
-<hr>
-
-<form class="section" action="#" method="post"> <!-- 폼 시작 -->
-
-  <div class="form-group">
-    <label>봉사자 유형 선택</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" name="user_type" value="봉사자"> 봉사자</label>
-      <label><input type="checkbox" name="user_type" value="수강자"> 수강자</label>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="username">이름</label>
-    <input type="text" id="username" name="username" required>
-  </div>
-
-  <div class="form-group">
-    <label>생년월일</label>
-    <div class="birth-group">
-      <select name="year" required>
-        <option value="">년도</option>
-        <option value="1999">1999</option>
-        <option value="2000">2000</option>
-        <option value="2001">2001</option>
-      </select>
-      <select name="month" required>
-        <option value="">월</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        ...
-        <option value="12">12</option>
-      </select>
-      <select name="day" required>
-        <option value="">일</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        ...
-        <option value="31">31</option>
-      </select>
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label>통신사</label>
-      <select name="domain" required>
-        <option value="daum">SKT</option>
-        <option value="naver">SKT 알뜰폰</option>
-        <option value="google">KT</option>
-        <option value="daum">KT 알뜰폰</option>        
-        <option value="daum">LG U+</option>        
-        <option value="daum">LG U+ 알뜰폰</option>        
-      </select>
-
-  </div>
-
-  <div class="form-group">
-    <label>전화번호</label>
-    <div class="phone-group">
-      <input type="text" name="phone1" maxlength="4" placeholder="010" required>
-      <input type="text" name="phone2" maxlength="4" placeholder="1234" required>
-      <input type="text" name="phone3" maxlength="4" placeholder="5678" required>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label>이메일</label>
-    <div class="email-group">
-      <input type="text" name="email_id" placeholder="your emai;" required>@
-      <input type="text" name="domain_address" required>
-      <select name="domain" required>
-        <option value="daum">직접입력</option>
-        <option value="naver">naver.com</option>
-        <option value="google">gmail.com</option>
-        <option value="daum">daum.net</option>        
-      </select>
-
-
-      <div style="display: flex; align-items: center; gap: 10px;">
-       <!--증복 여부를 말해주는 녀석을 나중에 이벤트 클릭으로 구현하자-->
-        <!-- <input type="button" value="이메일 중복 체크" class="button"> -->
+    <form class="section" action="#" method="post">
+      <div class="form-group">
+        <label>봉사자 유형 선택</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="user_type" value="봉사자"> 봉사자</label>
+          <label><input type="checkbox" name="user_type" value="수강자"> 수강자</label>
+        </div>
       </div>
-    </div>
+
+      <div class="form-group">
+        <label for="username">이름</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label>생년월일</label>
+        <div class="birth-group">
+          <select name="year" required>
+            <option value="">년도</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+          </select>
+          <select name="month" required>
+            <option value="">월</option>
+            <option value="1">1</option>
+            <option value="12">12</option>
+          </select>
+          <select name="day" required>
+            <option value="">일</option>
+            <option value="1">1</option>
+            <option value="31">31</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>통신사</label>
+        <select name="telecom" required>
+          <option value="SKT">SKT</option>
+          <option value="KT">KT</option>
+          <option value="LGU">LG U+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>전화번호</label>
+        <div class="phone-group">
+          <input type="text" name="phone1" maxlength="4" placeholder="010" required>
+          <input type="text" name="phone2" maxlength="4" placeholder="1234" required>
+          <input type="text" name="phone3" maxlength="4" placeholder="5678" required>
+          <input type="button" name="phone_verify" value="전화번호 인증하기" id="phoneVerifyBtn">
+        </div>
+        <div id="phoneVerifyBox" style="display: none; margin-top: 10px;" class="phone-group">
+          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
+          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
+          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
+          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
+          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
+          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;"> 
+
+          <input type="button" value="확인" id="phoneVerifyConfirmBtn" class="button">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>이메일</label>
+        <div class="email-group">
+          <input type="text" name="email_id" placeholder="your email" required>@
+          <input type="text" name="domain_address" id="domain_address" required>
+          <select name="domain" id="email_domain_select" required>
+            <option value="custom">직접입력</option>
+            <option value="naver">naver.com</option>
+            <option value="google">gmail.com</option>
+            <option value="daum">daum.net</option>
+          </select>
+          <input type="button" name="email_submit" value="이메일 인증하기">
+        </div>
+      </div>
+
+      <div class="form-group pw-group">
+        <div class="pw-item">
+          <label for="password">비밀번호</label>
+          <input type="password" name="password" id="password" required>
+        </div>
+        <div class="pw-item">
+          <label for="password_confirm">비밀번호 확인</label>
+          <input type="password" name="password_confirm" id="password_confirm" required>
+        </div>
+        <div class="pw-item pw-toggle">
+          <label style="font-size: 14px;">
+            <input type="checkbox" id="togglePassword"> 비밀번호 보기
+          </label>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <input type="submit" value="가입 완료" class="button" style="background-color: #28a745; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 4px;">
+      </div>
+    </form>
+    <div class="footer"></div>
   </div>
 
-<div class="form-group">
-  <label>비밀번호</label>
-  <input type="password" name="password" id="password" required>
-  <label>비밀번호 확인</label>
-  <input type="password" name="password_confirm" id="password" required>
-  <label style="font-size: 14px;">
-    <input type="checkbox" id="togglePassword"> 비밀번호 보기
-  </label>
-</div>
+  <script>
+    // 비밀번호 보기
+    document.getElementById("togglePassword").addEventListener("change", function () {
+      const pwInput = document.getElementById("password");
+      const pwConfirm = document.getElementById("password_confirm");
+      pwInput.type = this.checked ? "text" : "password";
+      pwConfirm.type = this.checked ? "text" : "password";
+    });
 
+    // 약관 동의 체크
+    const allAgree = document.querySelector('.all_agree');
+    const terms = document.querySelectorAll('.term');
 
+    allAgree.addEventListener('change', function () {
+      terms.forEach(term => term.checked = allAgree.checked);
+    });
 
- 
+    terms.forEach(term => {
+      term.addEventListener('change', function () {
+        allAgree.checked = Array.from(terms).every(t => t.checked);
+      });
+    });
 
-  <!-- <div class="form-group">
-    <label>성별<label>
-    <input type="password" name="password_confirm" required>
-   
-  </div>
+    // 이메일 도메인 자동 입력
+    document.getElementById('email_domain_select').addEventListener('change', function () {
+      const domainInput = document.getElementById('domain_address');
+      const domainMap = {
+        naver: "naver.com",
+        google: "gmail.com",
+        daum: "daum.net"
+      };
+      const selected = this.value;
 
-  <div class="form-group">
-    <label>내외국인</label>
-    <input type="password" name="password_confirm" required>
- 
-  </div> -->
+      if (domainMap[selected]) {
+        domainInput.value = domainMap[selected];
+        domainInput.readOnly = true;
+      } else {
+        domainInput.value = "";
+        domainInput.readOnly = false;
+      }
+    });
 
-  <!--통신사, 성별, 내외국인, 비밀번호 보이게 하는 버튼과 가리는 기능 -->
-  <!--성별과 내외국인을 가로로 한줄로 하자-->
+    // 전화번호 인증 UI 표시
+    document.getElementById("phoneVerifyBtn").addEventListener("click", function () {
+      document.getElementById("phoneVerifyBox").style.display = "flex";
+    });
 
+    // 인증번호 확인
+    document.getElementById("phoneVerifyConfirmBtn").addEventListener("click", function () {
+      const codes = document.querySelectorAll(".verify-code");
+      const inputCode = Array.from(codes).map(c => c.value).join("");
 
-  <!--  제출 버튼 -->
-  <div style="text-align: center; margin-top: 30px;">
-    <input type="submit" value="가입 완료" class="button" style="background-color: #28a745; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 4px;">
-  </div>
-
-  </form>
-<div class = "footer"> </div>
-</div>
-
-
+      if (inputCode.length === 3) {
+        alert("입력한 인증번호: " + inputCode);
+      } else {
+        alert("인증번호를 모두 입력해주세요.");
+      }
+    });
+  </script>
 </body>
-
-
-<script>
-  // 비밀번호 보기 토글
-  document.getElementById("togglePassword").addEventListener("change", function () {
-    const pwInput = document.getElementById("password");
-    pwInput.type = this.checked ? "text" : "password";
-  });
-
-  document.getElementById("toggleConfirm").addEventListener("change", function () {
-    const pwConfirm = document.getElementById("password_confirm");
-    pwConfirm.type = this.checked ? "text" : "password";
-  });
-</script>
 </html>
