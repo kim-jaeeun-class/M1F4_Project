@@ -79,6 +79,49 @@ a:active {
     padding: 0 20px;
 }
 
+/* body 
+
+    .block : body 내부 코드들 묶음
+        .like : 좋아요 버튼 영역
+            .like-btn : 좋아요 버튼
+        .title, .subject, .date, .content : 제목, 주제, 날짜, 내용
+            -index : 제목(내용 부분에는 없음)
+            -index-con : 제목과 연동되는 내용(내용 부분에는 없음)
+*/
+
+.body {
+    background-color: #f0f0f0;
+}
+
+.block {
+    width: 80%;
+    margin: 5% auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 3%;
+}
+
+.like {
+    text-align: right;
+}
+
+.title, .subject, .date {
+    display: flex;
+    gap: 30px;
+}
+
+.index {
+    width: 5%;
+    font-weight: 600;
+}
+.index-con {
+    width: 70%;
+}
+
+.input {
+    text-align: right;
+}
+
 
 /*
     footer : 홈페이지 정보

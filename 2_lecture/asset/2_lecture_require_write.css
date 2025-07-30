@@ -79,6 +79,22 @@ a:active {
     padding: 0 20px;
 }
 
+/* body */
+
+
+.block {
+    width: 80%;
+    margin: 5% auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 3%;
+}
+
+.index {
+    width: 10%;
+    font-weight: 600;
+}
+
 
 /*
     footer : 홈페이지 정보

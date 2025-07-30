@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="referrer" content="no-referrer">
-        <title>head / footer 템플릿</title>
+        <title>강의 요청 :: 상세</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
-        <link rel="stylesheet" href="asset/templete.css">
+        <link rel="stylesheet" href="../asset/2_lecture_require_detail.css">
     </head>
     <body>
         <div class="head">
@@ -20,27 +20,54 @@
             <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
             <div class="category" id="category-menu">
                 <div class="category-list reg">
-                    <a href="../2_lecture/html/2_lecture_main.html">수강 신청</a>
+                    <a href="2_lecture_main.html">수강 신청</a>
                 </div>
                 <div class="category-list lec-require">
-                    <a href="../2_lecture/html/2_lecture_require.html">강의 요청</a>
+                    <a href="2_lecture_require.html">강의 요청</a>
                 </div>
                 <div class="category-list community">
-                    <a href="../5_community/html/project.html">커뮤니티</a>
+                    <a href="../../5_community/html/project.html">커뮤니티</a>
                 </div>
                 <div class="category-list mypage">
-                    <a href="../3_mypage/html/mypage_main.html">마이 페이지</a>
+                    <a href="../../3_mypage/html/mypage_main.html">마이 페이지</a>
                 </div>
             </div>
         </div>
         <div class="body">
             <!-- 이 안에 원하는 내용 넣어주세요-->
+            <div class = "block">
+                <form class = "like">
+                    <button type="like-btn">좋아요버튼</button>
+                </form>
+                <hr>
+                <div class = "title">
+                    <div class = "index">제목</div>
+                    <div class = "index-con">내용</div>
+                </div>
+                <hr>
+                <div class = "subject">
+                    <div class = "index">주제</div>
+                    <div class = "index-con">내용</div>
+                </div>
+                <hr>
+                <div class = "date">
+                    <div class = "index">작성일</div>
+                    <div class = "index-con">내용</div>
+                </div>
+                <hr>
+                <div class = "content">내용</div>
+                <hr>
+                <form class = "input">
+                    <button type = "button">글 수정</button>
+                    <button type = "button">삭제</button>
+                </form>
+            </div>
         </div>
         <div class="footer">
             <ul type="none" class="bottom-menu">
                 <li class="bottom-menu-list">챗봇</li>
                 <li class="bottom-menu-list">
-                    <a href="../4_cs/csMain.html">고객센터</a>
+                    <a href="../../4_cs/html/csMain.html">고객센터</a>
                 </li>
                 <li class="bottom-menu-list">광고 문의</li>
                 <li class="bottom-menu-list">개인 정보 이용 방침</li>
@@ -48,6 +75,6 @@
             <div class = "copyright">© 2025 M1F4</div>
         </div>
         <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
-        <script src="asset/templete.js"></script>
+        <script src="../asset/2_lecture_require_detail.js"></script>
     </body>
 </html>
