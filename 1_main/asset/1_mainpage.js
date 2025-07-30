@@ -68,4 +68,23 @@ function bind() {
         showImage(index);
         startSlide();
     });
+
+    // 로그인 시 화면 전환
+    const loginBtn = document.querySelector('#login-btn');
+    const loginBlock = document.querySelector('.login-block');
+    const loginDone = document.querySelector('.login-done');
+
+    loginBtn.addEventListener('click', () => {
+        loginBlock.style.display = 'none';
+        loginDone.style.display = 'block';
+    });
+
+    // 로그아웃 클릭 시 화면 전환
+
+    const logout = document.querySelector('.logout');
+
+    logout.addEventListener('click', () => {
+        loginDone.style.display = 'none';
+        loginBlock.style.display = 'block';
+    });
 }

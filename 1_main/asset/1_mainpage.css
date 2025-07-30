@@ -87,7 +87,12 @@ a:active {
             .find-id : id 찾기
             .find-pw : 비밀번호 찾기
             .login-gaip : 회원 가입
-
+        .login-done : 로그인 완료 시
+            .login-done-pic : 프사
+            .login-done-info : 정보 및 로그아웃 기능 묶음
+                .name : 유저명
+                .id : 아이디
+                .logout : 로그아웃
     */
 .banner-list {
     display: flex;
@@ -232,6 +237,29 @@ a:active {
 }
 .login button:hover {
     background-color: #498449;
+}
+
+.login-done-pic {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://i.pinimg.com/736x/0d/3c/4a/0d3c4a711ef88700d2c6697defac8530.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    margin: 10% auto;
+}
+
+.login-done-info {
+    line-height: 1.6em;
+}
+
+.logout {
+    margin: 10px auto;
+    font-size: 0.9em;
+    color: #666;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /*
