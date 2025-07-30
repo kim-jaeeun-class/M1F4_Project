@@ -22,6 +22,7 @@ a, a:link, a:visited {
 a:focus, a:hover {
     color: #3e6b3e;
     text-decoration: none;
+    font-weight: 600;
 }
 
 a:active {
@@ -81,8 +82,11 @@ a:active {
 
 /* body 부분 */
 
-.nav {
+.block {
     width: 80%;
+    margin: auto;
+}
+.nav {
     margin: 40px auto;
 }
 
@@ -94,14 +98,19 @@ a:active {
     transition: color 0.3s ease;
 }
 
+.title {
+    text-align: left;
+    font-weight: 900;
+    font-size: 1.6em;
+    margin: 2% auto;
+}
+
 .upload {
-    width: 80%;
     margin: auto;
     text-align: right;
 }
 
 .text-block {
-    width: 80%;
     margin: 3% auto;
     border: 1px dotted #3e6b3e;
     border-radius: 20px;
@@ -133,6 +142,10 @@ thead {
 
 .table-date {
     width: 15%;
+}
+
+td {
+    padding: 10px;
 }
 
 .search {

@@ -209,7 +209,7 @@ a:active {
     justify-content: space-evenly;
 }
 
-.find-id, .find-pw, .login-gaip {
+.find-id, .login-gaip {
     margin: 10px auto;
     font-size: 0.9em;
     color: #666;
