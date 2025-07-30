@@ -20,7 +20,7 @@ function bind() {
             password: '0000' 
         }
     ];
-    const currentUserId = 'user01@naver.com';
+    const currentUserId = 'user02@gmail.com';
    
     // 화면에 아이디 표시
     document.getElementById('fix_id').textContent = currentUserId;
