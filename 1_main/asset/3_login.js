@@ -17,6 +17,11 @@ function bind() {
             id: 'user02@gmail.com', 
             role: 'volunteer', 
             password: '0000' 
+        },
+        {
+            id: 'tofhdns1130@naver.com',
+            role: 'student',
+            password: 'tofhdns'
         }
     ];
 
