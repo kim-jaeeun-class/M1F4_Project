@@ -220,6 +220,16 @@ button {
 
 .contents-info {
     line-height: 1.8em;
+    width: 90%;
+    margin: auto;
+    padding: 3%;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 600;
+    margin: 50px 0;
+    color: #3e6b3e;
 }
 
 .subject, .people-num, .location {
@@ -229,6 +239,19 @@ button {
 
 .subject-title, .people-num-title, .location-title, .info-title {
     font-weight: 600;
+}
+
+.location-map {
+    width: 300px;
+    height: 300px;
+    background-image: url('https://i.pinimg.com/736x/78/9d/74/789d74b1e1dfd2aa92c5d4e6588f0ed7.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 5%;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .info-content {
@@ -263,8 +286,9 @@ p {
 
 .question-input {
     width: 95%;
-    padding: 2%;
     text-align: right;
+    margin: 3% auto;
+    box-sizing: border-box;
 }
 
 .inquiry-block {
@@ -339,6 +363,8 @@ p {
 
 /* 여기부터 review */
 .input {
+    width: 95%;
+    padding: 2%;
     text-align: right;
 }
 .input-btn {
@@ -351,20 +377,24 @@ p {
     font-weight: 900;
     font-size: 1em;
     padding: 0.5em;
-    margin: 2% auto 0;
+    margin-top: 10px;
+    margin-right: 0;
+    margin-bottom: 0;
     cursor: pointer;
     width: 15%;
-
 }
 
 .review-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+
 }
 .review {
     margin: 30px 0 30px;
-    gap: 20px;
     background-color: #f0f0f0;
     border: 1px dotted #cce0cc;
     border-radius: 10px;
@@ -441,7 +471,7 @@ p {
     display: block;
 }
 
-/* + 리뷰용 모달 창 */
+/* 모달 공통 디자인 */
 
 .modal {
     width: 100%;
@@ -482,17 +512,6 @@ p {
     overflow: auto;
 }
 
-.review-write-title {
-    display: flex;
-    justify-content: space-between;
-    margin: 2% auto 5%;
-}
-
-.review-form-title, .review-form-content, .review-form-img {
-    display: flex;
-    margin: 3% auto;
-}
-
 h2 {
     font-weight: 600;
     font-size: 1.5em;
@@ -504,46 +523,6 @@ label {
     width: 15%;
     text-align: left;
     padding-top: 2px;
-}
-
-#review-title, #review-content, #review-image {
-    width: 85%;
-    font-family: 'ChosunGu';
-}
-
-#review-title, #review-content {
-    border: 1px dotted #aacda6;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    padding: 5px;
-    font-size: 0.95em;
-    box-sizing: border-box;
-}
-
-#review-title:focus, #review-content:focus {
-    outline: none;
-}
-
-#review-content {
-    resize: none;
-}
-#review-image {
-    font-size: 0.8em;
-    color: #555
-}
-
-#review-done-btn {
-    width: 100%;
-    margin: 5% auto;
-
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    background-color: #5b9b5b;
-    border-radius: 20px;
-    padding: 10px;
-    height: 3em;
-    border: none;
-    color: white;
 }
 
 .tos {
@@ -559,6 +538,65 @@ label {
 .tos ul li {
     margin: 2% auto;
 }
+
+.review-write-title, .inquiry-write-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% auto 5%;
+}
+
+.review-form-title, .review-form-content, .review-form-img, 
+.inquiry-form-title, .inquiry-form-content, .inquiry-form-img {
+    display: flex;
+    margin: 3% auto;
+}
+
+#review-title, #review-content, #review-image, 
+#inquiry-title, #inquiry-content, #inquiry-image {
+    width: 85%;
+    font-family: 'ChosunGu';
+}
+
+#review-title, #review-content,
+#inquiry-title, #inquiry-content {
+    border: 1px dotted #aacda6;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 5px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+}
+
+#review-title:focus, #review-content:focus, 
+#inquiry-title:focus, #inquiry-content:focus {
+    outline: none;
+}
+
+#review-content, #inquiry-content {
+    resize: none;
+}
+#review-image, #inquiry-image {
+    font-size: 0.8em;
+    color: #555
+}
+
+#review-done-btn, #inquiry-done-btn {
+    width: 100%;
+    margin: 5% auto;
+
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    border-radius: 20px;
+    padding: 10px;
+    height: 3em;
+    border: none;
+    color: white;
+}
+
+/* + 질문용 모달 창 */
+
+
 
 /*
     footer : 홈페이지 정보
@@ -609,7 +647,16 @@ label {
     .review {
         width: 90%;
     }
+
+    h1 {
+        font-size: 2.75em;
+    }
+
+    .tab-list-child {
+        width: 50%;
+    }
 }
+
 @media (max-width: 768px) {
     .head {
         flex-direction: column;
@@ -647,7 +694,7 @@ label {
     }
 
     .tab-list-child {
-        width: 70%;
+        width: 75%;
     }
     .tab {
         width: 25%;
@@ -659,9 +706,18 @@ label {
         height: 40px;
     }
 
-    .question-input {
-        width: 100%;
-        text-align: right;
+    .contents-info {
+        width: 90%;
+        padding: 3%;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .subject-title, .people-num-title, .location-title {
+        width: 20%;
     }
 
     .question, .answer {
@@ -674,19 +730,24 @@ label {
         padding-top: 5%;
     }
 
-    .input-btn {
-        width: 30%;
-        margin: 10px 5% 0;
+    .text-block {
+        padding: 5%;
     }
 
-    .review-box {
-        width: 90%;
-        margin: auto;
+    .input-btn {
+        width: 30%;
     }
+
+    .review-btn { 
+        margin-top: 10px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    
     .review {
         padding: 20px;
         width: 100%;
-        margin: 10% auto;
+        margin: 5% auto;
     }
 
 

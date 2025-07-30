@@ -102,28 +102,54 @@ function bind() {
         );
     })
 
-  // 모달 관련 바로 처리
-    const modal = document.querySelector('.modal');
-    const openModalBtn = document.querySelector('.review-btn');
-    const closeModalBtn = document.querySelector('.modal .close');
+    // 모달 관련 바로 처리
+    // 후기 모달 열기
+    const reviewBtn = document.querySelector('.review-btn');
+    const reviewModal = document.getElementById('review-modal');
 
-    openModalBtn.addEventListener('click', () => {
-        modal
-            .classList
-            .add('show');
-    });
+    // 질문 모달 열기
+    const inquiryBtn = document.querySelector('.inquiry-btn');
+    const inquiryModal = document.getElementById('inquiry-modal');
 
-    closeModalBtn.addEventListener('click', () => {
-        modal
-            .classList
-            .remove('show');
-    });
+    // 닫기 버튼
+    const closeReviewBtn = document.querySelector('#review-modal .close');
+    const closeInquiryBtn = document.querySelector('#inquiry-modal .close');
 
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal
-                .classList
-                .remove('show');
+    // 후기 모달 열기 이벤트
+    if (reviewBtn && reviewModal) {
+        reviewBtn.addEventListener('click', () => {
+            reviewModal.style.display = 'block';
+        });
+    }
+
+    // 질문 모달 열기 이벤트
+    if (inquiryBtn && inquiryModal) {
+        inquiryBtn.addEventListener('click', () => {
+            inquiryModal.style.display = 'block';
+        });
+    }
+
+    // 후기 모달 닫기 이벤트
+    if (closeReviewBtn && reviewModal) {
+        closeReviewBtn.addEventListener('click', () => {
+            reviewModal.style.display = 'none';
+        });
+    }
+
+    // 질문 모달 닫기 이벤트
+    if (closeInquiryBtn && inquiryModal) {
+        closeInquiryBtn.addEventListener('click', () => {
+            inquiryModal.style.display = 'none';
+        });
+    }
+
+    // 모달 외부 클릭 시 닫기
+    window.addEventListener('click', (e) => {
+        if (e.target === reviewModal) {
+            reviewModal.style.display = 'none';
+        }
+        if (e.target === inquiryModal) {
+            inquiryModal.style.display = 'none';
         }
     });
 
@@ -143,6 +169,23 @@ function bind() {
         modal.classList.remove('show');
         document.querySelector('#review-title').value = ''; // 입력창 초기화
         document.querySelector('#review-content').value = '';
+    });
+
+    const inquiryDoneBtn = document.querySelector('#inquiry-done-btn');
+
+    inquiryDoneBtn.addEventListener('click', () => {
+        const inquiryTitle = document.querySelector('#inquiry-title').value.trim();
+        const inquiryCon = document.querySelector('#inquiry-content').value.trim();
+
+        if (inquiryTitle === '' || inquiryCon === '') {
+            alert('질문 제목이나 내용을 입력해주세요.');
+            return;
+        }
+
+        alert('질문이 성공적으로 작성되었습니다. \n게시글은 담당자가 답변을 완료하면, 답변과 함께 등록됩니다.');
+        modal.classList.remove('show');
+        document.querySelector('#inquiry-title').value = ''; // 입력창 초기화
+        document.querySelector('#inquiry-content').value = '';
     });
 
 }
