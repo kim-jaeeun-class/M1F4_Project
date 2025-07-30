@@ -122,9 +122,8 @@ a:active {
     position: relative;
     padding-top: 20px;
     padding-bottom: 100px; /* 검색창 공간 확보 */
-    background-color: #ffffff;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px dotted #3e6b3e;
+    border-radius: 20px;
 }
 
 .content-table {
