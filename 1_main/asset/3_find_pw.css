@@ -14,10 +14,6 @@ body {
     margin-bottom: 10px;
 }
 
-.logo img {
-    width: 300px;
-    height: 250px;
-}
 .title {
     font-size: 40px;
     font-weight: bold;
@@ -57,20 +53,20 @@ body {
 }
 ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 .li_1, .li_2 {
     background-color: rgb(212, 212, 212);
     height: 100px;
     list-style: none;
     padding: 20px;
-    display: none;
+    /* display: none; */
     flex-direction: column;
     justify-content: center;
 }
 .li button {
     width: 100px;
-    height: 33px;
+    height: 100px;
 }
 .id {
     margin-bottom: 20px; 
@@ -79,26 +75,55 @@ ul {
     display: inline-block;
     width: 100px;
 }
-.id_1_text,
-.id_2_text,
+.id_1_text input,
+.id_2_text input{
+    display: inline-block;
+    width: 300px;
+    height: 25px;
+}
+.id_2_1 {
+    display: inline-block;
+    width: 300px;
+}
 .id_1_text_2,
 .id_2_text_2,
 .id_2_text_1 {
     display: inline-block;
 }
-.id_1_text input,
+.id_1_text,
+.id_2_text,
 .id_1_text_2 input,
-.id_2_text input,
 .id_2_text_1 input,
 .id_2_text_2 input {
-    width: 100%;
+    display: inline-block;
+    width: 100px;
     height: 25px;
-    box-sizing: border-box;
+    
 }
 .id_2_sel {
     width: 100px;
     height: 30px;
 }
+.find_pw_content {
+    background-color: rgb(212, 212, 212);
+    text-align: center;
+    display: none;
+}
+.find_pw_box {
+    margin-top: 10px;
+    padding: 20px 0px; 
+}
+.find_pw_box input {
+    width: 40%;
+    height: 20px;
+    margin: 0px 20px;
+}
+.find_pw_box button {
+    width: 70px;
+    height: 30px;
+}
+
+
 .footer {
     height: 50px;
     text-align: center;

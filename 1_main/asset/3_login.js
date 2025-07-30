@@ -28,7 +28,7 @@ function bind() {
     const idInput = document.querySelector('.id');
     const pwInput = document.querySelector('.pw');
     const loginButton = document.querySelector('button[type="submit"]');
-
+    
     // 로그인 함수
     function login() {
         const inputId = idInput.value.trim();
@@ -63,5 +63,5 @@ function bind() {
             login();
         }
     });
-
+    
 }
