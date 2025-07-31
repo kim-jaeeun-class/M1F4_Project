@@ -40,18 +40,13 @@
                     &gt; 강의 요청
                 </div>
                 <div class="title">강의 요청 목록</div>
-                <form class="upload">
-                    <button type="button" class="upload-btn">
-                        <a href="2_lecture_require_write.html">업로드 버튼</a>
-                    </button>
-                </form>
                 <div class="text-block">
                     <table>
                         <thead>
                             <td class="table-num">번호</td>
                             <td class="table-title">제목</td>
                             <td class="table-date">작성일</td>
-                            <td class="like">좋아요 수</td>
+                            <td class="like">좋아요</td>
                             <td class="count">조회수</td>
                         </thead>
                         <tbody>
@@ -176,16 +171,25 @@
                     </table>
                     <div class = "pagination">페이지네이션 삽입</div>
                 </div>
-                <form class="search">
-                    <select name="search-filter" size="1">
-                        <option value="title" selected="selected">제목</option>
-                        <option value="content">내용</option>
-                    </select>
-                    <input type="text" placeholder="검색할 내용을 입력해주세요">
+                <div class = "bottom-block">
+                    <form class="search">
+                        <select name="search-filter" size="1">
+                            <option value="title" selected="selected">제목</option>
+                            <option value="content">내용</option>
+                        </select>
+                        <input type="text" class = "search-input" placeholder="검색할 내용을 입력해주세요">
                         <button type="button" class="search-btn">검색</button>
+                    </form>
+                    <form class="upload">
+                        <a href="2_lecture_require_write.html">
+                            <button type="button" class="upload-btn">
+                                요청 등록하기
+                            </button>
+                        </a>
                     </form>
                 </div>
             </div>
+        </div>
         <div class="footer">
             <div class = "speech-bubble">도움이 필요하다면 절 눌러주세요!</div>
             <div class = "chatbot">

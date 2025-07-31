@@ -586,13 +586,13 @@ label {
 }
 
 .review-form-title, .review-form-content, .review-form-img, 
-.inquiry-form-title, .inquiry-form-content, .inquiry-form-img {
+.inquiry-form-title, .inquiry-form-content {
     display: flex;
     margin: 3% auto;
 }
 
 #review-title, #review-content, #review-image, 
-#inquiry-title, #inquiry-content, #inquiry-image {
+#inquiry-title, #inquiry-content {
     width: 85%;
     font-family: 'ChosunGu';
 }
@@ -615,9 +615,9 @@ label {
 #review-content, #inquiry-content {
     resize: none;
 }
-#review-image, #inquiry-image {
+#review-image {
     font-size: 0.8em;
-    color: #555
+    color: #555;
 }
 
 #review-done-btn, #inquiry-done-btn {

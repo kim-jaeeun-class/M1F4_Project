@@ -87,8 +87,17 @@ table
     thead
         .table-num : 번호
         .table-title : 제목
-        
+        .table-date : 작성일
+        .like : 좋아요 수
+        .count : 조회수
+    tbody
 */
+
+button {
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    color: #333;
+}
 
 .block {
     width: 80%;
@@ -113,11 +122,6 @@ table
     margin: 2% auto;
 }
 
-.upload {
-    margin: auto;
-    text-align: right;
-}
-
 .text-block {
     margin: 3% auto;
     border: 1px dotted #3e6b3e;
@@ -132,8 +136,9 @@ table {
 }
 
 thead {
+    font-size: 0.95em;
     font-weight: 600;
-    border-bottom: 1px solid #3e6b3e;
+    border-bottom: 3px solid #3e6b3e;
 }
 
 tbody {
@@ -164,16 +169,59 @@ td {
     padding: 10px;
 }
 
-.search {
-    width: 80%;
-    margin: 3% auto;
-    text-align: center;
-}
+/* 
+    .pagination
+*/
 
 .pagination {
     margin: 5% auto;
     width: 80%;
     text-align: center;
+}
+
+/* 
+    .bottom-block
+        .search
+            .search-filter : 검색 조건 설정
+            .search-input : 검색어 입력 창
+            .search-btn : 검색 실행 버튼
+        .upload
+            upload-btn : 요청 등록 버튼
+*/
+
+.bottom-block {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 5% auto;
+}
+
+.search {
+    width: 60%;
+    text-align: right;
+}
+
+
+.upload {
+    width: 15%;
+    text-align: right;
+}
+
+.upload-btn {
+    margin: 0;
+    width: 80%;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.upload-btn:hover {
+    background-color: #3e6b3e;
 }
 
 /* 챗봇 */
@@ -294,6 +342,19 @@ td {
 
     .category.show {
         display: flex;
+    }
+
+    .bottom-block {
+        justify-content: space-between;
+    }
+
+    .search {
+        width: 70%;
+        text-align: left;
+    }
+
+    .upload {
+        width: 30%;
     }
 
     .table-num {
