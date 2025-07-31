@@ -180,50 +180,41 @@ a:active {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-block {
-    margin: auto;
-    padding: 10% 5%;
+    width: 85%;
 }
 
-.login input[type="text"],
-.login input[type="password"] {
-    width: 90%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'ChosunGu';
-    box-sizing: content-box;
-}
-.login input[type="checkbox"] {
-    transform: scale(0.9);
+.introduction {
+    font-size: 1em;
+    line-height: 1.6em;
+    width: 85%;
+    margin: 5% auto;
+
 }
 
-.login label {
-    display: block;
-    margin: 5px 0;
-    font-size: 0.8em;
-    color: #666;
+strong {
+    font-weight: 600;
+    color: #3e6b3e;
+}
+
+.intro-sub {
     text-align: left;
-}
-
-.login-menu {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.find-id, .login-gaip {
-    margin: 10px auto;
+    color: #555;
     font-size: 0.9em;
-    color: #666;
-    cursor: pointer;
-    text-decoration: underline;
+    width: 90%;
+}
+
+.login-block1 {
+    margin: 7% auto;
 }
 
 .login button {
-    width: 90%;
+    width: 80%;
     padding: 15px;
     background-color: #5b9b5b;
     border: none;
@@ -237,6 +228,11 @@ a:active {
 }
 .login button:hover {
     background-color: #498449;
+}
+
+#login-btn {
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .login-done-pic {
@@ -368,6 +364,46 @@ a:active {
     color: #5b9b5b;
 }
 
+    /* 챗봇 테스트용 */
+
+.chatbot {
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.speech-bubble {
+	position: fixed;
+	background: #cce0cc;
+	border-radius: 20px;
+    bottom : 120px;
+    right: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.speech-bubble:after {
+    position: fixed;
+    bottom: 130px;
+    right: 70px;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #cce0cc;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+.chatbot-img { 
+    width: 80px;
+    height: 80px;
+}
+
 /* 반응형 */
 
 @media (max-width: 1270px) {
@@ -378,6 +414,18 @@ a:active {
     .banner-block, .login {
         width: 100%;
         margin: auto;
+    }
+
+    .login {
+        height: 400px;
+    }
+
+    .login-block {
+        width: 65%;
+    }
+
+    .intro-sub {
+        margin: 2% auto;
     }
 
 }
@@ -434,6 +482,12 @@ a:active {
         width: 90%;
         box-sizing: border-box;
     }
+
+    .login-block {
+        width: 85%;
+        padding: 50px 0;
+    }
+
     .contents-title {
         margin: 30px auto;
         width: 90%;
@@ -446,4 +500,5 @@ a:active {
     .contents-card {
         width: 90%;
     }
+
 }
