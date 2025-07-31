@@ -214,9 +214,10 @@ strong {
     padding: 15px;
     background-color: #5b9b5b;
     border: none;
-    color: white;
+    color: #fff;
     font-family: 'ChosunGu';
     font-weight: bold;
+    font-size: 1.1em;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;

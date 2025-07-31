@@ -101,8 +101,23 @@ a:active {
     padding: 3%;
 }
 
+hr {
+    margin: 2% auto;
+}
+
 .like {
     text-align: right;
+}
+
+.like-btn {
+    background-image: url('https://i.postimg.cc/9z5K7j7N/free-icon-hearts-18745836.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 30px; 
+    height: 30px; 
+    border: none; 
+    background-color: transparent;
 }
 
 .title, .subject, .date {
@@ -120,6 +135,24 @@ a:active {
 
 .input {
     text-align: right;
+}
+
+.modify, .delete {
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    width: 10%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modify:hover, .delete:hover {
+    background-color: #3e6b3e;    
 }
 
 /* 챗봇 */
