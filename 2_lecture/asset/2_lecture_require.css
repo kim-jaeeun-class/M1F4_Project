@@ -82,6 +82,14 @@ a:active {
 
 /* body 부분 */
 
+/* 
+table
+    thead
+        .table-num : 번호
+        .table-title : 제목
+        
+*/
+
 .block {
     width: 80%;
     margin: auto;
@@ -128,6 +136,10 @@ thead {
     border-bottom: 1px solid #3e6b3e;
 }
 
+tbody {
+    font-size: 0.9em;
+}
+
 .table-num, .table-title, .table-date {
     padding-bottom: 15px;
 }
@@ -137,11 +149,15 @@ thead {
 }
 
 .table-title {
-    width: 75%;
+    width: 50%;
 }
 
 .table-date {
     width: 15%;
+}
+
+.like, .count {
+    width: 12%;
 }
 
 td {
@@ -154,6 +170,51 @@ td {
     text-align: center;
 }
 
+.pagination {
+    margin: 5% auto;
+    width: 80%;
+    text-align: center;
+}
+
+/* 챗봇 */
+
+.chatbot {
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.speech-bubble {
+	position: fixed;
+	background: #cce0cc;
+	border-radius: 20px;
+    bottom : 120px;
+    right: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.speech-bubble:after {
+    position: fixed;
+    bottom: 130px;
+    right: 70px;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #cce0cc;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+.chatbot-img { 
+    width: 80px;
+    height: 80px;
+}
 
 /*
     footer : 홈페이지 정보

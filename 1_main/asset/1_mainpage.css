@@ -364,7 +364,7 @@ strong {
     color: #5b9b5b;
 }
 
-    /* 챗봇 테스트용 */
+/* 챗봇 */
 
 .chatbot {
     position: fixed;
@@ -381,7 +381,7 @@ strong {
     right: 20px;
     padding: 10px;
     font-weight: 600;
-    color: #333;
+    color: #555;
 }
 
 .speech-bubble:after {
