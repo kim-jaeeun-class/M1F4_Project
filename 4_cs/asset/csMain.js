@@ -36,8 +36,8 @@ function bind() {
 
     /* 게시글 표시 리스트 + 목록 + 검색 기능 */
     const posts = [
-        { number: 20, title: '[공지사항] 8월 서버 점검 안내', author: '관리자', time: '2025-07-29' },
-        { number: 19, title: '[공지사항] 여름방학 기간 온라인 문의 운영시간 변경', author: '관리자', time: '2025-07-28' },
+        { number: 20, title: '[공지사항] 8월 서버 점검 안내', content: '서버 점검은 8월 5일 오전 2시에 진행됩니다.', author: '관리자', time: '2025-07-29' },
+        { number: 19, title: '[공지사항] 여름방학 기간 온라인 문의 운영시간 변경', content: '운영시간은 오전 10시 ~ 오후 4시로 단축됩니다.', author: '관리자', time: '2025-07-28' },
         { number: 18, title: '[공지사항] 학습 이력 초기화 관련 안내', author: '관리자', time: '2025-07-27' },
         { number: 17, title: '[공지사항] 자주 묻는 질문(FAQ) 업데이트', author: '관리자', time: '2025-07-26' },
         { number: 16, title: '[공지사항] 모의고사 응시 기능 오류 수정 안내', author: '관리자', time: '2025-07-25' },
@@ -57,6 +57,7 @@ function bind() {
         { number: 2, title: '[공지사항] 개인정보 보호 정책 개정 안내', author: '관리자', time: '2025-07-11' },
         { number: 1, title: '[공지사항] 7월 출석 이벤트 당첨자 발표', author: '관리자', time: '2025-07-10' }
     ];
+    
     let currentPage = 1;
     const postsPerPage = 10;
     const maxVisibleButtons = 5;
@@ -142,17 +143,20 @@ function bind() {
     // ✅ 검색 함수
     function handleSearch() {
         const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
+        const field = document.getElementById('searchField').value; // 'title' 또는 'content'
 
         if (keyword === '') {
             filteredPosts = [...posts]; // 전체 목록 복원
         } else {
-            filteredPosts = posts.filter(post =>
-            post.title.toLowerCase().includes(keyword)
-            );
+            filteredPosts = posts.filter(post => {
+                const target = post[field]; // post.title 또는 post.content
+                return target && target.toLowerCase().includes(keyword);
+            });
         }
 
         renderTable(1); // 검색 시 첫 페이지로 이동
     }
+
 
     // ✅ 이벤트 연결
     document.getElementById('searchBtn').addEventListener('click', handleSearch);

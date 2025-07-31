@@ -59,10 +59,15 @@
             <div id="pagination" style="margin-top: 10px;"></div>
             
             <div id="bottom">
-                <div class="search">
-                    <input id="searchInput" type="text" placeholder="제목 기준으로 검색됩니다"/>
+                <div class="search-area">
+                    <select id="searchField">
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="검색어를 입력하세요" />
                     <button id="searchBtn">검색</button>
                 </div>
+
                 <div class="tabs">
                     <a href="csMainWrite-v2.html"><button>글쓰기</button></a>
                 </div>

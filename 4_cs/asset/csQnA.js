@@ -41,6 +41,7 @@ function bind() {
     const maxVisibleButtons = 5;
     let filteredPosts = [...posts]; // ✅ 빠졌던 선언 추가!
 
+    
     // ✅ 테이블 렌더링 함수
     function renderTable(page = 1) {
         const start = (page - 1) * postsPerPage;
@@ -54,7 +55,7 @@ function bind() {
             const row = document.createElement('tr');
             row.innerHTML = `
             <td>${post.number}</td>
-            <td><a href="csQnAView.html">${post.title}</a></td>
+            <td><a href="csMainView.html">${post.title}</a></td>
             <td>${post.author}</td>
             <td>${post.time}</td>
             `;
@@ -120,17 +121,20 @@ function bind() {
     // ✅ 검색 함수
     function handleSearch() {
         const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
+        const field = document.getElementById('searchField').value; // 'title' 또는 'content'
 
         if (keyword === '') {
             filteredPosts = [...posts]; // 전체 목록 복원
         } else {
-            filteredPosts = posts.filter(post =>
-            post.title.toLowerCase().includes(keyword)
-            );
+            filteredPosts = posts.filter(post => {
+                const target = post[field]; // post.title 또는 post.content
+                return target && target.toLowerCase().includes(keyword);
+            });
         }
 
         renderTable(1); // 검색 시 첫 페이지로 이동
     }
+
 
     // ✅ 이벤트 연결
     document.getElementById('searchBtn').addEventListener('click', handleSearch);
