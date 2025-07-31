@@ -84,12 +84,30 @@ a:active {
 /*.body 부분 */
 .body {
     position: relative;
-    padding: 30px 10px 300px 10px;
+    padding: 0 10px 300px 10px;
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     height: 80vh;
 }
 
+/* 네비게이션 부분 */
+.nav {
+    width: 80%;
+    margin-top: 40px;
+}
+.nav a {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav a:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+/* csCategory 부분 */
 .csCategory {
     text-align: center;
     padding: 20px 20px;
@@ -175,6 +193,23 @@ a:active {
     gap: 10px;
 }
 
+#pagination {
+    text-align: center;
+}
+#pagination button {
+
+    margin: 0 4px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+}
+#pagination button.active {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
 .search {
     display: flex;
     gap: 5px;
@@ -210,23 +245,7 @@ a:active {
     cursor: pointer;
 }
 
-#pagination {
-    text-align: center;
-}
 
-#pagination button {
-
-    margin: 0 4px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    background-color: white;
-    cursor: pointer;
-}
-#pagination button.active {
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-}
 
 
 /*
@@ -310,7 +329,7 @@ a:active {
     }
 
     .body {
-    padding-bottom: 300px; /* 모바일용 하단 공간 확보 */
+        padding: 30px 10px 320px 10px; /* 모바일용 하단 공간 확보 */
     }
 
     .footer {

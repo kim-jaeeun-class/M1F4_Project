@@ -23,23 +23,23 @@ function bind() {
         document.getElementById('postTime').textContent = post.time;
         document.getElementById('postContent').textContent = post.content;
     } else {
-        document.querySelector('.postForm').innerHTML = '<p>불러올 게시글이 없습니다.</p>';
+        document.querySelector('.form').innerHTML = '<p>불러올 게시글이 없습니다.</p>';
     }
 
-    // 목록보기 누르면 Q&A 목록으로 이동
+    // 목록보기 누르면 공지사항 목록으로 이동
     document.querySelector('#backList').addEventListener('click', function () {
-        window.location.href = "csQnA.html"; // ✔ 목록 페이지 경로
+        window.location.href = "csMain.html"; // ✔ 목록 페이지 경로
     });
 
     // ✅ 수정 버튼 → 작성 페이지로 이동
     document.getElementById('pre').addEventListener('click', function () {
-        window.location.href = "csQnAWrite.html"; // ✔ 수정은 작성 페이지로 이동 (확장 시 편집 기능도 가능)
+        window.location.href = "csMainView-v2.html"; // ✔ 수정은 작성 페이지로 이동 (확장 시 편집 기능도 가능)
     });
 
     // ✅ 삭제 버튼 → localStorage에서 삭제하고 목록으로 이동
     document.getElementById('next').addEventListener('click', function () {
         localStorage.removeItem('tempPost');
         alert("게시글이 삭제되었습니다.");
-        window.location.href = "csQnA.html";
+        window.location.href = "csMain.html";
     });
 }

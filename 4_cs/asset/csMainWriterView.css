@@ -83,26 +83,48 @@ a:active {
 
 /*.body 부분 */
 .body {
-    padding: 30px 10px 300px 10px;
+    padding: 0 10px 300px 10px;
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     height: 80vh;
 }
 
+/* 네비게이션 부분 */
+.nav {
+    width: 80%;
+    margin-top: 40px;
+}
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav a.navSecond {
+    color: #aacda6;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navFirst:hover, .navSecond:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+/* csCategory 부분 */
 .csCategory {
     text-align: center;
     padding: 20px 20px;
     font-size: 1.7rem;
 }
-
 .csCategory-list {
     display: inline-block;
     font-weight: bold;
     cursor: pointer;
     padding: 0 20px;
 }
-
-/* 기본 링크 스타일 */
 .csCategory-list a {
     color: black;
     text-decoration: none;
@@ -112,55 +134,63 @@ a:active {
 .csCategory-list a.active {
     color: #5b9b5b;
 }
-
-/* 게시판 글 작성 */
-.writeForm {
-  padding: 20px;
+.csCategory-list a:hover {
+    color: #3e6b3e;
 }
 
-.postForm{
-    width: 100%;
+
+.notice-contents {
+    padding: 15px 20px;
 }
 
-#writeTitle{
-    width: 100%;
+.form {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-input[type="text"]{
+.input {
     width: 100%;
-    height: 28px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    padding: 6px;
+    border: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
-textarea {
-    width: 100%;
+.title {
+    font-style: bold;
+    font-size: 1.4rem;
+}
+
+.artmain {
     height: 400px;
-    overflow: auto;
-    font-size: 1rem;
 }
 
 .meta {
-    margin: 13px 0;
-    color: #555;
+    padding: 6px;
+    border: none;
+    font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
 .tabs {
-  margin-top: 10px;
-  text-align: right;
+    margin-top: 10px;
+    text-align: right;
 }
 
 .tabs button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  margin-left: 5px;
-  cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    margin: 5px;
+    cursor: pointer;
 }
 
 .tabs button:hover {
-  background-color: #555;
+    background-color: #555;
 }
 
 
@@ -206,8 +236,6 @@ textarea {
 .bottom-menu-list:hover {
     color: #5b9b5b;
 }
-
-
 
 /* 반응형 */
 @media (max-width: 768px) {

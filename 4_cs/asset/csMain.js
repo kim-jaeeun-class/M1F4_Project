@@ -36,32 +36,33 @@ function bind() {
 
     /* 게시글 표시 리스트 + 목록 + 검색 기능 */
     const posts = [
-        { number: 1, title: '[공지사항] 8월 서버 점검 안내', author: '관리자', time: '2025-07-29' },
-        { number: 2, title: '[공지사항] 여름방학 기간 온라인 문의 운영시간 변경', author: '관리자', time: '2025-07-28' },
-        { number: 3, title: '[공지사항] 학습 이력 초기화 관련 안내', author: '관리자', time: '2025-07-27' },
-        { number: 4, title: '[공지사항] 자주 묻는 질문(FAQ) 업데이트', author: '관리자', time: '2025-07-26' },
-        { number: 5, title: '[공지사항] 모의고사 응시 기능 오류 수정 안내', author: '관리자', time: '2025-07-25' },
-        { number: 6, title: '[공지사항] 신규 강의 오픈 안내 (HTML/CSS 기초)', author: '관리자', time: '2025-07-24' },
-        { number: 7, title: '[공지사항] 모바일 버전 UI 개선 안내', author: '관리자', time: '2025-07-23' },
-        { number: 8, title: '[공지사항] 포인트 제도 변경 예정 안내', author: '관리자', time: '2025-07-22' },
-        { number: 9, title: '[공지사항] 비정상 로그인 시도 차단 안내', author: '관리자', time: '2025-07-21' },
-        { number: 10, title: '[공지사항] 회원가입 이메일 인증 기능 강화', author: '관리자', time: '2025-07-20' },
-        { number: 11, title: '[공지사항] 여름철 강의 수강 시 유의사항', author: '관리자', time: '2025-07-19' },
-        { number: 12, title: '[공지사항] 학습 진도 저장 오류 복구 완료', author: '관리자', time: '2025-07-18' },
-        { number: 13, title: '[공지사항] 온라인 시험 부정행위 감지 기능 도입', author: '관리자', time: '2025-07-17' },
-        { number: 14, title: '[공지사항] 튜터 피드백 시스템 개선 안내', author: '관리자', time: '2025-07-16' },
-        { number: 15, title: '[공지사항] 주간 학습 리포트 발송 시간 변경', author: '관리자', time: '2025-07-15' },
-        { number: 16, title: '[공지사항] 시스템 점검 안내 (7월 20일)', author: '관리자', time: '2025-07-14' },
-        { number: 17, title: '[공지사항] 강의 자료 다운로드 기능 추가', author: '관리자', time: '2025-07-13' },
-        { number: 18, title: '[공지사항] 커뮤니티 게시판 이용규칙 공지', author: '관리자', time: '2025-07-12' },
-        { number: 19, title: '[공지사항] 개인정보 보호 정책 개정 안내', author: '관리자', time: '2025-07-11' },
-        { number: 20, title: '[공지사항] 7월 출석 이벤트 당첨자 발표', author: '관리자', time: '2025-07-10' }
+        { number: 20, title: '[공지사항] 8월 서버 점검 안내', author: '관리자', time: '2025-07-29' },
+        { number: 19, title: '[공지사항] 여름방학 기간 온라인 문의 운영시간 변경', author: '관리자', time: '2025-07-28' },
+        { number: 18, title: '[공지사항] 학습 이력 초기화 관련 안내', author: '관리자', time: '2025-07-27' },
+        { number: 17, title: '[공지사항] 자주 묻는 질문(FAQ) 업데이트', author: '관리자', time: '2025-07-26' },
+        { number: 16, title: '[공지사항] 모의고사 응시 기능 오류 수정 안내', author: '관리자', time: '2025-07-25' },
+        { number: 15, title: '[공지사항] 신규 강의 오픈 안내 (HTML/CSS 기초)', author: '관리자', time: '2025-07-24' },
+        { number: 14, title: '[공지사항] 모바일 버전 UI 개선 안내', author: '관리자', time: '2025-07-23' },
+        { number: 13, title: '[공지사항] 포인트 제도 변경 예정 안내', author: '관리자', time: '2025-07-22' },
+        { number: 12, title: '[공지사항] 비정상 로그인 시도 차단 안내', author: '관리자', time: '2025-07-21' },
+        { number: 11, title: '[공지사항] 회원가입 이메일 인증 기능 강화', author: '관리자', time: '2025-07-20' },
+        { number: 10, title: '[공지사항] 여름철 강의 수강 시 유의사항', author: '관리자', time: '2025-07-19' },
+        { number: 9, title: '[공지사항] 학습 진도 저장 오류 복구 완료', author: '관리자', time: '2025-07-18' },
+        { number: 8, title: '[공지사항] 온라인 시험 부정행위 감지 기능 도입', author: '관리자', time: '2025-07-17' },
+        { number: 7, title: '[공지사항] 튜터 피드백 시스템 개선 안내', author: '관리자', time: '2025-07-16' },
+        { number: 6, title: '[공지사항] 주간 학습 리포트 발송 시간 변경', author: '관리자', time: '2025-07-15' },
+        { number: 5, title: '[공지사항] 시스템 점검 안내 (7월 20일)', author: '관리자', time: '2025-07-14' },
+        { number: 4, title: '[공지사항] 강의 자료 다운로드 기능 추가', author: '관리자', time: '2025-07-13' },
+        { number: 3, title: '[공지사항] 커뮤니티 게시판 이용규칙 공지', author: '관리자', time: '2025-07-12' },
+        { number: 2, title: '[공지사항] 개인정보 보호 정책 개정 안내', author: '관리자', time: '2025-07-11' },
+        { number: 1, title: '[공지사항] 7월 출석 이벤트 당첨자 발표', author: '관리자', time: '2025-07-10' }
     ];
-
-    const postsPerPage = 10;
     let currentPage = 1;
-    let filteredPosts = [...posts]; // 검색된 게시글
+    const postsPerPage = 10;
+    const maxVisibleButtons = 5;
+    let filteredPosts = [...posts]; // ✅ 빠졌던 선언 추가!
 
+    
     // ✅ 테이블 렌더링 함수
     function renderTable(page = 1) {
         const start = (page - 1) * postsPerPage;
@@ -92,12 +93,49 @@ function bind() {
         const pagination = document.getElementById('pagination');
         pagination.innerHTML = '';
 
-        for (let i = 1; i <= totalPages; i++) {
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
+        let endPage = startPage + maxVisibleButtons - 1;
+
+        if (endPage > totalPages) {
+            endPage = totalPages;
+            startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+        }
+
+        // ◀ 이전 버튼
+        if (startPage > 1) {
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = '◀';
+            prevBtn.addEventListener('click', () => {
+                currentPage = Math.max(1, currentPage - 1);
+                renderTable(currentPage);
+                renderPagination();
+            });
+            pagination.appendChild(prevBtn);
+        }
+
+        // 페이지 번호 버튼
+        for (let i = startPage; i <= endPage; i++) {
             const btn = document.createElement('button');
             btn.textContent = i;
             btn.className = (i === currentPage) ? 'active' : '';
-            btn.addEventListener('click', () => renderTable(i));
+            btn.addEventListener('click', () => {
+                currentPage = i;
+                renderTable(i);
+                renderPagination();
+            });
             pagination.appendChild(btn);
+        }
+
+        // ▶ 다음 버튼
+        if (endPage < totalPages) {
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = '▶';
+            nextBtn.addEventListener('click', () => {
+                currentPage = Math.min(totalPages, currentPage + 1);
+                renderTable(currentPage);
+                renderPagination();
+            });
+            pagination.appendChild(nextBtn);
         }
     }
 

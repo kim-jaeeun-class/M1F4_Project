@@ -83,13 +83,30 @@ a:active {
 
 /*.body 부분 */
 .body {
-    padding: 30px 10px 300px 10px;
+    padding: 0 10px 320px 10px;
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     height: 80%;
 }
 
-/* 카테고리 부분 */
+/* 네비게이션 부분 */
+.nav {
+    width: 80%;
+    margin-top: 40px;
+}
+.nav a {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav a:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+/* csCategory 부분 */
 .csCategory {
     text-align: center;
     padding: 20px 20px;

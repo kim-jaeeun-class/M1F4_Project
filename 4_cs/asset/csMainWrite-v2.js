@@ -31,24 +31,25 @@ function bind() {
         e.preventDefault(); // 폼 기본 제출 막기
 
         const title = document.getElementById('writeTitle').value;
-        const author = document.getElementById('authorName').textContent;
         const content = document.getElementById('content').value;
+        const author = document.getElementById('authorName').textContent;
         const time = document.getElementById('writeTime').textContent;
 
         const post = {
             title,
-            author,
             content,
-            time: new Date().toLocaleString(), // ← 작성 시간 저장
+            author,
+            time
         };
-
 
         // localStorage에 저장
         localStorage.setItem('tempPost', JSON.stringify(post));
 
         // 보기 페이지로 이동
-        location.href = 'csQnAWriterView.html';
+        location.href = 'csMainWriterView.html';
     });
 
+
+    // 글 작성 누르면 작성된 글로 이동
     
 }
