@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <title>아이디 / 비밀번호 찾기</title>
-    <link rel="stylesheet" href="/1_main/asset/3_find_pw.css">
+    <link rel="stylesheet" href="/1_main/asset/3_find_id_pw.css">
 </head>
 <body>
     <div>
         <div class="login_main">
             <div class="logo">
+                <a href="/1_main/html/1_mainpage.html">
                 <img style="width: 300px; height: 100px; margin: auto;" src="https://i.imgur.com/yOfFX9f.png">
+                </a>
             </div>
         </div>
     </div>
@@ -22,92 +24,74 @@
         <div>
             <div class="find">
                 <div class="find_id">
-                    아이디 찾기
+                    <a href="/1_main/html/3_find_id.html">아이디 찾기</a>
                 </div>
-                <div class="find_pw">
+                <div class="find_pw active">
                     비밀번호 찾기
                 </div>
             </div>
             <div class="h3">
-                아이디가 기억나지 않는다면?<br>
-                아래 방법 중 하나를 선택해주세요.
+                비밀번호가 기억나지 않는다면?
             </div>
         </div>
         <div class="find_id_content">
             <div class="phone">
-                <input type="checkbox" value="휴대폰번호로 찾기"> 휴대폰번호로 찾기
-                <ul class="li_1">
-                    <li>
-                        <div class="id">
-                            <div class="id_1">
-                                이름 
-                            </div>
-                            <div  class="id_1_text">
-                                <input type="text">
-                            </div>
+                <div class="li">
+                    <div class="id">
+                        <div class="id_1">
+                            아이디 
                         </div>
-                    </li>
-                    <li>
-                        <div>
-                            <div class="id_2">
-                                휴대폰
-                            </div>
-                            <div class="id_2_1">
-                                <select class="id_2_sel">
-                                    <option>대한민국(+82)</option>
-                                </select>
-                                <div class="id_2_text">
-                                    <input type="text">
+                        <div class="email_input">
+                            <input type="text"> @ 
+                            <input type="text">
+                            <select class="id_2_sel">
+                                <option>naver.com</option>
+                                <option>nate.com</option>
+                                <option>gmail.com</option>
+                                <option>직접입력</option>
+                            </select>
+                            <button type="submit">다음 ></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="id_phone">
+                    <input type="radio" name="search" class="phone_pw" value="휴대폰번호로 찾기"> 휴대폰번호로 찾기
+                    <ul class="li_1">
+                        <li>
+                            <div class="id">
+                                <div class="id_1">
+                                    아이디 
                                 </div>
-                                <div class="">
+                                <div class="email_input">
+                                    <input type="text"> @ 
+                                    <input type="text">
+                                    <select class="id_2_sel">
+                                        <option>naver.com</option>
+                                        <option>nate.com</option>
+                                        <option>gmail.com</option>
+                                        <option>직접입력</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="id">
+                                <div class="id_2">
+                                    휴대폰
+                                </div>
+                                <div class="id_2_1">
+                                    <select class="id_2_sel">
+                                        <option>대한민국(+82)</option>
+                                    </select>
+                                    <div class="id_2_text">
+                                        <input type="text">
+                                    </div>
                                     <button type="submit">다음></button>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="email">
-                <input type="checkbox" value="이메일로 찾기"> 이메일로 찾기
-                <ul class="li_2">
-                    <li>
-                        <div class="id">
-                            <div class="id_1">
-                                이름 
-                            </div>
-                            <div class="id_1_text_2">
-                                <input type="text">
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <div class="id_2">
-                                이메일
-                            </div>
-                            <div class="id_2_text_1">
-                                <input type="text"> @ 
-                            </div>
-                            <div class="id_2_text_2">
-                                <input type="text">
-                                <select class="id_2_sel">
-                                    <option>naver.com</option>
-                                    <option>nate.com</option>
-                                    <option>gmail.com</option>
-                                    <option>직접입력</option>
-                                </select>
-                            </div>
-                            <button type="submit">다음 ></button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="find_pw_content">
-            <div class="find_pw_box">
-                아이디
-                <input type="text">
-                <button type="submit">다음 ></button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

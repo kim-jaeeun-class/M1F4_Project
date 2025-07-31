@@ -34,94 +34,123 @@ body {
 }
 .find_id, .find_pw {
     border: 1px solid black;
+    border-radius: 10px;
     display: inline-block;
     font-size: 24px;
     line-height: 45px;
     width: 300px;
     height: 50px;
+    margin: 0px 5px;
+}
+.find_id:hover, .find_pw:hover {
+    cursor: pointer;
+}
+.active {
+    border: 1px solid #5b9b5b;
+    background-color: #5b9b5b;
+    color: #ffffff;
 }
 .h3 {
     margin: 30px;
     text-align: center;
 }
-.phone, .email {
+.phone {
     border-bottom: 1px solid gray;
     padding: 20px 0px; 
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 .phone {
     border-top: 3px solid black;
 }
 ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.li_1 {
+    background-color: rgb(212, 212, 212);
+    padding: 20px 20px 0px;
     display: flex;
     flex-direction: column;
-}
-.li_1, .li_2 {
-    background-color: rgb(212, 212, 212);
-    height: 100px;
-    list-style: none;
-    padding: 20px;
+    gap: 20px;
     /* display: none; */
+}
+
+.li {
+    background-color: rgb(212, 212, 212);
+    padding: 20px 20px 0px;
+    margin: 0px 0px 20px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px;
 }
-.li button {
-    width: 100px;
-    height: 100px;
-}
+
 .id {
-    margin-bottom: 20px; 
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
+
 .id_1, .id_2 {
-    display: inline-block;
+    font-weight: bold;
     width: 100px;
+}
+.id_phone {
+    border-top: 1px solid gray;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.phone_pw {
+    margin-bottom: 20px;
 }
 .id_1_text input,
-.id_2_text input{
-    display: inline-block;
-    width: 300px;
-    height: 25px;
+.id_1_text_2 input {
+    width: 420px;
+    height: 20px;
+    padding: 5px;
+    margin-right: 10px; 
+}
+.id_2_text input {
+    width: 280px;
+    height: 20px;
+    padding: 5px;
 }
 .id_2_1 {
-    display: inline-block;
-    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-.id_1_text_2,
-.id_2_text_2,
-.id_2_text_1 {
-    display: inline-block;
+.email_input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+    flex: 1;
 }
-.id_1_text,
-.id_2_text,
-.id_1_text_2 input,
-.id_2_text_1 input,
-.id_2_text_2 input {
-    display: inline-block;
-    width: 100px;
-    height: 25px;
-    
-}
-.id_2_sel {
-    width: 100px;
-    height: 30px;
-}
-.find_pw_content {
-    background-color: rgb(212, 212, 212);
-    text-align: center;
-    display: none;
-}
-.find_pw_box {
-    margin-top: 10px;
-    padding: 20px 0px; 
-}
-.find_pw_box input {
-    width: 40%;
+
+.email_input input {
     height: 20px;
-    margin: 0px 20px;
+    width: 130px;
+    padding: 5px;
 }
-.find_pw_box button {
-    width: 70px;
-    height: 30px;
+.phone select, 
+.email_input select {
+    height: 35px;
+    width: 120px;
 }
+
+button[type="submit"] {
+    border-radius: 5px;
+    background-color: #5b9b5b;
+    color: white;
+    margin-left: 10px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
 
 
 .footer {
