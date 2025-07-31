@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  <title>head / footer 템플릿</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+  <link rel="stylesheet" href="asset/white.css" />
+</head>
+
+<body>
+  <!-- ✅ 화면 전체를 감싸는 wrapper -->
+  <div class="wrapper">
+
+    <!-- ✅ 헤더 -->
+    <div class="head">
+      <div class="main-logo">
+        <a href="../../1_main/html/1_mainpage.html">
+          <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png" />
+          <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png" />
+        </a>
+      </div>
+      <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+      <div class="category" id="category-menu">
+        <div class="category-list reg">
+          <a href="/2_lecture/html/2_lecture_main.html">수강 신청</a>
+        </div>
+        <div class="category-list lec-require">
+          <a href="/2_lecture/html/2_lecture_require.html">강의 요청</a>
+        </div>
+        <div class="category-list community">
+          <a href="/5_community/html/project.html">커뮤니티</a>
+        </div>
+        <div class="category-list mypage">
+          <a href="/3_mypage/html/mypage_main.html">마이 페이지</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ 본문 영역 -->
+    <div class="body">
+      <div class="community-wrapper">
+        <div class="main-content">
+          <h2 class="group-name">#모임명</h2>
+          <h3 class="activity-title">#활동내용</h3>
+          <div class="group-intro">
+            <p>#모임 소개(사진 포함 가능)</p>
+            <img src="https://via.placeholder.com/400x250" alt="모임 사진" />
+          </div>
+        </div>
+        <div class="application-list">
+          <h4>#신청 리스트</h4>
+          <form>
+            <label><input type="checkbox" /> 신청자 1</label>
+            <label><input type="checkbox" /> 신청자 2</label>
+            <label><input type="checkbox" /> 신청자 3</label>
+            <label><input type="checkbox" /> 신청자 4</label>
+            <label><input type="checkbox" /> 신청자 5</label>
+          </form>
+          <div class="buttons">
+            <button class="approve-btn">#승인</button>
+            <button class="reject-btn">#거부</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ 푸터 -->
+    <div class="footer">
+      <ul type="none" class="bottom-menu">
+        <li class="bottom-menu-list">챗봇</li>
+        <li class="bottom-menu-list">
+          <a href="/4_cs/html/csMain.html">고객센터</a>
+        </li>
+        <li class="bottom-menu-list">광고 문의</li>
+        <li class="bottom-menu-list">개인 정보 이용 방침</li>
+      </ul>
+      <div class="copyright">© 2025 M1F4</div>
+    </div>
+
+  </div>
+
+  <script src="asset/white.js"></script>
+</body>
+</html>

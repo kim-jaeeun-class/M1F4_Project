@@ -1,0 +1,295 @@
+/* 기본 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'ChosunGu', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
+
+/* 전체 래퍼 - 화면 꽉 채우기 */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 헤더 */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 카테고리 메뉴 */
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+/* 본문 영역 */
+.body {
+    flex-grow: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px 0 20px 0;
+}
+
+/* 모임 컨테이너 */
+.community-wrapper {
+    display: flex;
+    width: 1000px;
+    margin: 80px auto;
+    gap: 30px;
+    max-width: 100%;
+    height : auto;
+    max-height : 350px;
+}
+
+/* 좌측 메인 콘텐츠 */
+.main-content {
+    flex: 3;
+    background-color: #ffffff;
+    border: 2px solid #3e6b3e;
+    padding: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    padding : 50px 30px;
+}
+
+/* 모임명 */
+.group-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e6b3e;
+    border-bottom: 1px solid #3e6b3e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 활동 내용 */
+.activity-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3e6b3e;
+    border-bottom: 1px dashed #3e6b3e;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+/* 소개 영역 */
+.group-intro {
+    background: #fdfdfd;
+    padding: 20px;
+    border: 1px solid #3e6b3e;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.group-intro img {
+    margin-top: 15px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
+
+/* 오른쪽 신청자 리스트 */
+.application-list {
+    flex: 1;
+    background-color: #ffffff;
+    border: 2px solid #3e6b3e;
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding : 50px 20px;
+}
+
+
+/* 신청 리스트 제목 */
+.application-list h4 {
+    font-size: 16px;
+    color: #3e6b3e;
+    font-weight: bold;
+    border-bottom: 1px solid #3e6b3e;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* 체크박스 리스트 */
+.application-list form label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* 버튼 영역 */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: back-ground 0.3s;
+}
+
+.approve-btn {
+    background-color: #3e6b3e;
+}
+
+.approve-btn:hover {
+    background-color: #2b522b;
+}
+
+.reject-btn {
+    background-color: #999;
+}
+
+.reject-btn:hover {
+    background-color: #777;
+}
+
+/* 푸터 */
+.footer {
+    height: 70px;
+    flex-shrink: 0;
+    background-color: #f0f0f0;
+    padding: 15px 0;
+    text-align: center;
+    color: #555;
+    border-top: 1px solid #ccc;
+}
+
+/* 푸터 메뉴 */
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+    list-style: none;
+    padding: 0;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+
+.bottom-menu-list:first-child::before {
+    content: "  ";
+}
+
+.bottom-menu-list::before {
+    content: " | ";
+}
+
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        height: auto;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    /* 모바일에서 본문 영역 폭 조절 */
+    .community-wrapper {
+        width: 95%;
+        flex-direction: column;
+        margin: 20px auto;
+    }
+}
