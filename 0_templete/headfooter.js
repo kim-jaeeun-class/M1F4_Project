@@ -17,6 +17,27 @@ fetch("../../0_templete/templete.html")
       requestAnimationFrame(() => {
         if (typeof bind === "function") bind();
         if (typeof initChatbot === "function") initChatbot();
+
+        // 로고 클릭 시 로그인 상태에 따라 메인페이지 분기 이동
+        const logoLink = document.querySelector(".head .main-logo a");
+        
+        if (logoLink) {
+
+          logoLink.addEventListener("click", function (e) {
+            
+            e.preventDefault(); // 기본 a태그 이동 막기
+
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            
+            if (currentUser && currentUser.id) {
+              window.location.href = "/1_main/html/1-1_mainpage_login.html";
+            } else {
+              window.location.href = "/1_main/html/1_mainpage.html";
+            }
+          });
+
+        }
+
       });
     }
   })
