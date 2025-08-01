@@ -147,6 +147,10 @@ hr {
     width: 70%;
 }
 
+.content {
+    line-height: 1.8em;
+    text-align: justify;
+}
 .input {
     text-align: right;
 }
