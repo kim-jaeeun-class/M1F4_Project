@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
         <link rel="stylesheet" href="../asset/2_lecture_require_detail.css">
+        <link rel="stylesheet" href="../../0_templete/asset/templete.css">
     </head>
     <body>
         <div class="head">
@@ -35,23 +36,25 @@
         </div>
         <div class="body">
             <!-- 이 안에 원하는 내용 넣어주세요-->
+            <div class = "nav">
+                <a class = "navFirst" href = "../../1_main/html/1_mainpage.html">메인</a>&nbsp;&gt;&nbsp;<a class = "navSecond" href = "2_lecture_require.html">강의 요청</a>&nbsp;&gt;&nbsp;강의 상세
+            </div>
             <div class = "block">
                 <form class = "like">
+                    <div class = "like-count">300</div>
                     <button type="button" class = "like-btn" data-type="circle"></button>
                 </form>
                 <div class = "title">
                     <div class = "index">제목</div>
-                    <div class = "index-con">내용</div>
+                    <div class = "index-con">제목제목</div>
                 </div>
-                <hr>
                 <div class = "subject">
                     <div class = "index">주제</div>
-                    <div class = "index-con">내용</div>
+                    <div class = "index-con">#주제 #프로그래밍 #그리고 #기타등등</div>
                 </div>
-                <hr>
                 <div class = "date">
                     <div class = "index">작성일</div>
-                    <div class = "index-con">내용</div>
+                    <div class = "index-con">2025.08.01</div>
                 </div>
                 <hr>
                 <div class = "content">
@@ -71,7 +74,6 @@
                         정식재판에 있어서 피고인의 자백이 그에게 불리한 유일한 증거일 때에는 이를 유죄의 증거로 삼거나 이를 이유로 처벌할 수 없다. 국가는 과학기술의
                         혁신과 정보 및 인력의 개발을 통하여 국민경제의 발전에 노력하여야 한다.</p>
                 </div>
-                <hr>
                 <form class = "input">
                     <a href = "2_lecture_require_write.html"><button type = "button" class = "modify">글 수정</button></a>
                     <a href="2_lecture_require.html"><button type = "button" class = "delete">삭제</button></a>
@@ -94,6 +96,7 @@
             <div class = "copyright">© 2025 M1F4</div>
         </div>
         <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
+        <script src="../../0_templete/headfooter.js"></script>
         <script src="../asset/2_lecture_require_detail.js"></script>
     </body>
 </html>

@@ -234,15 +234,48 @@ h1 {
 
 .subject, .people-num, .location {
     display: flex;
-    gap: 20px;
 }
 
 .subject-title, .people-num-title, .location-title, .info-title {
     font-weight: 600;
+    width: 10%;
+}
+
+.subject-title, .people-num-title, .subject-content, .people-num-content {
+    display : inline-block;
+}
+
+.subject-content, .people-num-content, .location-content {
+    width: 90%;
+}
+
+.location-content {
+    display: flex;
+}
+
+.location-content1 {
+    width: 40%;
+}
+
+.kakao-btn {
+    width: 70%;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease; 
+    margin-top: 5%;
+}
+
+.kakao-btn:hover {
+    background-color: #3e6b3e;
 }
 
 .location-map {
-    width: 300px;
+    width: 60%;
     height: 300px;
     background-image: url('https://i.pinimg.com/736x/78/9d/74/789d74b1e1dfd2aa92c5d4e6588f0ed7.jpg');
     background-position: center center;
@@ -250,8 +283,14 @@ h1 {
     background-size: cover;
     margin-left: 5%;
     border-radius: 20px;
-    border: none;
+    border: 2px dotted #3e6b3e;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .info-content {
@@ -634,10 +673,6 @@ label {
     color: white;
 }
 
-/* + 질문용 모달 창 */
-
-
-
 /*
     footer : 홈페이지 정보
     .bottom-menu : footer 내부 요소 묶음
@@ -679,6 +714,11 @@ label {
 }
 .bottom-menu-list:hover {
     color: #5b9b5b;
+}
+
+/* footer에 있는 챗봇 메뉴 */
+#chat{
+    display: none;
 }
 
 /* 반응형 */
@@ -760,6 +800,28 @@ label {
         width: 20%;
     }
 
+    .location-content {
+        display: block;
+        box-sizing: border-box;
+
+    }
+
+    .location-content1 {
+        width: 100%;
+    }
+
+    .location-content-detail, .kakao-btn, .location-map {
+        margin: 2% auto;
+    }
+    .location-map {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .kakao-btn{
+        width: 100%;
+    }
+
     .question, .answer {
         padding: 5%;
     }
@@ -799,5 +861,18 @@ label {
 
     #review-title, #review-content, #review-image {
         width: 70%;
+    }
+
+    /* footer에 있는 챗봇 메뉴 */
+    #chat{ 
+        display: inline;
+    }
+
+    /* 모바일일경우 pc버전에 표시되는 우측 하단 챗봇 이미지 제거 */
+    .chatbot{
+        display: none;
+    }
+    .speech-bubble{
+        display: none;
     }
 }

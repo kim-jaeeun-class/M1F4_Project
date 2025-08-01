@@ -188,4 +188,58 @@ function bind() {
         document.querySelector('#inquiry-content').value = '';
     });
 
+    // 지도?
+
+    kakao.maps.load(function () {
+            const map = new kakao.maps
+                .Map(document.getElementById('map'), {
+                    center: new kakao
+                        .maps
+                        .LatLng(37.5665, 126.9780),
+                    level: 3
+                });
+
+            const geocoder = new kakao.maps.services.Geocoder();
+            const endAddressElement = document.querySelector('.location-content-detail');
+            const endAddress = endAddressElement?.textContent.trim();
+
+            // 도착지 마커 표시
+            geocoder.addressSearch(endAddress, function (result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    const coords = new kakao.maps
+                        .LatLng(result[0].y, result[0].x);
+                    const marker = new kakao.maps
+                        .Marker({position: coords, map: map});
+
+                    const infowindow = new kakao.maps
+                        .InfoWindow(
+                            {content: `<div style="padding:5px;font-size:13px;">
+                            <strong>도착지</strong><br>${endAddress}
+                        </div>`}
+                        );
+                    infowindow.open(map, marker);
+                    map.setCenter(coords);
+                } else {
+                    alert("도착지 주소를 찾을 수 없습니다.");
+                }
+            });
+
+            // 길찾기 버튼 동작: 출발지는 생략 (현재 위치 사용)
+            window.openKakaoMapRoute = function () {
+                geocoder.addressSearch(endAddress, function (result, status) {
+                    if (status !== kakao.maps.services.Status.OK) {
+                        alert("도착지 주소를 찾을 수 없습니다.");
+                        return;
+                    }
+
+                    const lat = result[0].y;
+                    const lng = result[0].x;
+                    const name = encodeURIComponent(endAddress);
+                    const url = `https://map.kakao.com/link/to/${name},${lat},${lng}`;
+
+                    window.open(url);
+                });
+            };
+        });
+
 }

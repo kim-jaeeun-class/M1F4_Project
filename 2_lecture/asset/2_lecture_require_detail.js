@@ -75,12 +75,20 @@ function bind() {
     }
 
     const likeBtn = document.querySelector(".like-btn");
+    const likeCount = document.querySelector(".like-count");
+
     likeBtn.addEventListener("click", (e) => {
         const { clientX: x, clientY: y } = e;
         const type = likeBtn.dataset.type || "circle";
+
+        // 좋아요 수 증가
+        let count = parseInt(likeCount.textContent, 10);
+        likeCount.textContent = count + 1;
 
         // 원하는 수 만큼 파티클 생성
         createParticles(10, x, y, type);
     });
 
+
+    
 }
