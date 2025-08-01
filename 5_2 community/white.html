@@ -5,88 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="no-referrer" />
   <title>커뮤니티 게시판</title>
+
+  <!-- 리셋 & 공통 스타일 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
   <link rel="stylesheet" href="asset/white.css" />
+
+  <!-- 커뮤니티 전용 스타일 -->
+  <link rel="stylesheet" href="asset/community.css" />
 </head>
 <body>
-  <!-- ✅ 헤더 -->
+
+  <!-- 헤더 -->
   <div class="head">
     <div class="main-logo">
       <a href="../../1_main/html/1_mainpage.html">
-        <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png" />
-        <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png" />
+        <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png" alt="로고" />
+        <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png" alt="로고텍스트" />
       </a>
     </div>
     <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
     <div class="category" id="category-menu">
-      <div class="category-list reg">
-        <a href="/2_lecture/html/2_lecture_main.html">수강 신청</a>
-      </div>
-      <div class="category-list lec-require">
-        <a href="/2_lecture/html/2_lecture_require.html">강의 요청</a>
-      </div>
-      <div class="category-list community">
-        <a href="/5_community/html/project.html">커뮤니티</a>
-      </div>
-      <div class="category-list mypage">
-        <a href="/3_mypage/html/mypage_main.html">마이 페이지</a>
-      </div>
+      <div class="category-list reg"><a href="/2_lecture/html/2_lecture_main.html">수강 신청</a></div>
+      <div class="category-list lec-require"><a href="/2_lecture/html/2_lecture_require.html">강의 요청</a></div>
+      <div class="category-list community"><a href="/5_community/html/project.html">커뮤니티</a></div>
+      <div class="category-list mypage"><a href="/3_mypage/html/mypage_main.html">마이 페이지</a></div>
     </div>
   </div>
 
-  <!-- ✅ 본문 -->
+  <!-- 본문 -->
   <div class="body">
     <div class="wrapper">
-      <!-- 제목 -->
+
       <div class="board-title">커뮤니티 게시판</div>
 
-      <!-- 컨텐츠 박스 -->
       <div class="community-inner">
-        <!-- 모임명 박스 -->
+
+        <!-- 모임 소개 -->
         <div class="main-content">
-          <h2 class="group-name">#모임명</h2>
-          <h3 class="activity-title">#활동내용</h3>
+          <div class="input-row">
+            <label for="group-name">#모임명</label>
+            <input type="text" id="group-name" name="group-name" placeholder="모임 이름을 입력하세요" class="text-input" />
+          </div>
+
+          <div class="input-row">
+            <label for="activity-content">#활동내용</label>
+            <input type="text" id="activity-content" name="activity-content" placeholder="활동 내용을 입력하세요" class="text-input" />
+          </div>
+
           <div class="group-intro">
-            <p>#모임 소개(사진 포함 가능)</p>
-            <img src="https://via.placeholder.com/400x250" alt="모임 사진" />
+            <button id="uploadBtn" class="green-button" type="button">모임 사진 업로드(사진 포함 가능)</button>
+            <input type="file" id="photoInput" accept="image/*" style="display:none" />
+            <img id="groupPhoto" src="" alt="모임 사진" style="display:none; max-width: 200px; margin-top: 10px;" />
           </div>
         </div>
 
-        <!-- 신청 리스트 박스 -->
-        <div class="application-list">
-          <h4>#신청 리스트</h4>
-          <form>
-            <label><input type="checkbox" /> 신청자 1</label>
-            <label><input type="checkbox" /> 신청자 2</label>
-            <label><input type="checkbox" /> 신청자 3</label>
-            <label><input type="checkbox" /> 신청자 4</label>
-            <label><input type="checkbox" /> 신청자 5</label>
-            <label><input type="checkbox" /> 신청자 6</label>
-            <label><input type="checkbox" /> 신청자 7</label>
-            <label><input type="checkbox" /> 신청자 8</label>
-            <label><input type="checkbox" /> 신청자 9</label>
-            <label><input type="checkbox" /> 신청자 10</label>
-            <label><input type="checkbox" /> 신청자 11</label>
-            <label><input type="checkbox" /> 신청자 12</label>
-            <label><input type="checkbox" /> 신청자 13</label>
-            <label><input type="checkbox" /> 신청자 14</label>
-            <label><input type="checkbox" /> 신청자 15</label>
-          </form>
-          <div class="buttons">
-            <button class="approve-btn">#승인</button>
-            <button class="reject-btn">#거부</button>
+        <!-- 신청 리스트와 승인자 -->
+        <div class="side-section">
+          <div class="application-list">
+            <h4>#신청 리스트</h4>
+            <form>
+              <label><input type="checkbox" /> 신청자 1</label>
+              <label><input type="checkbox" /> 신청자 2</label>
+              <label><input type="checkbox" /> 신청자 3</label>
+              <label><input type="checkbox" /> 신청자 4</label>
+              <label><input type="checkbox" /> 신청자 5</label>
+              <label><input type="checkbox" /> 신청자 6</label>
+              <label><input type="checkbox" /> 신청자 7</label>
+              <label><input type="checkbox" /> 신청자 8</label>
+              <label><input type="checkbox" /> 신청자 9</label>
+              <label><input type="checkbox" /> 신청자 10</label>
+              <label><input type="checkbox" /> 신청자 11</label>
+              <label><input type="checkbox" /> 신청자 12</label>
+              <label><input type="checkbox" /> 신청자 13</label>
+              <label><input type="checkbox" /> 신청자 14</label>
+              <label><input type="checkbox" /> 신청자 15</label>
+            </form>
+            <div class="buttons">
+              <button class="approve-btn">#승인</button>
+              <button class="reject-btn">#거부</button>
+            </div>
+          </div>
+
+          <div class="approved-list">
+            <h4>#승인된 신청자</h4>
+            <div id="approved-users"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ✅ 푸터 -->
+  <!-- 푸터 -->
   <div class="footer">
     <div class="speech-bubble">도움이 필요하다면 절 눌러주세요!</div>
     <div class="chatbot">
       <a href="../../6_chatbot/chatbot_v3.html">
-        <img src="https://i.postimg.cc/bwVSjJHH/KGQDu4R.png" class="chatbot-img" />
+        <img src="https://i.postimg.cc/bwVSjJHH/KGQDu4R.png" class="chatbot-img" alt="챗봇" />
       </a>
     </div>
     <ul type="none" class="bottom-menu">
@@ -98,7 +112,94 @@
     <div class="copyright">© 2025 M1F4</div>
   </div>
 
-  <!-- ✅ 자바스크립트 -->
+  <!-- JS -->
+  <script>
+    // 사진 업로드 및 미리보기 + 버튼 숨기기
+    const uploadBtn = document.getElementById('uploadBtn');
+    const photoInput = document.getElementById('photoInput');
+    const groupPhoto = document.getElementById('groupPhoto');
+
+    uploadBtn.addEventListener('click', () => {
+      photoInput.click();
+    });
+
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          groupPhoto.src = e.target.result;
+          groupPhoto.style.display = 'block';
+          uploadBtn.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+
+    // 페이지 로드 시 bind 함수 실행
+    window.addEventListener('load', bind);
+
+    function bind() {
+      // 햄버거 메뉴 기능
+      const hamburgerBtn = document.getElementById('hamburger-menu');
+      const categoryMenu = document.getElementById('category-menu');
+
+      hamburgerBtn.addEventListener('click', () => {
+        categoryMenu.classList.toggle('show');
+      });
+
+      // 페이지 전환 시 포커스 제거
+      window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+          document.activeElement.blur();
+        }
+      });
+
+      // 승인 버튼 클릭 이벤트
+      const approveBtn = document.querySelector('.approve-btn');
+      const approvedList = document.getElementById('approved-users');
+
+      approveBtn.addEventListener('click', () => {
+        const checkboxes = document.querySelectorAll('.application-list input[type="checkbox"]');
+
+        checkboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            const name = checkbox.parentElement.textContent.trim();
+
+            // 중복 확인
+            const already = Array.from(approvedList.children).some(li => li.textContent.includes(name));
+            if (!already) {
+              const li = document.createElement('li');
+              li.textContent = `✅ ${name}`;
+              approvedList.appendChild(li);
+            }
+
+            checkbox.checked = false;
+          }
+        });
+      });
+    }
+
+    // 거부 버튼 클릭 이벤트
+    document.addEventListener("DOMContentLoaded", () => {
+      const rejectBtn = document.querySelector(".reject-btn");
+      const form = document.querySelector(".application-list form");
+
+      rejectBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const checkedBoxes = form.querySelectorAll('input[type="checkbox"]:checked');
+
+        checkedBoxes.forEach(checkbox => {
+          const label = checkbox.parentElement;
+          label.remove();
+        });
+      });
+    });
+  </script>
+
+  <!-- 추가 JS 불러오기 -->
   <script src="asset/white.js"></script>
 </body>
 </html>

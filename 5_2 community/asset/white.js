@@ -1,27 +1,83 @@
 window.addEventListener('load', bind);
 
-/*
-원래 function bind() 대괄호 내용만 작성했는데,
-혹시나 싶어 감싸는 구조랑 주석 추가해둡니다.
-*/
 function bind() {
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const categoryMenu = document.getElementById('category-menu');
+  initHamburgerMenu();
+  initPageFocusReset();
+  initPhotoUpload();
+  initApproveButton();
+  initRejectButton();
+}
 
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu
-            .classList
-            .toggle('show');
-    });
+function initHamburgerMenu() {
+  const hamburgerBtn = document.getElementById('hamburger-menu');
+  const categoryMenu = document.getElementById('category-menu');
 
-    window.addEventListener('pageshow', () => {
-        if (document.activeElement && document.activeElement.blur) {
-            document
-                .activeElement
-                .blur();
+  hamburgerBtn.addEventListener('click', () => {
+    categoryMenu.classList.toggle('show');
+  });
+}
+
+function initPageFocusReset() {
+  window.addEventListener('pageshow', () => {
+    if (document.activeElement && document.activeElement.blur) {
+      document.activeElement.blur();
+    }
+  });
+}
+
+function initPhotoUpload() {
+  const uploadBtn = document.getElementById('uploadBtn');
+  const photoInput = document.getElementById('photoInput');
+
+  uploadBtn.addEventListener('click', () => {
+    photoInput.click();
+  });
+
+  photoInput.addEventListener('change', () => {
+    if (photoInput.files.length > 0) {
+      uploadBtn.style.display = 'none'; // 업로드 버튼 숨기기
+      // 여기에서 사진 미리보기 추가도 가능해요!
+    }
+  });
+}
+
+function initApproveButton() {
+  const approveBtn = document.querySelector('.approve-btn');
+  const approvedList = document.getElementById('approved-users');
+
+  approveBtn.addEventListener('click', () => {
+    const checkboxes = document.querySelectorAll('.application-list input[type="checkbox"]');
+
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        const name = checkbox.parentElement.textContent.trim();
+
+        // 중복 확인
+        const already = Array.from(approvedList.children).some(li => li.textContent.includes(name));
+        if (!already) {
+          const li = document.createElement('li');
+          li.textContent = ✅ ${name};
+          approvedList.appendChild(li);
         }
+
+        checkbox.checked = false;
+      }
     });
+  });
+}
 
-    // 이벤트 추가 필요할 경우 이 아래로 삽입
+function initRejectButton() {
+  const rejectBtn = document.querySelector(".reject-btn");
+  const form = document.querySelector(".application-list form");
 
+  rejectBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const checkedBoxes = form.querySelectorAll('input[type="checkbox"]:checked');
+
+    checkedBoxes.forEach(checkbox => {
+      const label = checkbox.parentElement;
+      label.remove();
+    });
+  });
 }

@@ -5,9 +5,10 @@
     font-weight: normal;
     font-style: normal;
 }
-.html{
-margin : 0;
-padding : 0;
+
+.html {
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -16,14 +17,11 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    height : auto;
-    min-height : 90vh;
-    margin : 0;
-    padding : 0;
-    overflow-y : auto;
-    overflow-x : hidden;
+    height: auto;
+    min-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
-
 
 a, a:link, a:visited {
     color: inherit;
@@ -124,7 +122,6 @@ a:active {
     color: #555;
     border-top: 1px solid #ccc;
     margin-top: 40px;
-    margin: auto;
     text-align: center;
 }
 
@@ -207,10 +204,7 @@ a:active {
     min-height: 90vh;
     padding: 20px 5%;
     box-sizing: border-box;
-    height : auto;
-    margin : 0 auto;
-
-
+    margin: 0 auto;
 }
 
 .board-title {
@@ -230,36 +224,22 @@ a:active {
 
 .main-content {
     flex: 3;
-    min-height: 400px;
+    min-height: 600px;
     background-color: #fff;
     border: 2px solid #3e6b3e;
     padding: 30px;
     box-sizing: border-box;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
     border-radius: 5px;
-    min-height: 600px;
 }
- .application-list{
-    flex: 1;
-    min-height: 400px;
-    background-color: #fff;
-    border: 2px solid #3e6b3e;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
-    border-radius: 5px;
-    min-height: 600px;
-    font-size: 14px;
-    display : flex;
-    flex-direction : column;
- }
- .application-list form {
-    max-height : 200px;
-    overflow-y : auto;
-    padding-right : 5px;
-    margin-bottom : 20px;
-    
- }
+
+.application-list form {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 20px;
+}
+
 .group-name {
     font-size: 24px;
     font-weight: bold;
@@ -285,7 +265,7 @@ a:active {
     font-size: 16px;
     color: #333;
     text-align: center;
-    height : 380px;
+    height: 380px;
 }
 
 .group-intro img {
@@ -299,7 +279,7 @@ a:active {
     color: #3e6b3e;
     font-weight: bold;
     border-bottom: 1px solid #3e6b3e;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding-bottom: 5px;
 }
 
@@ -324,11 +304,14 @@ a:active {
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
-    transition: back-ground 0.3s;
+    transition: background 0.3s;
 }
 
 .approve-btn {
     background-color: #3e6b3e;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
 }
 
 .approve-btn:hover {
@@ -338,4 +321,124 @@ a:active {
 .reject-btn {
     background-color: #999;
 }
+
+/* 승인된 신청자 전체 박스 */
+.application-list {
+    flex: 1;
+    min-height: 360px;
+    background-color: #fff;
+    border: 2px solid #3e6b3e;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; /* 세로 쌓임 */
+}
+
+/* 승인자 리스트 제목 */
+.approved-list h4 {
+   margin-bottom: 10px;
+    color: #3e6b3e;
+    font-weight: bold; /* 이미 굵게 하셨다면 생략 가능 */
+    border-bottom: 1px solid #3e6b3e; /* ✅ 초록색 밑줄 */
+    padding-bottom: 5px;
+}
+
+/* 리스트 전체 스타일 */
+#approved-users {
+    list-style: none;
+  padding: 10px;
+  margin: 0;
+  max-height: 140px;       /* ✅ 고정 높이 설정 */
+  overflow-y: auto;        /* ✅ 스크롤 가능하게 설정 */
+  background-color: #f9fff9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+/* 각 승인자 항목 스타일 */
+#approved-users li {
+    padding: 6px 10px;
+    margin-bottom: 6px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+}
+
+/* 신청자 이름 세로 정렬 */
+#approved-users label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+.approved-list {
+  border: 2px solid #3e6b3e;
+  padding: 16px;
+  margin-top: 20px;  /* 신청리스트 상자와 간격 주기 */
+  background-color: white;
+  border-radius: 8px;
+  width: 100%; /* 혹은 고정 너비 대신 부모 너비 맞춤 */
+  box-sizing: border-box;
+  height: 200px;
+}
+.side-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+}
+.green-button {
+  background-color:#3e6b3e; /* 초록색 */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+  background-color: #3e6b3e; /* 좀 더 진한 초록색 */
+}
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.input-row label {
+  font-weight: bold;
+  white-space: nowrap;
+  min-width: 80px;
+  font-size : 18px;
+  color :#3e6b3e; 
+}
+
+.text-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.green-button {
+  background-color: #3e6b3e;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
 
