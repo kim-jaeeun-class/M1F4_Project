@@ -6,27 +6,6 @@ function init() {
 }
 
 function bind() {
-    // 임시 유저 데이터 (비밀번호 찾기용)
-    const users = [
-        { 
-            name: '김유저',
-            id: 'user01@naver.com', 
-            role: 'student', 
-            password: '1234' 
-        },
-        { 
-            name: '홍길동',
-            id: 'user02@gmail.com', 
-            role: 'volunteer', 
-            password: '0000' 
-        },
-        { 
-            name: '고현지',
-            id: 'tofhdns1130@naver.com', 
-            role: 'student', 
-            password: 'tofhdns' 
-        }
-    ];
 
     // 라디오 버튼과 폼 영역 선택
     const radioPhone = document.querySelector('input[value="휴대폰번호로 발급받기"]');
@@ -52,7 +31,7 @@ function bind() {
 
     // 임시 비밀번호 생성 함수
     function generateTempPassword(length = 8) {
-        const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}<>?';
         let temp = '';
         for (let i = 0; i < length; i++) {
             temp += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -113,6 +92,20 @@ function bind() {
             alert('해당 이메일로 등록된 계정을 찾을 수 없습니다.');
         }
     });
+
+    // 엔터 키로 버튼 동작
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+
+            if (radioEmail.checked) {
+                emailSubmitBtn.click();
+            } else if (radioPhone.checked) {
+                phoneSubmitBtn.click();
+            }
+        }
+    });
+
 
     // 이메일 도메인 select 요소와 domain input 선택
     const phoneEmailInput = document.querySelector('.phone_email_input');
