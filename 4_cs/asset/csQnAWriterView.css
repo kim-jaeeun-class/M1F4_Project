@@ -89,6 +89,31 @@ a:active {
     height: 80vh;
 }
 
+/* 네비게이션 부분 */
+.nav {
+    width: 80%;
+    margin-top: 40px;
+}
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav a.navSecond {
+    color: #aacda6;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navFirst:hover, .navSecond:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+/* csCategory 부분 */
 .csCategory {
     text-align: center;
     padding: 20px 20px;
@@ -113,25 +138,27 @@ a:active {
     color: #5b9b5b;
 }
 
-.notice-contents {
-  padding: 15px 20px;
-}
 
-.form {
-  padding: 20px;
+
+.postform {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .input {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid gray;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+    width: 100%;
+    padding: 6px;
+    border: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .title {
     font-style: bold;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .artmain {
@@ -139,29 +166,31 @@ a:active {
 }
 
 .meta {
-  padding: 6px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  font-size: 13px;
-  margin-bottom: 10px;
+    padding: 6px;
+    border: none;
+    font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
 .tabs {
-  margin-top: 10px;
-  text-align: right;
+    margin-top: 10px;
+    text-align: right;    
 }
 
 .tabs button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  margin-left: 5px;
-  cursor: pointer;
+    width: 10%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 3em;
 }
 
 .tabs button:hover {
-  background-color: #555;
+    background-color: #3e6b3e;
 }
 
 

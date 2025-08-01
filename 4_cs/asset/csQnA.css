@@ -80,8 +80,10 @@ a:active {
 }
 
 
-/* body 부분*/
+
+/*.body 부분 */
 .body {
+    position: relative;
     padding: 0 10px 300px 10px;
     margin: 0 auto;
     width: 80%;
@@ -105,135 +107,101 @@ a:active {
     text-decoration: underline;
 }
 
-/* csCategory 부분 */
 
+/* csCategory 부분 */
 .csCategory {
     text-align: center;
     padding: 20px 20px;
     font-size: 1.7rem;
 }
-
 .csCategory-list {
     display: inline-block;
     font-weight: bold;
     cursor: pointer;
     padding: 0 20px;
 }
-
 .csCategory-list a:hover {
     color: #3e6b3e;
 }
-
 /* 기본 링크 스타일 */
 .csCategory-list a {
     color: black;
     text-decoration: none;
 }
-
 /* 현재 페이지 링크에만 초록색 적용 */
 .csCategory-list a.active {
     color: #5b9b5b;
 }
 
+
+/* qna-contents 부분 */
 .qna-contents {
     position: relative;
     padding-top: 20px;
-    padding-bottom: 100px; /* 검색창 공간 확보 */
     border: 1px dotted #3e6b3e;
     border-radius: 20px;
 }
 
 .content-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.content-table thead {
+    font-size: 0.95em;
+    font-weight: 600;
+    border-bottom: 3px solid #3e6b3e;
 }
 
 .content-table th{
-  border-bottom: 2px solid black;
-  padding: 8px;
-  text-align: center;
-  font-size: 16px;
-  word-break: break-word;
+    border-bottom: 2px solid black;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+    word-break: break-word;
+}
+
+.number-col, .title-col, .author-col, .time-col {
+    padding-bottom: 15px;
+}
+
+.content-table tbody {
+    font-size: 0.9em;
 }
 
 .content-table td {
     border-bottom: 1px solid #ccc;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     font-size: 14px;
     word-break: break-word;
 }
 
 .number-col {
-  width: 10%;
+    width: 10%;
 }
 
 .title-col {
-  width: 55%;
-  /* text-align: left; */
-  padding-left: 10px;
+    width: 50%;
+    text-align: left;
 }
 
 .author-col {
-  width: 18%;
+    width: 18%;
 }
 
 .time-col {
-  width: 20%;
+    width: 20%;
 }
 
-/* bottom 영역 오른쪽 아래 정렬 */
-#bottom {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
-.search {
-    display: flex;
-    gap: 5px;
-    background: #fff;
-    padding: 5px;
-}
-
-#searchInput {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#searchBtn {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-}
-
-#searchBtn:hover {
-  background-color : #5b9b5b;
-}
-
-.tabs button {
-    padding: 6px 12px;
-    border: none;
-    background: #5b9b5b;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
+/* 페이지네이션 */
 #pagination {
     text-align: center;
+    margin-bottom: 20px;
 }
-
 #pagination button {
-
     margin: 0 4px;
     padding: 5px 10px;
     border: 1px solid #ccc;
@@ -246,9 +214,75 @@ a:active {
     font-weight: bold;
 }
 
+/* bottom 영역 오른쪽 아래 정렬 */
+.bottom-block {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 5% auto;
+}
+
+.search {
+    width: 80%;
+    text-align: right;
+}
+
+.search-filter, .search-input, .search-btn {
+    border: 1px solid #3e6b3e;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: 'ChosunGu';
+    box-sizing: border-box;
+    height: 40px;
+    outline: none;
+}
+
+.search-filter {
+    width: 15%;
+}
+
+.search-input {
+    width: 50%;
+}
+
+.search-btn {
+    width: 10%;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #3e6b3e;
+}
+
+.upload {
+    width: 15%;
+    text-align: right;
+}
+
+.upload-btn {
+    margin: 0;
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.upload-btn:hover {
+    background-color: #3e6b3e;
+}
 
 /* 챗봇 */
-
 .chatbot {
     position: fixed;
     z-index: 9999;
@@ -331,6 +365,8 @@ a:active {
     color: #5b9b5b;
 }
 
+
+
 /* 반응형 */
 @media (max-width: 768px) {
     .head {
@@ -366,5 +402,54 @@ a:active {
 
     .category.show {
         display: flex;
+    }
+
+    .bottom-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+    }
+    .search {
+        width: 100%;
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .search-filter {
+        width: 25%;
+    }
+
+    .search-input {
+        width: 50%;
+    }
+
+    .search-btn {
+        width: 20%;
+    }
+
+    .upload {
+        text-align: right;
+        width: 50%;
+        margin: 0;
+        align-self: flex-end;
+    }
+
+    .upload-btn {
+        margin: 30px 0;
+        padding: 2%;
+    }
+
+    .table-num {
+        width: 15%;
+    }
+
+    .table-title {
+        width: 50%;
+    }
+
+    .table-date {
+        width: 35%;
     }
 }

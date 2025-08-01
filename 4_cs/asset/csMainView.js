@@ -18,7 +18,7 @@ function bind() {
         }
     });
     document.querySelector('#backList').addEventListener('click', function(){
-        window.location.href = 'csQnA.html';
+        window.location.href = 'csMain.html';
     })
 
 }

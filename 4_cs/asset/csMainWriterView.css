@@ -139,11 +139,7 @@ a:active {
 }
 
 
-.notice-contents {
-    padding: 15px 20px;
-}
-
-.form {
+.postform {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 20px;
@@ -177,20 +173,23 @@ a:active {
 
 .tabs {
     margin-top: 10px;
-    text-align: right;
+    text-align: right;    
 }
 
 .tabs button {
-    background-color: #333;
-    color: #fff;
+    width: 10%;
     border: none;
-    padding: 6px 12px;
-    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
     cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 3em;
 }
 
 .tabs button:hover {
-    background-color: #555;
+    background-color: #3e6b3e;
 }
 
 

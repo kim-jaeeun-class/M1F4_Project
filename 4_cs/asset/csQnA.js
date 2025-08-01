@@ -1,63 +1,69 @@
 window.addEventListener('load', bind);
 
 function bind() {
-    /* 공통 UI 부분*/
+    /* GNB 파트 */
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
     hamburgerBtn.addEventListener('click', () => {
-        categoryMenu
-            .classList
-            .toggle('show');
+        categoryMenu.classList.toggle('show');
     });
 
     window.addEventListener('pageshow', () => {
         if (document.activeElement && document.activeElement.blur) {
-            document
-                .activeElement
-                .blur();
+            document.activeElement.blur();
         }
     });
 
-    /* 게시글 표시 리스트 + 목록 + 검색 기능 */
+    /* csCategory 하이라이트 */
+    document.addEventListener('DOMContentLoaded', function () {
+        const currentPage = location.pathname.split('/').pop();
+
+        document.querySelectorAll('.csCategory-list a').forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    /* 게시글 데이터 */
     const posts = [
-        { number: 13, title: 'HTML 태그 중에 줄바꿈은 어떻게 하나요?', author: '익명', time: '2025-07-29' },
-        { number: 12, title: 'CSS에서 margin이랑 padding 차이가 뭔가요?', author: '익명', time: '2025-07-28' },
-        { number: 11, title: '로그인을 안 해도 수강 가능한 강의가 있나요?', author: '익명', time: '2025-07-26' },
-        { number: 10, title: '마이페이지에서 학습 진도를 수정할 수 있나요?', author: '익명', time: '2025-07-25' },
-        { number: 9, title: '모바일에서도 강의 수강이 가능한가요?', author: '익명', time: '2025-07-24' },
-        { number: 8, title: '자바스크립트에서 let과 var의 차이를 알고 싶어요', author: '익명', time: '2025-07-23' },
-        { number: 7, title: '수료증을 발급받을 수 있나요?', author: '익명', time: '2025-07-22' },
-        { number: 6, title: '강의 자료를 다운로드할 수 있나요', author: '익명', time: '2025-07-21' },
-        { number: 5, title: '모의고사 점수는 어디에서 확인하나요?', author: '익명', time: '2025-07-20' },
-        { number: 4, title: '포인트는 어디에 사용되나요?', author: '익명', time: '2025-07-17' },
-        { number: 3, title: '강사에게 질문은 어떻게 하나요?', author: '익명', time: '2025-07-16' },
-        { number: 2, title: '비밀번호를 잊어버렸을 때 어떻게 하나요?', author: '익명', time: '2025-07-12' },
-        { number: 1, title: '자바스크립트 문법에서 세미콜론은 꼭 필요한가요?', author: '익명', time: '2025-07-11' },
+        { number: 13, title: '[Q&A] 수업은 어디서 진행되나요?', content: '수업은 지정된 지역 학습센터나 기관에서 대면으로 진행됩니다.', author: '관리자', time: '2025-07-31' },
+        { number: 12, title: '[Q&A] 학습 봉사자는 어떤 자격이 필요한가요?', content: '봉사자는 성인 이상이며, 간단한 교육 이수를 통해 활동 가능합니다.', author: '관리자', time: '2025-07-30' },
+        { number: 11, title: '[Q&A] 수업 예약은 어떻게 하나요?', content: '홈페이지에서 원하는 일정과 강좌를 선택해 예약할 수 있습니다.', author: '관리자', time: '2025-07-29' },
+        { number: 10, title: '[Q&A] 봉사자는 수업에 몇 분 전에 도착해야 하나요?', content: '원활한 준비를 위해 최소 10분 전에 도착해 주세요.', author: '관리자', time: '2025-07-28' },
+        { number: 9, title: '[Q&A] 수강자는 수업에 어떻게 참여하나요?', content: '예약한 수업 시간에 해당 교육 장소로 방문하시면 됩니다.', author: '관리자', time: '2025-07-27' },
+        { number: 8, title: '[Q&A] 수업에 지각하거나 결석하면 어떻게 되나요?', content: '지각이나 결석이 잦을 경우 수강 제한이 있을 수 있습니다.', author: '관리자', time: '2025-07-26' },
+        { number: 7, title: '[Q&A] 봉사시간은 어떻게 인증받나요?', content: '출석 체크 후, 관리자의 확인을 거쳐 자동으로 봉사시간이 등록됩니다.', author: '관리자', time: '2025-07-25' },
+        { number: 6, title: '[Q&A] 수업 자료는 제공되나요?', content: '필요 시 봉사자가 프린트물 등 자료를 준비할 수 있습니다.', author: '관리자', time: '2025-07-24' },
+        { number: 5, title: '[Q&A] 수업 시간은 얼마나 되나요?', content: '수업은 기본적으로 1회 50분이며, 강좌에 따라 다를 수 있습니다.', author: '관리자', time: '2025-07-23' },
+        { number: 4, title: '[Q&A] 누구나 수업에 참여할 수 있나요?', content: '네, 간단한 회원가입 후 누구나 수강 신청이 가능합니다.', author: '관리자', time: '2025-07-22' },
+        { number: 3, title: '[Q&A] 봉사자가 수업을 변경하고 싶을 땐 어떻게 하나요?', content: '마이페이지 > 수업관리 메뉴에서 일정 변경 요청이 가능합니다.', author: '관리자', time: '2025-07-21' },
+        { number: 2, title: '[Q&A] 수업 내용에 대한 질문은 어디서 하나요?', content: '수업 종료 후 Q&A 게시판을 통해 질문을 남기실 수 있습니다.', author: '관리자', time: '2025-07-20' },
+        { number: 1, title: '[Q&A] 대면 수업이 어려운 경우 대체 방법이 있나요?', content: '현재는 대면 수업만 운영 중이며, 온라인 수업은 제공되지 않습니다.', author: '관리자', time: '2025-07-19' }
     ];
 
     let currentPage = 1;
     const postsPerPage = 10;
     const maxVisibleButtons = 5;
-    let filteredPosts = [...posts]; // ✅ 빠졌던 선언 추가!
+    let filteredPosts = [...posts];
 
-    
-    // ✅ 테이블 렌더링 함수
     function renderTable(page = 1) {
         const start = (page - 1) * postsPerPage;
         const end = start + postsPerPage;
         const pagePosts = filteredPosts.slice(start, end);
 
         const tbody = document.getElementById('tableBody');
-        tbody.innerHTML = ''; // 기존 내용 초기화
+        tbody.innerHTML = '';
 
         pagePosts.forEach(post => {
             const row = document.createElement('tr');
             row.innerHTML = `
-            <td>${post.number}</td>
-            <td><a href="csMainView.html">${post.title}</a></td>
-            <td>${post.author}</td>
-            <td>${post.time}</td>
+                <td>${post.number}</td>
+                <td><a href="csMainView.html">${post.title}</a></td>
+                <td>${post.author}</td>
+                <td>${post.time}</td>
             `;
             tbody.appendChild(row);
         });
@@ -66,7 +72,6 @@ function bind() {
         renderPagination();
     }
 
-    // ✅ 페이지네이션 렌더링 함수
     function renderPagination() {
         const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
         const pagination = document.getElementById('pagination');
@@ -80,69 +85,69 @@ function bind() {
             startPage = Math.max(1, endPage - maxVisibleButtons + 1);
         }
 
-        // ◀ 이전 버튼
         if (startPage > 1) {
             const prevBtn = document.createElement('button');
             prevBtn.textContent = '◀';
             prevBtn.addEventListener('click', () => {
                 currentPage = Math.max(1, currentPage - 1);
                 renderTable(currentPage);
-                renderPagination();
             });
             pagination.appendChild(prevBtn);
         }
 
-        // 페이지 번호 버튼
         for (let i = startPage; i <= endPage; i++) {
             const btn = document.createElement('button');
             btn.textContent = i;
-            btn.className = (i === currentPage) ? 'active' : '';
+            if (i === currentPage) btn.classList.add('active');
             btn.addEventListener('click', () => {
                 currentPage = i;
                 renderTable(i);
-                renderPagination();
             });
             pagination.appendChild(btn);
         }
 
-        // ▶ 다음 버튼
         if (endPage < totalPages) {
             const nextBtn = document.createElement('button');
             nextBtn.textContent = '▶';
             nextBtn.addEventListener('click', () => {
                 currentPage = Math.min(totalPages, currentPage + 1);
                 renderTable(currentPage);
-                renderPagination();
             });
             pagination.appendChild(nextBtn);
         }
     }
 
-    // ✅ 검색 함수
     function handleSearch() {
-        const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
-        const field = document.getElementById('searchField').value; // 'title' 또는 'content'
+        const keyword = document.querySelector('.search-input').value.trim().toLowerCase();
+        const field = document.querySelector('.search-filter').value; // 'title' 또는 'content'
 
         if (keyword === '') {
-            filteredPosts = [...posts]; // 전체 목록 복원
+            filteredPosts = [...posts];
         } else {
             filteredPosts = posts.filter(post => {
-                const target = post[field]; // post.title 또는 post.content
-                return target && target.toLowerCase().includes(keyword);
+                const target = (post[field] || '').toLowerCase();
+                return target.includes(keyword);
             });
         }
 
-        renderTable(1); // 검색 시 첫 페이지로 이동
+        renderTable(1);
     }
 
-
-    // ✅ 이벤트 연결
-    document.getElementById('searchBtn').addEventListener('click', handleSearch);
-    document.getElementById('searchInput').addEventListener('keypress', function (e) {
+    // ✅ 검색 이벤트 연결
+    document.querySelector('.search-btn').addEventListener('click', handleSearch);
+    document.querySelector('.search-input').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') handleSearch();
     });
 
-    // ✅ 초기화
+    // ✅ 초기 테이블 렌더링
     renderTable();
 
+    // ✅ 글쓰기 버튼 클릭 시 localStorage 초기화
+    const writeButton = document.querySelector('.upload-btn');
+    if (writeButton) {
+        writeButton.addEventListener('click', function () {
+            localStorage.removeItem('tempPost'); // 기존 글 데이터 제거
+            window.location.href = 'csQnAWrite.html'; // 작성 페이지 경로
+        });
+    }
 }

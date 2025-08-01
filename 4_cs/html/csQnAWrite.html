@@ -34,6 +34,8 @@
     </div>
 
     <div class="body">
+        <div class="nav"><a href="csMain.html" class = "navFirst">고객센터</a><a href="csQnA.html"class = "navSecond"> &gt; Q&A</a> &gt; Q&A 작성</div>
+
         <div class="csCategory">
             <div class="csCategory-list"><a class="notice" href="csMain.html">공지사항</a></div>|
             <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
@@ -42,12 +44,12 @@
 
         <div class="writeForm">
             <form class="postForm" name="postForm">
-                <input type="text" id="writeTitle" name="writeTitle" placeholder="제목을 입력하세요" required />
-                <div class="meta" id="authorMeta">작성자: <span id="authorName"> </span> | 작성시간: <span id="writeTime"></span></div>
-                <textarea id="content" name="content" placeholder="본문을 입력하세요" required></textarea>
-
-                <div class="tabs">
-                    <button type="submit">글 작성</button>
+                <input type="text" id="writeTitle" name="writeTitle" placeholder="제목을 입력해주세요" required />
+                <div class="meta" id="authorMeta">작성자: <span id="authorName">관리자</span> | 작성시간: <span id="writeTime"></span></div>
+                <textarea id="content" name="content" placeholder="내용을 입력해주세요" required></textarea>
+                <div class = "bottom-btn-list">
+                    <button type="button" class="input-btn" id="cancel"><a href="csQnA.html">취소</a></button>
+                    <button type="submit" class="input-btn" id="input"><a href="csQnAWriterView.html">작성</a></button>                      
                 </div>
             </form>
         </div>
