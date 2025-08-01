@@ -74,21 +74,42 @@ function bind() {
         }
     }
 
+    // const likeBtn = document.querySelector(".like-btn");
+    // const likeCount = document.querySelector(".like-count");
+
+    // likeBtn.addEventListener("click", (e) => {
+    //     const { clientX: x, clientY: y } = e;
+    //     const type = likeBtn.dataset.type || "circle";
+
+    //     // 좋아요 수 증가
+    //     let count = parseInt(likeCount.textContent, 10);
+    //     likeCount.textContent = count + 1;
+    //     console.log(count);
+
+    //     // 원하는 수 만큼 파티클 생성
+    //     createParticles(10, x, y, type);
+    // });
+
     const likeBtn = document.querySelector(".like-btn");
     const likeCount = document.querySelector(".like-count");
 
-    likeBtn.addEventListener("click", (e) => {
-        const { clientX: x, clientY: y } = e;
-        const type = likeBtn.dataset.type || "circle";
+    // 이미 이벤트가 등록된 경우 방지
+    if (likeBtn && !likeBtn.dataset.bound) {
+        likeBtn.addEventListener("click", (e) => {
+            const { clientX: x, clientY: y } = e;
+            const type = likeBtn.dataset.type || "circle";
 
-        // 좋아요 수 증가
-        let count = parseInt(likeCount.textContent, 10);
-        likeCount.textContent = count + 1;
+            let count = parseInt(likeCount.textContent, 10);
+            likeCount.textContent = count + 1;
 
-        // 원하는 수 만큼 파티클 생성
-        createParticles(10, x, y, type);
-    });
+            createParticles(10, x, y, type);
+        });
+
+        likeBtn.dataset.bound = "true"; // 중복 방지 플래그
+    }
+
+    // 다른 이벤트들 (햄버거 버튼 등)은 그대로 두셔도 됩니다
+}
 
 
     
-}

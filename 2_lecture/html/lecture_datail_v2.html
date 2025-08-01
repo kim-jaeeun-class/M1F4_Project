@@ -6,6 +6,14 @@
   <meta name="referrer" content="no-referrer">
   <title>마이페이지</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+  <!-- 1. templete.js: bind 정의 -->
+  <script src="../../0_templete/asset/templete.js"></script>
+
+  <!-- 2. chatbot.js: initChatbot 정의 -->
+  <script src="../../0_templete/asset/chatbot.js"></script>
+
+  <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
   <script src="../../0_templete/headfooter.js"></script>
   <style>
     /* 웹 폰트 */
@@ -276,17 +284,6 @@
 <body>
   <div class="wrapper">
     <div class="head">
-      <!-- <div class="main-logo">
-        <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
-        <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
-      </div>
-      <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
-      <div class="category" id="category-menu">
-        <div class="category-list reg">수강신청</div>
-        <div class="category-list lec-require">강의 요청</div>
-        <div class="category-list community">커뮤니티</div>
-        <div class="category-list mypage">마이페이지</div>
-      </div> -->
     </div>
 
     <div class="body">
@@ -342,7 +339,6 @@
   </div> <!-- wrapper -->
 
   <!-- footer가 출력 안되는 버그 수정-->
-  <div class="footer">
-    </div>
+  <div class="footer"></div>
 </body>
 </html>
