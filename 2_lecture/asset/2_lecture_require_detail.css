@@ -118,6 +118,20 @@ hr {
     height: 30px; 
     border: none; 
     background-color: transparent;
+    appearance: none;
+}
+
+.like-btn:focus {
+    outline: none;
+}
+
+.particle {
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    position: fixed;
+    opacity: 0;
+    z-index: 9999;
 }
 
 .title, .subject, .date {
