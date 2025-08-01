@@ -1,21 +1,21 @@
 window.addEventListener('load', bind);
 
+// 
+
 function bind() {
     // 햄버거 버튼 부분
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu
-            .classList
-            .toggle('show');
-    });
+    if (hamburgerBtn && categoryMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            categoryMenu.classList.toggle('show');
+        });
+    }
 
     window.addEventListener('pageshow', () => {
         if (document.activeElement && document.activeElement.blur) {
-            document
-                .activeElement
-                .blur();
+            document.activeElement.blur();
         }
     });
 
@@ -26,13 +26,9 @@ function bind() {
 
     function showImage(i) {
         images.forEach((img, idx) => {
-            img
-                .classList
-                .remove("active");
+            img.classList.remove("active");
             if (idx === i) {
-                img
-                    .classList
-                    .add("active");
+                img.classList.add("active");
             }
         });
     }
@@ -55,18 +51,19 @@ function bind() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    prevBtn.addEventListener('click', () => {
-        stopSlide();
-        index = (index - 1 + images.length) % images.length;
-        showImage(index);
-        startSlide();
-    });
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopSlide();
+            index = (index - 1 + images.length) % images.length;
+            showImage(index);
+            startSlide();
+        });
 
-    nextBtn.addEventListener('click', () => {
-        stopSlide();
-        index = (index + 1) % images.length;
-        showImage(index);
-        startSlide();
-    });
-
+        nextBtn.addEventListener('click', () => {
+            stopSlide();
+            index = (index + 1) % images.length;
+            showImage(index);
+            startSlide();
+        });
+    }
 }
