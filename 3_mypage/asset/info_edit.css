@@ -138,6 +138,63 @@ a:active {
     padding-left: 20px;
 }
 
+.left {
+    border: 1px solid black;
+    display: inline-block;
+}
+.right {
+    border: 1px solid blue;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.profile {
+    border: 1px solid red;
+}
+
+.id_name {
+    border: 1px solid hotpink;
+}
+.id{
+    border: 1px solid purple;
+    display: inline-block;
+}
+.name {
+    border: 1px solid green;
+    display: inline-block;
+}
+
+.pw {
+    border: 1px solid orange;
+}
+
+.field {
+    border: 1px solid navy;
+}
+.interest {
+    border: 1px solid black;
+}
+.area {
+    border: 1px solid red;
+}
+
+.zip_code_box {
+    border: 1px solid blueviolet;
+}
+.zip_code {
+    border: 1px solid green;
+    display: inline-block;
+}
+
+.address {
+    border: 1px solid blue;
+}
+
+.quit {
+    display: block;
+}
+
 /*
     footer : 홈페이지 정보
     .bottom-menu : footer 내부 요소 묶음

@@ -10,8 +10,11 @@ function init(){
         return;
     }
 
-    // 아이디 화면에 출력
-    document.getElementById('fix_id').textContent = currentUser.id;
+    // 로그인 정보가 있을 경우, 아이디를 마이페이지에 출력
+    const userFixId = document.getElementById("fix_id");  // 여기 수정됨 (기존: querySelector(".fix_id"))
+    if (userFixId) {
+        userFixId.textContent = currentUser.id;
+    }
 
     bind(currentUser); // currentUser 전달
 }

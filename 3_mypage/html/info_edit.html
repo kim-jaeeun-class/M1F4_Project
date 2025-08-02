@@ -8,34 +8,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
         <link rel="stylesheet" href="/3_mypage/asset/info_edit.css">
+        <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+        <script src="/0_templete/headfooter.js"></script>
     </head>
     <body>
-        <div class="head">
-            <div class="main-logo">
-                <a href = "../../1_main/html/1_mainpage.html">
-                    <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
-                    <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
-                </a>
-            </div>
-            <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
-            <div class="category" id="category-menu">
-                <div class="category-list reg">
-                    <a href="../../2_lecture/html/2_lecture_main.html">수강 신청</a>
-                </div>
-                <div class="category-list lec-require">
-                    <a href="../../2_lecture/html/2_lecture_require.html">강의 요청</a>
-                </div>
-                <div class="category-list community">
-                    <a href="../../5_community/html/project.html">커뮤니티</a>
-                </div>
-                <div class="category-list mypage">
-                    <a href="../../3_mypage/html/mypage_main.html">마이 페이지</a>
-                </div>
-            </div>
-        </div>
+        <div class="head"></div>
         <div class="body">
             <!-- 이 안에 원하는 내용 넣어주세요-->
-             <div class="my_back">
+            <div class="my_back">
                 <div class="tab">
                     <div class="tab_0">
                         마이페이지
@@ -51,89 +31,57 @@
                     <div class="nav">
                         마이페이지 > 회원정보 수정
                     </div>
-                    <div>
+                    <div class="edit">
                         회원정보 수정
                     </div>
                     <div>
-                        <div>
-                            이름
-                        </div>
-                        <div>
-                            <input type="text" disabled="disabled" value="홍길동">
-                        </div>
-                        <div>
-                            아이디
-                        </div>
-                        <div>
-                            <input type="text" disabled="disabled" value="aaa">
-                        </div>
-                        <div>
-                            비밀번호
-                        </div>
-                        <div>
-                            <input type="password">
-                        </div>
-                        <div>
-                            비밀번호 확인
-                        </div>
-                        <div>
-                            <input type="password">
-                        </div>
-                        <div>
-                            연락처
-                        </div>
-                        <div>
-                            <input type="text"> -
-                            <input type="text"> -
-                            <input type="text">
-                        </div>
-                        <div>
-                            <div class="">
-                                이메일
+                        <div class="left">
+                            <div class="profile">
+                                프로필 사진
                             </div>
-                            <div>
-                                <input type="text"> @ 
-                                <input type="text">
-                                <select class="">
-                                    <option>naver.com</option>
-                                    <option>nate.com</option>
-                                    <option>gmail.com</option>
-                                    <option>직접입력</option>
-                                </select>
+                            <button type="submit">프로필 사진 변경</button>
+                        </div>
+                        <div class="right">
+                            <div class="id_name">
+                                <div class="id">
+                                    id
+                                </div>
+                                <div class="name">
+                                    닉네임
+                                </div>
+                            </div>
+                            <div class="pw">
+                                비밀번호
+                            </div>
+                            <div class="field">
+                                <div class="interest">
+                                    흥미
+                                </div>
+                                <div class="area">
+                                    지역
+                                </div>
+                                <div class="zip_code_box">
+                                    <div class="zip_code">
+                                        우편
+                                    </div>
+                                    <button type="submit">우편번호 확인</button>
+                                </div>
+                                <div class="address">
+                                    <input type="text">
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            우편번호
-                        </div>
-                        <div>
-                            <input type="text">
-                            <button type="submit">
-                                우편번호 확인
-                            </button>
-                        </div>
-                        <div>
-                            주소
-                        </div>
-                        <div>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <input type="text">
-                        </div>
-                        <button type="submit">저장하기</button>
-                        <button type="reset">다시쓰기</button>
                     </div>
+                    <div>
+                        <button type="submit">저장하기</button>
+                    </div>
+                    <div>
+                        <button type="submit" class="quit">회원탈퇴</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer">
-            <ul type="none" class="bottom-menu">
-                <li class="bottom-menu-list">챗봇</li>
-                <li class="bottom-menu-list">고객센터</li>
-                <li class="bottom-menu-list">광고 문의</li>
-                <li class="bottom-menu-list">개인 정보 이용 방침</li>
-            </ul>
-            <div class = "copyright">© 2025 M1F4</div>
-        </div>
+        <div class="footer"></div>
         <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
         <script src="asset/templete.js"></script>
     </body>
