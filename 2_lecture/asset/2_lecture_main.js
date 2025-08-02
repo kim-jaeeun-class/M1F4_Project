@@ -1,6 +1,6 @@
-window.addEventListener('load', bind);
+window.addEventListener('load', binding);
 
-function bind() {
+function binding() {
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
@@ -21,31 +21,57 @@ function bind() {
 
     // 드롭다운 열기/닫기
     dropdownBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
+        if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+            dropdownMenu.style.display = 'block';
+        } else {
+            dropdownMenu.style.display = 'none';
+        }
     });
 
     // 외부 클릭 시 닫기
     document.addEventListener('click', (e) => {
         if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-            dropdownMenu.classList.add('hidden');
+            dropdownMenu.style.display = 'none';
         }
     });
 
     // 적용 버튼 클릭 시 선택값 표시
     applyBtn.addEventListener('click', () => {
-        const selected = Array.from(checkboxes)
-            .filter(cb => cb.checked)
-            .map(cb => cb.value);
+        const filterForm = document.querySelector('#filter-form');
 
-        selectedFilters.textContent = selected.length > 0
-            ? selected.join(', ')
+        // 범주별로 분리하여 값 가져오기
+        const selectedRegion = filterForm.querySelector('input[name="region"]:checked');
+        const selectedPeriod = filterForm.querySelector('input[name="period"]:checked');
+        const selectedSubjects = Array.from(
+            filterForm.querySelectorAll('input[name="subject"]:checked')
+        );
+
+        const selectedTexts = [];
+
+        if (selectedRegion) {
+            selectedTexts.push(`지역: ${selectedRegion.value}`);
+        }
+
+        if (selectedSubjects.length > 0) {
+            const subjectValues = selectedSubjects.map(cb => cb.value).join(', ');
+            selectedTexts.push(`주제: ${subjectValues}`);
+        }
+
+        if (selectedPeriod) {
+            selectedTexts.push(`기간: ${selectedPeriod.value}`);
+        }
+
+        selectedFilters.textContent = selectedTexts.length > 0
+            ? selectedTexts.join(' | ')
             : '선택 없음';
-        dropdownMenu.classList.add('hidden');
+
+        dropdownMenu.style.display = 'none';
     });
+
 
     // 초기화 버튼 클릭 시 전체 해제 및 초기화
     resetBtn.addEventListener('click', () => {
-        checkboxes.forEach(cb => cb.checked = false);
+        document.querySelectorAll('#filter-form input').forEach(input => input.checked = false);
         selectedFilters.textContent = '선택 없음';
     });
 

@@ -16,6 +16,21 @@
         .more-btn : 더 보기 버튼
 */
 
+button {
+    background-color: #5b9b5b;
+    transition: 0.3s background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e6b3e;
+}
+
 .nav {
     width: 80%;
     margin: 40px auto;
@@ -44,13 +59,7 @@
 
 #dropdown-btn {
     padding: 8px 12px;
-    cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    background-color: #5b9b5b;
-    border-radius: 10px;
-    border: none;
-    color: #fff;
-    font-weight: bold;
 }
 
 #selected-filters {
@@ -96,7 +105,7 @@
     z-index: 1000; /* 위로 띄우기 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     margin-top: 0.5em;
-    width: max-content;
+    width: 300px;
 }
 
 /* 숨김 처리 클래스 */
@@ -107,7 +116,10 @@
 /* 필터 내부 레이아웃 개선 */
 #filter-form label {
     display: block;
-    margin: 4px 0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;  /* 줄 간격 명시적으로 지정 */
+    font-size: 14px;
 }
 
 .filter-actions {
@@ -115,6 +127,7 @@
     display: flex;
     gap: 8px;
     justify-content: flex-end;
+    width: 300px;
 }
 
 #selected-filters {
@@ -122,6 +135,33 @@
     font-weight: bold;
 }
 
+.filter-index {
+    font-weight: 600;
+    margin-bottom: 5%;
+}
+
+.filter-contents-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    gap: 10px;
+    margin-bottom: 10%;
+    text-align: justify;
+}
+
+.filter-contents {
+    line-height: 2em;
+    vertical-align: middle;
+    flex-grow: 1;
+}
+
+#reset-btn {
+    background-color: #555;
+}
+
+#reset-btn:hover {
+    background-color: #333;
+}
 
 .contents-list {
     width: 80%;
@@ -193,13 +233,7 @@
     width: 100%;
     padding: 10px;
     height: 4em;
-    border: none;
-    color: white;
-    font-family: 'ChosunGu';
-    font-weight: bold;
-    cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    background-color: #5b9b5b;
 }
 
 /* 반응형 */
