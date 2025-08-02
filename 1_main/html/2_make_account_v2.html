@@ -15,9 +15,6 @@
   <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
   <script src="../../0_templete/headfooter.js"></script>
 
-  
-  <!-- <script src="../../0_templete/headfooter.js"></script> -->
-  <!-- <script type="module" src="../../0_templete/asset/templete.js"></script> -->
   <title>회원 가입</title>
   <style>
     body {
@@ -27,7 +24,7 @@
       padding: 0;
     }
     .container {
-      width: 60%;
+      width: 500px;
       margin: 20px auto;
       background-color: #fff;
       padding: 20px 40px;
@@ -79,7 +76,7 @@
     }
     h2 {
       margin-bottom: 10px;
-      background-color: #28a745;
+      background-color: #3cb371;
       height: 50px;
       line-height: 50px;
       color: white;
@@ -116,8 +113,10 @@
   </style>
 </head>
 <body>
-  <div class="head"></div>
-
+  <!-- <div class="head"></div> -->
+   <a href="/1_main/html/1_mainpage.html">
+                <img style="width: 200px; height: 50px;"  src="https://i.imgur.com/yOfFX9f.png">
+            </a>
   <div class="container">
     <h2>약관 동의</h2>
     <hr>
@@ -142,103 +141,8 @@
         </li>
       </ul>
     </div>
-
-    <h2>유저 정보 입력</h2>
-    <hr>
-
-    <form class="section" action="#" method="post">
-      <div class="form-group">
-        <label for="username">이름</label>
-        <input type="text" id="username" name="username" required>
-      </div>
-
-      <div class="form-group">
-        <label>생년월일</label>
-        <div class="birth-group">
-          <select name="year" required>
-            <option value="">년도</option>
-            <option value="1999">1999</option>
-            <option value="2000">2000</option>
-          </select>
-          <select name="month" required>
-            <option value="">월</option>
-            <option value="1">1</option>
-            <option value="12">12</option>
-          </select>
-          <select name="day" required>
-            <option value="">일</option>
-            <option value="1">1</option>
-            <option value="31">31</option>
-          </select>
-        </div>
-      </div>
-      <hr>
-
-      <!-- <div class="form-group">
-        <label>통신사</label>
-        <select name="telecom" required>
-          <option value="SKT">SKT</option>
-          <option value="KT">KT</option>
-          <option value="LGU">LG U+</option>
-        </select>
-      </div> -->
-
-      <div class="form-group">
-        <label>전화번호</label>
-        <div class="phone-group">
-          <input type="text" name="phone1" maxlength="4" placeholder="010" required>
-          <input type="text" name="phone2" maxlength="4" placeholder="1234" required>
-          <input type="text" name="phone3" maxlength="4" placeholder="5678" required>
-          <input type="button" name="phone_verify" value="전화번호 인증하기" id="phoneVerifyBtn">
-        </div>
-        <div id="phoneVerifyBox" style="display: none; margin-top: 10px;" class="phone-group">
-          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
-          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
-          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
-          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
-          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;">
-          <input type="text" maxlength="1" class="verify-code" style="width: 30px; text-align: center;"> 
-
-          <input type="button" value="확인" id="phoneVerifyConfirmBtn" class="button">
-        </div>
-      </div>
-      <hr>
-      <div class="form-group">
-        <label>이메일(ID)</label>
-        <div class="email-group">
-          <input type="text" name="email_id" placeholder="your email" required>@
-          <input type="text" name="domain_address" id="domain_address" required>
-          <select name="domain" id="email_domain_select" required>
-            <option value="custom">직접입력</option>
-            <option value="naver">naver.com</option>
-            <option value="google">gmail.com</option>
-            <option value="daum">daum.net</option>
-          </select>
-          <input type="button" name="email_submit" value="이메일 인증하기">
-        </div>
-      </div>
-
-      <div class="form-group pw-group">
-        <div class="pw-item">
-          <label for="password">비밀번호</label>
-          <input type="password" name="password" id="password" required>
-        </div>
-        <div class="pw-item">
-          <label for="password_confirm">비밀번호 확인</label>
-          <input type="password" name="password_confirm" id="password_confirm" required>
-        </div>
-        <div class="pw-item pw-toggle">
-          <label style="font-size: 14px;">
-            <input type="checkbox" id="togglePassword"> 비밀번호 보기
-          </label>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 30px;">
-        <input type="submit" value="가입 완료" class="button" style="background-color: #28a745; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 4px;">
-      </div>
-    </form>
-    <div class="footer"></div>
+  
+    <!-- <div class="footer"></div> -->
   </div>
 
   <script>
