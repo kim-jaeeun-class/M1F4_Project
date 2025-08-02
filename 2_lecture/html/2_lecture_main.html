@@ -27,24 +27,23 @@
             <div class="nav"><a href="../../1_main/html/1_mainpage.html">메인</a> &gt; 수강 신청</div>
             <div class="contents-list">
                 <div class="contents-title">강의 목록</div>
-                <form class="contents-filter">
+                <div class="filter-container">
                     <!-- 필터는 나중에 체크박스 식으로 수정 -->
-                    <select name = "location" size = "1">
-                        <option value = "전달값1" selected> 지역1 </option> 
-                        <option value = "전달값2"> 지역2 </option>
-                        <option value = "전달값3"> 지역3 </option>
-                    </select>
-                    <select name = "subject" size = "1">
-                        <option value = "전달값1" selected> 주제1 </option> 
-                        <option value = "전달값2"> 주제2 </option>
-                        <option value = "전달값3"> 주제3 </option>
-                    </select>
-                    <select name = "date" size = "1">
-                        <option value = "전달값1" selected> 기간1 </option> 
-                        <option value = "전달값2"> 기간2 </option>
-                        <option value = "전달값3"> 기간3 </option>
-                    </select>
-                </form>
+                        <button id="dropdown-btn">🔍 조건 선택</button>
+                        <span id="selected-filters">선택 없음</span>
+                    <div id="dropdown-menu" class="dropdown hidden">
+                        <form  id="filter-form" class="contents-filter">
+                            <label><input type="checkbox" value="카테고리 A" /> 조건 A</label><br>
+                            <label><input type="checkbox" value="카테고리 B" /> 조건 B</label><br>
+                            <label><input type="checkbox" value="카테고리 C" /> 조건 C</label><br>
+                            <label><input type="checkbox" value="카테고리 D" /> 조건 D</label><br>
+                            <div class="filter-actions">
+                                <button type="button" id="apply-btn">적용</button>
+                                <button type="button" id="reset-btn">초기화</button>
+                            </div>
+                        </form>                        
+                    </div>
+                </div>
                 <div class="contents-line">
                     <div class="contents-card">
                         <a href = "2_lecture_child.html">

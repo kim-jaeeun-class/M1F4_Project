@@ -37,7 +37,7 @@ function bind() {
         intervalId = setInterval(() => {
             index = (index + 1) % images.length;
             showImage(index);
-        }, 2000);
+        }, 5000);
     }
 
     function stopSlide() {

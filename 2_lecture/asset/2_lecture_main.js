@@ -10,6 +10,47 @@ function bind() {
             .toggle('show');
     });
 
+    // 필터링
+
+    const dropdownBtn = document.querySelector('#dropdown-btn');
+    const dropdownMenu = document.querySelector('#dropdown-menu');
+    const applyBtn = document.querySelector('#apply-btn');
+    const resetBtn = document.querySelector('#reset-btn');
+    const selectedFilters = document.querySelector('#selected-filters');
+    const checkboxes = document.querySelectorAll('#filter-form input[type="checkbox"]');
+
+    // 드롭다운 열기/닫기
+    dropdownBtn.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+    });
+
+    // 외부 클릭 시 닫기
+    document.addEventListener('click', (e) => {
+        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.add('hidden');
+        }
+    });
+
+    // 적용 버튼 클릭 시 선택값 표시
+    applyBtn.addEventListener('click', () => {
+        const selected = Array.from(checkboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value);
+
+        selectedFilters.textContent = selected.length > 0
+            ? selected.join(', ')
+            : '선택 없음';
+        dropdownMenu.classList.add('hidden');
+    });
+
+    // 초기화 버튼 클릭 시 전체 해제 및 초기화
+    resetBtn.addEventListener('click', () => {
+        checkboxes.forEach(cb => cb.checked = false);
+        selectedFilters.textContent = '선택 없음';
+    });
+
+    // 더 보기
+
     const moreBtn = document.querySelector('.more-btn');
     const cards = document.querySelectorAll('.contents-card');
 
