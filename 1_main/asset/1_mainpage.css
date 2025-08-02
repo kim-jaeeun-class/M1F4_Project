@@ -167,7 +167,7 @@ a:active {
     right: 10px;
 }
 
-.login {
+/* .login {
     background-color: #ffffff;
     border-radius: 10px;
     width: 32%;
@@ -230,6 +230,93 @@ strong {
 #login-btn {
     padding-top: 25px;
     padding-bottom: 25px;
+} */
+
+.login {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 32%;
+    min-width: 300px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-block {
+    width: 85%;
+}
+
+.introduction {
+    font-size: 1em;
+    line-height: 1.6em;
+    width: 85%;
+    margin: 5% auto;
+
+}
+
+strong {
+    font-weight: 600;
+    color: #3e6b3e;
+}
+
+.intro-sub {
+    text-align: left;
+    color: #555;
+    font-size: 0.9em;
+    width: 90%;
+}
+
+.login-block1 {
+    margin: 7% auto;
+}
+
+.login button {
+    width: 80%;
+    padding: 15px;
+    background-color: #5b9b5b;
+    border: none;
+    color: white;
+    font-family: 'ChosunGu';
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-sizing: content-box;
+}
+.login button:hover {
+    background-color: #498449;
+}
+
+#login-btn {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.login-done-pic {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://i.pinimg.com/736x/0d/3c/4a/0d3c4a711ef88700d2c6697defac8530.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    margin: 10% auto;
+}
+
+.login-done-info {
+    line-height: 1.6em;
+}
+
+.logout {
+    margin: 10px auto;
+    font-size: 0.9em;
+    color: #666;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /*

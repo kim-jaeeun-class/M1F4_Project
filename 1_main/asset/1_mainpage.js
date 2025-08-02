@@ -4,8 +4,8 @@ window.addEventListener('load', bind);
 
 function bind() {
     // 햄버거 버튼 부분
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const categoryMenu = document.getElementById('category-menu');
+    const hamburgerBtn = document.querySelector('#hamburger-menu');
+    const categoryMenu = document.querySelector('#category-menu');
 
     if (hamburgerBtn && categoryMenu) {
         hamburgerBtn.addEventListener('click', () => {
@@ -48,8 +48,8 @@ function bind() {
     startSlide();
 
     // 배너 슬라이드 버튼
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.querySelector('#prevBtn');
+    const nextBtn = document.querySelector('#nextBtn');
 
     if (prevBtn && nextBtn) {
         prevBtn.addEventListener('click', () => {
@@ -66,4 +66,52 @@ function bind() {
             startSlide();
         });
     }
+
+    // 로그인 버튼 클릭 이벤트
+
+    const loginBtn = document.querySelector('#login-btn');
+    const gaipBtn = document.querySelector('.login-gaip');
+    
+    if(loginBtn) {
+        loginBtn.addEventListener('click', () => {
+            window.location.href = '3_login.html';
+        })
+    }
+    if(gaipBtn) {
+        gaipBtn.addEventListener('click', () => {
+            window.location.href = '2_make_account_v2.html';
+        })
+    }
+
+    // 추가 요청 js
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    const loginBlock = document.querySelector('.login-block');
+    const loginDone = document.querySelector('.login-done');
+    const logoutBtn = document.querySelector('.logout');
+
+    if (currentUser && currentUser.id) {
+
+        // 로그인 상태 UI
+        if (loginBlock) loginBlock.style.display = 'none';
+        if (loginDone) loginDone.style.display = 'block';
+
+        if (logoutBtn) {
+
+        logoutBtn.addEventListener('click', function () {
+
+            localStorage.removeItem('currentUser');
+            location.reload();
+
+        });
+        }
+    } else {
+
+        // 비로그인 상태 UI
+        if (loginDone) loginDone.style.display = 'none';
+        if (loginBlock) loginBlock.style.display = 'block';
+
+    }
+
 }
