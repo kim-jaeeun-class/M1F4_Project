@@ -137,26 +137,43 @@ a:active {
     margin: 0px 50px;
     padding-left: 20px;
 }
+.text {
+    border: 1px solid black;
+    display: inline-block;
+}
+.edit {
+    text-align: center;
+}
 
+.center {
+    text-align: center;
+}
 .left {
     border: 1px solid black;
     display: inline-block;
+    text-align: center;
 }
 .right {
     border: 1px solid blue;
     display: inline-block;
+    text-align: left;
     vertical-align: top;
+    width: 700px;
 }
 
 
 .profile {
     border: 1px solid red;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
 }
 
 .id_name {
     border: 1px solid hotpink;
 }
-.id{
+#id {
     border: 1px solid purple;
     display: inline-block;
 }
@@ -174,9 +191,11 @@ a:active {
 }
 .interest {
     border: 1px solid black;
+    display: inline-block;
 }
 .area {
     border: 1px solid red;
+    display: inline-block;
 }
 
 .zip_code_box {
@@ -186,9 +205,13 @@ a:active {
     border: 1px solid green;
     display: inline-block;
 }
+.zip_button {
+    display: inline-block;
+}
 
 .address {
     border: 1px solid blue;
+    display: inline-block;
 }
 
 .quit {

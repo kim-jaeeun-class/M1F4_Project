@@ -34,41 +34,75 @@
                     <div class="edit">
                         회원정보 수정
                     </div>
-                    <div>
+                    <div class="center">
                         <div class="left">
                             <div class="profile">
                                 프로필 사진
                             </div>
-                            <button type="submit">프로필 사진 변경</button>
+                            <div class="profile_button">
+                                <button type="submit">프로필 사진 변경</button>
+                            </div>
                         </div>
                         <div class="right">
                             <div class="id_name">
-                                <div class="id">
-                                    id
+                                <div class="text">
+                                    아이디
+                                </div>
+                                <div id="id">
+                                    dddddddddd
+                                </div>
+                                <div class="text">
+                                    닉네임
                                 </div>
                                 <div class="name">
-                                    닉네임
+                                    <input type="text">
                                 </div>
                             </div>
                             <div class="pw">
-                                비밀번호
+                                <div class="text">
+                                    비밀번호
+                                </div>
+                                <input type="password">
                             </div>
                             <div class="field">
-                                <div class="interest">
+                                <div class="text">
                                     흥미
                                 </div>
-                                <div class="area">
+                                <div class="interest">
+                                    <select>
+                                        <option>스포츠</option>
+                                        <option>여행</option>
+                                        <option>사진</option>
+                                    </select>
+
+                                </div>
+                                <div class="text">
                                     지역
                                 </div>
-                                <div class="zip_code_box">
-                                    <div class="zip_code">
-                                        우편
-                                    </div>
+                                <div class="area">
+                                    <select>
+                                        <option>서울</option>
+                                        <option>충남</option>
+                                        <option>제주</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="zip_code_box">
+                                <div class="text">
+                                    우편번호
+                                </div>
+                                <div class="zip_code">
+                                    <input type="text" disabled>
+                                </div>
+                                <div class="zip_button">
                                     <button type="submit">우편번호 확인</button>
                                 </div>
-                                <div class="address">
-                                    <input type="text">
-                                </div>
+                            </div>
+                            <div class="text">
+                                세부 주소
+                            </div>
+                            <div class="address">
+                                <input type="text">
                             </div>
                         </div>
                     </div>

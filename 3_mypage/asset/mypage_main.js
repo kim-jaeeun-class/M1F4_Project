@@ -6,7 +6,7 @@ function init(){
 
     if (!currentUser) {
         alert('로그인이 필요합니다.');
-        window.location.href = '/1_main/html/login.html';
+        window.location.href = '/1_main/html/3_login.html';
         return;
     }
 
