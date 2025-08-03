@@ -16,7 +16,7 @@
         .more-btn : 더 보기 버튼
 */
 
-button {
+/* button {
     background-color: #5b9b5b;
     transition: 0.3s background-color;
     color: #fff;
@@ -25,11 +25,7 @@ button {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #3e6b3e;
-}
+} */
 
 .nav {
     width: 80%;
@@ -60,6 +56,19 @@ button:hover {
 #dropdown-btn {
     padding: 8px 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#dropdown-btn:hover {
+    background-color: #3e6b3e;
 }
 
 #selected-filters {
@@ -81,6 +90,8 @@ button:hover {
     border-radius: 6px;
     min-width: 180px;
 }
+
+
 
 .hidden {
     display: none;
@@ -155,7 +166,29 @@ button:hover {
     flex-grow: 1;
 }
 
+#apply-btn {
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#apply-btn:hover {
+    background-color: #3e6b3e;
+}
+
 #reset-btn {
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
     background-color: #555;
 }
 
@@ -234,6 +267,17 @@ button:hover {
     padding: 10px;
     height: 4em;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.more-btn:hover {
+    background-color: #3e6b3e;
 }
 
 /* 반응형 */

@@ -1,14 +1,19 @@
 window.addEventListener('load', binding);
 
 function binding() {
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const categoryMenu = document.getElementById('category-menu');
-
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu
-            .classList
-            .toggle('show');
+    // hamburger 버튼이 동적으로 삽입될 때까지 기다리는 코드
+    const observer = new MutationObserver(() => {
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const categoryMenu = document.getElementById('category-menu');
+        if (hamburgerBtn && categoryMenu) {
+            hamburgerBtn.addEventListener('click', () => {
+                categoryMenu.classList.toggle('show');
+            });
+            observer.disconnect(); // 한 번만 실행되도록 종료
+        }
     });
+
+    observer.observe(document.body, { childList: true, subtree: true });
 
     // 필터링
 

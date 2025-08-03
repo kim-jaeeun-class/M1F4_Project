@@ -2,16 +2,20 @@ window.addEventListener('load', binding);
 
 function binding() {
 
-    // 모바일에서 상단 카테고리 출력
-
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const categoryMenu = document.getElementById('category-menu');
-
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu
-            .classList
-            .toggle('show');
+    const observer = new MutationObserver(() => {
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const categoryMenu = document.getElementById('category-menu');
+        if (hamburgerBtn && categoryMenu) {
+            hamburgerBtn.addEventListener('click', () => {
+                categoryMenu.classList.toggle('show');
+            });
+            observer.disconnect(); // 이벤트 연결되면 감시 종료
+        }
     });
+
+    // body 아래에 동적 요소가 삽입될 때를 감지
+    observer.observe(document.body, { childList: true, subtree: true });
+
 
     // 탭 버튼
 

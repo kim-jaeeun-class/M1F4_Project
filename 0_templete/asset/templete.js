@@ -1,13 +1,22 @@
 // 
 
 function bind() {
-  const hamburgerBtn = document.getElementById('hamburger-menu');
-  const categoryMenu = document.getElementById('category-menu');
+  const hamburgerBtn = document.querySelector('#hamburger-menu');
+  const categoryMenu = document.querySelector('#category-menu');
 
   // 요소가 존재할 때만 이벤트 바인딩
   if (hamburgerBtn && categoryMenu) {
     hamburgerBtn.addEventListener('click', () => {
-      categoryMenu.classList.toggle('show');
+      const isOpen = categoryMenu.classList.contains('show');
+      
+      if (isOpen) {
+        categoryMenu.classList.remove('show');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      }
+      else {
+        categoryMenu.classList.add('show');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+      }
     });
   }
 

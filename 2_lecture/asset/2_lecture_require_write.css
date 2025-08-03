@@ -7,21 +7,6 @@ textarea {
     font-size: 1.1em;
 }
 
-button {
-    background-color: #5b9b5b;
-    transition: 0.3s ease background-color;
-    color: #fff;
-    font-family: 'ChosunGu';
-    font-weight: 600;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #3e6b3e;
-}
-
 /* body */
 
 .body {
@@ -80,7 +65,19 @@ button:hover {
 }
 
 #dropdown-btn {
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
     padding: 10px;
+}
+
+#dropdown-btn:hover {
+    background-color: #3e6b3e;
 }
 
 .index-select-con {
@@ -148,12 +145,16 @@ button:hover {
 }
 
 .input-btn {
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border: none;
     width: 10%;
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     background-color: #5b9b5b;
-    color: white;
     cursor: pointer;
     transition: color 0.3s ease;
     line-height: 3em;
