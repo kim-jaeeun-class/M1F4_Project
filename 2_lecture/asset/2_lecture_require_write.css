@@ -7,6 +7,21 @@ textarea {
     font-size: 1.1em;
 }
 
+button {
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e6b3e;
+}
+
 /* body */
 
 .body {
@@ -64,20 +79,68 @@ textarea {
     align-items: center;
 }
 
+#dropdown-btn {
+    padding: 10px;
+}
+
+.index-select-con {
+    position: relative;
+}
+
+.subject-list {
+    display: none;
+    position: absolute; 
+    top: 100%;         
+    left: 0;
+    z-index: 1000;      
+    padding: 20px;
+    border: 1px dotted #aacda6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    background-color: #fff;
+}
+
+.subject-title {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 5%;
+}
+
+.subject-box {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+}
+
+.subject-con {
+    flex-grow: 1;
+}
+
+.sub-hr {
+    margin: 10% auto;
+}
+
+.result {
+    color: #555;
+    margin-left: 10px;
+}
+
 .date-sel {
-    font-size: 1.2em;
+    font-size: 1.1em;
     box-sizing: border-box;
     outline: none;
-    font-family: 'ChosunGu'
+    font-family: 'ChosunGu';
+    padding: 3px;
 }
 
 .write {
-    width: 100%;
+    width: 95%;
     height: 500px;
     border-radius: 10px;
     outline: none;
     box-sizing: border-box;
-    margin: 2% auto;
+    margin: 2% 2.5%;
 }
 
 .bottom-btn-list {

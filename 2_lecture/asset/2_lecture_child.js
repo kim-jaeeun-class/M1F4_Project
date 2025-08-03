@@ -1,6 +1,6 @@
-window.addEventListener('load', bind);
+window.addEventListener('load', binding);
 
-function bind() {
+function binding() {
 
     // 모바일에서 상단 카테고리 출력
 

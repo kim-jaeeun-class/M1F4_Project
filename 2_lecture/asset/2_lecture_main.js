@@ -23,7 +23,8 @@ function binding() {
     dropdownBtn.addEventListener('click', () => {
         if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
             dropdownMenu.style.display = 'block';
-        } else {
+        }
+        else {
             dropdownMenu.style.display = 'none';
         }
     });

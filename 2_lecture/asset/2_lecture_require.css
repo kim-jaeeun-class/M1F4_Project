@@ -145,6 +145,7 @@ td {
     color: white;
     cursor: pointer;
     transition: color 0.3s ease;
+    font-size: 1em;
 }
 
 .search-btn:hover {
@@ -168,6 +169,7 @@ td {
     cursor: pointer;
     transition: color 0.3s ease;
     box-sizing: border-box;
+    font-size: 1em;
 }
 
 .upload-btn:hover {
