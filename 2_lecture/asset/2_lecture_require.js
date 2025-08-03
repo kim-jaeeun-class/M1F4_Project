@@ -1,4 +1,7 @@
-window.addEventListener('load', bind);
+// window.addEventListener('load', bind); 
+// headfooter에서 bind 를 하기떄문에 여기서 한번더 호출하면 증복 호출이 됩니다.
+
+
 
 /*
 원래 function bind() 대괄호 내용만 작성했는데,
