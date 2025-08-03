@@ -91,6 +91,7 @@ a:active {
     background-color: #5b9b5b;
     color: #ffffff;
     width: 200px;
+    min-width: 200px;
     height: 100%;
     text-align: center;
 }
@@ -329,6 +330,77 @@ button:hover {
 }
 
 /* 반응형 */
+/* 모바일 (최대 480px) */
+@media screen and (max-width: 480px) {
+    .my_back {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .edit {
+        display: none;
+    }
+
+    .tab {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .tab_0,
+    .tab_1,
+    .tab_2 {
+        width: 100%;
+        height: auto;
+        font-size: 14px;
+        line-height: 40px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .center {
+        min-width: 300px;
+        margin: 20px 10px;
+        padding: 30px 20px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .profile {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+    }
+
+    .text {
+        text-align: left;
+    }
+
+    .second_box {
+        width: 20%;
+    }
+
+    .center input,
+    .field select {
+        width: 100px;
+    }
+
+    .save,
+    .quit {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+
 @media (max-width: 768px) {
     .head {
         flex-direction: column;
@@ -364,4 +436,151 @@ button:hover {
     .category.show {
         display: flex;
     }
+
+    .my_back {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .edit {
+        display: none;
+    }
+    
+    .tab {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .tab_0,
+    .tab_1,
+    .tab_2 {
+        height: auto;
+        line-height: 40px;
+        font-size: 16px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .center {
+        margin: 20px 20px;
+        padding: 40px 30px;
+    }
+
+    .left,
+    .right {
+        display: block;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .profile {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 30px;
+    }
+
+    .text {
+        width: 150px;
+    }
+
+
+    .center input,
+    .field select {
+        width: 150px;
+    }
+
+    .save,
+    .quit {
+        text-align: center;
+        margin: 30px 0;
+    }
 }
+
+@media screen and (max-width: 1024px) {
+  .my_back {
+    display: block;
+    height: auto;
+  }
+
+  .edit {
+    display: none;
+  }
+
+  /* 사이드 탭*/
+  .tab {
+    display: inline-block;
+    width: 30%;
+    height: auto;
+    background-color: #5b9b5b;
+  }
+
+  .tab_0,
+  .tab_1,
+  .tab_2 {
+    height: auto;
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  .tab_2 {
+    background-color: #3e6b3e;
+  }
+
+  /* 메인 콘텐츠 간격 줄이기 */
+  .main {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .center {
+    margin: 30px;
+    padding: 40px 20px;
+  }
+
+  .left {
+    margin: 30px auto 0;
+    text-align: center;
+  }
+
+  .right {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .center input,
+  .field select {
+      width: 200px;
+      max-width: 300px;
+    }
+    .text {
+        min-width: 80px;
+    }
+    .second_box {
+        min-width: 30px;
+        max-width: 30px;
+    }
+    
+    /* 프로필 사진 크기 축소 */
+    .profile {
+    width: 150px;
+    height: 150px;
+  }
+
+  
+  
+  .save,
+  .quit {
+    text-align: center;
+    margin: 40px 0 0;
+  }
+}
+
+
