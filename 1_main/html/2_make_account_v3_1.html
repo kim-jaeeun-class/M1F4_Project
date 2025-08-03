@@ -42,6 +42,33 @@
       gap: 20px;
       margin-top: 5px;
     }
+
+    /* 아래 CSS를 기존 style 태그 안에 추가 또는 수정 */
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .submit-back {
+      flex: 1;
+      padding: 10px;
+
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .submit-back:hover {
+      background-color: #b3b3b3;
+    }
+
+    .submit-btn {
+      flex: 1;
+    }
+
     .submit-btn {
       width: 100%;
       padding: 10px;
@@ -56,9 +83,81 @@
     .submit-btn:hover {
       background-color: #36a165;
     }
+
+        .login_main {
+    width: 500px;
+    margin: 100px auto 30px;
+    padding: 20px;
+    text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        
+    }
+
+    .gender-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 5px;
+      justify-content: space-between;
+    }
+
+    .gender-box {
+      flex: 1;
+      padding: 10px 0;
+      text-align: center;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s;
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+
+    .gender-box:hover {
+      background-color: #e6e6e6;
+    }
+
+    input[name="gender"]:checked + .gender-box {
+      background-color: #3cb371;
+      border-color: #3cb371;
+      color: white;
+    }
+
+    .input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.input-row input,
+.input-row select {
+  flex: 1;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-row span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+
   </style>
 </head>
 <body>
+  <div class = "login_main">
+    <div class="logo">
+      <a href="/1_main/html/1_mainpage.html">
+          <img style="width: 200px; height: 50px;"  src="https://i.imgur.com/yOfFX9f.png">
+      </a>
+    </div>
+    </div>
   <div class="container">
     <h2>회원 가입</h2>
 
@@ -68,6 +167,21 @@
 
       <!-- <label for="userid">아이디</label>
       <input type="text" id="userid" name="userid" required /> -->
+      <label for="email">이메일</label>
+      <div class="input-row">
+        <input type="text" id="email_id" name="email_id" placeholder="이메일 아이디" required />
+        <span>@</span>
+        <select id="email_domain" name="email_domain" required>
+          <option value="">선택</option>
+          <option value="gmail.com">gmail.com</option>
+          <option value="naver.com">naver.com</option>
+          <option value="daum.net">daum.net</option>
+          <option value="hanmail.net">hanmail.net</option>
+          <option value="kakao.com">kakao.com</option>
+          <option value="직접입력">직접입력</option>
+        </select>
+      </div>
+      <input type="text" id="custom_domain" name="custom_domain" placeholder="도메인 직접 입력" style="display:none; width: 100%; margin-top: 5px;" />
 
       <label for="password">비밀번호</label>
       <input type="password" id="password" name="password" required />
@@ -80,49 +194,97 @@
 
       <label>성별</label>
       <div class="gender-group">
-        <label><input type="radio" name="gender" value="male" required /> 남성</label>
-        <label><input type="radio" name="gender" value="female" /> 여성</label>
+        <input type="radio" id="male" name="gender" value="male" required hidden />
+        <label for="male" class="gender-box">남성</label>
+
+        <input type="radio" id="female" name="gender" value="female" hidden />
+        <label for="female" class="gender-box">여성</label>
       </div>
 
-      <label for="email">이메일</label>
-      <input type="email" id="email" name="email" required />
 
       <label for="phone">휴대폰 번호</label>
-      <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required />
+      <div class="input-row">
+        <input type="tel" id="phone1" maxlength="3" placeholder="010" required />
+        <span>-</span>
+        <input type="tel" id="phone2" maxlength="4" placeholder="1234" required />
+        <span>-</span>
+        <input type="tel" id="phone3" maxlength="4" placeholder="5678" required />
+      </div>
 
       <label for="address">주소</label>
       <input type="text" id="address" name="address" />
 
-      <button type="submit" class="submit-btn">가입하기</button>
+      <!-- 기존 버튼 부분 수정 -->
+      <div class="button-group">
+        <button type="button" class="submit-btn" onclick="history.back()">뒤로가기</button>
+        <button type="submit" class="submit-btn">가입하기</button>
+      </div>
+
     </form>
   </div>
 
-  <script>
-    document.getElementById("signupForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+<script>
+  // 이메일 도메인 선택 → 직접입력 시 입력창 표시
+  document.getElementById("email_domain").addEventListener("change", function () {
+    const customInput = document.getElementById("custom_domain");
+    if (this.value === "직접입력") {
+      customInput.style.display = "block";
+      customInput.required = true;
+    } else {
+      customInput.style.display = "none";
+      customInput.required = false;
+    }
+  });
 
-      const name = document.getElementById("name").value.trim();
-    //   const userid = document.getElementById("userid").value.trim();
-      const pw = document.getElementById("password").value;
-      const pwConfirm = document.getElementById("password_confirm").value;
-      const birth = document.getElementById("birth").value;
-      const gender = document.querySelector('input[name="gender"]:checked');
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
+  document.getElementById("signupForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      if (!name || !pw || !pwConfirm || !birth || !gender || !email || !phone) {
-        alert("모든 항목을 입력해주세요.");
-        return;
-      }
+    const name = document.getElementById("name").value.trim();
+    const pw = document.getElementById("password").value;
+    const pwConfirm = document.getElementById("password_confirm").value;
+    const birth = document.getElementById("birth").value;
+    const gender = document.querySelector('input[name="gender"]:checked');
 
-      if (pw !== pwConfirm) {
-        alert("비밀번호가 일치하지 않습니다.");
-        return;
-      }
+    // 이메일 조합
+    const emailId = document.getElementById("email_id").value.trim();
+    const emailDomain = document.getElementById("email_domain").value;
+    const customDomain = document.getElementById("custom_domain").value.trim();
+    const fullEmail = emailId + "@" + (emailDomain === "직접입력" ? customDomain : emailDomain);
 
-      // 이동
-      window.location.href = "3_login.html";
-    });
-  </script>
+    // 휴대폰 조합
+    const phone1 = document.getElementById("phone1").value.trim();
+    const phone2 = document.getElementById("phone2").value.trim();
+    const phone3 = document.getElementById("phone3").value.trim();
+    const fullPhone = `${phone1}-${phone2}-${phone3}`;
+
+    if (!name || !pw || !pwConfirm || !birth || !gender || !emailId || !phone1 || !phone2 || !phone3) {
+      alert("모든 항목을 입력해주세요.");
+      return;
+    }
+
+    if (emailDomain === "") {
+      alert("이메일 도메인을 선택해주세요.");
+      return;
+    }
+
+    if (emailDomain === "직접입력" && !customDomain) {
+      alert("도메인을 직접 입력해주세요.");
+      return;
+    }
+
+    if (pw !== pwConfirm) {
+      alert("비밀번호가 일치하지 않습니다.");
+      return;
+    }
+
+    // 테스트용 로그 출력
+    console.log("이메일:", fullEmail);
+    console.log("전화번호:", fullPhone);
+
+    // 이동
+    window.location.href = "3_login.html";
+  });
+</script>
+
 </body>
 </html>
