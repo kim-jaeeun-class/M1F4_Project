@@ -211,8 +211,12 @@
         <input type="tel" id="phone3" maxlength="4" placeholder="5678" required />
       </div>
 
-      <label for="address">주소</label>
-      <input type="text" id="address" name="address" />
+    <label for="address">주소</label>
+    <div class="input-row">
+      <input type="text" id="address" name="address" placeholder="주소를 입력해주세요" readonly />
+      <button type="button" onclick="execDaumPostcode()" style="flex: 0 0 auto; padding: 8px 12px;">검색</button>
+    </div>
+
 
       <!-- 기존 버튼 부분 수정 -->
       <div class="button-group">
@@ -222,9 +226,13 @@
 
     </form>
   </div>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<!-- 카카오 주소 검색 API -->
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <script>
-  // 이메일 도메인 선택 → 직접입력 시 입력창 표시
+  // 📌 1. 이메일 도메인 선택 시 직접입력 필드 표시 여부 제어
   document.getElementById("email_domain").addEventListener("change", function () {
     const customInput = document.getElementById("custom_domain");
     if (this.value === "직접입력") {
@@ -236,9 +244,20 @@
     }
   });
 
+  // 📌 2. 주소 검색 버튼 클릭 시 카카오 API 호출
+  function execDaumPostcode() {
+    new daum.Postcode({
+      oncomplete: function(data) {
+        document.getElementById("address").value = data.address;
+      }
+    }).open();
+  }
+
+  // 📌 3. 가입 폼 제출 처리
   document.getElementById("signupForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // 기본 정보 수집
     const name = document.getElementById("name").value.trim();
     const pw = document.getElementById("password").value;
     const pwConfirm = document.getElementById("password_confirm").value;
@@ -251,13 +270,15 @@
     const customDomain = document.getElementById("custom_domain").value.trim();
     const fullEmail = emailId + "@" + (emailDomain === "직접입력" ? customDomain : emailDomain);
 
-    // 휴대폰 조합
+    // 휴대폰 번호 조합
     const phone1 = document.getElementById("phone1").value.trim();
     const phone2 = document.getElementById("phone2").value.trim();
     const phone3 = document.getElementById("phone3").value.trim();
     const fullPhone = `${phone1}-${phone2}-${phone3}`;
 
-    if (!name || !pw || !pwConfirm || !birth || !gender || !emailId || !phone1 || !phone2 || !phone3) {
+    // 필수 입력 체크
+    if (!name || !pw || !pwConfirm || !birth || !gender ||
+        !emailId || !phone1 || !phone2 || !phone3) {
       alert("모든 항목을 입력해주세요.");
       return;
     }
@@ -277,14 +298,15 @@
       return;
     }
 
-    // 테스트용 로그 출력
+    // 콘솔 출력 (테스트용)
     console.log("이메일:", fullEmail);
     console.log("전화번호:", fullPhone);
 
-    // 이동
+    // 최종 이동
     window.location.href = "3_login.html";
   });
 </script>
+
 
 </body>
 </html>
