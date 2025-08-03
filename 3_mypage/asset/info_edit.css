@@ -81,13 +81,13 @@ a:active {
 /* body css 시작 */
 .my_back {
     display: flex;
-    height: 80vh;
+    height: 120vh;
 }
 
 /* 사이드 탭 (왼쪽 메뉴) */
 .tab {
-    border-right: 3px solid #346334;
-    border-bottom: 3px solid #346334;
+    border-right: 1px solid #f9f9f9;
+    /* border-bottom: 3px solid #346334; */
     background-color: #5b9b5b;
     color: #ffffff;
     width: 200px;
@@ -105,20 +105,22 @@ a:active {
     cursor: pointer;
     transition: 0.3s;
 }
+.tab_2 {
+    background-color: #3e6b3e;
+}
 
 .tab_1:hover,
 .tab_2:hover {
     background-color: #4a8a4a;
 }
 .tab_0 {
-    border: 3px solid #346334;
-    border-right: none;
+    border: 1px solid #f9f9f9;
     color: #555;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
 }
 /* 메인 콘텐츠 */
 .main {
-    background-color: #fff;
+    background-color: #f9f9f9;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -127,95 +129,160 @@ a:active {
 }
 /* 네비 */
 .nav {
-    border-bottom: 3px solid #346334;
-    /* background-color: #5b9b5b; */
+    /* border-bottom: 3px solid #346334; */
+    /* background-color: #fff; */
     /* color: #ffffff; */
     text-align: left;
     font-weight: bold;
     height: 50px;
     line-height: 50px;
-    margin: 0px 50px;
+    margin: 10px 50px 0px;
     padding-left: 20px;
 }
 .text {
-    border: 1px solid black;
+    border-right: 1px solid #b5b6b5;
+    font-size: 20px;
+    text-align: right;
+    font-weight: bold;
     display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 30px 10px 0px;
+    padding-right: 10px;
 }
 .edit {
     text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    padding-top: 30px;
 }
 
 .center {
+    border: 1px solid #b5b6b5;
+    background-color: #ffffff;
+    border-radius: 10px;
     text-align: center;
+    margin: 0px 100px 150px;
+    padding: 70px 50px 30px;
+    box-shadow: 0px 0px 10px rgb(0,0,0,0.1);
+}
+
+.center input {
+    width: 300px;
+    height: 25px;
 }
 .left {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: inline-block;
     text-align: center;
+    margin:  50px 50px 0px 30px;
 }
 .right {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: inline-block;
     text-align: left;
     vertical-align: top;
-    width: 700px;
+    width: 900px;
 }
 
 
 .profile {
-    border: 1px solid red;
+    background-image: url('https://i.pinimg.com/736x/0d/3c/4a/0d3c4a711ef88700d2c6697defac8530.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 1px solid red; */
     border-radius: 100%;
     width: 200px;
     height: 200px;
+    margin-bottom: 50px;
     box-sizing: border-box;
 }
-
-.id_name {
-    border: 1px solid hotpink;
-}
-#id {
-    border: 1px solid purple;
-    display: inline-block;
-}
-.name {
-    border: 1px solid green;
-    display: inline-block;
+.profile_button button {
+    border: none;
+    border-radius: 10px;
+    background-color: #5b9b5b;
+    color: #fff;
+    width: 150px;
+    height: 40px;
 }
 
-.pw {
-    border: 1px solid orange;
-}
-
-.field {
-    border: 1px solid navy;
-}
-.interest {
-    border: 1px solid black;
-    display: inline-block;
-}
-.area {
-    border: 1px solid red;
-    display: inline-block;
-}
-
+.id_name,
+.pw,
+.field,
 .zip_code_box {
+    border-bottom: 1px solid #b5b6b5;
+    margin: 30px 0px;
+}
+
+.box {
+    /* border: 1px solid black; */
+    display: inline-block;
+}
+
+.second_box {
+    width: 200px;
+    margin-right: 100px;
+}
+
+#id {
+    /* border: 1px solid purple; */
+    display: inline-block;
+}
+
+/* .pw {
+    border: 1px solid orange;
+} */
+
+/* .field {
+    border: 1px solid navy;
+} */
+.field select {
+    text-align: center;
+    font-size: 16px;
+    width: 300px;
+    height: 30px;
+}
+
+/* .zip_code_box {
     border: 1px solid blueviolet;
-}
+} */
 .zip_code {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: inline-block;
+    margin-right: 20px;
 }
-.zip_button {
-    display: inline-block;
-}
-
-.address {
-    border: 1px solid blue;
-    display: inline-block;
+.zip_button button {
+    width: 100px;
+    height: 35px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+.save {
+    text-align: right;
+    margin: 120px 0px 0px;
+}
 .quit {
-    display: block;
+    text-align: right;
+    margin: 0px 145px 0px 0px;
+}
+
+.save button,
+.quit button {
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100px;
+    height: 50px;
+}
+.save button {
+    background-color: #5b9b5b;
+    color:#fff;
 }
 
 /*

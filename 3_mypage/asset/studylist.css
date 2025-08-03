@@ -86,9 +86,8 @@ a:active {
 
 /* 사이드 탭 (왼쪽 메뉴) */
 .tab {
-    border-right: 3px solid #346334;
-    border-bottom: 3px solid #346334;
-    border-radius: 10px;
+    border-right: 1px solid #f9f9f9;
+    /* border-bottom: 3px solid #346334; */
     background-color: #5b9b5b;
     color: #ffffff;
     width: 200px;
@@ -112,15 +111,12 @@ a:active {
     background-color: #4a8a4a;
 }
 .tab_0 {
-    border: 3px solid #346334;
-    border-right: none;
-    border-radius: 10px 10px 0 0;
+    border: 1px solid #f9f9f9;
     color: #555;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
 }
 .tab_1 {
-    background-color: #346334;
-    font-size: 28px;
+    background-color: #3e6b3e;
 }
 /* 메인 콘텐츠 */
 .main {
@@ -131,14 +127,14 @@ a:active {
 }
 /* 네비 */
 .nav {
-    border-bottom: 3px solid #346334;
-    /* background-color: #5b9b5b; */
+    /* border-bottom: 3px solid #346334; */
+    /* background-color: #fff; */
     /* color: #ffffff; */
     text-align: left;
     font-weight: bold;
     height: 50px;
     line-height: 50px;
-    margin: 0px 50px;
+    margin: 10px 50px 0px;
     padding-left: 20px;
 }
 .list_tab {
