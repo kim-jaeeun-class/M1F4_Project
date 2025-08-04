@@ -4,9 +4,11 @@ function bind() {
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu.classList.toggle('show');
-    });
+    if(hamburgerBtn && categoryMenu){
+        hamburgerBtn.addEventListener('click', () => {
+            categoryMenu.classList.toggle('show');
+        });
+    }
 
     window.addEventListener('pageshow', () => {
         if (document.activeElement && document.activeElement.blur) {
@@ -14,7 +16,7 @@ function bind() {
         }
     });
 
-    // ✅ 기존 게시글이 있으면 input에 채워 넣기 (수정용)
+    // 기존 게시글이 있으면 input에 채워 넣기 (수정용)
     const existingPost = JSON.parse(localStorage.getItem('tempPost'));
     if (existingPost) {
         document.getElementById('writeTitle').value = existingPost.title;
@@ -41,7 +43,6 @@ function bind() {
 
         localStorage.setItem('tempPost', JSON.stringify(post));
 
-        // 보기 페이지로 이동
         location.href = 'csQnAWriterView.html';
     });
 }

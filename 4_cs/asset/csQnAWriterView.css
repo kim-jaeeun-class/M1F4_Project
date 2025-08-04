@@ -1,4 +1,4 @@
-/* 기본 설정 */
+/* -------------------- [1] 기본 설정 -------------------- */
 @font-face {
     font-family: 'ChosunGu';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
@@ -6,12 +6,22 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'ChosunGu';
-    background-color: #f9f9f9;
-    color: #333;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 또는 height: 100% */
+}
+
+.wrapper {
+    flex: 1; /* 남는 높이 다 차지 */
+    display: flex;
+    flex-direction: column;
 }
 
 a, a:link, a:visited {
@@ -21,28 +31,13 @@ a, a:link, a:visited {
 
 a:focus, a:hover {
     color: #3e6b3e;
-    text-decoration: none;
 }
 
 a:active {
     color: #5b9b5b;
-    text-decoration: none;
 }
 
-
-/*
-    head 세부 클래스명
-    .logo : 홈페이지 로고
-    .category
-        .category-list : 개별 카테고리(통합)
-            .reg : 수강 신청
-            .lec-require : 강의 요청
-            .community : 커뮤니티
-            .mypage : 마이페이지
-    .top-menu : 챗봇 / 고객센터 메뉴 묶음
-        .top-menu-list : 메뉴별(통합)
-*/
-
+/* -------------------- [2] 헤더 -------------------- */
 .head {
     display: flex;
     justify-content: space-between;
@@ -79,33 +74,33 @@ a:active {
     padding: 0 20px;
 }
 
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
 
-
-/*.body 부분 */
+/* -------------------- [3] 본문 -------------------- */
 .body {
-    padding: 0 10px 300px 10px;
-    margin: 0 auto;
+    flex: 1;
     width: 90%;
-    height: 80vh;
+    margin: 0 auto;
+    padding: 0 10px 50px 10px;
 }
 
 /* 네비게이션 부분 */
 .nav {
     width: 80%;
-    margin-top: 40px;
+    margin: 40px auto;
 }
 .nav a.navFirst {
     color: #5b9b5b;
-    text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
     transition: color 0.3s ease;
 }
 .nav a.navSecond {
     color: #aacda6;
-    text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
     transition: color 0.3s ease;
 }
 .navFirst:hover, .navSecond:hover {
@@ -113,102 +108,92 @@ a:active {
     text-decoration: underline;
 }
 
+
 /* csCategory 부분 */
 .csCategory {
     text-align: center;
     padding: 20px 20px;
     font-size: 1.7rem;
 }
-
 .csCategory-list {
     display: inline-block;
     font-weight: bold;
     cursor: pointer;
     padding: 0 20px;
 }
-
+.csCategory-list a:hover {
+    color: #3e6b3e;
+}
 /* 기본 링크 스타일 */
 .csCategory-list a {
     color: black;
     text-decoration: none;
 }
-
 /* 현재 페이지 링크에만 초록색 적용 */
 .csCategory-list a.active {
     color: #5b9b5b;
 }
 
-
-
+/* 게시글 보기 */
 .postform {
-    padding: 20px;
-    background-color: #ffffff;
+    width: 75%;
+    margin: 5% auto 0;
+    background-color: #fff;
     border-radius: 20px;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px dotted #aacda6;
+    padding: 3%;
 }
 
-.input {
-    width: 100%;
-    padding: 6px;
-    border: none;
-    box-sizing: border-box;
-    margin-bottom: 10px;
+.title, .author, .date {
+    display: flex;
+    width: 90%;
+    margin: 3% auto;
+    gap: 30px;
 }
-
-.title {
-    font-style: bold;
-    font-size: 1.4rem;
+.index {
+    width: 10%;
+    font-weight: 600;
 }
-
-.artmain {
-    height: 400px;
+.index-con {
+    width: 70%;
 }
-
-.meta {
-    padding: 6px;
-    border: none;
-    font-size: 0.9em;
-    margin-bottom: 10px;
+.index, .index-con {
+    line-height: 1.8em;
 }
-
+.content {
+    line-height: 1.8em;
+    text-align: justify;
+    width: 90%;
+    margin: 5% auto;
+}
 .tabs {
     margin-top: 10px;
-    text-align: right;    
+    text-align: right;
 }
-
 .tabs button {
     width: 10%;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     background-color: #5b9b5b;
     color: white;
     cursor: pointer;
-    transition: color 0.3s ease;
     line-height: 3em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
-
 .tabs button:hover {
     background-color: #3e6b3e;
 }
 
-
-/*
-    footer : 홈페이지 정보
-    .bottom-menu : footer 내부 요소 묶음
-        .copyright : 카피라이트
-        .bottom-menu-list : 하단 메뉴 묶음(개별)
-*/
+/* -------------------- [4] 푸터 -------------------- */
 .footer {
+    width: 100%;
     background-color: #f0f0f0;
     padding: 20px;
     font-size: 0.9em;
     color: #555;
     border-top: 1px solid #ccc;
-    margin-top: 40px;
-    margin: auto;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .bottom-menu {
@@ -228,18 +213,17 @@ a:active {
     display: inline;
 }
 .bottom-menu-list:first-child::before {
-    content: "  "
+    content: " ";
 }
 .bottom-menu-list::before {
-    content: " | "
+    content: " | ";
 }
 .bottom-menu-list:hover {
     color: #5b9b5b;
 }
 
 
-
-/* 반응형 */
+/* -------------------- [5] 반응형 -------------------- */
 @media (max-width: 768px) {
     .head {
         flex-direction: column;
@@ -277,10 +261,6 @@ a:active {
     }
 
     .body {
-    padding-bottom: 300px; /* 모바일용 하단 공간 확보 */
-    }
-
-    .footer {
-    height: 100px;
+        padding-bottom: 100px; /* 모바일 하단 공간 확보 */
     }
 }

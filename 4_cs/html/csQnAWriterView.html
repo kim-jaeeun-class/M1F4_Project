@@ -18,30 +18,44 @@
 <body>
     <div class="head"></div>
 
+  <div class="wrapper">
     <div class="body">
-        <div class="nav">
-            <a href="csMain.html" class="navFirst">고객센터</a>
-            <a href="csQnA.html" class="navSecond"> &gt; Q&A</a> &gt; Q&A 상세
-        </div>
+      <div class="nav">
+        <a href="csMain.html" class="navFirst">고객센터</a>
+        <a href="csQnA.html" class="navSecond"> &gt; Q&A</a> &gt; Q&A 상세
+      </div>
 
-        <div class="csCategory">
-            <div class="csCategory-list"><a class="notice" href="csMain.html">공지사항</a></div>|
-            <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
-            <div class="csCategory-list"><a class="qna active" href="csQnA.html">Q&A</a></div>
-        </div>
+      <div class="csCategory">
+        <div class="csCategory-list"><a class="notice" href="csMain.html">공지사항</a></div>|
+        <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
+        <div class="csCategory-list"><a class="qna active" href="csQnA.html">Q&A</a></div>
+      </div>
 
-        <div class="postform">
-            <div class="input title" id="postTitle">제목</div><hr>
-            <div class="meta">작성자 : <span id="postAuthor">익명</span> | <span id="postTime">작성시간</span></div><hr>
-            <div class="input artmain" id="postContent">본문</div><hr>
-
-            <div class="tabs">
-                <button id="backList">목록보기</button>
-                <button id="edit">수정</button>
-                <button id="delete">삭제</button>
-            </div>
+      <section class="postform">
+        <div class="title">
+          <div class="index">제목</div>
+          <div class="index-con" id="postTitle"></div>
         </div>
+        <div class="author">
+          <div class="index">작성자</div>
+          <div class="index-con" id="postAuthor"></div>
+        </div>
+        <div class="date">
+          <div class="index">작성일</div>
+          <div class="index-con" id="postTime"></div>
+        </div>
+        <hr>
+        <div class="content" id="postContent"></div>
+
+        <div class="tabs">
+          <button id="backList">목록보기</button>
+          <button id="edit">수정</button>
+          <button id="delete">삭제</button>
+        </div>
+      </section>
     </div>
+  </div>
+
 
     <div class="footer"></div>
     

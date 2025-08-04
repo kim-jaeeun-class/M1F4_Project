@@ -28,12 +28,6 @@ body {
     min-height: 100vh;
 }
 
-.head {
-    padding: 20px 5%;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
-
 a, a:link, a:visited {
     color: inherit;
     text-decoration: none;

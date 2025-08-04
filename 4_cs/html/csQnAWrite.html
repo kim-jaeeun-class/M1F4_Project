@@ -30,11 +30,18 @@
         <div class="writeForm">
             <form class="postForm" name="postForm">
                 <input type="text" id="writeTitle" name="writeTitle" placeholder="제목을 입력해주세요" required />
-                <div class="meta" id="authorMeta">작성자: <span id="authorName">관리자</span> | 작성시간: <span id="writeTime"></span></div>
+                <div class="author">
+                    <div class="index">작성자</div>
+                    <div class="index-con" id="authorName">익명</div>
+                </div>
+                <div class="date">
+                    <div class="index">작성일</div>
+                    <div class="index-con" id="writeTime"></div>
+                </div>
                 <textarea id="content" name="content" placeholder="내용을 입력해주세요" required></textarea>
-                <div class = "bottom-btn-list">
-                    <button type="button" class="input-btn" id="cancel"><a href="csQnA.html">취소</a></button>
-                    <button type="submit" class="input-btn" id="input"><a href="csQnAWriterView.html">작성</a></button>                      
+                <div class="bottom-btn-list">
+                    <button type="button" class="input-btn" id="cancel"><a href="csMain.html">취소</a></button>
+                    <button type="submit" class="input-btn" id="input">작성</button>
                 </div>
             </form>
         </div>

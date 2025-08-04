@@ -4,9 +4,11 @@ function bind() {
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu.classList.toggle('show');
-    });
+    if (hamburgerBtn && categoryMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            categoryMenu.classList.toggle('show');
+        });
+    }
 
     window.addEventListener('pageshow', () => {
         if (document.activeElement && document.activeElement.blur) {
@@ -14,7 +16,6 @@ function bind() {
         }
     });
 
-    // ✅ 게시글 불러오기
     const post = JSON.parse(localStorage.getItem('tempPost'));
 
     if (post) {
@@ -23,22 +24,18 @@ function bind() {
         document.getElementById('postTime').textContent = post.time;
         document.getElementById('postContent').textContent = post.content;
     } else {
-        document.querySelector('.postform').innerHTML = '<p>불러올 게시글이 없습니다.</p>';
+        document.querySelector('.form').innerHTML = '<p>불러올 게시글이 없습니다.</p>';
     }
 
-    // ✅ 목록보기
-    document.getElementById('backList').addEventListener('click', function () {
+    document.getElementById('backList').addEventListener('click', () => {
         window.location.href = "csQnA.html";
     });
 
-    // ✅ 수정
-    document.getElementById('edit').addEventListener('click', function () {
-        // 수정 시 기존 데이터를 유지한 채 작성 페이지로 이동
+    document.getElementById('edit').addEventListener('click', () => {
         window.location.href = "csQnAWrite.html";
     });
 
-    // ✅ 삭제
-    document.getElementById('delete').addEventListener('click', function () {
+    document.getElementById('delete').addEventListener('click', () => {
         localStorage.removeItem('tempPost');
         alert("게시글이 삭제되었습니다.");
         window.location.href = "csQnA.html";
