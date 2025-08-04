@@ -1,0 +1,81 @@
+[33me75f0f52c0293ea654abebfbf78aa437055bcf77[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m 250804_css 수정(김재은)
+[33mf672c89d3ebbb0f609c7ade4fc758d620d3c03e2[m 250804_css 수정(김재은)
+[33mc41c0aea619bc68cdf1071bcc43a2f6b73360601[m 회원정보 수정 반응형 완료
+[33m0f83a9f10055d923851a4d4a93d9fb28894444eb[m 250804_5-4_나중에 폴더 다 합쳐야 함
+[33m47b6a1a032f4100a840c9b002dc002a666d508de[m 250804_챗봇 학습, 일부 head, footer 삭제 안 한 부분 삭제(김재은)
+[33m21a532313980622c13570ac188b32d6ddf881c16[m 250804_footer 카테고리 양식 css 수정(김재은)
+[33m63b0c22a5607d81ec633d75ba6a3a30d504dee10[m 회원가입 링크 경로 v2 -> v3로 수정
+[33m7d03680a6999347afb7821b7401e0afe39a82567[m 250804_문제 해결_최종(김재은)
+[33ma39506e9cf52e6834019f9874d7b2b056a6e85ed[m 250804_templete.js toggle 방식에서 변경, lecture_main 오류 해결, lecture_child만 hamburger-btn 오류 원인 해결 필요(김재은)
+[33md10d4b6a2eab38286ff1a39dffa41b5e1bd8e943[m 8.3 반응형 수정중
+[33m0534facbf855242eae45752f1c243e041f87652d[m no message
+[33mf8f3359d4f3c76891991d2747eb357b70d5ac9e5[m 회원정보 수정 파트
+[33mf88aed5789002e74e54ca84b9b320b42bfe6ea4c[m 2_lecture_require.js:14 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')     at bind (2_lecture_require.js:14:18) 콘솔 에러 기능상으로 문제가 없었지만 에러가 발생하기에 수정해 둡니다. 에러 사유 주석으로 적어놨습니다.
+[33m4a0e0343f7fce3c9be49f1500057234632284c53[m 강의 세부 정보 모바일 버전 일부 수정
+[33mdf7916e55d576ca464afb9b1adfb45dca0882619[m 강의 세부 -사진 변경, 에러 해결-
+[33mae35943da6df9d1666b6230cc02328d26afda814[m 주소 검색 기능 kakao
+[33mfbefdfc32e1e05a2d1e3482be9f3953671b39e2e[m 회원정보 입력 페이지
+[33m7eb6e5c82c1df4de6379b216357f3c94e6eb0b43[m 약관 페이지
+[33mf2177e12d047086c79a6ca8f0d468617e1a49506[m 링크 수정
+[33mb875e64d561a6f3e2c54783778409221597677af[m 250803_강의요청-작성란 주제 선택 드롭다운 적용_추후 디자인 수정 등(김재은)
+[33me4fa1bef7d282bec597bae69a936484581893165[m 회원정보 입력창
+[33m928d78f842f10590417d7397c9f40b6417d16329[m 약관 동의창
+[33m94a2b45316f7cbc932e779c2205c44760b270997[m 250802_수강신청 필터링 레이아웃 구현 및 클릭 이벤트 문제 해결 완료(김재은)
+[33m33dba95d13099489d4d327b8b61a4f3c9dc3ef36[m 약관 디자인 정리중
+[33mf2f9c3683d5fb86aecb1cd41383fc14968db564a[m 250802_수강신청 메인 필터_클릭 이벤트가 확률적으로만 적용되는 오류 수정 X(김재은)
+[33m8fd7e7b51115d2b09bcdd0d4568992879cce225c[m 8.2 중간
+[33ma18d2156be84a9277429e13653e8c99d2ac8166e[m 250802_메인페이지 js 수정_로그인 페이지 관련 요청사항 반영, 버튼에 a href 대신 js로 클릭 이벤트 적용(김재은)
+[33m41e2798906097b6f5cdf17ee03f0551849f05c7a[m 8.1 작업 내용 로그인 정보 유지 하는 js
+[33mc46ccee21e55910237428cee7ddbdc7ef9b9b0f0[m 챗봇 추가 완료, 개발자 도구를 보면  hamburger쪽에 놓은 확률로 에러가 발생하는데 테스트 할때는 문제 없음, DOM 문제를 생각하면 되고 최대한 빠른 시일내에 수정할 예정 좋아요 누르면 2개 올라가는 부분 수정 완료
+[33m572f9d00c8a2403573ca29d6b052fa7d3add6c27[m 250801_챗봇 학습, headfooter 전체 연동, 필터 제외한 모든 css 완료(김재은)
+[33m193d64dc051c986789f8f515351a8f551f22e278[m 5_2 community
+[33m4fe465b802ea43e6631b0276aff4d71b37b4dea6[m 발표용 파일 추가
+[33m483a4e10ce5194840ccc31009abb7815f3e1566b[m 고객센터 - 디자인 통일 / 기능 추가
+[33m812a7be533ea3afdccc38901416d41ae9d817a80[m 메인페이지 베너 및 챗봇 css적용 문제 해결
+[33m8f4fd06f67a956517097b8383f32a6120b37abec[m 250801_중간 확인용_mainpage에 headfooter.js 연동 등(김재은)
+[33ma34b8395148d2ae3812849eaff5bf302851cfacf[m 탬플릿 수정
+[33m6dbf0caa07d5ebdc4e07c7ab70c4d517a5f8ac0f[m header js에 로그인정보 기억하게 변경
+[33mce6c2e5dfb53370278db4d9cdf1a1ba88d84faa7[m 로그인, 아이디찾기 유저정보 js로 따로 빼서 기억하도록함
+[33m60a145eb73da283e5d8ae9658bb8f6f7ab6b61d0[m 딱히 달라진건 없음
+[33m09cfb331bf283e5a32bc4de12299afa72ba5baa3[m 회원가입 페이지(챗봇 모바일 pc버전 체크 완)
+[33mba09de765dd0123af02e3fd8d160d37ac0d4bea0[m 탬플릿 css에 챗봇 추가
+[33m5780334e089962f6e9d11557d4c0557802949070[m 템플릿에 챗봇 추가
+[33ma2ed0dbfe2c7d8b044723453a193d3e3116b635b[m 헤드 푸터 수정
+[33mc83555446a6d9bd5f3d4adcabac942c01018e9d0[m footer > chatbot -> new window
+[33m7d9d02a54a1d6a247c5e7befb13ecdd6bed79b8b[m 챗봇 모바일 버전 (패드 제외) 수정
+[33mfbd8db958135f2d23f19b7807fc9a05f3db3fa3c[m 챗봇 모바일 버전
+[33mad01087dae222988c989676a771b948d609f5916[m 250801_중간 확인용_강의요청 - 상세의 좋아요 애니메이션 효과(김재은)
+[33m0b104d58ef3c91bfaf27e7b70e6d72f08fafea89[m 고객센터- 챗봇 추가
+[33m310ecbec8ece5b0770cab5d58b375cf6ae8bea98[m 7.31 아이디/ 비밀번호 찾기 js 완료
+[33m58e0d56b7cf55ac60bf97ba6587aa2f6dde3ce58[m 250731_강의 요청, 요청 상세 디자인 수정 및 링크 연결 등(김재은)
+[33m3ec5ffa4eac716864f982bc4b2a857ef8d2fe7b2[m 고객센터 - 검색기능+페이지네이션 강화
+[33mc936d8bce62ac289f495a7ebfcca3ef9ad667838[m 신청리스트 페이지
+[33m5dec6f5f2607479dfadf328e4c29e395fdc2bd8b[m 제미나이 추가 학습 디자인좀 도좌줘요
+[33ma2e8a018901cf899eec2c28aaf872f0a805f5a6a[m 250731_로그인 / 비로그인 화면 문서 분리 및 링크 연동_배너 라인 부분만(김재은)
+[33mefa9150b3bfde3648acc04c6e3053d9c2ff2d3b3[m 고객센터 디테일 추가
+[33m8654b9be75bab25396daaba95693aa61e126cb2c[m 7.31 찾기페이지 수정중
+[33m0aee3a90b98642e2758c192a31cc688295514ca8[m 페이지 2개
+[33m4a3dce135fb93f01ab368c0bdf2ad592099e016c[m 250731_추가!!_템플릿 파일 연동(김재은)
+[33m32fe2684bde78f1d8ddf0f33b26b665823bb1de0[m 250731_메인페이지 챗봇 링크 수정(김재은)
+[33mf0c36efc141ee125c2f811ef6a6789d76e923644[m 챗봇 지미니 연동, 지미니 자체 학습은 추루 더 진행해야함
+[33mbb02eea13ed9186e0043c2fba2a9bcd1d8eb822c[m 250731_로그인 창 버튼 레이아웃 수정, 챗봇 이미지 배치 및 링크 연결(김재은)
+[33m6e35be571f90727fb6709a52f097340a56a80464[m 250731_헤드푸터 충돌 수정
+[33meb7eb9b1695b71399cc8aeda0444f02fc40d0ce9[m 챗봇 - 아직 안됨
+[33mfd33e1570e437667395d1ce180d8a229df53fe59[m 회원가입 페이지 헤더 푸터 -> headfooter.js파이롤 적용
+[33m1d2d7b9b9a99cae38be07c12786dec9419c4e66e[m 250730_메인페이지 로그인 시 화면-실제 데이터 입력 없는 단순 버튼 이벤트(김재은)
+[33m455aafc2a04f3b469b8012d9513e1fa15b716b80[m 오늘 녹색톤의 커뮤니티 게시판을 만들었다
+[33m5e0547c0677c2e744f936e48a8f0f9507dec1745[m 고객센터 조금 수정
+[33m98ee44cec2b9d10ce4adb5f5e0a851de020a9c81[m 250730_중간 커밋(김재은)
+[33m5b495986d3d0c45ac77b6390991430a5569eb52f[m 7.30 중간
+[33m28130361085d72a1cf95f93da4c8d66a8d1444ff[m 250730_중간 점검(김재은)
+[33md80e0f56d999c72e15dca164463317581974f6ce[m 새로운 유저 추가
+[33m69d4dfb7ac246744c0a6c72a96b41ad6e313e1b6[m 로그인 js
+[33m2d2d3ed981a2b1d9dad73302ccde1792e547e061[m 250730_중간 저장(김재은)
+[33mdc50dbc0602e7f5bdfba716041e778fea0fb146b[m 강의 상세 페이지 수정
+[33md1371648b9688c01a3f1a768c673625920bde632[m 템플릿 링크 문제 해결/ 헤드푸터 문제 해결
+[33md3bffea31e3cdfc11ae7211f45b4a3eb268fb846[m 250730_템플릿 롤백(김재은)
+[33mbee977f1d1eeca6339fa27f3f529b314a15a42d6[m 07.29 마이페이지 수정중
+[33mb6a5dc0bddb1063d70d077cc97920f702e4a5e8f[m 250729_강의 요청 진행 등(김재은)
+[33m99d4a3e7f3e7035a407a3877074d130eb9a24069[m 챗봇 테스트 버전
+[33m5fda7a518d8cabcd01446bcee911db750c864aa0[m 카카오 맵
+

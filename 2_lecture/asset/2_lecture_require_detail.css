@@ -119,6 +119,7 @@ hr {
 }
 .input {
     text-align: right;
+    margin-top: 5%;
 }
 
 .modify, .delete {
@@ -129,13 +130,24 @@ hr {
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    background-color: #5b9b5b;
     color: white;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.modify:hover, .delete:hover {
+.modify {
+    background-color: #5b9b5b;
+}
+
+.delete {
+    background-color: #555;
+}
+
+.delete:hover {
+    background-color: #333;
+}
+
+.modify:hover {
     background-color: #3e6b3e;    
 }
 
@@ -188,5 +200,14 @@ hr {
 
     .index {
         width: 15%;
+    }
+
+    .input {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .modify, .delete {
+        width: 45%;
     }
 }
