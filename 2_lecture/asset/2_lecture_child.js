@@ -1,24 +1,6 @@
 function bind() {
 
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const categoryMenu = document.getElementById('category-menu');
-
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu
-            .classList
-            .toggle('show');
-    });
-
-    window.addEventListener('pageshow', () => {
-        if (document.activeElement && document.activeElement.blur) {
-            document
-                .activeElement
-                .blur();
-        }
-    });
-    
     // 탭 버튼
-
     const tabs = document.querySelectorAll('.tab');
     const contentMap = {
         'tab-info': 'contents-info',

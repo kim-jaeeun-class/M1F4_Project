@@ -128,6 +128,13 @@ button {
 .tab-list {
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid #3e6b3e;
+    background-color: #f9f9f9;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    width: 80%;
+    margin: 2% auto 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .tab-list-child {
@@ -137,25 +144,29 @@ button {
 }
 
 .tab {
-    margin: auto 2%;
-    width: auto;
-    flex-grow: 1;
-    flex: 1 1 0;
-    margin: 0;  
-    min-width: 0;
-    height: 3em;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    background-color: #5b9b5b;
-    color: white;
+    flex: 1;
+    padding: 0.75em 1em;
+    border: 1px solid transparent;
+    border-bottom: none;
+    background-color: #d9ead3; /* 연한 녹색 배경 */
+    color: #3e6b3e;
+    font-weight: 600;
+    text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    font-size: 1em;
 }
 
 
+
+.tab:not(:last-child) {
+    border-right: 1px solid #aacda6;
+}
+
 .tab:hover {
-    background-color: #3e6b3e;
+    background-color: #5b9b5b;
+    color: #fff;
 }
 
 .apply {
@@ -168,6 +179,7 @@ button {
     color: white;
     cursor: pointer;
     transition: color 0.3s ease;
+    margin-bottom: 1%;
 }
 
 .apply:hover {
@@ -252,7 +264,6 @@ h1 {
 .location-map {
     width: 60%;
     height: 300px;
-    background-image: url('https://i.pinimg.com/736x/78/9d/74/789d74b1e1dfd2aa92c5d4e6588f0ed7.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -260,12 +271,6 @@ h1 {
     border-radius: 20px;
     border: 2px dotted #3e6b3e;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.location-map iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
 }
 
 .info-content {
@@ -485,46 +490,6 @@ p {
     display: block;
 }
 
-/* 챗봇 */
-
-.chatbot {
-    position: fixed;
-    z-index: 9999;
-    bottom: 20px;
-    right: 20px;
-}
-
-.speech-bubble {
-	position: fixed;
-	background: #cce0cc;
-	border-radius: 20px;
-    bottom : 120px;
-    right: 20px;
-    padding: 10px;
-    font-weight: 600;
-    color: #555;
-}
-
-.speech-bubble:after {
-    position: fixed;
-    bottom: 130px;
-    right: 70px;
-	content: '';
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-top-color: #cce0cc;
-	border-bottom: 0;
-	border-right: 0;
-	margin-left: -10px;
-	margin-bottom: -20px;
-}
-
-.chatbot-img { 
-    width: 80px;
-    height: 80px;
-}
-
 /* 모달 공통 디자인 */
 
 .modal {
@@ -648,54 +613,6 @@ label {
     color: white;
 }
 
-/*
-    footer : 홈페이지 정보
-    .bottom-menu : footer 내부 요소 묶음
-        .copyright : 카피라이트
-        .bottom-menu-list : 하단 메뉴 묶음(개별)
-*/
-.footer {
-    background-color: #f0f0f0;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #555;
-    border-top: 1px solid #ccc;
-    margin-top: 40px;
-    margin: auto;
-    text-align: center;
-}
-
-.bottom-menu {
-    gap: 15px;
-    font-size: 0.9em;
-    margin: 3% auto;
-}
-
-.copyright {
-    display: block;
-    margin: 3% auto;
-}
-
-.bottom-menu-list {
-    cursor: pointer;
-    transition: color 0.3s;
-    display: inline;
-}
-.bottom-menu-list:first-child::before {
-    content: "  "
-}
-.bottom-menu-list::before {
-    content: " | "
-}
-.bottom-menu-list:hover {
-    color: #5b9b5b;
-}
-
-/* footer에 있는 챗봇 메뉴 */
-#chat{
-    display: none;
-}
-
 /* 반응형 */
 
 @media (max-width: 1200px) {
@@ -713,40 +630,6 @@ label {
 }
 
 @media (max-width: 768px) {
-    .head {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .hamburger-menu {
-        display: block;
-        font-size: 28px;
-        margin-left: auto;
-        margin-top: 10px;
-        position: absolute;
-        top: 13px;
-        right: 5%;
-        z-index: 1000;
-    }
-
-    .category {
-        display: none;
-        overflow: hidden;
-        flex-direction: column;
-        width: 100%;
-        margin: 5% auto;
-        gap: 30px;
-        padding: 20px 0;
-        background-color: #f9f9f9;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-    }
-
-    .category.show {
-        display: flex;
-    }
 
     .tab-list-child {
         width: 75%;
@@ -754,6 +637,8 @@ label {
     .tab {
         width: 25%;
         height: 40px;
+        padding: 1px;
+        font-size: 0.9em;
     }
 
     .apply {

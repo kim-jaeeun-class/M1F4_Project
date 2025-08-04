@@ -265,7 +265,7 @@
                     </div>
                     <div class = "review-form-content">
                         <label for="review-content">내용</label>
-                        <textarea id="review-content" name="content" rows="4" required="required" placeholder="내용을 입력해주세요."></textarea>  
+                        <textarea id="review-content" name="content" rows="4" maxlength="100" required="required" placeholder="내용을 입력해주세요. (최대 100자까지 작성 가능)"></textarea>  
                     </div>
                     <div class = "review-form-img">
                         <label for="review-image">사진 첨부</label>
@@ -317,5 +317,6 @@
         <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=1b0b5948c5149f6457504bef826a543e&autoload=false&libraries=services"></script>
         <!-- <script src="../../0_templete/headfooter.js"></script> -->
         <script src="../asset/2_lecture_child.js"></script>
+        <script>bind()</script> 
     </body>
 </html>
