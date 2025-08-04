@@ -117,8 +117,13 @@ body {
 
 /* 모바일 (480px 이하) */
 @media screen and (max-width: 480px) {
+    body{
+        padding: 0px;
+    }
     .login_main {
-        padding: 10px;
+        width: 100%;
+        margin: 30px 0px 0px;
+        padding: 0px;
     }
 
     .logo img {
@@ -126,8 +131,9 @@ body {
     }
 
     .login {
-        width: 100%;
+        width: 300px;
         padding: 20px 10px;
+        margin: auto;
     }
 
     .id,.pw {
@@ -140,27 +146,36 @@ body {
         font-size: 20px;
     }
 
+    .find {
+        width: 400px;
+    }
     .find li {
         font-size: 12px;
         margin: 0 5px;
     }
 
     .banner {
-        width: 100%;
+        width: 400px;
         font-size: 12px;
-        padding: 15px 10px;
+        padding: 0px;
+        margin: 0px auto;
     }
 
     .footer {
+        width: 380px;
         font-size: 12px;
         padding: 15px 10px;
     }
 }
 
 
-/* 태블릿 (481px ~ 768px) */
-@media screen and (min-width: 481px) and (max-width: 768px) {
+/* 481px ~ 767px */
+@media screen and (min-width: 481px) and (max-width: 76px) {
+    body{
+        padding: 0px;
+    }
     .login_main {
+        width: 100%;
         padding: 20px;
     }
 

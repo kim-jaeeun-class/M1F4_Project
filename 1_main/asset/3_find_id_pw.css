@@ -116,7 +116,11 @@ ul {
     align-items: center;
     margin-bottom: 20px;
 }
+.id_id_1 {
+    font-weight: bold;
+    width: 100px;
 
+}
 .id_1, .id_2 {
     font-weight: bold;
     width: 100px;
@@ -184,15 +188,20 @@ button[type="submit"] {
 
 /* 480 */
 @media screen and (max-width: 480px) {
+    body {
+        padding: 0px;
+    }
     .login_main {
-        width: 90%;
-        margin: 30px auto 0px;
-        padding: 15px;
+        width: 300px;
+        margin: 30px auto 30px;
+        padding: 0px;
     }
     
+    .logo,
     .logo img {
-        width: 100%;
+        width: 300px;
         height: auto;
+        margin: 0px auto;
     }
 
     .title {
@@ -200,30 +209,62 @@ button[type="submit"] {
     }
     
     .find_back {
-        min-width: 300px;
-        width: 90%;
+        width: 300px;
+        margin: 50px auto 80px;
         padding: 30px 20px 50px;
     }
-
+    .id_2_text,
     .find_id, .find_pw {
         display: inline-block;
         font-size: 18px;
-        width: 40%;
+        width: 120px;
+    }
+  
+    .id,
+    .id_1,
+    .id_2 {
+        display: block;
+        width: 50px;
+        margin: 10px 0px;
     }
 
-    .id_1_text input,
-    .id_1_text_2 input,
-    .id_2_text input,
-    .id_2_text_1 input,
-    .id_2_text_2 input {
-        width: 100%;
+    .id_2_1,
+    .phone_email_input,
+    .email_input {
+        display: block;
+        width: 280px;
+    }
+   
+    .id_li_1 input {
+        margin: 10px 0px;
+        width: 160px;
+    }
+    .id_li_1 select {
+        width: 70px;
+    }
+    .id_li_1 button {
+        width: 90%;
+        margin: 0px auto;
     }
 
-    .id_2_sel {
-        width: 100%;
-        margin-top: 10px;
+    .id_li_text input {
+        width: 200px;
     }
-
+    
+    .li_1 input,
+    .li_2 input {
+        width: 100px;
+    }
+    .li_1 select {
+        width: 70px;
+        margin: 10px 0px;
+    }
+    .li_2 button {
+        margin: 10px 0px 0px 50px;
+    }
+    .li_1 button {
+        width: 70px;
+    }
     ul {
         flex-direction: column;
     }
@@ -231,54 +272,153 @@ button[type="submit"] {
 
 /* 481~767 */
 @media screen and (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 0px;
+    }
     .login_main {
-        width: 90%;
-        margin: 40px auto 0px;
-        padding: 20px;
+        width: 300px;
+        margin: 30px auto 30px;
+        padding: 0px;
     }
     
+    .logo,
     .logo img {
-        width: 100%;
+        width: 300px;
         height: auto;
+        margin: 0px auto;
+    }
+
+    .title {
+        font-size: 20px;
     }
     
     .find_back {
-        max-width: 500px;
-        width: 95%;
-        padding: 40px 30px 60px;
+        width: 450px;
+        margin: 50px auto 80px;
+        padding: 30px 20px 50px;
     }
-
+    .id_2_text,
     .find_id, .find_pw {
         display: inline-block;
-        font-size: 20px;
-        width: 40%;
+        font-size: 18px;
+        width: 200px;
+    }
+    .id_id_1,
+    .id_1_text {
+        display: inline-block;
+    }
+    .id,
+    .id_1,
+    .id_2 {
+        display: block;
+        /* width: 400px; */
+        margin: 10px 0px;
     }
 
+    .id_2_1,
+    .phone_email_input,
+    .email_input {
+        display: block;
+        width: 420px;
+    }
+    .id_li_1 input {
+        margin: 10px 0px;
+        width: 160px;
+    }
+    
+    .id_li_1 button {
+        margin: 0px 0px 0px 20px;
+    }
+
+    .li_1 input{
+        width: 130px;
+
+    }
+    .li_2 input {
+        width: 100px;
+    }
+    .li_1 select {
+        width: 70px;
+        margin: 10px 0px;
+    }
+    .li_1 button {
+        width: 70px;
+    }
+    .li_2 button {
+        margin: 10px 0px 0px 300px;
+    }
     ul {
-        flex-wrap: wrap;
+        flex-direction: column;
     }
 }
 
 /* 768~1024 */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding: 0px;
+    }
     .login_main {
-        width: 80%;
-        padding: 25px;
+        width: 300px;
+        margin: 30px auto 30px;
+        padding: 0px;
+    }
+    
+    .logo,
+    .logo img {
+        width: 300px;
+        height: auto;
+        margin: 0px auto;
     }
 
+    .title {
+        font-size: 28px;
+    }
+    
     .find_back {
-        max-width: 500px;
-        width: 90%;
+        width: 700px;
+        margin: 50px auto 80px;
+        padding: 30px 20px 50px;
     }
-
+    .id_2_text,
     .find_id, .find_pw {
         display: inline-block;
-        font-size: 20px;
-        width: 40%;
+        font-size: 18px;
+        width: 200px;
+    }
+  
+    .id,
+    .id_1,
+    .id_2 {
+        display: block;
+        width: 100%;
+        margin: 10px 0px;
     }
 
-    .logo img {
-        width: 280px;
-        height: auto;
+    .id_2_1,
+    .phone_email_input,
+    .email_input {
+        display: block;
+        width: 600px;
+    }
+    
+    .li_1 input {
+        width: 200px;
+    }
+    .li_2 input {
+        width: 150px;
+    }
+    .li_1 select {
+        width: 100px;
+        margin: 10px 0px;
+    }
+    .li_1 button {
+        width: 70px;
+        margin: 10px 0px 0px 20px;
+    }
+    .li_2 button {
+        margin: 10px 0px 0px 20px;
+    }
+    ul {
+        flex-direction: column;
     }
 }

@@ -39,7 +39,7 @@
                 <ul class="id_li_1">
                     <li>
                         <div class="id">
-                            <div class="id_1">
+                            <div class="id_id_1">
                                 이름 
                             </div>
                             <div  class="id_1_text">
@@ -74,33 +74,64 @@
     </div>
     <script src="/1_main/asset/users.js"></script>
     <script>
-        const nameInput = document.querySelector('.id_1_text input');
-        const phonePrefixSelect = document.querySelector('.id_2_sel');
-        const phoneRestInput = document.querySelector('.id_2_text input');
-        const submitBtn = document.querySelector('.id_2_1 button');
        
-        submitBtn.addEventListener('click', function (e) {
-            e.preventDefault();
+    // 사용자 찾기 함수
+    function findUser(name, phoneNumber) {
 
-            const enteredName = nameInput.value.trim();
-            const phonePrefix = phonePrefixSelect.value;
-            const phoneRest = phoneRestInput.value.trim().replace(/[^0-9]/g, '');
+        for (let i = 0; i < users.length; i++) {
 
-            const fullPhone = phonePrefix + phoneRest;
+            const user = users[i];
 
-            if (!enteredName || !phoneRest) {
-                alert('이름과 휴대폰 번호를 모두 입력해주세요.');
-                return;
+            const cleanPhone = user.phone.split('-').join('');
+
+            if (user.name === name && cleanPhone === phoneNumber) {
+                return user;
             }
+        }
+        return null;
+    }
 
-            const user = users.find(u => u.name === enteredName && u.phone === fullPhone);
+    // 입력
+    const nameInput = document.querySelector('.id_1_text input');
+    const phoneSelect = document.querySelector('.id_2_sel');
+    const phoneInput = document.querySelector('.id_2_text input');
+    const submitBtn = document.querySelector('.id_2_1 button');
 
-            if (user) {
-                alert(`아이디는 "${user.id}" 입니다.`);
-            } else {
-                alert('입력하신 정보와 일치하는 사용자를 찾을 수 없습니다.');
-            }
-        });
+    // 아이디 찾기 동작 함수 (공통으로 사용)
+    function findId() {
+        const enteredName = nameInput.value.trim();
+        const phonePrefix = phoneSelect.value;
+        const phoneRest = phoneInput.value.trim().replace(/[^0-9]/g, '');
+        const fullPhone = phonePrefix + phoneRest;
+
+        if (!enteredName || !phoneRest) {
+            alert('이름과 휴대폰 번호를 모두 입력해주세요.');
+            return;
+        }
+
+        const user = findUser(enteredName, fullPhone);
+
+        if (user) {
+            alert(`아이디는 "${user.id}" 입니다.`);
+        } else {
+            alert('입력하신 정보와 일치하는 사용자를 찾을 수 없습니다.');
+        }
+    }
+
+    // 버튼 클릭 시 실행
+    submitBtn.addEventListener('click', function (e) {
+
+        e.preventDefault();
+        findId();
+    });
+
+    // 엔터키 눌렀을 때
+    document.addEventListener('keydown', function (e) {
+
+        if (e.key === 'Enter') {
+            findId();
+        }
+    });
     </script>
 </body>
 </html>
