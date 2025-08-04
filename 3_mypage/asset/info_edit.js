@@ -17,6 +17,16 @@ function init() {
     bind(currentUser);
 }
 
+function correctPassword(password) {
+    const lengthCheck = password.length >= 8;
+    const upperCheck = /[A-Z]/.test(password);
+    const lowerCheck = /[a-z]/.test(password);
+    const numberCheck = /[0-9]/.test(password);
+    const specialCheck = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    return lengthCheck && upperCheck && lowerCheck && numberCheck && specialCheck;
+}
+
 function bind(user) {
     // 정보
     const nickname = document.querySelector(".nickname");
@@ -96,6 +106,12 @@ function bind(user) {
             return;
         }
         
+        if (!correctPassword(newPassword)) {
+            alert("비밀번호는 8자 이상이며, 대소문자, 숫자, 특수문자를 각각 1개 이상 포함해야 합니다.");
+            return;
+        }
+
+
         const detailAddress = document.querySelector(".detail");
         
         user.nickname = newNickname;
@@ -113,7 +129,7 @@ function bind(user) {
                 break;
             }
         }
-        
+
         localStorage.setItem("users", JSON.stringify(allUsers));
         localStorage.setItem("currentUser", JSON.stringify(user));
         

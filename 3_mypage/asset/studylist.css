@@ -79,6 +79,10 @@ a:active {
     padding: 0 20px;
 }
 /* body css 시작 */
+.main.hidden {
+    display: none;
+}
+
 .my_back {
     display: flex;
     height: 1000px;

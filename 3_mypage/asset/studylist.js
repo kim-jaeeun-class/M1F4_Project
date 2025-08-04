@@ -2,7 +2,27 @@
 window.addEventListener('load', init);
 
 function init() {
-  bind();  // 탭 전환 바인딩
+
+  const currentUser = localStorage.getItem("currentUser");
+
+  if (!currentUser) {
+
+    alert("로그인이 필요합니다.");
+    window.location.href = "/1_main/html/3_login.html"; // 로그인 페이지 경로
+    return; 
+  }
+
+  console.log("로그인 상태 확인 완료:", currentUser);
+  // 로그인 되어 있으면 main 보여주기
+  const main = document.querySelector('.main');
+  if (main) {
+    main.classList.remove('hidden');
+     console.log("main 영역 보이도록 처리 완료");
+  } else {
+    console.log("main 요소를 찾을 수 없음");
+  }
+
+  bind();  
   setupPagination("ing"); // 처음엔 '진행 중' 탭 페이지네이션 초기화
 }
 
