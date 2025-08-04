@@ -5,33 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <title>고객센터 - Q&A</title>
+    <link rel="stylesheet" href="../../0_templete/asset/templete.css">
     <link rel="stylesheet" href="../../4_cs/asset/csQnA.css">
-    <script src="../../4_cs/asset/csQnA.js"></script>
+    <!-- 1. templete.js: bind 정의 -->
+    <script src="../../0_templete/asset/templete.js"></script>
+    <!-- 2. chatbot.js: initChatbot 정의 -->
+    <script src="../../0_templete/asset/chatbot.js"></script>
+    <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+    <script src="../../0_templete/headfooter.js"></script>
 </head>
+
 <body>
-    <div class="head">
-        <div class="main-logo">
-            <a href = "../../1_main/html/1_mainpage.html">
-                <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
-                <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
-            </a>
-        </div>
-        <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
-        <div class="category" id="category-menu">
-            <div class="category-list reg">
-                <a href="../../2_lecture/html/2_lecture_main.html">수강 신청</a>
-            </div>
-            <div class="category-list lec-require">
-                <a href="../../2_lecture/html/2_lecture_require.html">강의 요청</a>
-            </div>
-            <div class="category-list community">
-                <a href="../../5_community/html/project.html">커뮤니티</a>
-            </div>
-            <div class="category-list mypage">
-                <a href="../../3_mypage/html/mypage_main.html">마이 페이지</a>
-            </div>
-        </div>
-    </div>
+    <div class="head"></div>
 
     <div class="body">
         <div class="nav"><a href="csMain.html">고객센터</a> &gt; Q&A</div>
@@ -75,20 +60,8 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class = "speech-bubble">도움이 필요하다면 절 눌러주세요!</div>
-        <div class = "chatbot">
-            <a href="../../6_chatbot/chatbot_v3.html"><img src = "https://i.postimg.cc/bwVSjJHH/KGQDu4R.png" class= "chatbot-img"></a>     
-        </div>
-        <ul type="none" class="bottom-menu">
-            <a href="../../6_chatbot/chatbot_v3.html"><li class="bottom-menu-list">챗봇</li></a>
-            <li class="bottom-menu-list">
-                <a href="../../4_cs/html/csMain.html">고객센터</a>
-            </li>
-            <li class="bottom-menu-list">광고 문의</li>
-            <li class="bottom-menu-list">개인 정보 이용 방침</li>
-        </ul>
-        <div class = "copyright">© 2025 M1F4</div>
-    </div>
+    <div class="footer"></div>
+    
+    <script src="../../4_cs/asset/csQnA.js"></script>
 </body>
 </html>

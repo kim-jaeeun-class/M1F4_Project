@@ -6,12 +6,32 @@
     font-style: normal;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: 'ChosunGu';
     background-color: #f9f9f9;
     color: #333;
-    margin: 0;
-    padding: 0;
+}
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.head {
+    padding: 20px 5%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 a, a:link, a:visited {
@@ -80,14 +100,14 @@ a:active {
 }
 
 
-
 /*.body 부분 */
 .body {
-    position: relative;
-    padding: 0 10px 300px 10px;
-    margin: 0 auto;
+    flex: 1;
     width: 80%;
-    height: 80vh;
+    margin: 0 auto;
+    padding: 10px;
+    padding-bottom: 80px; /* 푸터 높이만큼 공간 확보 */
+    box-sizing: border-box;
 }
 
 /* 네비게이션 부분 */
@@ -328,14 +348,15 @@ a:active {
         .bottom-menu-list : 하단 메뉴 묶음(개별)
 */
 .footer {
+    width: 100%;
     background-color: #f0f0f0;
     padding: 20px;
     font-size: 0.9em;
     color: #555;
     border-top: 1px solid #ccc;
-    margin-top: 40px;
-    margin: auto;
     text-align: center;
+    box-sizing: border-box;
+    min-height: 80px; 
 }
 
 .bottom-menu {

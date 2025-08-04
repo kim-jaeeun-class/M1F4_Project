@@ -61,7 +61,7 @@ function bind() {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${post.number}</td>
-                <td><a href="csMainView.html">${post.title}</a></td>
+                <td><a href="csQnAView.html">${post.title}</a></td>
                 <td>${post.author}</td>
                 <td>${post.time}</td>
             `;
