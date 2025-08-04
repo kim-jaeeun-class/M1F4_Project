@@ -26,7 +26,7 @@ function bind() {
         if (foundUser) {
             // 로그인 성공 시 현재 유저 정보 저장
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
-            window.location.href = '/1_main/html/1-1_mainpage_login.html';
+            window.location.href = '/1_main/html/1_mainpage.html';
         } else {
             alert('아이디 또는 비밀번호가 올바르지 않습니다.');
         }
