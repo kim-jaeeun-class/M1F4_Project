@@ -140,6 +140,9 @@ a:active {
     margin: 10px 50px 0px;
     padding-left: 20px;
 }
+.nav a.nav_text {
+    color: #5b9b5b;
+}
 .text {
     border-right: 1px solid #b5b6b5;
     font-size: 20px;
@@ -167,7 +170,7 @@ a:active {
     text-align: center;
     width: 90%;
     margin: 0px 30px 150px;
-    padding: 70px 30px 30px;
+    padding: 50px 30px 30px;
     box-shadow: 0px 0px 10px rgb(0,0,0,0.1);
 }
 
@@ -178,7 +181,7 @@ a:active {
 .left {
     /* border: 1px solid black; */
     text-align: center;
-    margin:  50px 50px 0px 10px;
+    margin:  0px 0px 0px;
 }
 .right {
     /* border: 1px solid blue; */
@@ -329,8 +332,44 @@ button:hover {
 }
 
 /* 반응형 */
-/* ---------- 반응형: 소형 모바일 (최대 480px) ---------- */
+/* 480 */
 @media screen and (max-width: 480px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    /* body */
     .my_back {
         flex-direction: column;
         height: auto;
@@ -436,6 +475,42 @@ button:hover {
 
 /* 481px ~ 767px */
 @media screen and (min-width: 481px) and (max-width: 767px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    /* body */
     .my_back {
         flex-direction: column;
         height: auto;
@@ -624,7 +699,42 @@ button:hover {
     }
 }
 
-/* ---------- 반응형: 모바일 (최대 767px) ---------- */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+}
 
 
 

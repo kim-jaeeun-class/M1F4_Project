@@ -35,7 +35,7 @@ function bind() {
 
 // 페이지네이션 js
 function setupPagination(contentId) {
-  const perPage = 3; // 한 페이지당 카드 개수
+  const perPage = 4; // 한 페이지당 카드 개수
   const contents = document.querySelectorAll(`#${contentId} .contents-card`);
   const pagination = document.querySelector('#pagination');
   pagination.innerHTML = ""; // 초기화

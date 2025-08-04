@@ -277,7 +277,8 @@ a:active {
 }
 
 /* 반응형 */
-@media (max-width: 768px) {
+/* ~ 480px */
+@media screen and (max-width: 480px) {
     .head {
         flex-direction: column;
         align-items: flex-start;
@@ -311,5 +312,131 @@ a:active {
 
     .category.show {
         display: flex;
+    }
+
+    /* body */
+    .my_back {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tab {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .tab_0,
+    .tab_1,
+    .tab_2 {
+        font-size: 12px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0;
+    }
+
+    .title {
+        font-size: 20px;
+        margin: 20px auto 30px;
+    }
+    .id_pw {
+        margin: 0px auto 300px;
+    }
+}   
+
+/* 481px ~ 767px */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    /* body */
+    .my_back {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tab {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .tab_0,
+    .tab_1,
+    .tab_2 {
+        font-size: 12px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .title {
+        margin: 20px auto 30px;
+    }
+    .id_pw {
+        margin: 0px auto 300px;
+    }
+}
+
+/* 768px ~ 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .my_back {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tab {
+        width: 100%;
+        min-width: auto;
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+    }
+
+    .tab_0,
+    .tab_1,
+    .tab_2 {
+        flex: 1;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+    }
+
+    .title {
+        margin: 20px auto 30px;
+    }
+    .id_pw {
+        margin: 0px auto 300px;
     }
 }
