@@ -265,7 +265,9 @@ a:active {
     font-size: 16px;
     color: #333;
     text-align: center;
-    height: 380px;
+    height: 400px;
+    margin-bottom : 30px;
+    padding : 20px;
 }
 
 .group-intro img {
@@ -304,7 +306,7 @@ a:active {
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
-    transition: background 0.3s;
+    transition: back-ground 0.3s;
 }
 
 .approve-btn {
@@ -439,6 +441,42 @@ a:active {
   border-radius: 4px;
   cursor: pointer;
 }
+.upload-confirm-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 10;
+}
+.main-content {
+  position: relative;
+  min-height : 300px;
+}
 
+.upload-finish-wrapper {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.upload-finish-wrapper {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+}
+.reset-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.reset-btn {
+  background-color: #3e6b3e;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color : white;
+}
 
 

@@ -56,7 +56,7 @@ function initApproveButton() {
         const already = Array.from(approvedList.children).some(li => li.textContent.includes(name));
         if (!already) {
           const li = document.createElement('li');
-          li.textContent = ✅ ${name};
+          li.textContent = `✅ ${name}`;
           approvedList.appendChild(li);
         }
 
@@ -78,6 +78,26 @@ function initRejectButton() {
     checkedBoxes.forEach(checkbox => {
       const label = checkbox.parentElement;
       label.remove();
+    });
+  });
+}
+window.addEventListener('load', bind);
+
+function bind() {
+  initHamburgerMenu();
+  initPageFocusReset();
+  initPhotoUpload();
+  initApproveButton();
+  initRejectButton();
+  initResetButton();  // ✅ 추가!
+}
+function initResetButton() {
+  const resetBtn = document.querySelector(".reset-btn");
+
+  resetBtn.addEventListener("click", () => {
+    const checkboxes = document.querySelectorAll('.application-list input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = false;
     });
   });
 }

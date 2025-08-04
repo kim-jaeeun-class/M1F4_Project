@@ -48,6 +48,10 @@
             <input type="text" id="group-name" name="group-name" placeholder="모임 이름을 입력하세요" class="text-input" />
           </div>
 
+          <div class="upload-confirm-wrapper">
+  <button id="uploadConfirmBtn" class="green-button" type="button">업로드 버튼</button>
+</div>
+
           <div class="input-row">
             <label for="activity-content">#활동내용</label>
             <input type="text" id="activity-content" name="activity-content" placeholder="활동 내용을 입력하세요" class="text-input" />
@@ -59,6 +63,8 @@
             <img id="groupPhoto" src="" alt="모임 사진" style="display:none; max-width: 200px; margin-top: 10px;" />
           </div>
         </div>
+
+        <!-- 새롭게 추가할 업로드 완료 버튼 -->
 
         <!-- 신청 리스트와 승인자 -->
         <div class="side-section">
@@ -82,9 +88,13 @@
               <label><input type="checkbox" /> 신청자 15</label>
             </form>
             <div class="buttons">
-              <button class="approve-btn">#승인</button>
-              <button class="reject-btn">#거부</button>
+              <button class="approve-btn">승인</button>
+              <button class="reject-btn">거부</button>
             </div>
+            <!-- 초기화 버튼 추가 -->
+<div class="reset-wrapper">
+  <button class="reset-btn">초기화버튼</button>
+</div>
           </div>
 
           <div class="approved-list">
