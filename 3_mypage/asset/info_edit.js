@@ -14,7 +14,7 @@ function init() {
         userFixId.value = currentUser.id;
     }
 
-    bind(currentUser);
+    binduser(currentUser);
 }
 
 function correctPassword(password) {
@@ -27,7 +27,7 @@ function correctPassword(password) {
     return lengthCheck && upperCheck && lowerCheck && numberCheck && specialCheck;
 }
 
-function bind(user) {
+function binduser(user) {
     // 정보
     const nickname = document.querySelector(".nickname");
     const pw = document.querySelector(".password");

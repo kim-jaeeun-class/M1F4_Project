@@ -16,9 +16,9 @@ function init(){
         userFixId.textContent = currentUser.id;
     }
 
-    bind(currentUser); // currentUser 전달
+    bindmypage(currentUser); // currentUser 전달
 }
-function bind(currentUser) {
+function bindmypage(currentUser) {
 
     // 비밀번호 확인 후 이동
     function confirm() {

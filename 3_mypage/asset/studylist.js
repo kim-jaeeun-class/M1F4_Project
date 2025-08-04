@@ -22,7 +22,7 @@ function init() {
     console.log("main 요소를 찾을 수 없음");
   }
 
-  bind();  
+  bindStudyTab();  
   setupPagination("ing"); // 처음엔 '진행 중' 탭 페이지네이션 초기화
 }
 
