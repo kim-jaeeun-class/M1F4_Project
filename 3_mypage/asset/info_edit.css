@@ -218,19 +218,20 @@ a:active {
     margin: 30px 0px;
 }
 
+.id_box,
+.nickname_box,
+.btn_box,
+.address_box,
+.detail_box,
 .box {
     /* border: 1px solid black; */
     display: inline-block;
 }
 
 .second_box {
+    display: inline-block;
     width: 200px;
     margin-right: 100px;
-}
-
-#id {
-    /* border: 1px solid purple; */
-    display: inline-block;
 }
 
 /* .pw {
@@ -330,136 +331,224 @@ button:hover {
 }
 
 /* 반응형 */
-/* 모바일 (최대 480px) */
+/* ---------- 반응형: 소형 모바일 (최대 480px) ---------- */
 @media screen and (max-width: 480px) {
     .my_back {
         flex-direction: column;
         height: auto;
     }
 
-    .edit {
-        display: none;
-    }
-
     .tab {
-        width: 100%;
+        flex-direction: column;
         height: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        width: 100%;
     }
 
     .tab_0,
     .tab_1,
     .tab_2 {
-        width: 100%;
-        height: auto;
-        font-size: 14px;
+        font-size: 12px;
+        height: 40px;
         line-height: 40px;
+        padding: 0;
     }
 
-    .main {
-        padding: 10px;
+    .nav {
+        font-size: 14px;
+        margin: 10px 15px;
+        padding-left: 5px;
     }
 
     .center {
-        min-width: 300px;
-        margin: 20px 10px;
-        padding: 30px 20px;
+        margin: 15px 15px 150px;
+        padding: 20px 15px;
     }
 
-    .left,
-    .right {
-        width: 100%;
-        margin: 0;
-        text-align: center;
+    .edit {
+        font-size: 22px;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .left {
+        margin: 0 auto;
     }
 
     .profile {
         width: 120px;
         height: 120px;
-        margin: 0 auto 20px;
+        margin: 0px auto 30px;
+    }
+
+    .right {
+        width: 100%;
+        margin-top: 20px;
     }
 
     .text {
-        text-align: left;
+        font-size: 13px;
+        width: 50px;
+        padding-right: 5px;
+        margin: 5px 10px;
+    }
+    .id_box,
+    .nickname_box {
+        width: 100%;
     }
 
-    .second_box {
-        width: 20%;
-    }
-
+    .box,
+    .second_box,
     .center input,
     .field select {
-        width: 100px;
+        width: 70%;
+        font-size: 14px;
+        margin: auto;
+    }
+
+    .zip_code {
+        width: 30%;
+        margin: 0px 0px 10px;
+    }
+
+    .zip_button button,
+    .btn_box {
+        width: 35%;
+        font-size: 8px;
+    }
+
+    .address_box,
+    .detail_box {
+        width: 35%;
+    }
+
+    .profile_button button,
+    .save button,
+    .quit button {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
     }
 
     .save,
     .quit {
         text-align: center;
-        margin: 20px 0;
+        margin: 20px 0 0;
     }
 }
 
-@media (max-width: 768px) {
-    .head {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .hamburger-menu {
-        display: block;
-        font-size: 28px;
-        margin-left: auto;
-        margin-top: 10px;
-        position: absolute;
-        top: 13px;
-        right: 5%;
-        z-index: 1000;
-    }
-
-    .category {
-        display: none;
-        overflow: hidden;
-        flex-direction: column;
-        width: 100%;
-        margin: 5% auto;
-        gap: 30px;
-        padding: 20px 0;
-        background-color: #f9f9f9;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-    }
-
-    .category.show {
-        display: flex;
-    }
-
+/* 481px ~ 767px */
+@media screen and (min-width: 481px) and (max-width: 767px) {
     .my_back {
         flex-direction: column;
         height: auto;
     }
 
-    .edit {
-        display: none;
-    }
-    
     .tab {
+        flex-direction: column;
         width: 100%;
         height: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
     }
 
     .tab_0,
     .tab_1,
     .tab_2 {
-        height: auto;
+        font-size: 12px;
+        height: 40px;
         line-height: 40px;
+    }
+
+    .nav {
+        margin: 10px 20px;
+        padding-left: 10px;
         font-size: 16px;
+    }
+
+    .center {
+        margin: 20px 20px 200px;
+        padding: 30px 20px;
+    }
+
+    .left {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .profile {
+        width: 150px;
+        height: 150px;
+        margin: 0px auto 50px;
+    }
+
+    .right {
+        width: 100%;
+        margin: 20px 0 0;
+    }
+
+
+    .profile_button button,
+    .zip_button button,
+    .save button,
+    .quit button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 14px;
+        width: 60px;
+        text-align: left;
+    }
+
+    .id_box,
+    .nickname_box {
+        width: 100%;
+    }
+
+    .box,
+    .second_box,
+    .center input,
+    .field select {
+        width: 70%;
+        font-size: 14px;
+        margin: auto;
+    }
+
+    .address_box,
+    .detail_box {
+        width: 35%;
+    }
+
+    .save,
+    .quit {
+        text-align: center;
+        width: 100%;
+        margin: 30px auto 0px;
+    }
+}
+
+/* 768px ~ 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .my_back {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tab {
+        width: 100%;
+        min-width: auto;
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+    }
+
+    .tab_0,
+    .tab_1,
+    .tab_2 {
+        flex: 1;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
     }
 
     .main {
@@ -467,120 +556,77 @@ button:hover {
     }
 
     .center {
-        margin: 20px 20px;
-        padding: 40px 30px;
+        margin: 30px 30px 300px;
+        padding: 50px 30px;
     }
 
-    .left,
-    .right {
+    .left {
         display: block;
-        width: 100%;
-        margin: 0;
+        margin: 0 auto;
         text-align: center;
     }
 
     .profile {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 30px;
+        width: 200px;
+        height: 200px;
+        margin: 0px auto 50px;
+    }
+
+    .right {
+        width: 100%;
+        display: block;
+        margin: 30px 0px 0px;
     }
 
     .text {
-        width: 150px;
+        width: 70px;
+        font-size: 16px;
     }
 
+    .id_box,
+    .nickname_box {
+        width: 40%;
+    }
 
-    .center input,
+    .box,
+    .second_box {
+        width: 200px;
+        margin: 0px;
+    }
+    .center input {
+        width: 100%;
+        font-size: 14px;
+        margin: auto;
+    }
+
+    .pw input {
+        width: 50%;
+    }
+
     .field select {
-        width: 150px;
+        width: 100%;
+    }
+
+    .address_box,
+    .detail_box {
+        width: 35%;
+        margin: 0px 5px;
+    }
+
+    .save button,
+    .quit button {
+        width: 100%;
     }
 
     .save,
     .quit {
+        width: 100%;
         text-align: center;
-        margin: 30px 0;
+        margin-top: 50px;
     }
 }
 
-@media screen and (max-width: 1024px) {
-  .my_back {
-    display: block;
-    height: auto;
-  }
+/* ---------- 반응형: 모바일 (최대 767px) ---------- */
 
-  .edit {
-    display: none;
-  }
-
-  /* 사이드 탭*/
-  .tab {
-    display: inline-block;
-    width: 30%;
-    height: auto;
-    background-color: #5b9b5b;
-  }
-
-  .tab_0,
-  .tab_1,
-  .tab_2 {
-    height: auto;
-    font-size: 16px;
-    padding: 12px 0;
-  }
-
-  .tab_2 {
-    background-color: #3e6b3e;
-  }
-
-  /* 메인 콘텐츠 간격 줄이기 */
-  .main {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .center {
-    margin: 30px;
-    padding: 40px 20px;
-  }
-
-  .left {
-    margin: 30px auto 0;
-    text-align: center;
-  }
-
-  .right {
-    width: 100%;
-    padding: 0 20px;
-  }
-  .center input,
-  .field select {
-      width: 200px;
-      max-width: 300px;
-    }
-    .text {
-        min-width: 80px;
-    }
-    .second_box {
-        min-width: 30px;
-        max-width: 30px;
-    }
-    
-    /* 프로필 사진 크기 축소 */
-    .profile {
-    width: 150px;
-    height: 150px;
-  }
-
-  
-  
-  .save,
-  .quit {
-    text-align: center;
-    margin: 40px 0 0;
-  }
-}
 
 

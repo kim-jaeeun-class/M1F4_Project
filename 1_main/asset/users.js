@@ -4,6 +4,9 @@ const users = [
         name: '김하나',
         id: 'user01@naver.com',
         password: '1234',
+        nickname: '안녕',
+        interest: '스포츠',
+        region: '충남',
         role: 'student',
         phone: '010-1111-2222'
     },

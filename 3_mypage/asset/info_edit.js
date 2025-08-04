@@ -9,9 +9,9 @@ function init() {
         return;
     }
 
-    const userFixId = document.getElementById("id");
+    const userFixId = document.getElementById("fix_id");
     if (userFixId) {
-        userFixId.textContent = currentUser.id;
+        userFixId.value = currentUser.id;
     }
 
     bind(currentUser);
