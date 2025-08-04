@@ -98,6 +98,7 @@
     .li{
       padding-top : px;
     }
+    
 
     @media (max-width: 600px) {
     .container,
@@ -126,15 +127,15 @@
       width: 90% !important;
       max-width: 300px;
       margin:  0px auto;
-      display: block;
+      /* display: block; */
 
     }
   }
 
+  </style>
 
-
-    </style>
 </head>
+
 <body>
   <div class = "login_main">
     <div class = "logo">
@@ -206,13 +207,13 @@
     </div>
 
   </div>
-  <div class = "button_group" style="text-align: center; margin-top: 20px;width : 100%;">
-    <button onclick="goBack()" style="background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">뒤돌아가기</button>
-    <button onclick="goNext()" style="background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">다음</button>
+  <div class = "button_group" style="text-align: center; margin-top: 20px;margin-bottom: 30px;width : 100%;">
+    <button onclick="goBack()" style="border : none; background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">뒤돌아가기</button>
+    <button onclick="goNext()" style="border : none; background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">다음</button>
   </div>
 
 
-  <div class = "footer" style = "border : 1px solid red"></div>
+  <div class = "footer"></div>
 
 
   <script>
