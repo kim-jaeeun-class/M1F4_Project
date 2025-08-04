@@ -26,9 +26,9 @@ function bind(currentUser) {
 
         if (input === currentUser.password) {
             if (currentUser.role === 'student') {
-                window.location.href = '../../3_mypage/html/studylist_student.html';
+                window.location.href = '../../3_mypage/html/studylist.html';
             } else if (currentUser.role === 'volunteer') {
-                window.location.href = '../../3_mypage/html/studylist_volunteer.html';
+                window.location.href = '../../3_mypage/html/studylist.html';
             } else {
                 alert('알 수 없는 사용자 역할입니다.');
             }
