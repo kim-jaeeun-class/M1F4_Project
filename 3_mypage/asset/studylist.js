@@ -27,7 +27,7 @@ function init() {
 }
 
 // 지난 , 진행 중 수강내역 버튼 클릭 js
-function bind() {
+function bindStudyTab() { //다른 js파일의 bind와 충돌되어 수정합니다.
   const tabButtons = document.querySelectorAll('.list_tab div');     // 탭 버튼들
   const contents = document.querySelectorAll('.contents-line');      // 각 콘텐츠 영역
 
