@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="no-referrer" />
-<title>커뮤니티 게시판</title>
+<title>커뮤니티 :: 메인</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-<link rel="stylesheet" href="asset/project.css" />
+<link rel="stylesheet" href="/5_community/asset/project.css" />
 </head>
 <body>
 
@@ -21,22 +21,25 @@
   <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
   <div class="category" id="category-menu">
     <div class="category-list reg">
-      <a href="/2_lecture/html/2_lecture_main.html">수강 신청</a>
+      <a href="../../2_lecture/html/2_lecture_main.html">수강 신청</a>
     </div>
     <div class="category-list lec-require">
-      <a href="/2_lecture/html/2_lecture_require.html">강의 요청</a>
+      <a href="../../2_lecture/html/2_lecture_require.html">강의 요청</a>
     </div>
     <div class="category-list community">
-      <a href="/5_community/html/project.html">커뮤니티</a>
+      <a href="../../5_community/html/project.html">커뮤니티</a>
     </div>
     <div class="category-list mypage">
-      <a href="/3_mypage/html/mypage_main.html">마이 페이지</a>
+      <a href="../../3_mypage/html/mypage_main.html">마이 페이지</a>
     </div>
   </div>
 </div>
 
+
+
 <!-- 본문 -->
 <div class="body" style="padding: 20px;">
+  <div class="navigation">메인 > 커뮤니티 </div>
   <h2 class="community-title">커뮤니티 게시판</h2>
 
   <div class="content-wrapper">
@@ -101,7 +104,7 @@
 
       <div class="button-area">
         <button class="btn-more" id="btnMore">더 보기</button>
-        <button class="btn-create">새로운 모임 생성</button>
+        <button class="btn-create"><a href="moim.html">모임 생성</a></button>
       </div>
     </main>
   </div>
@@ -118,7 +121,8 @@
   <div class="copyright">© 2025 M1F4</div>
 </div>
 
-<script src="asset/project.js"></script>
+<!-- js 경로 넣기 -->
+<script src="/5_community/asset/project.js"></script>
 
 </body>
 </html>
