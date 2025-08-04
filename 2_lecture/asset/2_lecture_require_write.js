@@ -1,10 +1,10 @@
-window.addEventListener('load', binding);
+window.addEventListener('load', bind);
 
 /*
 원래 function bind() 대괄호 내용만 작성했는데,
 혹시나 싶어 감싸는 구조랑 주석 추가해둡니다.
 */
-function binding() {
+function bind() {
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 
