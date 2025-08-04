@@ -1,5 +1,3 @@
-// 
-
 fetch("/0_templete/templete.html")
   .then(res => res.text())
   .then(html => {
@@ -9,34 +7,41 @@ fetch("/0_templete/templete.html")
     const header = doc.querySelector(".head");
     const footer = doc.querySelector(".footer");
 
-    if (header) document.querySelector(".head").innerHTML = header.innerHTML;
-    if (footer) {
-      document.querySelector(".footer").innerHTML = footer.innerHTML;
+    const headTarget = document.querySelector(".head");
+    const footerTarget = document.querySelector(".footer");
 
-      // header/footer 삽입 후 DOM에 존재할 때 함수 호출
+    // ✅ .head가 존재할 경우에만 삽입
+    if (header && headTarget) {
+      headTarget.innerHTML = header.innerHTML;
+
+      // header 삽입 후 로고 클릭 리디렉션 로직 포함
+      requestAnimationFrame(() => {
+        const logoLink = document.querySelector(".head .main-logo a");
+        if (logoLink) {
+          logoLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.location.href = "/1_main/html/1_mainpage.html";
+          });
+        }
+      });
+    }
+
+    // ✅ .footer가 존재할 경우에만 삽입
+    if (footer && footerTarget) {
+      footerTarget.innerHTML = footer.innerHTML;
+
+      // footer 삽입 후 실행 함수들
       requestAnimationFrame(() => {
         if (typeof bind === "function") bind();
         if (typeof initChatbot === "function") initChatbot();
 
-        // 로고 클릭 시 로그인 상태에 따라 메인페이지 분기 이동
-        const logoLink = document.querySelector(".head .main-logo a");
-        if (logoLink) {
-          logoLink.addEventListener("click", function (e) {
-            e.preventDefault(); // 기본 이동 막기
-            window.location.href = "/1_main/html/1_mainpage.html";
-          });
-        }
-
         const logoutBtn = document.querySelector(".logoutBtn");
-
-        // 로그아웃 시 정보 제거
         if (logoutBtn) {
           logoutBtn.addEventListener("click", function () {
             localStorage.removeItem("currentUser");
           });
         }
-
       });
     }
   })
-  .catch(err => console.error("불러오기 실패:", err));
+  .catch(err => console.error("템플릿 불러오기 실패:", err));

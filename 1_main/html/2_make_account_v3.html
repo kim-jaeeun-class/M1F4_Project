@@ -5,8 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-   <!-- <script src="../../0_templete/headfooter.js"></script> -->
+  <!-- <script src="../../0_templete/headfooter.js"></script> -->
+    <!-- 1. templete.js: bind 정의 -->
+  <script src="../../0_templete/asset/templete.js"></script>
+
+  <!-- 2. chatbot.js: initChatbot 정의 -->
+  <script src="../../0_templete/asset/chatbot.js"></script>
+
+  <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+  <script src="../../0_templete/headfooter.js"></script>
   <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+ 
 
   <title>회원 가입</title>
   <style>
@@ -23,6 +32,10 @@
       padding: 20px 40px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .speech-bubble,.chatbot-icon{
+      display: none;
     }
     hr {
       margin: 10px 0 20px;
@@ -89,10 +102,10 @@
     @media (max-width: 600px) {
     .container,
     .login_main {
-      width: 95%;
+      width: 100%;
       padding: 15px 20px;
     }
-
+ 
     .terms_box {
       margin-left: 0;
     }
@@ -104,13 +117,17 @@
 
     .button-group {
       flex-direction: column;
+      text-align: center;
+       margin-top:20px;
+       width : 100%;
     }
 
     button {
       width: 90% !important;
       max-width: 300px;
-      margin: 10px auto;
+      margin:  0px auto;
       display: block;
+
     }
   }
 
@@ -189,10 +206,13 @@
     </div>
 
   </div>
-  <div style="text-align: center; margin-top: 20px;">
+  <div class = "button_group" style="text-align: center; margin-top: 20px;width : 100%;">
     <button onclick="goBack()" style="background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">뒤돌아가기</button>
     <button onclick="goNext()" style="background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">다음</button>
   </div>
+
+
+  <div class = "footer" style = "border : 1px solid red"></div>
 
 
   <script>
