@@ -144,6 +144,6 @@ function bind(user) {
         localStorage.removeItem("currentUser");
 
         alert("탈퇴되었습니다.");
-        window.location.href = "/1_main/html/1_main.html";
+        window.location.href = "../../1_main/html/1_mainpage.html";
     });
 }
