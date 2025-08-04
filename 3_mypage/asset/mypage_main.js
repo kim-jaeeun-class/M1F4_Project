@@ -25,12 +25,10 @@ function bind(currentUser) {
         const input = document.getElementById('passwordInput').value;
 
         if (input === currentUser.password) {
-            if (currentUser.role === 'student') {
-                window.location.href = '../../3_mypage/html/studylist.html';
-            } else if (currentUser.role === 'volunteer') {
-                window.location.href = '../../3_mypage/html/studylist.html';
-            } else {
+            if (!currentUser) {
                 alert('알 수 없는 사용자 역할입니다.');
+            } else {
+                window.location.href = '../../3_mypage/html/info_edit.html';
             }
         } else {
             alert('비밀번호가 틀렸습니다.');
