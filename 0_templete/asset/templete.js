@@ -1,5 +1,3 @@
-window.addEventListener('load', bind);
-
 function bind() {
   const hamburgerBtn = document.querySelector('#hamburger-menu');
   const categoryMenu = document.querySelector('#category-menu');
