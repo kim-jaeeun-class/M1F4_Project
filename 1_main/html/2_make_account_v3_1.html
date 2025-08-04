@@ -182,6 +182,13 @@
         <span class="toggle-password" data-target="password">👁️</span>
       </div>
 
+      <div class = "password_detail" style = "color : rgba(243, 7, 7, 0.911); font-size: 14px;">
+        최소 길이 : 보통 8자 이상
+        문자 조합 요구사항 : 영문 대소문자 포함,<br>
+        숫자 포함, 특수문자 포함, 연속/반복 문자 금지<br>
+        예: aaa111 또는 abcd1234 와 같은 패턴 제한
+      </div>
+
       <label for="password_confirm">비밀번호 확인</label>
       <div class="password-wrapper">
         <input type="password" id="password_confirm" name="password_confirm" required />
@@ -228,74 +235,141 @@
   </div>
 
   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <script>
-    function execDaumPostcode() {
-      new daum.Postcode({
-        oncomplete: function(data) {
-          document.getElementById("address").value = data.address;
-        }
-      }).open();
+ 
+<script>
+  // 📌 1. 주소 검색 (Daum API)
+  function execDaumPostcode() {
+    new daum.Postcode({
+      oncomplete: function (data) {
+        document.getElementById("address").value = data.address;
+      }
+    }).open();
+  }
+
+  // 📌 2. 비밀번호 유효성 검사 함수
+  function validatePassword(pw) {
+    const errors = [];
+
+    if (pw.length < 8) {
+      errors.push("8자 이상이어야 합니다.");
+    }
+    if (!/[A-Z]/.test(pw)) {
+      errors.push("영문 대문자를 포함해야 합니다.");
+    }
+    if (!/[a-z]/.test(pw)) {
+      errors.push("영문 소문자를 포함해야 합니다.");
+    }
+    if (!/[0-9]/.test(pw)) {
+      errors.push("숫자를 포함해야 합니다.");
+    }
+    if (!/[!@#$%^&*(),.?\":{}|<>_\-+=/\\[\]`~]/.test(pw)) {
+      errors.push("특수문자를 포함해야 합니다.");
+    }
+    if (/([a-zA-Z0-9])\1\1/.test(pw)) {
+      errors.push("같은 문자를 3번 이상 반복할 수 없습니다.");
+    }
+    if (/abcdefghijklmnopqrstuvwxyz|0123456789/.test(pw.toLowerCase())) {
+      errors.push("연속된 문자를 사용할 수 없습니다.");
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      // 이메일 도메인 직접입력
-      document.getElementById("email_domain").addEventListener("change", function () {
-        const customInput = document.getElementById("custom_domain");
-        customInput.style.display = (this.value === "직접입력") ? "block" : "none";
-        customInput.required = (this.value === "직접입력");
-      });
+    return errors;
+  }
 
-      // 비밀번호 보기/숨기기
-      document.querySelectorAll(".toggle-password").forEach(icon => {
-        icon.addEventListener("click", () => {
-          const input = document.getElementById(icon.getAttribute("data-target"));
-          input.type = input.type === "password" ? "text" : "password";
-        });
-      });
+  // 📌 3. 페이지 로드 후 이벤트 등록
+  document.addEventListener("DOMContentLoaded", function () {
 
-      // 비밀번호 확인 검사
-      const pwField = document.getElementById("password");
-      const pwConfirmField = document.getElementById("password_confirm");
+    // 🔹 이메일 도메인 직접 입력 처리
+    document.getElementById("email_domain").addEventListener("change", function () {
+      const customInput = document.getElementById("custom_domain");
+      if (this.value === "직접입력") {
+        customInput.style.display = "block";
+        customInput.required = true;
+      } else {
+        customInput.style.display = "none";
+        customInput.required = false;
+      }
+    });
 
-      pwConfirmField.addEventListener("blur", () => {
-        if (pwField.value && pwConfirmField.value && pwField.value !== pwConfirmField.value) {
-          alert("비밀번호가 일치하지 않습니다.");
-        }
-      });
-
-      // 가입 폼 제출 처리
-      document.getElementById("signupForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const pw = pwField.value;
-        const pwConfirm = pwConfirmField.value;
-        const birth = document.getElementById("birth").value;
-        const gender = document.querySelector('input[name="gender"]:checked');
-        const emailId = document.getElementById("email_id").value.trim();
-        const emailDomain = document.getElementById("email_domain").value;
-        const customDomain = document.getElementById("custom_domain").value.trim();
-        const phone1 = document.getElementById("phone1").value.trim();
-        const phone2 = document.getElementById("phone2").value.trim();
-        const phone3 = document.getElementById("phone3").value.trim();
-
-        if (!name || !pw || !pwConfirm || !birth || !gender ||
-            !emailId || !phone1 || !phone2 || !phone3 ||
-            (emailDomain === "직접입력" && !customDomain)) {
-          alert("모든 항목을 입력해주세요.");
-          return;
-        }
-
-        if (pw !== pwConfirm) {
-          alert("비밀번호가 일치하지 않습니다.");
-          return;
-        }
-
-        // 최종 이동
-        window.location.href = "3_login.html";
+    // 🔹 비밀번호 보기/숨기기 토글
+    document.querySelectorAll(".toggle-password").forEach(icon => {
+      icon.addEventListener("click", () => {
+        const input = document.getElementById(icon.getAttribute("data-target"));
+        input.type = (input.type === "password") ? "text" : "password";
       });
     });
-  </script>
+
+    // 🔹 비밀번호 실시간 유효성 검사
+    const passwordInput = document.getElementById("password");
+    const passwordDetail = document.querySelector(".password_detail");
+
+    passwordInput.addEventListener("input", () => {
+      const pw = passwordInput.value;
+      const messages = validatePassword(pw);
+
+      if (messages.length > 0) {
+        passwordDetail.style.color = "red";
+        passwordDetail.innerHTML = "❌ " + messages.join("<br>❌ ");
+      } else {
+        passwordDetail.style.color = "green";
+        passwordDetail.innerHTML = "✅ 비밀번호 조건을 충족했습니다.";
+      }
+    });
+
+    // 🔹 비밀번호 확인 입력 시 일치 여부 확인
+    const pwConfirmField = document.getElementById("password_confirm");
+
+    pwConfirmField.addEventListener("blur", () => {
+      const pw = passwordInput.value;
+      const pwConfirm = pwConfirmField.value;
+
+      if (pw && pwConfirm && pw !== pwConfirm) {
+        alert("비밀번호가 일치하지 않습니다.");
+      }
+    });
+
+    // 🔹 가입 폼 제출 처리
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const pw = passwordInput.value;
+      const pwConfirm = pwConfirmField.value;
+      const birth = document.getElementById("birth").value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const emailId = document.getElementById("email_id").value.trim();
+      const emailDomain = document.getElementById("email_domain").value;
+      const customDomain = document.getElementById("custom_domain").value.trim();
+      const phone1 = document.getElementById("phone1").value.trim();
+      const phone2 = document.getElementById("phone2").value.trim();
+      const phone3 = document.getElementById("phone3").value.trim();
+
+      // 필수값 누락 체크
+      if (!name || !pw || !pwConfirm || !birth || !gender ||
+          !emailId || !phone1 || !phone2 || !phone3 ||
+          (emailDomain === "직접입력" && !customDomain)) {
+        alert("모든 항목을 입력해주세요.");
+        return;
+      }
+
+      // 비밀번호 일치 확인
+      if (pw !== pwConfirm) {
+        alert("비밀번호가 일치하지 않습니다.");
+        return;
+      }
+
+      // 비밀번호 조건 검사
+      const pwErrors = validatePassword(pw);
+      if (pwErrors.length > 0) {
+        alert("비밀번호가 다음 조건을 만족하지 않습니다:\n- " + pwErrors.join("\n- "));
+        return;
+      }
+
+      // 모든 조건 통과 → 로그인 페이지로 이동
+      window.location.href = "3_login.html";
+    });
+  });
+</script>
+
 
 </body>
 </html>
