@@ -92,7 +92,7 @@ a:active {
 /* 네비게이션 부분 */
 .nav {
     width: 80%;
-    margin-top: 40px;
+    margin: 40px 0 0 50px;
 }
 .nav a {
     color: #5b9b5b;
