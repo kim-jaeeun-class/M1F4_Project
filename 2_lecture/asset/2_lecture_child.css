@@ -130,7 +130,6 @@ button {
     justify-content: space-between;
     border-bottom: 2px solid #3e6b3e;
     background-color: #f9f9f9;
-    border-radius: 10px 10px 0 0;
     overflow: hidden;
     width: 80%;
     margin: 2% auto 0;
@@ -148,7 +147,7 @@ button {
     padding: 0.75em 1em;
     border: 1px solid transparent;
     border-bottom: none;
-    background-color: #d9ead3; /* 연한 녹색 배경 */
+    background-color: #d9ead3;
     color: #3e6b3e;
     font-weight: 600;
     text-align: center;
@@ -156,12 +155,8 @@ button {
     transition: background-color 0.3s ease, color 0.3s ease;
     user-select: none;
     font-size: 1em;
-}
-
-
-
-.tab:not(:last-child) {
     border-right: 1px solid #aacda6;
+    border-radius: 10px 10px 0 0;
 }
 
 .tab:hover {
@@ -412,6 +407,7 @@ p {
     margin: auto;
 
 }
+
 .review {
     margin: 30px 0 30px;
     background-color: #f0f0f0;
@@ -626,6 +622,7 @@ label {
 
     .tab-list-child {
         width: 50%;
+        font-size: 0.8em;
     }
 }
 
@@ -634,11 +631,12 @@ label {
     .tab-list-child {
         width: 75%;
     }
+
     .tab {
         width: 25%;
-        height: 40px;
+        height: 100%;
         padding: 1px;
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .apply {

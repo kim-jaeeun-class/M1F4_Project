@@ -1,4 +1,3 @@
-window.addEventListener('load', bind);
 
 /*
 원래 function bind() 대괄호 내용만 작성했는데,
@@ -109,6 +108,23 @@ function bind() {
     }
 
     // 다른 이벤트들 (햄버거 버튼 등)은 그대로 두셔도 됩니다
+
+    const modify = document.querySelector('.modify');
+    const deleting = document.querySelector('.delete');
+    
+    if(modify) {
+        modify.addEventListener('click', () => {
+            window.location.href = '2_lecture_require_write.html';
+        })
+    }
+    if(deleting) {
+        deleting.addEventListener('click', () => {
+            alert('글이 삭제되었습니다.');
+            setTimeout(() => {
+                window.location.href = '2_lecture_require.html';
+            }, 100); // 100ms 지연 후 이동
+        })
+    }
 }
 
 

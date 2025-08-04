@@ -1,5 +1,4 @@
 function bind() {
-
     // 탭 버튼
     const tabs = document.querySelectorAll('.tab');
     const contentMap = {
@@ -85,7 +84,7 @@ function bind() {
     apply.addEventListener('click', () => {
         alert(
             '신청이 완료되었습니다.\n최종 승인은 담당자 확인 후 반영됩니다.\n승인 처리 시, 선택하신 알림 서비스로 결과를 알려드립니다.'
-        );
+        ), { once: true };
     })
 
     // 모달 관련 바로 처리
