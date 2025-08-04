@@ -1,20 +1,20 @@
-window.addEventListener('load', binding);
+function bind() {
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const categoryMenu = document.getElementById('category-menu');
 
-function binding() {
-    // hamburger 버튼이 동적으로 삽입될 때까지 기다리는 코드
-    const observer = new MutationObserver(() => {
-        const hamburgerBtn = document.getElementById('hamburger-menu');
-        const categoryMenu = document.getElementById('category-menu');
-        if (hamburgerBtn && categoryMenu) {
-            hamburgerBtn.addEventListener('click', () => {
-                categoryMenu.classList.toggle('show');
-            });
-            observer.disconnect(); // 한 번만 실행되도록 종료
-        }
+    hamburgerBtn.addEventListener('click', () => {
+        categoryMenu
+            .classList
+            .toggle('show');
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
-
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
     // 필터링
 
     const dropdownBtn = document.querySelector('#dropdown-btn');

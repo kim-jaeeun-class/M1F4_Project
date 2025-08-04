@@ -1,22 +1,22 @@
-window.addEventListener('load', binding);
+function bind() {
 
-function binding() {
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const categoryMenu = document.getElementById('category-menu');
 
-    const observer = new MutationObserver(() => {
-        const hamburgerBtn = document.getElementById('hamburger-menu');
-        const categoryMenu = document.getElementById('category-menu');
-        if (hamburgerBtn && categoryMenu) {
-            hamburgerBtn.addEventListener('click', () => {
-                categoryMenu.classList.toggle('show');
-            });
-            observer.disconnect(); // 이벤트 연결되면 감시 종료
-        }
+    hamburgerBtn.addEventListener('click', () => {
+        categoryMenu
+            .classList
+            .toggle('show');
     });
 
-    // body 아래에 동적 요소가 삽입될 때를 감지
-    observer.observe(document.body, { childList: true, subtree: true });
-
-
+    window.addEventListener('pageshow', () => {
+        if (document.activeElement && document.activeElement.blur) {
+            document
+                .activeElement
+                .blur();
+        }
+    });
+    
     // 탭 버튼
 
     const tabs = document.querySelectorAll('.tab');

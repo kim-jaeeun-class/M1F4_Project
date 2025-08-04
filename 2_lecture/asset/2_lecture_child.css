@@ -205,9 +205,15 @@ h1 {
     display: flex;
 }
 
-.subject-title, .people-num-title, .location-title, .info-title {
+.subject-title, .people-num-title, .location-title {
     font-weight: 600;
     width: 10%;
+}
+
+.info-title {
+    font-weight: 600;
+    width: 100%;
+    margin-top: 2%;
 }
 
 .subject-title, .people-num-title, .subject-content, .people-num-content {
