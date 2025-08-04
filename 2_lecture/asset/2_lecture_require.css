@@ -1,5 +1,3 @@
-/* body 부분 */
-
 /* 
 table
     thead
@@ -49,7 +47,7 @@ button {
 }
 
 table {
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
@@ -57,14 +55,23 @@ thead {
     font-size: 0.95em;
     font-weight: 600;
     border-bottom: 3px solid #3e6b3e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 tbody {
     font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.table-num, .table-title, .table-date {
+.table-num, .table-title, .table-date, .like, .count {
     padding-bottom: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .table-num {
@@ -258,7 +265,7 @@ td {
     }
 
     .table-num {
-        width: 15%;
+        width: 20%;
     }
 
     .table-title {

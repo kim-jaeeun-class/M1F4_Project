@@ -92,7 +92,7 @@ function bind() {
         btn.textContent = label;
         btn.style.margin = '0 5px';
         btn.style.padding = '5px 10px';
-        btn.style.border = '1px solid #3e6b3e';
+        btn.style.border = '1px solid transparent';
         btn.style.borderRadius = '5px';
         btn.style.backgroundColor = '#fff';
         btn.style.cursor = 'pointer';
@@ -103,5 +103,23 @@ function bind() {
     // 초기 페이지 로딩
     renderTable(currentPage);
     renderPagination();
+
+    // function updateText() {
+    //     const text1 = document.querySelector('.like');
+    //     const text2 = document.querySelector('.count');
+    //     if (window.innerWidth < 800) {
+    //         text1.textContent = "❤";
+    //         text2.textContent = "👁‍🗨";
+    //     } else {
+    //         text1.textContent = "좋아요";
+    //         text2.textContent = "조회수";
+    //     }
+    // }
+
+    // // 최초 실행
+    // updateText();
+
+    // // 창 크기 변경 시 텍스트 갱신
+    // window.addEventListener('resize', updateText);
 
 }
