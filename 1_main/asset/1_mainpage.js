@@ -79,7 +79,7 @@ function bind() {
     }
     if(gaipBtn) {
         gaipBtn.addEventListener('click', () => {
-            window.location.href = '2_make_account_v2.html';
+            window.location.href = '2_make_account_v3.html';
         })
     }
 
