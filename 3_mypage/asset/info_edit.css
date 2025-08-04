@@ -81,7 +81,7 @@ a:active {
 /* body css 시작 */
 .my_back {
     display: flex;
-    height: 120vh;
+    height: 1500px;
 }
 
 /* 사이드 탭 (왼쪽 메뉴) */
@@ -165,27 +165,25 @@ a:active {
     background-color: #ffffff;
     border-radius: 10px;
     text-align: center;
-    margin: 0px 100px 150px;
-    padding: 70px 50px 30px;
+    width: 90%;
+    margin: 0px 30px 150px;
+    padding: 70px 30px 30px;
     box-shadow: 0px 0px 10px rgb(0,0,0,0.1);
 }
 
 .center input {
-    width: 300px;
+    width: 200px;
     height: 25px;
 }
 .left {
     /* border: 1px solid black; */
-    display: inline-block;
     text-align: center;
-    margin:  50px 50px 0px 30px;
+    margin:  50px 50px 0px 10px;
 }
 .right {
     /* border: 1px solid blue; */
-    display: inline-block;
     text-align: left;
     vertical-align: top;
-    width: 900px;
 }
 
 
@@ -198,7 +196,7 @@ a:active {
     border-radius: 100%;
     width: 200px;
     height: 200px;
-    margin-bottom: 50px;
+    margin: 0px auto 50px;
     box-sizing: border-box;
 }
 .profile_button button {
@@ -244,7 +242,7 @@ a:active {
 .field select {
     text-align: center;
     font-size: 16px;
-    width: 300px;
+    width: 200px;
     height: 30px;
 }
 
@@ -271,7 +269,7 @@ button:hover {
 }
 .quit {
     text-align: right;
-    margin: 0px 145px 0px 0px;
+    margin: 100px 50px 0px 0px;
 }
 
 .save button,
