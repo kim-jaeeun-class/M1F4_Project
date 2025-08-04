@@ -16,16 +16,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'ChosunGu';
-    background-color: #f9f9f9;
-    color: #333;
 }
 
 .wrapper {
-    flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.head {
+    padding: 20px 5%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 a, a:link, a:visited {
@@ -334,49 +336,13 @@ a:active {
     height: 80px;
 }
 
-
-/*
-    footer : 홈페이지 정보
-    .bottom-menu : footer 내부 요소 묶음
-        .copyright : 카피라이트
-        .bottom-menu-list : 하단 메뉴 묶음(개별)
-*/
+/* footer */
 .footer {
     width: 100%;
-    background-color: #f0f0f0;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #555;
-    border-top: 1px solid #ccc;
     text-align: center;
-    box-sizing: border-box;
-    min-height: 80px; 
-}
-
-.bottom-menu {
-    gap: 15px;
-    font-size: 0.9em;
-    margin: 3% auto;
-}
-
-.copyright {
-    display: block;
-    margin: 3% auto;
-}
-
-.bottom-menu-list {
-    cursor: pointer;
-    transition: color 0.3s;
-    display: inline;
-}
-.bottom-menu-list:first-child::before {
-    content: "  "
-}
-.bottom-menu-list::before {
-    content: " | "
-}
-.bottom-menu-list:hover {
-    color: #5b9b5b;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ccc;
 }
 
 
