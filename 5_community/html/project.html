@@ -119,26 +119,6 @@
 </div>
 
 <script src="asset/project.js"></script>
-<script>
-  const btnMore = document.getElementById('btnMore');
-  const cards = document.querySelectorAll('.group-card');
-  let visibleCount = 4;
-  const increment = 2;
-
-  btnMore.addEventListener('click', () => {
-    let shown = 0;
-    for (let i = visibleCount; i < cards.length && shown < increment; i++) {
-      if (cards[i].classList.contains('hidden')) {
-        cards[i].classList.remove('hidden');
-        shown++;
-      }
-    }
-    visibleCount += shown;
-    if (visibleCount >= cards.length) {
-      btnMore.style.display = 'none';
-    }
-  });
-</script>
 
 </body>
 </html>
