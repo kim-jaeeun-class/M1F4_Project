@@ -1,14 +1,6 @@
-window.addEventListener('load', bind);
+window.addEventListener('load', bind3);
 
-function bind() {
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const categoryMenu = document.getElementById('category-menu');
-
-    if (hamburgerBtn && categoryMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            categoryMenu.classList.toggle('show');
-        });
-    }
+function bind3() {
 
     window.addEventListener('pageshow', () => {
         if (document.activeElement && document.activeElement.blur) {

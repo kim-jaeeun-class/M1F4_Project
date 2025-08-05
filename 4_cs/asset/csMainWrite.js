@@ -1,6 +1,6 @@
-window.addEventListener('load', bind);
+window.addEventListener('load', bind2);
 
-function bind() {
+function bind2() {
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const categoryMenu = document.getElementById('category-menu');
 

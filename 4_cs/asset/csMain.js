@@ -1,19 +1,8 @@
-window.addEventListener('load', bind);
+window.addEventListener('load', bindGNB);
 
-function bind() {
+function bindGNB() {
     /* GNB 파트 */
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const categoryMenu = document.getElementById('category-menu');
 
-    hamburgerBtn.addEventListener('click', () => {
-        categoryMenu.classList.toggle('show');
-    });
-
-    window.addEventListener('pageshow', () => {
-        if (document.activeElement && document.activeElement.blur) {
-            document.activeElement.blur();
-        }
-    });
 
     /* csCategory 하이라이트 */
     document.addEventListener('DOMContentLoaded', function () {
