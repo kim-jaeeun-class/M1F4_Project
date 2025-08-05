@@ -16,3 +16,11 @@ btnMore.addEventListener('click', () => {
     btnMore.style.display = 'none';  // 모두 다 보여주면 버튼 숨김
   }
 });
+
+for(let i=0; i<cards.length; i++){
+  cards[i].addEventListener('click', () => {
+    window.location.href = 'moimView.html'
+  })
+}
+
+

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="no-referrer" />
-  <title>모임 등록</title>
+  <title>커뮤니티 :: 모임 등록</title>
   <!-- CSS Reset -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
   <!-- 템플릿 스타일 -->
@@ -12,9 +12,9 @@
   <!-- 커스텀 스타일 -->
   <link rel="stylesheet" href="/5_community/asset/moim.css" />
 </head>
+
 <body>
   <!-- 헤더 -->
-
   <div class="head">
     <div class="main-logo">
       <a href="../../1_main/html/1_mainpage.html">
@@ -30,8 +30,11 @@
       <div class="category-list mypage"><a href="../3_mypage/html/mypage_main.html">마이 페이지</a></div>
     </div>
   </div>
+
   <!-- 본문 콘텐츠 -->
-   <div class="pink">메인 > 커뮤니티</div>
+  <!-- 네비게이션 -->
+  <div class="nav"><a href="/1_main/html/1_mainpage.html" class = "navFirst">메인</a> &gt; <a href="/5_community/html/project.html" class = "navSecond">커뮤니티</a> &gt; 모임 등록</div>
+  
   <div class="moim-container">
     <h2 class="board-title">커뮤니티 게시판</h2>
 
@@ -79,11 +82,10 @@
 
         <div class="image-section">
           <button class="upload-btn">이미지 업로드</button>
-          <div class="image-preview">
-            미리보기
-          </div>
+          <div class="image-preview">미리보기</div>
         </div>
       </div>
+      <button class="upload-btn allUpload">모임 등록</button>
     </div>
   </div>
 

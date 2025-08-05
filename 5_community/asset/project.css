@@ -80,93 +80,37 @@ a:active {
 }
 
 
-/*
-    footer : 홈페이지 정보
-    .bottom-menu : footer 내부 요소 묶음
-        .copyright : 카피라이트
-        .bottom-menu-list : 하단 메뉴 묶음(개별)
-*/
-.footer {
-    background-color: #f0f0f0;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #555;
-    border-top: 1px solid #ccc;
-    margin-top: 40px;
-    margin: auto;
-    text-align: center;
+/* 본문 영역 */
+/* 네비게이션 부분 */
+.nav {
+  width: 80%;
+  margin: 40px auto;
+}
+.nav a.navFirst {
+  color: #5b9b5b;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.nav a.navSecond {
+  color: #aacda6;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.navFirst:hover, .navSecond:hover {
+  color: #3e6b3e;
+  text-decoration: underline;
 }
 
-.bottom-menu {
-    gap: 15px;
-    font-size: 0.9em;
-    margin: 3% auto;
-}
-
-.copyright {
-    display: block;
-    margin: 3% auto;
-}
-
-.bottom-menu-list {
-    cursor: pointer;
-    transition: color 0.3s;
-    display: inline;
-}
-.bottom-menu-list:first-child::before {
-    content: "  "
-}
-.bottom-menu-list::before {
-    content: " | "
-}
-.bottom-menu-list:hover {
-    color: #5b9b5b;
-}
-
-/* 반응형 */
-@media (max-width: 768px) {
-    .head {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .hamburger-menu {
-        display: block;
-        font-size: 28px;
-        margin-left: auto;
-        margin-top: 10px;
-        position: absolute;
-        top: 13px;
-        right: 5%;
-        z-index: 1000;
-    }
-
-    .category {
-        display: none;
-        overflow: hidden;
-        flex-direction: column;
-        width: 100%;
-        margin: 5% auto;
-        gap: 30px;
-        padding: 20px 0;
-        background-color: #f9f9f9;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-    }
-
-    .category.show {
-        display: flex;
-    }
-}
-* 제목 영역 */
+/* 제목 영역 */
 .community-title {
-  background-color: #5b9b5b;
-  color: white;
+  color: #5b9b5b;
   text-align: center;
   font-size: 2rem;
-  padding: 20px 0;
+  padding: 10px;
   font-weight: bold;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -174,8 +118,10 @@ a:active {
 
 /* 전체 레이아웃 */
 .content-wrapper {
+  width: 80%;
   display: flex;
   gap: 20px;
+  margin: 0 auto;
   padding: 0 20px 40px 20px;
 }
 
@@ -355,4 +301,83 @@ a:active {
 
 
 
+/*
+    footer : 홈페이지 정보
+    .bottom-menu : footer 내부 요소 묶음
+        .copyright : 카피라이트
+        .bottom-menu-list : 하단 메뉴 묶음(개별)
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    margin: auto;
+    text-align: center;
+}
 
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+.bottom-menu-list:first-child::before {
+    content: "  "
+}
+.bottom-menu-list::before {
+    content: " | "
+}
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+}

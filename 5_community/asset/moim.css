@@ -79,105 +79,137 @@ a:active {
     padding: 0 20px;
 }
 
+
+/* 네비게이션 부분 */
+.nav {
+    width: 80%;
+    margin: 40px auto;
+}
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav a.navSecond {
+    color: #aacda6;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navFirst:hover, .navSecond:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
 /* 시작 */
 .moim-container {
-  max-width: 1000px;
-  margin: 60px auto;
-  background: #eee;
-  border: 2px solid #5b9b5b;
-  padding: 40px;
-  border-radius: 1.5em;
+    max-width: 1000px;
+    margin: 60px auto;
+    background: #eee;
+    border: 2px solid #5b9b5b;
+    padding: 40px;
+    border-radius: 1.5em;
 }
 
 .board-title {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 25px;
-  color: #5b9b5b;
-  font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #5b9b5b;
+    font-weight: bold;
 }
 
 .moim-title {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #5b9b5b;
-  background-color: #f7fff7;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #5b9b5b;
+    background-color: #f7fff7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    }
 
 .filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .region-select,
 .category-select {
-  min-width: 160px;
-  padding: 10px;
-  border: 1px solid #5b9b5b;
-  background-color: #f7fff7;
-  border-radius: 5px;
-  color: #333;
+    min-width: 160px;
+    padding: 10px;
+    border: 1px solid #5b9b5b;
+    background-color: #f7fff7;
+    border-radius: 5px;
+    color: #333;
 }
 
 .filters div {
-  background-color: #f7fff7;
-  border: 1px solid #5b9b5b;
-  padding: 10px;
-  border-radius: 5px;
-  color: #333;
+    background-color: #f7fff7;
+    border: 1px solid #5b9b5b;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
 }
 
 .content-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: stretch; /* 높이 맞추기 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch; /* 높이 맞추기 */
 }
 
 .moim-description {
-  flex: 2;
-  height: 180px;
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #5b9b5b;
-  background-color: #f7fff7;
-  resize: none;
-  border-radius: 5px;
-  box-sizing: border-box;
+    flex: 2;
+    height: 202px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #5b9b5b;
+    background-color: #f7fff7;
+    resize: none;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .image-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: 180px; /* 높이 맞추기 */
-  box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 180px; /* 높이 맞추기 */
+    box-sizing: border-box;
 }
 
 .upload-btn {
-  padding: 10px;
-  background-color: #5b9b5b;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+    padding: 10px;
+    background-color: #5b9b5b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .image-preview {
-  background-color: #ffffff;
-  height: 150px;
-  border: 2px dashed #5b9b5b;
-  text-align: center;
-  line-height: 150px;
-  border-radius: 5px;
-  color: #999;
+    background-color: #ffffff;
+    height: 150px;
+    border: 2px dashed #5b9b5b;
+    text-align: center;
+    line-height: 150px;
+    border-radius: 5px;
+    color: #999;
 }
+
+.allUpload {
+    width: 20%;
+    margin: 10px 0 0 auto; /* 왼쪽 마진을 auto로 */
+    display: block;   
+}
+
 
 /* 끝 */
 
