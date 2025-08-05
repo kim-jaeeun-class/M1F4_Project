@@ -15,7 +15,7 @@ function init(){
     if (userFixId) {
         userFixId.textContent = currentUser.id;
     }
-
+    bindTab();
     bindmypage(currentUser); // currentUser 전달
 }
 function bindmypage(currentUser) {
@@ -44,5 +44,14 @@ function bindmypage(currentUser) {
             e.preventDefault();
             confirm();
         }
+    });
+}
+
+function bindTab() {
+    document.querySelector('.tab_1').addEventListener('click', function () {
+        window.location.href = '/3_mypage/html/studylist.html';
+    });
+    document.querySelector('.tab_2').addEventListener('click', function () {
+        window.location.href = '/3_mypage/html/mypage_main.html';
     });
 }

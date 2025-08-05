@@ -13,7 +13,7 @@ function init() {
     if (userFixId) {
         userFixId.value = currentUser.id;
     }
-
+    bindTab();
     binduser(currentUser);
 }
 
@@ -25,6 +25,15 @@ function correctPassword(password) {
     const specialCheck = /[!@#$%^&*(),.?":{}|<>]/.test(password);
 
     return lengthCheck && upperCheck && lowerCheck && numberCheck && specialCheck;
+}
+
+function bindTab() {
+    document.querySelector('.tab_1').addEventListener('click', function () {
+        window.location.href = '/3_mypage/html/studylist.html';
+    });
+    document.querySelector('.tab_2').addEventListener('click', function () {
+        window.location.href = '/3_mypage/html/mypage_main.html';
+    });
 }
 
 function binduser(user) {

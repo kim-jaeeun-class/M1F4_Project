@@ -62,6 +62,7 @@ function bind() {
         if (user) {
             const tempPw = generateTempPassword();
             alert(`임시 비밀번호: ${tempPw}`);
+            window.location.href = '/1_main/html/3_login.html';
         } else {
             alert('해당 이메일로 등록된 계정을 찾을 수 없습니다.');
         }
@@ -88,6 +89,7 @@ function bind() {
         if (user) {
             const tempPw = generateTempPassword();
             alert(`임시 비밀번호: ${tempPw}`);
+            window.location.href = '/1_main/html/3_login.html';
         } else {
             alert('해당 이메일로 등록된 계정을 찾을 수 없습니다.');
         }
