@@ -21,16 +21,32 @@ function bind() {
             return;
         }
 
-        const foundUser = users.find(u => u.id === inputId && u.password === inputPw);
+        let foundUser = null;
+
+        for (const user of users) {
+            if (user.id === inputId && user.password === inputPw) {
+                foundUser = user;
+                break;
+            }
+        }
+
 
         if (foundUser) {
             // 로그인 성공 시 현재 유저 정보 저장
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
-            window.location.href = '/1_main/html/1_mainpage.html';
+
+            // 역할에 따라 페이지 이동
+            if (foundUser.role === 'admin') {
+                window.location.href = '/admin.html';
+            } else if (foundUser.role !== 'admin') {
+                window.location.href = '/1_main/html/1_mainpage.html';
+            } else {
+                alert('알 수 없는 사용자 권한입니다.');
+            }
         } else {
             alert('아이디 또는 비밀번호가 올바르지 않습니다.');
         }
-    }
+    }       
 
     // 클릭으로 로그인
     loginButton.addEventListener('click', function (e) {

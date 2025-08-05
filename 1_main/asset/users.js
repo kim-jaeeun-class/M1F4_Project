@@ -23,5 +23,12 @@ const users = [
         password: 'tofhdns',
         role: 'student',
         phone: '010-5555-6666'
+    },
+    {
+        name: '윤성연',
+        id: 'admin@gmail.com',
+        password: 'admin',
+        role: 'admin',
+        phone: '010-0000-0000'
     }
 ];
