@@ -24,9 +24,9 @@
     </div>
     <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
     <div class="category" id="category-menu">
-      <div class="category-list reg"><a href="../2_lecture/html/2_lecture_main.html">수강 신청</a></div>
-      <div class="category-list lec-require"><a href="../2_lecture/html/2_lecture_require.html">강의 요청</a></div>
-      <div class="category-list community"><a href="../html/project.html">커뮤니티</a></div>
+      <div class="category-list reg"><a href="/2_lecture/html/2_lecture_main.html">수강 신청</a></div>
+      <div class="category-list lec-require"><a href="/2_lecture/html/2_lecture_require.html">강의 요청</a></div>
+      <div class="category-list community"><a href="./html/project.html">커뮤니티</a></div>
       <div class="category-list mypage"><a href="../3_mypage/html/mypage_main.html">마이 페이지</a></div>
     </div>
   </div>
@@ -81,7 +81,8 @@
         <textarea class="moim-description" placeholder="활동내용 및 모임 소개"></textarea>
 
         <div class="image-section">
-          <button class="upload-btn">이미지 업로드</button>
+          <button class="upload-btn" id="uploadBtn">이미지 업로드</button>
+          <input type="file" id="fileInput" accept="image/*" style="display: none;" />
           <div class="image-preview">미리보기</div>
         </div>
       </div>

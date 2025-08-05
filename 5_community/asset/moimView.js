@@ -39,4 +39,3 @@ fetch("/0_templete/templete.html")
       });
     }
   })
-  .catch(err => console.error("불러오기 실패:", err));

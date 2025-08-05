@@ -64,7 +64,10 @@
             <div class="group-description">
             <h2>#모임 소개(사진 포함 가능)</h2>
             <a href="https://via.placeholder.com/600x300" target="_blank" rel="noopener noreferrer">
-                <img src="https://via.placeholder.com/600x300" alt="모임 사진 예시" />
+  <button id="selectPhotoBtn" class="green-button"> 사진 선택</button>
+  <input type="file" id="photoInput" accept="image/*" style="display: none;" />
+</div>
+                    </div>
             </a>
 
             <!-- 챗봇 -->
@@ -96,3 +99,28 @@
         </div>
     </body>
 </html>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const selectPhotoBtn = document.getElementById('selectPhotoBtn');
+    const photoInput = document.getElementById('photoInput');
+    const selectedPhoto = document.getElementById('selectedPhoto');
+
+    // 버튼 클릭 시 파일 선택창 열기
+    selectPhotoBtn.addEventListener('click', () => {
+      photoInput.click();
+    });
+
+    // 파일이 선택되었을 때 이미지 미리보기
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        selectedPhoto.src = e.target.result;
+        selectedPhoto.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
