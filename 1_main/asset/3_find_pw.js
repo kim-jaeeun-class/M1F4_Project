@@ -6,6 +6,13 @@ function init() {
 }
 
 function bind() {
+    // 뒤로가기 버튼
+    const backBtn = document.querySelector('.before_pw')
+    
+    backBtn.addEventListener('click', function () {
+        window.location.href = '/1_main/html/3_login.html';
+    });
+    
 
     // 라디오 버튼과 폼 영역 선택
     const radioPhone = document.querySelector('input[value="휴대폰번호로 발급받기"]');
@@ -117,6 +124,9 @@ function bind() {
     if (phoneSelect.value !== '직접입력') {
         phoneDomainInput.value = phoneSelect.value;
         phoneDomainInput.readOnly = true;
+    } else {
+        phoneDomainInput.value = '';
+        phoneDomainInput.readOnly = false;
     }
     
     phoneSelect.addEventListener('change', () => {
@@ -138,6 +148,9 @@ function bind() {
     if (emailSelect.value !== '직접입력') {
         emailDomainInput.value = emailSelect.value;
         emailDomainInput.readOnly = true;
+    } else {
+        emailDomainInput.value = '';
+        emailDomainInput.readOnly = false;
     }
     
     emailSelect.addEventListener('change', () => {

@@ -61,11 +61,14 @@
                                 <div class="id_2_text">
                                     <input type="text">
                                 </div>
-                                <button type="submit">다음></button>
                             </div>
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div class="button_box">
+                <button type="button" class="before">뒤로가기</button>
+                <button type="submit" class="next">다음</button>
             </div>
         </div>
     </div>
@@ -95,9 +98,17 @@
     const nameInput = document.querySelector('.id_1_text input');
     const phoneSelect = document.querySelector('.id_2_sel');
     const phoneInput = document.querySelector('.id_2_text input');
-    const submitBtn = document.querySelector('.id_2_1 button');
+    const submitBtn = document.querySelector('.next');
+    const backBtn = document.querySelector('.before')
 
-    // 아이디 찾기 동작 함수 (공통으로 사용)
+    // 뒤로가기 버튼
+    backBtn.addEventListener('click', function () {
+        window.location.href = '/1_main/html/3_login.html';
+    });
+    
+
+
+    // 아이디 찾기 동작 함수 
     function findId() {
         const enteredName = nameInput.value.trim();
         const phonePrefix = phoneSelect.value;
