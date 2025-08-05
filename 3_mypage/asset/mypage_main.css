@@ -225,6 +225,7 @@ a:active {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    border: none;
 }
 
 .button button:hover {
