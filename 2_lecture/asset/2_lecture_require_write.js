@@ -24,21 +24,6 @@ function bind() {
 
     // 이벤트 추가 필요할 경우 이 아래로 삽입
 
-    // 버튼 클릭 이벤트(링크)
-    const cancel = document.querySelector('#cancel');
-    const input = document.querySelector('#input');
-    
-    if(cancel) {
-        cancel.addEventListener('click', () => {
-            window.location.href = '2_lecture_require.html';
-        })
-    }
-    if(input) {
-        input.addEventListener('click', () => {
-            window.location.href = '2_lecture_require_detail.html';
-        })
-    }
-
     const dropdownBtn = document.querySelector('#dropdown-btn');
     const select = document.querySelector('.subject-list');
 
@@ -82,4 +67,74 @@ function bind() {
             : '선택 없음';
     }
 
+    // 버튼 클릭 이벤트 : 작성 취소, 작성 완료
+    // 작성 취소 버튼을 누를 시, 정말 취소하시겠습니까?라는 알림창을 표시한 후
+    // 알림창의 확인 버튼을 누르면 글 작성이 취소되었습니다라는 알림과 함께
+    // 지정한 페이지로 이동
+    // 작성 버튼을 누르면 제목, 주제, 날짜, 내용 값이 전부 있는 지 확인 후,
+    // 값이 있을 때만 글 작성이 완료됐다는 알림창 표시한 후 페이지 이동
+    // 아니면 00를 작성하지 않으셨습니다라는 내용의 알림창을 띄움
+    const cancel = document.querySelector('#cancel');
+    const input = document.querySelector('#input');
+
+    if (cancel) {
+        cancel.addEventListener('click', () => {
+            const confirmed = confirm('정말 글 작성을 취소하시겠습니까?');
+            if (confirmed) {
+                alert('글 작성이 취소되었습니다.');
+                setTimeout(() => {
+                    window.location.href = '2_lecture_require.html';
+                }, 100);
+            }
+        });
+    }
+
+    let isSubmitted = false;
+
+    if (input) {
+        input.addEventListener('click', () => {
+            if (isSubmitted) 
+                return; // 이미 클릭된 경우 무시
+            isSubmitted = true;
+
+            const title = document
+                .querySelector('.input-txt')
+                .value
+                .trim();
+            const checkedSubjects = document.querySelectorAll('.subject-con:checked');
+            const date = document
+                .querySelector('.date-sel')
+                .value;
+            const content = document
+                .querySelector('.write')
+                .value
+                .trim();
+
+            if (!title) {
+                alert('제목이 작성되지 않았습니다.');
+                isSubmitted = false;
+                return;
+            }
+            if (checkedSubjects.length === 0) {
+                alert('주제를 선택하지 않았습니다.');
+                isSubmitted = false;
+                return;
+            }
+            if (!date) {
+                alert('날짜가 선택되지 않았습니다.');
+                isSubmitted = false;
+                return;
+            }
+            if (!content) {
+                alert('내용이 작성되지 않았습니다.');
+                isSubmitted = false;
+                return;
+            }
+
+            alert('글 작성이 완료되었습니다.');
+            setTimeout(() => {
+                window.location.href = '2_lecture_require_detail.html';
+            }, 100);
+        });
+    }
 }
