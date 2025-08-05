@@ -94,7 +94,7 @@ a:active {
   transition: color 0.3s ease;
 }
 .nav a.navSecond {
-  color: #aacda6;
+  color: #5b9b5b;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
@@ -287,7 +287,7 @@ a:active {
   line-height: 1.6 !important;
   letter-spacing: 0.03em !important;
   margin: 0 !important;
-  color: #4a7a4a !important;
+  color: #5b9b5b !important;
 }
 .group-card h4 {
   padding: 10px;

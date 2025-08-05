@@ -381,19 +381,7 @@ a:active {
     display: none;
   }
 }
-/* 제목 상단 */
-.community-header {
-  background-color: #f8c6c6;
-  padding: 20px;
-  text-align: center;
-  margin-top: 30px;
-  font-weight: bold;
 
-}
-.community-header h1 {
-  font-size: 24px;
-  font-weight: bold;
-}
 
 /* 모임 박스 전체 */
 .group-box {
@@ -486,7 +474,7 @@ a:hover {
 
 /* 상단 제목 영역 */
 .community-header {
-  background-color: #3e6b3e;
+  background-color: #5b9b5b;
   padding: 20px;
   text-align: center;
   color: #ffffff;
@@ -531,7 +519,7 @@ a:hover {
 
 /* 버튼 */
 .join-btn {
-  background-color: #3e6b3e;
+  background-color: #5b9b5b;
   border: none;
   color: #ffffff;
   padding: 10px 16px;
@@ -588,15 +576,6 @@ a:hover {
   width : 500px;
 }
 
-.join-btn {
-  padding: 10px 15px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  white-space: nowrap;
-}
 .activity-textarea {
   width: 100%;              /* 너비 꽉 차게 */
   height: 130px;            /* 적당한 높이 */
