@@ -30,13 +30,13 @@
 
 ## 2. 페이지 구성  
 
-### 0_templete
+#### 0_templete
 - **templete** : 전체 기본 디자인 양식  
 - **chatbot** : Gemini AI 연동 챗봇  
 
 ---
 
-### 1_main
+#### 1_main
 - **mainpage** : 서비스 메인 페이지  
     - `make_account` : 회원 가입  
     - `find_id` : ID 찾기  
@@ -45,7 +45,7 @@
 
 ---
 
-### 2_lecture
+#### 2_lecture
 - **lecture_main** : 수강 신청 메인 페이지  
     - `lecture_child` : 수강 신청 게시글 (상세 페이지)  
 - **lecture_require** : 강의 요청 메인  
@@ -54,14 +54,14 @@
 
 ---
 
-### 3_mypage
+#### 3_mypage
 - **mypage_main** : 마이페이지 메인 페이지  
     - `info_edit` : 개인정보 수정  
     - `studylist` : 수강 내역 / 봉사 시간 확인  
 
 ---
 
-### 4_cs
+#### 4_cs
 - **csMain** : CS 메인 페이지  
     - `csMainView` : 공지 사항 게시글 (상세 페이지)  
     - `csMainWrite` : 공지 사항 작성 페이지  
@@ -74,7 +74,7 @@
 
 ---
 
-### 5_community
+#### 5_community
 - 추후 이름 확정 시 갱신 예정  
 
 ---
