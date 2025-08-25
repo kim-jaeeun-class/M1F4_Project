@@ -1,0 +1,476 @@
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 기본 설정 */
+body {
+    margin: 0px;
+    background-color: #f9f9f9;
+}
+.login_main {
+    width: 500px;
+    margin: 50px auto 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.find_back {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 700px;
+    margin: 20px auto 100px;
+    padding: 50px 50px 0px;
+    box-shadow: 0px 0px 10px rgb(0,0,0,0.1);
+}
+
+.find {
+    text-align: center;
+    margin: 30px 0px;
+}
+.find_id, .find_pw {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+    width: 300px;
+    height: 50px;
+    margin: 0px 5px;
+}
+.find_id:hover, .find_pw:hover {
+    cursor: pointer;
+}
+.active {
+    border: 1px solid #5b9b5b;
+    background-color: #5b9b5b;
+    color: #ffffff;
+}
+.h3 {
+    margin: 30px;
+    text-align: center;
+}
+.h3 span {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.phone {
+    border-top: 3px solid black;
+}
+.phone, .email {
+    border-bottom: 1px solid gray;
+    padding: 20px 0px; 
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.id_li_1 {
+    background-color: rgb(212, 212, 212);
+    padding: 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.li_1 {
+    background-color: rgb(212, 212, 212);
+    padding: 20px 20px 0px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+}
+.li_2 {
+    background-color: rgb(212, 212, 212);
+    padding: 20px 20px 0px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+}
+
+.li {
+    background-color: rgb(212, 212, 212);
+    padding: 20px 20px 0px;
+    margin: 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.id {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.id_id_1 {
+    font-weight: bold;
+    width: 100px;
+
+}
+.id_1, .id_2 {
+    font-weight: bold;
+    width: 100px;
+}
+.id_phone {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.phone_pw {
+    margin-bottom: 20px;
+}
+.id_1_text input,
+.id_1_text_2 input {
+    width: 420px;
+    height: 20px;
+    padding: 5px;
+    margin-right: 10px; 
+}
+.id_2_text input {
+    width: 280px;
+    height: 20px;
+    padding: 5px;
+}
+.id_2_1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.phone_email_input,
+.email_input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+    flex: 1;
+}
+
+.phone_email_input input,
+.email_input input {
+    height: 20px;
+    width: 130px;
+    padding: 5px;
+}
+.phone select, 
+.email_input select {
+    height: 35px;
+    width: 120px;
+}
+
+.button_box {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px auto 40px;
+}
+
+
+.next,
+.before {
+    border-radius: 10px;
+    border: none;
+    background-color: #5b9b5b;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+    font-family: 'ChosunGu';
+}
+
+.before_pw {
+    border-radius: 10px;
+    border: none;
+    background-color: #5b9b5b;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    width: 200px;
+    height: 50px;
+    margin: 30px 0px;
+    cursor: pointer;
+    font-family: 'ChosunGu';
+}
+.next_pw {
+    border-radius: 10px;
+    border: none;
+    background-color: #5b9b5b;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    width: 70px;
+    height: 35px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: 'ChosunGu';
+}
+
+
+.footer {
+    height: 50px;
+    text-align: center;
+}
+
+/* 480 */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0px;
+    }
+    .login_main {
+        width: 300px;
+        margin: 30px auto 30px;
+        padding: 0px;
+    }
+    
+    .logo,
+    .logo img {
+        width: 300px !important;
+        height: auto;
+        margin: 0px auto;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+    
+    .find_back {
+        width: 80%;
+        margin: 50px auto 80px;
+        padding: 30px 20px 50px;
+    }
+    .id_2_text,
+    .find_id, .find_pw {
+        display: inline-block;
+        font-size: 18px;
+        width: 120px;
+    }
+  
+    .id,
+    .id_1,
+    .id_2 {
+        display: block;
+        width: 50px;
+        margin: 10px 0px;
+    }
+
+    .id_2_1,
+    .phone_email_input,
+    .email_input {
+        display: block;
+        width: 280px;
+    }
+   
+    .id_li_1 input {
+        margin: 10px 0px;
+        width: 160px;
+    }
+    .id_li_1 select {
+        width: 70px;
+    }
+    .id_li_1 button {
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    .id_li_text input {
+        width: 200px;
+    }
+    
+    .li_1 input,
+    .li_2 input {
+        width: 100px;
+    }
+    .li_1 select {
+        width: 70px;
+        margin: 10px 0px;
+    }
+    .li_2 button {
+        margin: 10px 0px 0px 50px;
+    }
+    .li_1 button {
+        width: 50px;
+        margin: 10px 0px 0px 3px;
+    }
+    ul {
+        flex-direction: column;
+    }
+
+    .before_pw {
+        width: 40%;
+    }
+}
+
+/* 481~767 */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 0px;
+    }
+    .login_main {
+        width: 300px;
+        margin: 30px auto 30px;
+        padding: 0px;
+    }
+    
+    .logo,
+    .logo img {
+        width: 300px;
+        height: auto;
+        margin: 0px auto;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+    
+    .find_back {
+        width: 450px;
+        margin: 50px auto 80px;
+        padding: 30px 20px 50px;
+    }
+    .id_2_text,
+    .find_id, .find_pw {
+        display: inline-block;
+        font-size: 18px;
+        width: 200px;
+    }
+    .id_id_1,
+    .id_1_text {
+        display: inline-block;
+    }
+    .id,
+    .id_1,
+    .id_2 {
+        display: block;
+        /* width: 400px; */
+        margin: 10px 0px;
+    }
+
+    .id_2_1,
+    .phone_email_input,
+    .email_input {
+        display: block;
+        width: 420px;
+    }
+    .id_li_1 input {
+        margin: 10px 0px;
+        width: 160px;
+    }
+    
+    .id_li_1 button {
+        margin: 0px 0px 0px 20px;
+    }
+
+    .li_1 input{
+        width: 130px;
+
+    }
+    .li_2 input {
+        width: 100px;
+    }
+    .li_1 select {
+        width: 70px;
+        margin: 10px 0px;
+    }
+    .li_1 button {
+        width: 70px;
+    }
+    .li_2 button {
+        margin: 10px 0px 0px 300px;
+    }
+    ul {
+        flex-direction: column;
+    }
+}
+
+/* 768~1024 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding: 0px;
+    }
+    .login_main {
+        width: 300px;
+        margin: 30px auto 30px;
+        padding: 0px;
+    }
+    
+    .logo,
+    .logo img {
+        width: 300px;
+        height: auto;
+        margin: 0px auto;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+    
+    .find_back {
+        width: 700px;
+        margin: 50px auto 80px;
+        padding: 30px 20px 50px;
+    }
+    .id_2_text,
+    .find_id, .find_pw {
+        display: inline-block;
+        font-size: 18px;
+        width: 200px;
+    }
+  
+    .id,
+    .id_1,
+    .id_2 {
+        display: block;
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .id_2_1,
+    .phone_email_input,
+    .email_input {
+        display: block;
+        width: 600px;
+    }
+    
+    .li_1 input {
+        width: 200px;
+    }
+    .li_2 input {
+        width: 150px;
+    }
+    .li_1 select {
+        width: 100px;
+        margin: 10px 0px;
+    }
+    .li_1 button {
+        width: 70px;
+        margin: 10px 0px 0px 20px;
+    }
+    .li_2 button {
+        margin: 10px 0px 0px 20px;
+    }
+    ul {
+        flex-direction: column;
+    }
+}

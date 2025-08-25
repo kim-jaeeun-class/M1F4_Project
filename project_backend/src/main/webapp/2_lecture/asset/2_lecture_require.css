@@ -1,0 +1,278 @@
+/* 
+table
+    thead
+        .table-num : 번호
+        .table-title : 제목
+        .table-date : 작성일
+        .like : 좋아요 수
+        .count : 조회수
+    tbody
+*/
+
+button {
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    color: #333;
+}
+
+.block {
+    width: 80%;
+    margin: auto;
+}
+.nav {
+    margin: 40px auto;
+}
+
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.title {
+    text-align: left;
+    font-weight: 900;
+    font-size: 1.6em;
+    margin: 2% auto;
+}
+
+.text-block {
+    margin: 3% auto;
+    border: 1px dotted #3e6b3e;
+    border-radius: 20px;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+table {
+    width: 95%;
+    margin: auto;
+}
+
+thead {
+    font-size: 0.95em;
+    font-weight: 600;
+    border-bottom: 3px solid #3e6b3e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+tbody {
+    font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-num, .table-title, .table-date, .like, .count {
+    padding-bottom: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-num {
+    width: 10%;
+}
+
+.table-title {
+    width: 50%;
+}
+
+.table-date {
+    width: 15%;
+}
+
+.like, .count {
+    width: 12%;
+}
+
+td {
+    padding: 10px;
+}
+
+/* 
+    .pagination
+*/
+
+.pagination {
+    margin: 5% auto;
+    width: 80%;
+    text-align: center;
+}
+
+/* 
+    .bottom-block
+        .search
+            .search-filter : 검색 조건 설정
+            .search-input : 검색어 입력 창
+            .search-btn : 검색 실행 버튼
+        .upload
+            upload-btn : 요청 등록 버튼
+*/
+
+.bottom-block {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 5% auto;
+}
+
+.search {
+    width: 80%;
+    text-align: right;
+}
+
+.search-filter, .search-input, .search-btn {
+    border: 1px solid #3e6b3e;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: 'ChosunGu';
+    box-sizing: border-box;
+    height: 40px;
+    outline: none;
+}
+
+.search-filter {
+    width: 15%;
+}
+
+.search-input {
+    width: 50%;
+}
+
+.search-btn {
+    width: 10%;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1em;
+}
+
+.search-btn:hover {
+    background-color: #3e6b3e;
+}
+
+.upload {
+    width: 15%;
+    text-align: right;
+}
+
+.upload-btn {
+    margin: 0;
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.upload-btn:hover {
+    background-color: #3e6b3e;
+}
+
+/* 챗봇 */
+
+.chatbot {
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.speech-bubble {
+	position: fixed;
+	background: #cce0cc;
+	border-radius: 20px;
+    bottom : 120px;
+    right: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.speech-bubble:after {
+    position: fixed;
+    bottom: 130px;
+    right: 70px;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #cce0cc;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+.chatbot-img { 
+    width: 80px;
+    height: 80px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+
+
+    .bottom-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+    }
+    .search {
+        width: 100%;
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .search-filter {
+        width: 25%;
+    }
+
+    .search-input {
+        width: 50%;
+    }
+
+    .search-btn {
+        width: 20%;
+    }
+
+    .upload {
+        text-align: right;
+        width: 50%;
+        margin: 0;
+        align-self: flex-end;
+    }
+
+    .upload-btn {
+        margin: 30px 0;
+        padding: 2%;
+    }
+
+    .table-num {
+        width: 20%;
+    }
+
+    .table-title {
+        width: 50%;
+    }
+
+    .table-date {
+        width: 35%;
+    }
+}

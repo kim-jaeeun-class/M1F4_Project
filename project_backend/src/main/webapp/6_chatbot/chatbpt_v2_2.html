@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gemini 고객센터 챗봇</title>
+</head>
+<body>
+  <h2>📞 고객센터 챗봇</h2>
+  <input type="text" id="userInput" placeholder="무엇을 도와드릴까요?" style="width: 300px;" />
+  <button onclick="sendToGemini()">전송</button>
+  <pre id="responseBox" style="margin-top: 20px; white-space: pre-wrap;"></pre>
+
+  <script>
+    const responseBox = document.getElementById("responseBox");
+    const chatHistory = []; // 👉 이전 대화 저장
+
+    const systemPrompt = 
+    "모든 대답은 정중하게 답 해줘. 모르는 내용은 '모르겠습니다'로 답해."+
+    "답을 할떄 50글자 내로 답해줘";
+
+    async function sendToGemini() {
+      const userInput = document.getElementById("userInput").value;
+      if (!userInput.trim()) return;
+
+      document.getElementById("userInput").value = "";
+
+      // 대화 UI에 사용자 질문 추가
+      appendToChat("🙋‍♀️ 고객", userInput);
+
+      // 🔁 시스템 프롬프트는 항상 첫 메시지로
+      const payload = {
+        contents: [
+          { role: "user", parts: [{ text: systemPrompt }] },
+          ...chatHistory,
+          { role: "user", parts: [{ text: userInput }] }
+        ]
+      };
+
+      try {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCf3N7eOMox1_CRZw02w8PitkcfR59J4QQ`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        const botReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "❌ 응답이 없습니다.";
+
+        // 대화 UI에 챗봇 응답 추가
+        appendToChat("🤖 챗봇", botReply);
+
+        // 👉 대화 히스토리에 질문/답변 저장
+        chatHistory.push(
+          { role: "user", parts: [{ text: userInput }] },
+          { role: "model", content: { parts: [{ text: botReply }] } }
+        );
+      } catch (err) {
+        console.error("에러:", err);
+        appendToChat("⚠️ 시스템", "오류가 발생했습니다.");
+      }
+    }
+
+    function appendToChat(speaker, message) {
+      responseBox.textContent += `${speaker}: ${message}\n\n`;
+    }
+  </script>
+</body>
+</html>

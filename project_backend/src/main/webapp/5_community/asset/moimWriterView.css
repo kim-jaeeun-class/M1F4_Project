@@ -1,0 +1,510 @@
+/* 기본 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'ChosunGu';
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+/* 헤더 관련 스타일 */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+
+/* 네비게이션 부분 */
+.nav {
+    width: 80%;
+    margin: 40px auto;
+}
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav a.navSecond {
+    color:  #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navFirst:hover, .navSecond:hover {
+    color:  #5b9b5b;
+    text-decoration: underline;
+}
+
+
+/* 커뮤니티 게시판 레이아웃 추가 */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    padding: 20px 5%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.board-title {
+    font-size: 28px;
+    color: #3e6b3e;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.community-inner {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    min-height: 500px;
+    flex-wrap: wrap;
+}
+
+.main-content {
+    flex: 3;
+    min-height: 600px;
+    background-color: #fff;
+    border: 2px solid #3e6b3e;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    border-radius: 5px;
+}
+
+.application-list form {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 20px;
+}
+
+.group-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e6b3e;
+    border-bottom: 1px solid #3e6b3e;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.activity-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3e6b3e;
+    border-bottom: 1px dashed #3e6b3e;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.group-intro {
+    background: #fdfdfd;
+    padding: 20px;
+    border: 1px solid #3e6b3e;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    height: 400px;
+    margin-bottom : 30px;
+    padding : 20px;
+}
+
+.group-intro img {
+    margin-top: 15px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
+
+.application-list h4 {
+    font-size: 16px;
+    color: #3e6b3e;
+    font-weight: bold;
+    border-bottom: 1px solid #3e6b3e;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.application-list form label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: back-ground 0.3s;
+}
+
+.approve-btn {
+    background-color: #5b9b5b;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+}
+
+.approve-btn:hover {
+    background-color: #2b522b;
+}
+
+.reject-btn {
+    background-color: #999;
+}
+
+/* 승인된 신청자 전체 박스 */
+.application-list {
+    flex: 1;
+    min-height: 360px;
+    background-color: #fff;
+    border: 2px solid #3e6b3e;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; /* 세로 쌓임 */
+}
+
+/* 승인자 리스트 제목 */
+.approved-list h4 {
+   margin-bottom: 10px;
+    color: #3e6b3e;
+    font-weight: bold; /* 이미 굵게 하셨다면 생략 가능 */
+    border-bottom: 1px solid #3e6b3e; /* ✅ 초록색 밑줄 */
+    padding-bottom: 5px;
+}
+
+/* 리스트 전체 스타일 */
+#approved-users {
+    list-style: none;
+  padding: 10px;
+  margin: 0;
+  max-height: 140px;       /* ✅ 고정 높이 설정 */
+  overflow-y: auto;        /* ✅ 스크롤 가능하게 설정 */
+  background-color: #f9fff9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+/* 각 승인자 항목 스타일 */
+#approved-users li {
+    padding: 6px 10px;
+    margin-bottom: 6px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+}
+
+/* 신청자 이름 세로 정렬 */
+#approved-users label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+.approved-list {
+  border: 2px solid #3e6b3e;
+  padding: 16px;
+  margin-top: 20px;  /* 신청리스트 상자와 간격 주기 */
+  background-color: white;
+  border-radius: 8px;
+  width: 100%; /* 혹은 고정 너비 대신 부모 너비 맞춤 */
+  box-sizing: border-box;
+  height: 200px;
+}
+.side-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+}
+.green-button {
+  background-color: #5b9b5b; /* 초록색 */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+  background-color: #5b9b5b; /* 좀 더 진한 초록색 */
+}
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.input-row label {
+  font-weight: bold;
+  white-space: nowrap;
+  min-width: 80px;
+  font-size : 18px;
+  color :#3e6b3e; 
+}
+
+.text-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.upload-confirm-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 10;
+}
+.main-content {
+  position: relative;
+  min-height : 300px;
+}
+
+.upload-finish-wrapper {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.upload-finish-wrapper {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+}
+
+
+
+.hidden {
+  display: none;
+}
+
+
+.reset-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.reset-btn {
+  background-color: #5b9b5b;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color : white;
+}
+
+
+
+/* 챗봇 */
+.chatbot {
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.speech-bubble {
+    position: fixed;
+    background: #cce0cc;
+    border-radius: 20px;
+    bottom: 120px;
+    right: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.speech-bubble:after {
+    position: fixed;
+    bottom: 130px;
+    right: 70px;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #cce0cc;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -10px;
+    margin-bottom: -20px;
+}
+
+.chatbot-img {
+    width: 80px;
+    height: 80px;
+}
+
+/* 푸터 */
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+
+.bottom-menu-list:first-child::before {
+    content: "  ";
+}
+
+.bottom-menu-list::before {
+    content: " | ";
+}
+
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    /* 커뮤니티 영역 반응형 */
+    .community-inner {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>강의 요청 :: 글 작성</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
+        <link rel="stylesheet" href="../asset/2_lecture_require_write.css">
+        <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+
+        <!-- 1. templete.js: bind 정의 -->
+        <script src="../../0_templete/asset/templete.js"></script>
+
+        <!-- 2. chatbot.js: initChatbot 정의 -->
+        <script src="../../0_templete/asset/chatbot.js"></script>
+
+        <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+        <script src="../../0_templete/headfooter.js"></script>
+
+    </head>
+    <body>
+        <div class="head"></div>
+        <div class="body">
+            <div class = "nav">
+                <a class = "navFirst" href = "../../1_main/html/1_mainpage.html">메인</a>&nbsp;&gt;&nbsp;<a class = "navSecond" href = "2_lecture_require.html">강의 요청</a>&nbsp;&gt;&nbsp;글 작성 및 수정
+            </div>
+            <div class = "block">
+                <form class="input">
+                    <div class="filter">
+                        <div class="title">
+                            <div class="index">제목</div>
+                            <input type="text" class="input-txt" placeholder="제목을 입력해주세요.">
+                        </div>
+                        <!-- <hr class="sub-hr"> -->
+                        <div class="subject">
+                            <div class = "index">강의 주제</div>
+                            <button id = "dropdown-btn">선택</button>
+                            <div class = "index-select-con">
+                                <form class="index-select">
+                                    <div class="subject-list">
+                                        <div class="subject-title">주제 분류1</div>
+                                        <div class = "subject-box group1">
+                                            <label><input type="checkbox" name="subject" value="1" class="subject-con">1</label>
+                                            <label><input type="checkbox" name="subject" value="2" class="subject-con">2</label>
+                                            <label><input type="checkbox" name="subject" value="3" class="subject-con">3</label>
+                                            <label><input type="checkbox" name="subject" value="4" class="subject-con">4</label>
+                                            <label><input type="checkbox" name="subject" value="5" class="subject-con">5</label>
+                                            <label><input type="checkbox" name="subject" value="6" class="subject-con">6</label>
+                                            <label><input type="checkbox" name="subject" value="7" class="subject-con">7</label>
+                                            <label><input type="checkbox" name="subject" value="8" class="subject-con">8</label>                                            
+                                        </div>
+                                        <hr class="sub-hr">
+                                        <div class="subject-title">주제 분류2</div>
+                                        <div class="subject-box group2">
+                                            <label><input type="checkbox" name="subject" value="9" class="subject-con">9</label>
+                                            <label><input type="checkbox" name="subject" value="10" class="subject-con">10</label>
+                                            <label><input type="checkbox" name="subject" value="11" class="subject-con">11</label>
+                                            <label><input type="checkbox" name="subject" value="12" class="subject-con">12</label>
+                                            <label><input type="checkbox" name="subject" value="13" class="subject-con">13</label>
+                                            <label><input type="checkbox" name="subject" value="14" class="subject-con">14</label>
+                                            <label><input type="checkbox" name="subject" value="15" class="subject-con">15</label>
+                                            <label><input type="checkbox" name="subject" value="16" class="subject-con">16</label>                                            
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="result">선택 없음</div>
+                        </div>
+                        <!-- <hr class="sub-hr"> -->
+                        <div class="date">
+                            <div class = "index">강의 날짜</div>
+                            <input type = "date" class = "date-sel">
+                        </div>
+                        <hr class = "sub-hr">
+                        <textarea class="write" placeholder="내용을 작성해주세요."></textarea><br>
+                        <div class = "bottom-btn-list">
+                            <button type="button" class="input-btn" id="cancel">취소</button>
+                            <button type="button" class="input-btn" id="input">작성</button>                      
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- 이 안에 원하는 내용 넣어주세요-->
+        </div>
+        <div class="footer"></div>
+        <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
+        <!-- <script src="../../0_templete/headfooter.js"></script> -->
+        <script src="../asset/2_lecture_require_write.js"></script>
+    </body>
+</html>

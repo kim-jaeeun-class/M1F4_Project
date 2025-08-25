@@ -1,0 +1,315 @@
+/* 
+    nav : 내비게이터
+    contents-list 세부 클래스명
+    .contents-title : 제목
+    .filter-container
+        .contents-filter : 강의 조건 필터링
+    .contents-line : 각 행(통합)
+    .contents-card : 강의 카드(통합)
+    .card-img : 카드 배너 이미지(통합, 추후 개별로 분리)
+    .card-info : 강의 정보 요약 작성
+        .card-name : 강의명
+        .card-loc : 장소
+        .card-pnum : 수강 정원
+        .card-outline : 강의 개요
+    .more : 버튼용 form 클래스명
+        .more-btn : 더 보기 버튼
+*/
+
+/* button {
+    background-color: #5b9b5b;
+    transition: 0.3s background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+} */
+
+.nav {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* 나중에 a href로 링크 걸 경우에 색상 변경 */
+.nav a {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+.filter-container {
+    position: relative;
+    display: inline-block;
+    font-family: 'ChosunGu';
+    margin: 2% auto;
+}
+
+#dropdown-btn {
+    padding: 8px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#dropdown-btn:hover {
+    background-color: #3e6b3e;
+}
+
+#selected-filters {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 12px;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    min-width: 180px;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.filter-actions {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.filter-actions button {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+/* 드롭다운 기본 스타일 */
+#dropdown-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 1em;
+    z-index: 1000; /* 위로 띄우기 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-top: 0.5em;
+    width: 300px;
+}
+
+/* 숨김 처리 클래스 */
+.hidden {
+    display: none;
+}
+
+/* 필터 내부 레이아웃 개선 */
+#filter-form label {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;  /* 줄 간격 명시적으로 지정 */
+    font-size: 14px;
+}
+
+.filter-actions {
+    margin-top: 1em;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    width: 300px;
+}
+
+#selected-filters {
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.filter-index {
+    font-weight: 600;
+    margin-bottom: 5%;
+}
+
+.filter-contents-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    gap: 10px;
+    margin-bottom: 10%;
+    text-align: justify;
+}
+
+.filter-contents {
+    line-height: 2em;
+    vertical-align: middle;
+    flex-grow: 1;
+}
+
+#apply-btn {
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#apply-btn:hover {
+    background-color: #3e6b3e;
+}
+
+#reset-btn {
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #555;
+}
+
+#reset-btn:hover {
+    background-color: #333;
+}
+
+.contents-list {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.contents-title {
+    text-align: left;
+    font-weight: 900;
+    font-size: 1.6em;
+    margin: 2% auto;
+}
+
+.contents-filter {
+    width: 90%;
+    padding: 2% 0;
+}
+
+.contents-line {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contents-card {
+    background-color: #ffffff;
+    border: 1px solid #cce0cc;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 280px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.contents-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    background-image: url('https://piktochart.com/wp-content/uploads/2022/11/large-18-600x338.jpg');
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    padding: 15px;
+    font-size: 0.85em;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.card-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.more {
+    width: 80%;
+    margin: 5% auto;
+}
+
+.more-btn {
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    height: 4em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #5b9b5b;
+    transition: 0.3s ease background-color;
+    color: #fff;
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.more-btn:hover {
+    background-color: #3e6b3e;
+}
+
+/* 반응형 */
+
+@media (max-width: 1200px) {
+    .contents-card {
+        width: 45%;
+    }
+}
+@media (max-width: 768px) {
+    .nav {
+        width: 90%;
+        margin: 30px 10%;
+    }
+
+    .contents-title {
+        margin: 30px auto;
+        width: 90%;
+    }
+    .contents-filter {
+        margin: 30px auto 10px;
+        width: 90%;
+    }
+
+    .filter-container {
+        margin: 30px;
+    }
+    .contents-line {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contents-card {
+        width: 90%;
+    }
+}

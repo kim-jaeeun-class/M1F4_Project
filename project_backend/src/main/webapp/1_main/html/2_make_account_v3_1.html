@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 500px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #3cb371;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .gender-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 5px;
+      justify-content: space-between;
+    }
+    .gender-box {
+      flex: 1;
+      padding: 10px 0;
+      text-align: center;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s;
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+    .gender-box:hover {
+      background-color: #e6e6e6;
+    }
+    input[name="gender"]:checked + .gender-box {
+      background-color: #3cb371;
+      border-color: #3cb371;
+      color: white;
+    }
+    .password-wrapper {
+      position: relative;
+    }
+    .password-wrapper input {
+      width: 100%;
+      padding-right: 40px;
+    }
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 18px;
+      user-select: none;
+    }
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .input-row input,
+    .input-row select {
+      flex: 1;
+    }
+    .input-row span {
+      font-size: 16px;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .submit-btn {
+      width: 100%;
+      /* padding: 10px; */
+      /* background-color: #3cb371; */
+      /* color: white; */
+      border: none;
+      /* cursor: pointer; */
+      text-align: center;
+      line-height: 60px;
+      font-size: 16px;
+      background-color: #3cb371; 
+      border-radius: 8px;
+      color: white;
+      /* width: 200px; */
+      height: 60px;
+    }
+    a.submit-btn {
+      text-decoration: none;
+      display: inline-block;
+    }
+    a.submit-btn:hover {
+      background-color: #36a165;
+      color: white;
+    }
+    button.submit-btn:hover {
+      background-color: #36a165;
+    }
+    .login_main {
+      width: 500px;
+      margin: 100px auto 30px;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    @media (max-width: 600px) {
+      .gender-group,
+      .button-group,
+      .input-row {
+        flex-direction: column;
+        gap: 5px;
+      }
+      .submit-btn {
+        width: 100%;
+      }
+      .input-row span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login_main">
+    <div class="logo">
+      <a href="/1_main/html/1_mainpage.html">
+        <img style="width: 200px; height: 50px;" src="https://i.imgur.com/yOfFX9f.png">
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>회원 가입</h2>
+    <form id="signupForm">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">이메일</label>
+      <div class="input-row">
+        <input type="text" id="email_id" name="email_id" placeholder="이메일 아이디" required />
+        <span>@</span>
+        <select id="email_domain" name="email_domain" required>
+          <option value="">선택</option>
+          <option value="gmail.com">gmail.com</option>
+          <option value="naver.com">naver.com</option>
+          <option value="daum.net">daum.net</option>
+          <option value="hanmail.net">hanmail.net</option>
+          <option value="kakao.com">kakao.com</option>
+          <option value="직접입력">직접입력</option>
+        </select>
+      </div>
+      <input type="text" id="custom_domain" name="custom_domain" placeholder="도메인 직접 입력" style="display:none; margin-top: 5px;" />
+
+      <label for="password">비밀번호</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password" required />
+        <span class="toggle-password" data-target="password">👁️</span>
+      </div>
+
+      <div class = "password_detail" style = "color : rgba(243, 7, 7, 0.911); font-size: 14px;">
+        <!-- 최소 길이 : 보통 8자 이상
+        문자 조합 요구사항 : 영문 대소문자 포함,<br>
+        숫자 포함, 특수문자 포함, 연속/반복 문자 금지<br>
+        예: aaa111 또는 abcd1234 와 같은 패턴 제한 -->
+      </div>
+
+      <label for="password_confirm">비밀번호 확인</label>
+      <div class="password-wrapper">
+        <input type="password" id="password_confirm" name="password_confirm" required />
+        <span class="toggle-password" data-target="password_confirm">👁️</span>
+      </div>
+
+      <label for="birth">생년월일</label>
+      <input type="date" id="birth" name="birth" required />
+
+      <label>성별</label>
+      <div class="gender-group">
+        <input type="radio" id="male" name="gender" value="male" required hidden />
+        <label for="male" class="gender-box">남성</label>
+
+        <input type="radio" id="female" name="gender" value="female" hidden />
+        <label for="female" class="gender-box">여성</label>
+      </div>
+
+      <label for="phone">휴대폰 번호</label>
+      <div class="input-row">
+        <input type="tel" id="phone1" maxlength="3" placeholder="010" required />
+        <span>-</span>
+        <input type="tel" id="phone2" maxlength="4" required />
+        <span>-</span>
+        <input type="tel" id="phone3" maxlength="4" required />
+      </div>
+
+      <label for="address">주소</label>
+      <div class="input-row">
+        <input type="text" id="address" name="address" placeholder="주소를 입력해주세요" readonly />
+        <button type="button" onclick="execDaumPostcode()" style="flex: 0 0 auto; padding: 8px 12px;">검색</button>
+      </div>
+
+      <label for="detail_address">상세 주소</label>
+      <div class="input-row">
+        <input type="text" id="detail_address" name="detail_address" placeholder="상세 주소를 입력해주세요" />
+      </div>
+
+      <div class="button-group">
+        <a href="2_make_account_v3.html" class="submit-btn" role="button" >뒤로가기</a>
+        <button type="submit" class="submit-btn">가입하기</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+ 
+<script>
+  //  1. 주소 검색 (Daum API)
+  function execDaumPostcode() {
+    new daum.Postcode({
+      oncomplete: function (data) {
+        document.getElementById("address").value = data.address;
+      }
+    }).open();
+  }
+
+  //  2. 비밀번호 유효성 검사 함수
+  function validatePassword(pw) {
+    const errors = [];
+
+    if (pw.length < 8) {
+      errors.push("8자 이상이어야 합니다.");
+    }
+    if (!/[A-Z]/.test(pw)) {
+      errors.push("영문 대문자를 포함해야 합니다.");
+    }
+    if (!/[a-z]/.test(pw)) {
+      errors.push("영문 소문자를 포함해야 합니다.");
+    }
+    if (!/[0-9]/.test(pw)) {
+      errors.push("숫자를 포함해야 합니다.");
+    }
+    if (!/[!@#$%^&*(),.?\":{}|<>_\-+=/\\[\]`~]/.test(pw)) {
+      errors.push("특수문자를 포함해야 합니다.");
+    }
+    if (/([a-zA-Z0-9])\1\1/.test(pw)) {
+      errors.push("같은 문자를 3번 이상 반복할 수 없습니다.");
+    }
+    if (/abcdefghijklmnopqrstuvwxyz|0123456789/.test(pw.toLowerCase())) {
+      errors.push("연속된 문자를 사용할 수 없습니다.");
+    }
+
+    return errors;
+  }
+
+  //  3. 페이지 로드 후 이벤트 등록
+  document.addEventListener("DOMContentLoaded", function () {
+
+    //  이메일 도메인 직접 입력 처리
+    document.getElementById("email_domain").addEventListener("change", function () {
+      const customInput = document.getElementById("custom_domain");
+      if (this.value === "직접입력") {
+        customInput.style.display = "block";
+        customInput.required = true;
+      } else {
+        customInput.style.display = "none";
+        customInput.required = false;
+      }
+    });
+
+    //  비밀번호 보기/숨기기 토글
+    document.querySelectorAll(".toggle-password").forEach(icon => {
+      icon.addEventListener("click", () => {
+        const input = document.getElementById(icon.getAttribute("data-target"));
+        input.type = (input.type === "password") ? "text" : "password";
+      });
+    });
+
+    //  비밀번호 실시간 유효성 검사
+    const passwordInput = document.getElementById("password");
+    const passwordDetail = document.querySelector(".password_detail");
+
+    passwordInput.addEventListener("input", () => {
+      const pw = passwordInput.value;
+      const messages = validatePassword(pw);
+
+      if (messages.length > 0) {
+        passwordDetail.style.color = "red";
+        passwordDetail.innerHTML = "❌ " + messages.join("<br>❌ ");
+      } else {
+        passwordDetail.style.color = "green";
+        passwordDetail.innerHTML = "✅ 비밀번호 조건을 충족했습니다.";
+      }
+    });
+
+    //  비밀번호 확인 입력 시 일치 여부 확인
+    const pwConfirmField = document.getElementById("password_confirm");
+
+    pwConfirmField.addEventListener("blur", () => {
+      const pw = passwordInput.value;
+      const pwConfirm = pwConfirmField.value;
+
+      if (pw && pwConfirm && pw !== pwConfirm) {
+        alert("비밀번호가 일치하지 않습니다.");
+      }
+    });
+
+    //  가입 폼 제출 처리
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const pw = passwordInput.value;
+      const pwConfirm = pwConfirmField.value;
+      const birth = document.getElementById("birth").value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const emailId = document.getElementById("email_id").value.trim();
+      const emailDomain = document.getElementById("email_domain").value;
+      const customDomain = document.getElementById("custom_domain").value.trim();
+      const phone1 = document.getElementById("phone1").value.trim();
+      const phone2 = document.getElementById("phone2").value.trim();
+      const phone3 = document.getElementById("phone3").value.trim();
+
+      // 필수값 누락 체크
+      if (!name || !pw || !pwConfirm || !birth || !gender ||
+          !emailId || !phone1 || !phone2 || !phone3 ||
+          (emailDomain === "직접입력" && !customDomain)) {
+        alert("모든 항목을 입력해주세요.");
+        return;
+      }
+
+      // 비밀번호 일치 확인
+      if (pw !== pwConfirm) {
+        alert("비밀번호가 일치하지 않습니다.");
+        return;
+      }
+
+      // 비밀번호 조건 검사
+      const pwErrors = validatePassword(pw);
+      if (pwErrors.length > 0) {
+        alert("비밀번호가 다음 조건을 만족하지 않습니다:\n- " + pwErrors.join("\n- "));
+        return;
+      }
+
+      // 모든 조건 통과 → 로그인 페이지로 이동
+      window.location.href = "3_login.html";
+    });
+  });
+</script>
+
+
+</body>
+</html>

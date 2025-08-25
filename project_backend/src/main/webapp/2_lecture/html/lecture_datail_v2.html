@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer">
+  <title>마이페이지</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+  <!-- 1. templete.js: bind 정의 -->
+  <script src="../../0_templete/asset/templete.js"></script>
+
+  <!-- 2. chatbot.js: initChatbot 정의 -->
+  <script src="../../0_templete/asset/chatbot.js"></script>
+
+  <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+  
+  <style>
+    /* 웹 폰트 */
+    @font-face {
+      font-family: 'ChosunGu';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'ChosunGu';
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-logo img {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .hamburger-menu {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .category {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 15px 0;
+      gap: 20px;
+    }
+
+    .category-list {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0 20px;
+    }
+
+    .body {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .my_back {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      border-right: 3px solid #346334;
+      border-bottom: 3px solid #346334;
+      background-color: #5b9b5b;
+      color: #ffffff;
+      width: 200px;
+      text-align: center;
+    }
+
+    .tab_0,
+    .tab_1 {
+      border-bottom: 1px solid #eee;
+      height: 50px;
+      line-height: 50px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tab_1:hover {
+      background-color: #4a8a4a;
+    }
+
+    .tab_0 {
+      border: 3px solid #346334;
+      border-right: none;
+      color: #555;
+      background-color: #ffffff;
+    }
+
+    .main {
+      flex: 1;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav {
+      font-weight: bold;
+      padding: 15px 20px;
+      border-bottom: 3px solid #346334;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 30px 0;
+    }
+
+    .lec_container {
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+
+    .lec_image img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .lec_con {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .lec_con > #daumRoughmapContainer1753667793337,
+    .lec_con > .lec_info {
+      flex: 1 1 300px;
+      min-width: 250px;
+    }
+
+    .lec_info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lec_address {
+      margin-top: 10%;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10%;
+    }
+
+    .button button {
+      background-color: #5b9b5b;
+      border-radius: 5px;
+      color: #fff;
+      width: 80px;
+      height: 38px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button button:hover {
+      background-color: #4a8a4a;
+    }
+
+    .footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+      border-top: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .bottom-menu {
+      gap: 15px;
+      font-size: 0.9em;
+      margin: 3% auto;
+    }
+
+    .bottom-menu-list {
+      cursor: pointer;
+      transition: color 0.3s;
+      display: inline;
+    }
+
+    .bottom-menu-list:first-child::before {
+      content: "  ";
+    }
+
+    .bottom-menu-list::before {
+      content: " | ";
+    }
+
+    .bottom-menu-list:hover {
+      color: #5b9b5b;
+    }
+
+    .copyright {
+      display: block;
+      margin: 3% auto;
+    }
+
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+      .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+      }
+
+      .category {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        gap: 10px;
+        padding: 10px 0;
+        text-align: center;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .tab{
+        width : 100%;
+      }
+
+      .category.show {
+        display: flex;
+      }
+
+      .lec_con {
+        flex-direction: column;
+      }
+
+      .button {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .button button {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .lec_image img {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="head">
+    </div>
+
+    <div class="body">
+      <div class="my_back">
+        <div class="tab">
+          <div class="tab_0">수강내역</div>
+          <div class="tab_1">회원정보 수정</div>
+        </div>
+
+        <div class="main">
+          <div class="nav">마이페이지 > 수강내역 > 강좌상세</div>
+          <div class="title">강좌상세</div>
+
+          <div class="lec_container">
+            <div class="lec_image">
+              <img src="../../img/banner.png" style = "height : 300px;">
+            </div>
+
+            <div class="lec_con">
+              <div id="daumRoughmapContainer1753667793337" class="root_daum_roughmap root_daum_roughmap_landing" style="margin-top: 10px;"></div>
+              <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+              <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                  "timestamp": "1753667793337",
+                  "key": "6e3yto85o3h",
+                  "mapWidth": "100%",
+                  "mapHeight": "200"
+                }).render();
+              </script>
+
+              <div class="lec_info">
+                <div class="lec_address">
+                  <p><strong>강좌명 : ~~~~</strong></p><br>
+                  배우는 내용 : ~~~<br>
+                  강사명 : ~~~<br>
+                  총 인원 : ~~~<br>
+                  강좌 시간 : ~~~<br>
+                  수업 방식 : 온라인 | 오프라인<br>
+                  강의 장소 : 휴먼 교육센터<br>
+                </div>
+                <div class="button">
+                  <button type="submit">신청취소</button>
+                  <button type="submit">목록</button>
+                </div>
+              </div>
+            </div>
+          </div> <!-- lec_container -->
+        </div> <!-- main -->
+      </div> <!-- my_back -->
+    </div> <!-- body -->
+
+
+  </div> <!-- wrapper -->
+<script src="../../0_templete/headfooter.js"></script>
+  <!-- footer가 출력 안되는 버그 수정-->
+  <div class="footer"></div>
+</body>
+</html>

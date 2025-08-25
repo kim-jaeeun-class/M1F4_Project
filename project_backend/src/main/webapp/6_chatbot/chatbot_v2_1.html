@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gemini API JS 테스트</title>
+</head>
+<body>
+  <h2>💬 Gemini 챗봇</h2>
+  <input type="text" id="userInput" placeholder="질문을 입력하세요" style="width: 300px;" />
+  <button onclick="sendToGemini()">전송</button>
+  <pre id="responseBox" style="margin-top: 20px; white-space: pre-wrap;"></pre>
+
+  <script>
+    async function sendToGemini() {
+      const userInput = document.getElementById("userInput").value;
+      const responseBox = document.getElementById("responseBox");
+
+      const apiKey = "AIzaSyCf3N7eOMox1_CRZw02w8PitkcfR59J4QQ"; // 여기에 Gemini API 키 입력
+      const modelId = "gemini-2.5-flash"; // 또는 gemini-1.5-flash 등
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelId}:generateContent?key=${apiKey}`;
+
+      const systemPrompt = "너는 우리 서비스 배워보다의 고객센터 상담원이야, 모든 대답은 최대한 정중하게 해줘, 모르겠는 내용은 모르겠습니다로 답해줘";
+
+      const payload = {
+        contents: [
+          {
+            role: "user",
+            parts: [
+              { text: `${systemPrompt}\n\n질문: ${userInput}` }
+            ]
+          }
+        ]
+      };
+
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        responseBox.textContent = text || "❌ 응답이 없습니다.";
+      } catch (error) {
+        console.error("에러 발생:", error);
+        responseBox.textContent = "❌ 오류 발생: " + error.message;
+      }
+    }
+  </script>
+</body>
+</html>

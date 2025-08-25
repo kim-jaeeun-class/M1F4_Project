@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>강의 게시판 :: 메인</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
+        <link rel="stylesheet" href="../asset/2_lecture_main.css">
+        <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+        <!-- 1. templete.js: bind 정의 -->
+        <script src="../../0_templete/asset/templete.js"></script>
+
+        <!-- 2. chatbot.js: initChatbot 정의 -->
+        <script src="../../0_templete/asset/chatbot.js"></script>
+
+        <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+        <script src="../../0_templete/headfooter.js"></script>
+    </head>
+    <body>
+        <div class="head"></div>
+        <div class="body">
+            <!-- 내비게이션 메인 링크 추후 수정 -->
+            <div class="nav"><a href="../../1_main/html/1_mainpage.html" style = "color: #5b9b5b;">메인</a> &gt; 수강 신청</div>
+            <div class="contents-list">
+                <div class="contents-title">강의 목록</div>
+                <div class="filter-container">
+                    <!-- 필터는 나중에 체크박스 식으로 수정 -->
+                        <button id="dropdown-btn" style="font-family: 'ChosunGu">🔍 조건 선택</button>
+                        <span id="selected-filters">선택 없음</span>
+                    <div id="dropdown-menu" class="dropdown" style="display: none;">
+                        <form id="filter-form" class="contents-filter">
+                            <div class = "filter-index">지역</div>
+                            <div class = "filter-contents-box">
+                                <label><input type="radio" name="region" value = "서울" class = "filter-contents">서울</label>
+                                <label><input type="radio" name="region" value = "경기" class = "filter-contents">경기</label>                               
+                                <label><input type="radio" name="region" value = "강원" class = "filter-contents">강원</label>
+                                <label><input type="radio" name="region" value = "충남" class = "filter-contents">충남</label>                                
+                                <label><input type="radio" name="region" value = "충북" class = "filter-contents">충북</label>
+                                <label><input type="radio" name="region" value = "대전" class = "filter-contents">대전</label>                                
+                                <label><input type="radio" name="region" value = "전북" class = "filter-contents">전북</label>                                
+                                <label><input type="radio" name="region" value = "전남" class = "filter-contents">전남</label>
+                                <label><input type="radio" name="region" value = "울산" class = "filter-contents">울산</label>                                
+                                <label><input type="radio" name="region" value = "대구" class = "filter-contents">대구</label>                                
+                                <label><input type="radio" name="region" value = "경북" class = "filter-contents">경북</label>                                
+                                <label><input type="radio" name="region" value = "경남" class = "filter-contents">경남</label>                                
+                                <label><input type="radio" name="region" value = "부산" class = "filter-contents">부산</label>                                
+                                <label><input type="radio" name="region" value = "제주" class = "filter-contents">제주</label>                                
+                            </div>
+                            <div class = "filter-index">주제</div>
+                            <div class = "filter-contents-box">
+                                <label><input type="checkbox" name = "subject" value = "1" class = "filter-contents">1</label>
+                                <label><input type="checkbox" name = "subject" value = "2" class = "filter-contents">2</label>                                
+                                <label><input type="checkbox" name = "subject" value = "3" class = "filter-contents">3</label>
+                                <label><input type="checkbox" name = "subject" value = "4" class = "filter-contents">4</label>                                
+                                <label><input type="checkbox" name = "subject" value = "5" class = "filter-contents">5</label>
+                                <label><input type="checkbox" name = "subject" value = "6" class = "filter-contents">6</label>                                
+                                <label><input type="checkbox" name = "subject" value = "7" class = "filter-contents">7</label>
+                                <label><input type="checkbox" name = "subject" value = "8" class = "filter-contents">8</label>                                
+                            </div>
+                            <div class = "filter-index">기간</div>
+                            <div class = "filter-contents-box">
+                                <label><input type="radio" name="period" value = "하루" class = "filter-contents">하루</label>
+                                <label><input type="radio" name="period" value = "단기(하루~일주일)" class = "filter-contents">단기(하루~일주일)</label>                               
+                                <label><input type="radio" name="period" value = "중기(일주일 ~ 한 달)" class = "filter-contents">중기(일주일 ~ 한 달)</label>
+                                <label><input type="radio" name="period" value = "장기(한 달 이상)" class = "filter-contents">장기(한 달 이상)</label>                               
+                            </div>
+                            <div class="filter-actions">
+                                <button type="button" id="apply-btn">적용</button>
+                                <button type="button" id="reset-btn">초기화</button>
+                            </div>
+                        </form>                        
+                    </div>
+                </div>
+                <div class="contents-line">
+                    <div class="contents-card">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contents-card" style = "display: none;">
+                        <a href = "2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <form class = "more">
+                    <button type = "button" class = "more-btn">더 보기</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <!-- <script src="../../0_templete/headfooter.js"></script> -->
+        <script src="../asset/2_lecture_main.js"></script>
+    </body>
+</html>

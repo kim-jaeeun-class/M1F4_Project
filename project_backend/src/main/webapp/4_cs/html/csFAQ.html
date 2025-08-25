@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>고객센터 - FAQ</title>
+    <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+    <link rel="stylesheet" href="../../4_cs/asset/csFAQ.css">
+    <!-- 1. templete.js: bind 정의 -->
+    <script src="../../0_templete/asset/templete.js"></script>
+    <!-- 2. chatbot.js: initChatbot 정의 -->
+    <script src="../../0_templete/asset/chatbot.js"></script>
+    <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+    <script src="../../0_templete/headfooter.js"></script>
+</head>
+
+<body>
+    <div class="head"></div>
+
+    <div class="body">
+        <div class="nav"><a href="csMain.html">고객센터</a> &gt; FAQ</div>
+        <div class="csCategory">
+            <div class="csCategory-list"><a class="notice" href="../../4_cs/html/csMain.html">공지사항</a></div>|
+            <div class="csCategory-list"><a class="faq active" href="../../4_cs/html/csFAQ.html">FAQ</a></div>|
+            <div class="csCategory-list"><a class="qna" href="../../4_cs/html/csQnA.html">Q&A</a></div>
+        </div>
+        
+        <div class="faq-contents">
+            <div class="head-title">
+                <h3 class="tit_faq">
+                    <strong>자주 묻는 질문</strong>
+                    <span>배워보다의 자주 묻는 질문을 모았습니다</span>
+                </h3>
+                <form class="tab-list">
+                    <div class="tab-list-child">
+                        <button type="button" class="tab login">계정 관련</button>
+                        <button type="button" class="tab lecture">수업 관련</button>
+                        <button type="button" class="tab etc">기타</button>
+                    </div>
+                </form>
+            </div>
+            <div class="accordio_box login">
+                <ol>
+                    <li>
+                        <h4><span>Q1</span> 비밀번호를 변경하고 싶어요</h4>
+                        <p>&nbsp마이페이지 > 계정 설정에서 비밀번호 변경 메뉴를 통해 새 비밀번호로 수정하실 수 있습니다. 현재 비밀번호 입력 후 새 비밀번호를 설정해 주세요.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q2</span> 비밀번호를 잊어버렸어요</h4>
+                        <p>&nbsp로그인 페이지 하단의 ‘비밀번호 찾기’를 통해 등록된 이메일 주소로 임시 비밀번호를 받아보실 수 있습니다. 임시 비밀번호로 로그인 후 꼭 새로운 비밀번호로 변경해 주세요.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q3</span> 개인 정보 처리 방침은 어떻게 되나요?</h4>
+                        <p>&nbsp개인정보 처리 방침은 사이트 하단의 ‘개인정보처리방침’ 메뉴에서 확인하실 수 있습니다. 회원님의 소중한 정보를 안전하게 보호하기 위해 최선을 다하고 있습니다.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q4</span> 회원 탈퇴는 어떻게 하나요?</h4>
+                        <p>&nbsp마이페이지 > 계정 설정에서 ‘회원 탈퇴’ 버튼을 눌러 진행하실 수 있습니다. 탈퇴 시 보유한 수강 이력 및 포인트는 모두 삭제되오니 신중히 결정해 주세요.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q5</span> 가입한 아이디로 로그인이 되지 않아요</h4>
+                        <p>&nbsp아이디 또는 비밀번호 입력 오류일 수 있으니 다시 확인해 주세요. 문제가 계속될 경우 고객센터나 [비밀번호 찾기]를 이용해 주세요.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q6</span> 여러 사람이 한 계정을 사용해도 되나요?</h4>
+                        <p>&nbsp한 계정은 1인 사용을 원칙으로 하고 있으며, 다수 사용 시 이용에 제한이 있을 수 있습니다. 보다 원활한 학습 환경을 위해 각자 계정을 생성해 주세요.</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="accordio_box lecture">
+                <ol>
+                    <li>
+                        <h4><span>Q1</span> 제게 맞는 수업을 추천받고 싶어요</h4>
+                        <p>&nbsp학습 목표나 관심 분야를 알려주시면 맞춤 강의를 추천해 드립니다. ‘학습추천’ 메뉴를 활용하거나, 고객센터로 문의 주세요.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q2</span> 수강 후기는 어떻게 남기나요?</h4>
+                        <p>&nbsp수강 완료 후 강의 상세페이지에서 ‘후기 작성’ 버튼을 통해 후기를 남기실 수 있습니다. 작성하신 후기는 다른 학습자에게 큰 도움이 됩니다.</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="accordio_box etc">
+                <ol>
+                    <li>
+                        <h4><span>Q1</span> 오류 제보는 어떻게 하나요?</h4>
+                        <p>&nbsp이용 중 발견하신 오류는 고객센터 또는 [1:1 문의]를 통해 알려주시면 빠르게 확인하고 조치하겠습니다. 상세한 화면 캡처와 함께 보내주시면 더 정확한 대응이 가능합니다.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q2</span> 기업 단체 수강하고 싶습니다</h4>
+                        <p>&nbsp가능합니다. 기업 맞춤형 교육 컨설팅 및 단체 수강 신청은 --이메일-- 또는 고객센터를 통해 문의 주세요. 담당자가 빠르게 연락드릴 예정입니다.</p>
+                    </li>
+                    <li>
+                        <h4><span>Q3</span> 유선상담이 가능한가요?</h4>
+                        <p>대표번호 010-1234-5678로 전화주세요. 상담가능 시간 : 평일 10시~17시.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../../4_cs/asset/csFAQ.js"></script>
+</body>
+</html>

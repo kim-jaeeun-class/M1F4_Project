@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="/3_mypage/asset/mypage_main.css">
+    <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+    <script src="../../0_templete/asset/templete.js"></script>
+
+    <!-- 2. chatbot.js: initChatbot 정의 -->
+    <script src="../../0_templete/asset/chatbot.js"></script>
+
+    <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+    <script src="../../0_templete/headfooter.js"></script>
+
+
+</head>
+<body>
+    <div class="head"></div>
+    <div class="body">
+        <!-- 이 안에 원하는 내용 넣어주세요-->
+        <div class="my_back">
+            <div class="tab">
+                <div class="tab_1">
+                    <a href="/3_mypage/html/studylist.html">수강내역</a>
+                </div>
+                <div class="tab_2">
+                    회원정보 수정
+                </div>
+            </div>
+            <div class="main">
+                <div class="title">
+                    비밀번호 확인
+                </div>
+                <div class="id_pw">
+                    <div class="id_pw_box">
+                        <div class="id_box">
+                            <div class="id">
+                                아이디
+                            </div>
+                            <div id="fix_id">
+                            
+                            </div>
+                        </div>
+                        <div class="pw">
+                            비밀번호
+                        </div>
+                        <div class="pw_box">
+                            <div class="pw_in">
+                                <input type="password" id="passwordInput" placeholder="비밀번호"><br/>
+                            </div>
+                            <div class="button">
+                                <button type="submit" id="button">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+        
+    <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
+    <script src="/1_main/asset/users.js"></script>
+    <script src="/3_mypage/asset/mypage_main.js"></script>
+</body>
+</html>

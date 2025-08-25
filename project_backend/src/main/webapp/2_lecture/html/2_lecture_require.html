@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>배워보다 :: 강의 요청</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
+        <link rel="stylesheet" href="../asset/2_lecture_require.css">
+        <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+        
+        <!-- 1. templete.js: bind 정의 -->
+        <script src="../../0_templete/asset/templete.js"></script>
+
+        <!-- 2. chatbot.js: initChatbot 정의 -->
+        <script src="../../0_templete/asset/chatbot.js"></script>
+
+        <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+        <script src="../../0_templete/headfooter.js"></script>
+
+    </head>
+    <body>
+        <div class="head"></div>
+        <div class="body">
+            <div class="block">
+                <div class="nav">
+                    <a href="../../1_main/html/1_mainpage.html" class="navFirst">메인</a>&nbsp;&gt;&nbsp;강의 요청
+                </div>
+                <div class="title">강의 요청 목록</div>
+                <div class="text-block">
+                    <table>
+                        <thead>
+                            <td class="table-num">번호</td>
+                            <td class="table-title">제목</td>
+                            <td class="table-date">작성일</td>
+                            <td class="like">좋아요</td>
+                            <td class="count">조회수</td>
+                        </thead>
+                        <tbody id = "table-body">
+                            <tr>
+                                <td>17</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.08.01</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.08.01</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>
+                                    <a href="2_lecture_require_detail.html">연결용 링크</a>
+                                </td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>예시용 제목</td>
+                                <td>2025.07.30</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class = "pagination" id = "pagination" style="margin-top: 10px;">페이지네이션 삽입</div>
+                </div>
+                <div class = "bottom-block">
+                    <form class="search">
+                        <select name="search-filter" class = "search-filter" size="1">
+                            <option value="title" selected="selected">제목</option>
+                            <option value="content">내용</option>
+                        </select>
+                        <input type="text" class = "search-input" placeholder="검색할 내용을 입력해주세요">
+                        <button type="button" class="search-btn">검색</button>
+                    </form>
+                    <form class="upload">
+                        <a href="2_lecture_require_write.html">
+                            <button type="button" class="upload-btn">
+                                요청 등록하기
+                            </button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
+        <!-- <script src="../../0_templete/headfooter.js"></script> -->
+        <script src="../asset/2_lecture_require.js"></script>
+    </body>
+</html>

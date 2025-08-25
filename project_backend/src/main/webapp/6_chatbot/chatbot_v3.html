@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8" />
+  <title>마스코드 배선생</title>
+  <style>
+    .chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+    .chatbot-icon img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .chatbot-window {
+      position: fixed;
+      bottom: 100px;
+      right: 70px;
+      width: 300px;
+      height: 400px;
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      z-index: 9998;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+
+    .chatbot-header {
+      background: #16ce25;
+      padding: 10px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-body {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .chatbot-input {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    .chatbot-input input {
+      flex: 1;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    .chatbot-input button {
+      margin-left: 5px;
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+
+    /* 💬 말풍선 스타일 */
+    .chat-message {
+      display: flex;
+      margin: 8px 0;
+    }
+
+    .chat-message.user {
+      justify-content: flex-end;
+    }
+
+    .chat-message.bot {
+      justify-content: flex-start;
+    }
+
+    .chat-bubble {
+      max-width: 70%;
+      padding: 8px 12px;
+      border-radius: 16px;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+
+    .chat-message.user .chat-bubble {
+      background-color: #109ef0;
+      color: #000;
+      border-bottom-right-radius: 0;
+    }
+
+    .chat-message.bot .chat-bubble {
+      background-color: #45e614;
+      color: #000;
+      border-bottom-left-radius: 0;
+    }
+
+    @media (max-width: 768px) {
+      #chatbotClose {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body > *:not(.chatbot-window) {
+        display: none !important;
+      }
+
+      .chatbot-window {
+        width: 100%;
+        height: 100vh;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        z-index: 9999;
+        display: flex !important;
+        flex-direction: column;
+      }
+
+      .chatbot-icon {
+        display: none;
+      }
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- 챗봇 아이콘 -->
+  <div class="chatbot-icon" id="chatbotToggle">
+    <img src="../img/baeT.png" alt="Chatbot Icon" />
+  </div>
+
+  <!-- 챗봇 창 -->
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      고객센터 챗봇
+      <button id="chatbotClose">×</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody"></div>
+    <div class="chatbot-input">
+      <input type="text" id="userInput" placeholder="질문을 입력하세요..." />
+      <button id="sendBtn">전송</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const chatbotWindow = document.getElementById("chatbotWindow");
+    const toggleBtn = document.getElementById("chatbotToggle");
+    const closeBtn = document.getElementById("chatbotClose");
+    const sendBtn = document.getElementById("sendBtn");
+    const inputBox = document.getElementById("userInput");
+    const chatbotBody = document.getElementById("chatbotBody");
+
+    const API_KEY = "AIzaSyCf3N7eOMox1_CRZw02w8PitkcfR59J4QQ"; // ⚠️ 여기에 본인의 Gemini API 키 입력
+    const chatHistory = [];
+
+    let systemPrompt = "";
+    let promptLoaded = false;
+
+    toggleBtn.addEventListener("click", () => {
+      chatbotWindow.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      chatbotWindow.style.display = "none";
+    });
+
+    sendBtn.addEventListener("click", sendToGemini);
+    inputBox.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendToGemini();
+    });
+
+    function appendMessage(sender, message) {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("chat-message", sender);
+
+      const bubble = document.createElement("div");
+      bubble.classList.add("chat-bubble");
+      bubble.textContent = message;
+
+      wrapper.appendChild(bubble);
+      chatbotBody.appendChild(wrapper);
+      chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    }
+
+    async function loadSystemPrompt() {
+      try {
+        const res = await fetch('Gemini.txt'); // ⚠️ 같은 폴더에 있어야 함
+        if (!res.ok) throw new Error("Gemini.txt 불러오기 실패");
+        systemPrompt = await res.text();
+        promptLoaded = true;
+        console.log("✅ 프롬프트 로드 완료");
+      } catch (err) {
+        console.error("❌ 프롬프트 로딩 실패:", err);
+        systemPrompt = "";
+      }
+    }
+
+    async function sendToGemini() {
+      const userInput = inputBox.value.trim();
+      if (!userInput) return;
+
+      inputBox.value = "";
+      appendMessage("user", userInput);
+
+      if (!promptLoaded) await loadSystemPrompt();
+
+      const payload = {
+        contents: [
+          { role: "user", parts: [{ text: systemPrompt }] },
+          ...chatHistory,
+          { role: "user", parts: [{ text: userInput }] }
+        ]
+      };
+
+      try {
+        const res = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          }
+        );
+
+        const data = await res.json();
+        const botReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "❌ 응답이 없습니다.";
+        appendMessage("bot", botReply);
+
+        chatHistory.push(
+          { role: "user", parts: [{ text: userInput }] },
+          { role: "model", parts: [{ text: botReply }] }
+        );
+      } catch (err) {
+        console.error("Gemini API 오류:", err);
+        appendMessage("bot", "⚠️ 오류가 발생했습니다.");
+      }
+    }
+
+
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.innerWidth <= 768) {
+        chatbotWindow.style.display = "flex";
+      }
+    });
+  </script>
+</body>
+</html>

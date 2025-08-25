@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>head / footer 템플릿</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
+        <link rel="stylesheet" href="asset/templete.css">
+    </head>
+    <body>
+        <div class="head">
+            <div class="main-logo">
+                <a href = "../../1_main/html/1_mainpage.html">
+                    <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png">
+                    <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
+                </a>
+            </div>
+            <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+            <div class="category" id="category-menu">
+                <div class="category-list reg">
+                    <a href="/2_lecture/html/2_lecture_main.html">수강 신청</a>
+                </div>
+                <div class="category-list lec-require">
+                    <a href="/2_lecture/html/2_lecture_require.html">강의 요청</a>
+                </div>
+                <div class="category-list community">
+                    <a href="/5_community/html/project.html">커뮤니티</a>
+                </div>
+                <div class="category-list mypage">
+                    <a href="/3_mypage/html/studylist.html">마이 페이지</a>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+           
+        </div>
+        <div class="footer">
+            <div class = "speech-bubble">도움이 필요하다면 절 눌러주세요!</div>
+            <!--<div class = "chatbot">
+                <a href="../../6_chatbot/chatbot_v3.html"><img src = "https://i.postimg.cc/bwVSjJHH/KGQDu4R.png" class= "chatbot-img"></a>     
+            </div> -->
+
+ <!-- 이 안에 원하는 내용 넣어주세요-->
+             <!-- 챗봇 아이콘 -->
+            <div class="chatbot-icon" id="chatbotToggle">
+                <img src="../../img/baeT.png" alt="Chatbot Icon" />
+            </div>
+
+            <!-- 챗봇 창 -->
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chatbot-header">
+                    고객센터 챗봇
+                    <button id="chatbotClose">×</button>
+                </div>
+                <div class="chatbot-body" id="chatbotBody"></div>
+                    <div class="chatbot-input">
+                    <input type="text" id="userInput" placeholder="질문을 입력하세요..." />
+                    <button id="sendBtn">전송</button>
+                </div>
+            </div>
+            
+            
+            <ul type="none" class="bottom-menu">
+                <!--수정사항 : 챗봇 자체는 지금 푸터의 챗봇을 클릭했을때 모바일 기준으로 기존의 창이 넘어가 지는데, 새로운 창이 열리게 하는것이 목적-->
+                <li class="bottom-menu-list" id = "chat">
+                    <a href="../../6_chatbot/chatbot_v3.html"  target="_blank" rel="noopener noreferrer" >챗봇</a>
+                </li>
+                <li class="bottom-menu-list">
+                    <a href="../../4_cs/html/csMain.html">고객센터</a>
+                </li>
+                <li class="bottom-menu-list">광고 문의</li>
+                <li class="bottom-menu-list">개인 정보 이용 방침</li>
+            </ul>
+            <div class = "copyright">© 2025 M1F4</div>
+        </div>
+        <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
+        <script src="asset/templete.js"></script>
+    </body>
+</html>

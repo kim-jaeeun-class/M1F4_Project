@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>고객센터 - 공지사항</title>
+    <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+    <link rel="stylesheet" href="../../4_cs/asset/csMain.css">
+    <!-- 1. templete.js: bind 정의 -->
+    <script src="../../0_templete/asset/templete.js"></script>
+
+    <!-- 2. chatbot.js: initChatbot 정의 -->
+    <script src="../../0_templete/asset/chatbot.js"></script>
+
+    <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+    <script src="../../0_templete/headfooter.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="head"></div>
+
+        <div class="body">
+            <div class="nav"><a href="csMain.html">고객센터</a> &gt; 공지사항</div>
+            
+            <div class="csCategory">
+                <div class="csCategory-list"><a class="notice active" href="csMain.html">공지사항</a></div>|
+                <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
+                <div class="csCategory-list"><a class="qna" href="csQnA.html">Q&A</a></div>
+            </div>
+            
+            <div class="notice-contents">
+                <table class="content-table">
+                    <thead>
+                    <tr>
+                        <th class="number-col">번호</th>
+                        <th class="title-col">제목</th>
+                        <th class="author-col">작성자</th>
+                        <th class="time-col">작성일</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    <!-- 게시글이 여기 표시됩니다 -->
+                    </tbody>
+                </table>
+                <div id="pagination" style="margin-top: 10px;"></div>
+            </div>
+
+            <div class="bottom-block">
+                <form class="search">
+                    <select name="search-filter" class = "search-filter" size="1">
+                        <option value="title" selected="selected">제목</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <input type="text" class = "search-input" placeholder="검색할 내용을 입력해주세요">
+                    <button type="button" class="search-btn">검색</button>
+                </form>
+                <form class="upload">
+                    <a href="csMainWrite.html" onclick="localStorage.removeItem('tempPost')">
+                        <button type="button" class="upload-btn">글쓰기</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    
+    <script src="../../4_cs/asset/csMain.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+/* body 
+
+    .block : body 내부 코드들 묶음
+        .like : 좋아요 버튼 영역
+            .like-btn : 좋아요 버튼
+        .title, .subject, .date, .content : 제목, 주제, 날짜, 내용
+            -index : 제목(내용 부분에는 없음)
+            -index-con : 제목과 연동되는 내용(내용 부분에는 없음)
+*/
+
+.body {
+    background-color: #f9f9f9;
+    padding : 40px 0;
+}
+
+.nav {
+    width: 80%;
+    margin: 0 auto 40px;
+}
+
+/* 나중에 a href로 링크 걸 경우에 색상 변경 */
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav a.navSecond {
+    color: #aacda6;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navFirst:hover, .navSecond:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+.block {
+    width: 75%;
+    margin: 5% auto 0;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px dotted #aacda6;
+    padding: 3%;
+}
+
+hr {
+    width: 90%;
+}
+
+.like {
+    display : flex;
+    justify-content: end;
+    gap: 10px;
+    align-items: center;
+    width: 90%;
+    margin: 3% auto;
+}
+
+.like-count {
+    color: #555;
+    font-weight: 600;
+}
+
+.like-btn {
+    background-image: url('https://i.postimg.cc/9z5K7j7N/free-icon-hearts-18745836.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 30px; 
+    height: 30px; 
+    border: none; 
+    background-color: transparent;
+    appearance: none;
+}
+
+.like-btn:focus {
+    outline: none;
+}
+
+.particle {
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    position: fixed;
+    opacity: 0;
+    z-index: 9999;
+}
+
+.title, .subject, .date {
+    display: flex;
+    width: 90%;
+    margin: 3% auto;
+    gap: 30px;
+}
+
+.index, .index-con {
+    line-height: 1.8em;
+}
+
+.index {
+    width: 10%;
+    font-weight: 600;
+}
+
+.index-con {
+    width: 70%;
+}
+
+.content {
+    line-height: 1.8em;
+    text-align: justify;
+    width: 90%;
+    margin: 5% auto;
+}
+.input {
+    text-align: right;
+    margin-top: 5%;
+}
+
+.modify, .delete {
+    font-family: 'ChosunGu';
+    font-weight: 600;
+    width: 10%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modify {
+    background-color: #5b9b5b;
+}
+
+.delete {
+    background-color: #555;
+}
+
+.delete:hover {
+    background-color: #333;
+}
+
+.modify:hover {
+    background-color: #3e6b3e;    
+}
+
+/* 챗봇 */
+
+.chatbot {
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.speech-bubble {
+	position: fixed;
+	background: #cce0cc;
+	border-radius: 20px;
+    bottom : 120px;
+    right: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.speech-bubble:after {
+    position: fixed;
+    bottom: 130px;
+    right: 70px;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #cce0cc;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+.chatbot-img { 
+    width: 80px;
+    height: 80px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    
+    .title, .subject, .date {
+        margin: 5% auto;
+    }
+
+    .index {
+        width: 15%;
+    }
+
+    .input {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .modify, .delete {
+        width: 45%;
+    }
+}

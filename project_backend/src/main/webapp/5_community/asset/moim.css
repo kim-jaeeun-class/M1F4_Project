@@ -1,0 +1,297 @@
+/* 기본 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ChosunGu';
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
+
+
+/*
+    head 세부 클래스명
+    .logo : 홈페이지 로고
+    .category
+        .category-list : 개별 카테고리(통합)
+            .reg : 수강 신청
+            .lec-require : 강의 요청
+            .community : 커뮤니티
+            .mypage : 마이페이지
+    .top-menu : 챗봇 / 고객센터 메뉴 묶음
+        .top-menu-list : 메뉴별(통합)
+*/
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+
+/* 네비게이션 부분 */
+.nav {
+    width: 80%;
+    margin: 40px auto;
+}
+.nav a.navFirst {
+    color: #5b9b5b;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.nav a.navSecond {
+    color: #aacda6;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.navFirst:hover, .navSecond:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+/* 시작 */
+.moim-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    background: #eee;
+    border: 2px solid #5b9b5b;
+    padding: 40px;
+    border-radius: 1.5em;
+}
+
+.board-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #5b9b5b;
+    font-weight: bold;
+}
+
+.moim-title {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid  #3e6b3e;
+    background-color: #f7fff7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    }
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.region-select,
+.category-select {
+    min-width: 160px;
+    padding: 10px;
+    border: 1px solid #5b9b5b;
+    background-color: #f7fff7;
+    border-radius: 5px;
+    color: #333;
+}
+
+.filters div {
+    background-color: #f7fff7;
+    border: 1px solid #5b9b5b;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch; /* 높이 맞추기 */
+}
+
+.moim-description {
+    flex: 2;
+    height: 202px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #5b9b5b;
+    background-color: #f7fff7;
+    resize: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 180px; /* 높이 맞추기 */
+    box-sizing: border-box;
+}
+
+.upload-btn {
+    padding: 10px;
+    background-color: #5b9b5b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image-preview {
+    background-color: #ffffff;
+    height: 150px;
+    border: 2px dashed #5b9b5b;
+    text-align: center;
+    line-height: 150px;
+    border-radius: 5px;
+    color: #999;
+}
+
+.allUpload {
+    width: 20%;
+    margin: 10px 0 0 auto; /* 왼쪽 마진을 auto로 */
+    display: block;   
+}
+
+
+/* 끝 */
+
+/*
+    footer : 홈페이지 정보
+    .bottom-menu : footer 내부 요소 묶음
+        .copyright : 카피라이트
+        .bottom-menu-list : 하단 메뉴 묶음(개별)
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    margin: auto;
+    text-align: center;
+}
+
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+.bottom-menu-list:first-child::before {
+    content: "  "
+}
+.bottom-menu-list::before {
+    content: " | "
+}
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+}
+

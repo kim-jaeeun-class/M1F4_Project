@@ -1,0 +1,54 @@
+1. 팀원 : 기존 해커톤 팀
+2. 팀명 : M1F4
+3. 팀장 : 최연지 
+
+4. 제작 내용 : * 표시는 필수. - 표시는 추후 다른 프로젝트 진행 시에.
+  1) 유저 페이지
+	** 로그인 / 회원가입 창 (강사 / 수강자 구분)
+	** 강의 신청(게시판형) - 리뷰 / 교육 장소 안내(지도 추후 학습)
+	* 봉사자 매칭
+	--- 크레딧 / 배지 / 레벨업
+  2) 관리자 페이지
+	** 봉사자 관리 : 서류 제출 확인
+	** 강의 개설 승인 (생각해보기) : 장소 섭외 및 배정
+	리뷰 관리
+	레벨 표시 기능
+	
+5. 참고 사이트
+  1) https://svoucher.kspo.or.kr/course/memberFacilityList.do
+  2) https://www.somoim.co.kr/
+  3) https://imweb.me/theme?&utm_source=sa_google&utm_medium=cpc&utm_campaign=bat-google-sa_pc-traffic_brand_manualcpc&utm_content=pc-brandkeyword-pageview-241010&utm_term=아이웹&gad_source=1&gad_campaignid=22783404872&gclid=CjwKCAjw7fzDBhA7EiwAOqJkh2OkRFN2jKCgW-DfSR0HreV2s9O2nyJGhfnxhW_rqF8N7LuRX4TFjBoCfN4QAvD_BwE
+
+6. 진행할 일 : ppt 제작 / 일정표
+ 
++. UML 참고용
+	
+	🎭 액터 (Actors)
+	수강자 (Learner)
+	봉사자 (Volunteer)
+	관리자 (Admin)
+
+	※ 수강자 / 봉사자 모두 **"유저(User)"**라는 공통 액터로 추상화 가능하지만, 세부 동작이 다르기 때문에 경우에 따라 별도로 표시하는 것이 좋음.
+
+	✅ 주요 유스케이스 (Use Cases)
+	사용자 페이지 (일반 유저)
+	회원가입 / 로그인
+		수강자 / 강사 / 봉사자로 구분되어 로그인
+	강의 신청
+		게시판형 인터페이스
+		강의 리뷰 열람 / 작성
+		교육 장소 확인 (지도 제공 예정)
+	봉사자 매칭
+		수강자 ↔ 봉사자 연결
+	크레딧 / 배지 / 레벨 시스템
+		활동에 따른 레벨업 및 보상
+
+	관리자 페이지 : 통합 id 하나?
+	봉사자 서류 관리
+		서류 제출 확인 / 승인
+	강의 개설 승인 (선택 사항)
+		장소 섭외 / 배정 포함
+	리뷰 관리
+		부적절한 리뷰 삭제, 신고 처리 등
+	레벨 표시 설정
+		유저 레벨 관련 설정 관리

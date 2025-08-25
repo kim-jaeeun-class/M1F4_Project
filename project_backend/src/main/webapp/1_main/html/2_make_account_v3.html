@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <!-- <script src="../../0_templete/headfooter.js"></script> -->
+    <!-- 1. templete.js: bind 정의 -->
+  <script src="../../0_templete/asset/templete.js"></script>
+
+  <!-- 2. chatbot.js: initChatbot 정의 -->
+  <script src="../../0_templete/asset/chatbot.js"></script>
+
+  <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+  <script src="../../0_templete/headfooter.js"></script>
+  <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+ 
+
+  <title>회원 가입</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 500px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .speech-bubble,.chatbot-icon{
+      display: none;
+    }
+    hr {
+      margin: 10px 0 20px;
+    }
+
+    li{
+      margin-bottom: 20px;
+    }
+
+
+
+    .agree_text {
+      margin-left: 24px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #3cb371;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+
+    .login_main {
+    width: 500px;
+    margin: 100px auto 30px;
+    padding: 20px;
+    text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        
+    }
+
+    .section{
+        margin-top: 40px;
+    }
+    .terms_box{
+        overflow:auto;
+        box-sizing:border-box;
+        max-height:100px;
+        margin:9px 0 0 32px;
+        padding:15px;
+        border-radius:6px;
+        border:1px solid #d6d6d6}
+    .terms_box::-webkit-scrollbar{width:20px}
+    .terms_box::-webkit-scrollbar-thumb{
+        height:42px;
+        background:#999;
+        border-radius:10px;
+        border:6px solid #fff}
+    .terms_box::-webkit-scrollbar-track{
+        border-radius:0 6px 6px 0;
+        background-color:transparent
+    }
+    .li{
+      padding-top : px;
+    }
+    
+
+    @media (max-width: 600px) {
+    .container,
+    .login_main {
+      width: 100%;
+      padding: 15px 20px;
+    }
+ 
+    .terms_box {
+      margin-left: 0;
+    }
+
+    .logo img {
+      width: 100%;
+      height: auto;
+    }
+
+    .button-group {
+      flex-direction: column;
+      text-align: center;
+       margin-top:20px;
+       width : 100%;
+    }
+
+    button {
+      width: 90% !important;
+      max-width: 300px;
+      margin:  0px auto;
+      /* display: block; */
+
+    }
+  }
+
+  </style>
+
+</head>
+
+<body>
+  <div class = "login_main">
+    <div class = "logo">
+      <a href="/1_main/html/1_mainpage.html">
+        <img style="width: 200px; height: 50px;" src="https://i.imgur.com/yOfFX9f.png">
+      </a>
+      </div>
+    </div>
+  <div class="container">
+    <h2>약관 동의</h2>
+    <div class="section">
+      <label><input type="checkbox" class="all_agree"> 전부 동의</label>
+      <p style="font-size: 14px; color: #555;">
+        실명 인증된 아이디로 가입, 서비스 이용약관, 개인정보 수집 및 이용 동의, 봉사 정보  제공 및 마케팅(선택) 동의를 포함합니다.
+      </p>
+      <br><hr>
+      <ul>
+        <li>
+          <label><input type="checkbox" class="term"> 약관 1 (서비스 이용약관)</label>
+          <div class="terms_box">
+            <p><strong>제 1 조 (목적)</strong></p>
+            <p>이 약관은 봉사 포털 사이트(이하 "사이트")가 제공하는 온라인 봉사 신청 및 관리 서비스의 이용과 관련하여 회원과 사이트 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+
+            <p><strong>제 2 조 (회원가입 및 서비스 이용)</strong></p>
+            <p>회원은 본 약관에 동의한 후 사이트가 정한 절차에 따라 가입할 수 있으며, 가입 시 제공된 정보는 정확해야 합니다. 거짓 정보 입력 시 서비스 이용에 제한이 있을 수 있습니다.</p>
+
+            <p><strong>제 3 조 (서비스 내용)</strong></p>
+            <p>사이트는 자원봉사 신청, 활동 확인서 발급, 활동 내역 조회 등 봉사 관련 전반적인 서비스를 제공합니다.</p>
+
+            <p><strong>제 4 조 (회원의 의무)</strong></p>
+            <p>회원은 봉사 신청 시 성실히 활동에 참여하고, 무단 불참 등의 행위를 하지 않아야 합니다.</p>
+
+            <p><strong>제 5 조 (계약 해지)</strong></p>
+            <p>회원은 언제든지 사이트를 탈퇴할 수 있으며, 위반 행위가 확인될 경우 사이트는 사전 통보 후 회원 자격을 제한할 수 있습니다.</p>
+          </div>
+        </li>
+
+        <li>
+          <label><input type="checkbox" class="term"> 약관 2 (개인정보 수집 및 이용 동의)</label>
+          <div class="terms_box">
+            <p><strong>1. 수집 항목</strong></p>
+            <p>이름, 생년월일, 연락처, 이메일, 봉사활동 참여 이력 등</p>
+
+            <p><strong>2. 수집 목적</strong></p>
+            <p>봉사활동 신청/관리, 참여 확인, 봉사실적 인증서 발급 등 원활한 서비스 운영을 위함</p>
+
+            <p><strong>3. 보유 기간</strong></p>
+            <p>회원 탈퇴 시까지 또는 관련 법령에 따른 보관 기간까지</p>
+
+            <p><strong>4. 동의 거부 권리 및 불이익</strong></p>
+            <p>개인정보 수집에 대한 동의를 거부할 수 있으며, 이 경우 서비스 이용에 제한이 있을 수 있습니다.</p>
+          </div>
+        </li>
+
+        <li>
+          <label><input type="checkbox" class="term"> 약관 3 (봉사 정보 제공 및 마케팅 동의) <span style="color: #888;">(선택)</span></label>
+          <div class="terms_box">
+            <p>사이트는 회원에게 다양한 봉사활동 추천, 봉사 관련 교육, 캠페인 및 소식 등을 이메일이나 문자 등을 통해 안내할 수 있습니다.</p>
+
+            <p>회원은 동의하지 않더라도 사이트 기본 서비스 이용에는 제한이 없습니다. 단, 유용한 봉사 정보를 받아보지 못할 수 있습니다.</p>
+
+            <p>마케팅 수신은 언제든지 회원정보 페이지에서 해지할 수 있습니다.</p>
+          </div>
+        </li>
+
+
+
+      </ul>
+    </div>
+
+  </div>
+  <div class = "button_group" style="text-align: center; margin-top: 20px;margin-bottom: 30px;width : 100%;">
+    <button onclick="goBack()" style="border : none; background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">뒤돌아가기</button>
+    <button onclick="goNext()" style="border : none; background-color: #3cb371; border-radius: 8px; color: white; width: 200px; height: 60px;">다음</button>
+  </div>
+
+
+  <div class = "footer"></div>
+
+
+  <script>
+
+  // ✅ 변수 이름 변경
+  const allAgreeCheckbox = document.querySelector('.all_agree');
+  const termCheckboxes = document.querySelectorAll('.term');
+
+  allAgreeCheckbox.addEventListener('change', function () {
+    termCheckboxes.forEach(term => term.checked = allAgreeCheckbox.checked);
+  });
+
+  termCheckboxes.forEach(term => {
+    term.addEventListener('change', function () {
+      allAgreeCheckbox.checked = Array.from(termCheckboxes).every(t => t.checked);
+    });
+  });
+
+  // 뒤로가기
+  function goBack() {
+    window.location.href = "3_login.html";
+  }
+
+  // 다음 버튼 클릭 시 필수 약관 확인
+  function goNext() {
+    const requiredTerms = Array.from(termCheckboxes).slice(0, 2); // 약관 1, 2만 필수
+    const allChecked = requiredTerms.every(term => term.checked);
+
+    if (!allChecked) {
+      alert("필수 약관에 모두 동의해야 다음 단계로 진행할 수 있습니다.");
+      return;
+    }
+
+    // 모두 동의했으면 다음 페이지로 이동
+    window.location.href = "2_make_account_v3_1.html";
+  }
+
+
+  </script>
+</body>
+</html>

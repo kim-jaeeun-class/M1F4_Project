@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>고객센터 - Q&A</title>
+    <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+    <link rel="stylesheet" href="../../4_cs/asset/csQnAWriterView.css" />
+    <!-- 1. templete.js: bind 정의 -->
+    <script src="../../0_templete/asset/templete.js"></script>
+    <!-- 2. chatbot.js: initChatbot 정의 -->
+    <script src="../../0_templete/asset/chatbot.js"></script>
+    <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+    <script src="../../0_templete/headfooter.js"></script>
+</head>
+
+<body>
+    <div class="head"></div>
+
+  <div class="wrapper">
+    <div class="body">
+      <div class="nav">
+        <a href="csMain.html" class="navFirst">고객센터</a>
+        <a href="csQnA.html" class="navSecond"> &gt; Q&A</a> &gt; Q&A 상세
+      </div>
+
+      <div class="csCategory">
+        <div class="csCategory-list"><a class="notice" href="csMain.html">공지사항</a></div>|
+        <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
+        <div class="csCategory-list"><a class="qna active" href="csQnA.html">Q&A</a></div>
+      </div>
+
+      <section class="postform">
+        <div class="title">
+          <div class="index">제목</div>
+          <div class="index-con" id="postTitle"></div>
+        </div>
+        <div class="author">
+          <div class="index">작성자</div>
+          <div class="index-con" id="postAuthor"></div>
+        </div>
+        <div class="date">
+          <div class="index">작성일</div>
+          <div class="index-con" id="postTime"></div>
+        </div>
+        <hr>
+        <div class="content" id="postContent"></div>
+
+        <div class="tabs">
+          <button id="backList">목록보기</button>
+          <button id="edit">수정</button>
+          <button id="delete">삭제</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+    <div class="footer"></div>
+    
+    <script src="../../4_cs/asset/csQnAWriterView.js"></script>
+</body>
+</html>

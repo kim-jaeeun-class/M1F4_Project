@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>아이디 / 비밀번호 찾기</title>
+    <link rel="stylesheet" href="/1_main/asset/3_find_id_pw.css">
+</head>
+<body>
+    <div>
+        <div class="login_main">
+            <div class="logo">
+                <a href="/1_main/html/1_mainpage.html">
+                <img style="width: 300px; height: 100px; margin: auto;" src="https://i.imgur.com/yOfFX9f.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="find_back">
+        <div class="title">
+            아이디 / 비밀번호 찾기
+        </div>
+        <div>
+            <div class="find">
+                <div class="find_id">
+                    <a href="/1_main/html/3_find_id.html">아이디 찾기</a>
+                </div>
+                <div class="find_pw active">
+                    비밀번호 찾기
+                </div>
+            </div>
+            <div class="h3">
+                비밀번호가 기억나지 않는다면?<br>
+                한 가지 방법을 선택해 <span>임시 비밀번호</span>를 발급받아주세요.
+            </div>
+        </div>
+        <div class="find_id_content">
+            <div class="phone">
+                <input type="radio" name="search" value="휴대폰번호로 발급받기"> 휴대폰번호로 발급받기
+                <ul class="li_1">
+                    <li>
+                        <div class="id">
+                            <div class="id_1">
+                                아이디 
+                            </div>
+                            <div class="phone_email_input">
+                                <input type="text" class="email_id" placeholder="아이디"> @ 
+                                <input type="text" class="email_domain" readonly>
+                                <select class="id_2_sel">
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="직접입력" selected>직접입력</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="id">
+                            <div class="id_2">
+                                휴대폰
+                            </div>
+                            <div class="id_2_1">
+                                <select class="id_2_sel">
+                                    <option>010</option>
+                                    <option>011</option>
+                                    <option>017</option>
+                                </select>
+                                <div class="id_2_text">
+                                    <input type="text">
+                                </div>
+                                <button type="submit" class="next_pw">다음></button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="email">
+                <input type="radio" name="search" value="이메일로 발급받기"> 이메일로 발급받기
+                <ul class="li_2">
+                    <li>
+                        <div class="id">
+                            <div class="id_1">
+                                아이디 
+                            </div>
+                            <div class="email_input">
+                                <input type="text" class="email_id" placeholder="아이디"> @ 
+                                <input type="text" class="email_domain" readonly>
+                                <select class="id_2_sel">
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="직접입력" selected>직접입력</option>
+                                </select>
+                                <button type="submit" class="next_pw">다음 ></button>
+                            </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="button_box_pw">
+                <button type="button" class="before_pw">뒤로가기</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        @ 2025 배워보다
+    </div>
+    <script src="/1_main/asset/users.js"></script> 
+    <script src="/1_main/asset/3_find_pw.js"></script> 
+</body>
+</html>

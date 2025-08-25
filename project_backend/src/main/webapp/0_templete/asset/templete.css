@@ -1,0 +1,391 @@
+/* 기본 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ChosunGu';
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+    text-decoration: none;
+}
+
+a:active {
+    color: #5b9b5b;
+    text-decoration: none;
+}
+
+
+/*
+    head 세부 클래스명
+    .logo : 홈페이지 로고
+    .category
+        .category-list : 개별 카테고리(통합)
+            .reg : 수강 신청
+            .lec-require : 강의 요청
+            .community : 커뮤니티
+            .mypage : 마이페이지
+    .top-menu : 챗봇 / 고객센터 메뉴 묶음
+        .top-menu-list : 메뉴별(통합)
+*/
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+/* 챗봇 */
+
+.chatbot {
+    position: fixed;
+    z-index: 9999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.speech-bubble {
+	position: fixed;
+	background: #cce0cc;
+	border-radius: 20px;
+    bottom : 120px;
+    right: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.speech-bubble:after {
+    position: fixed;
+    bottom: 130px;
+    right: 70px;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #cce0cc;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -10px;
+    margin-bottom: -20px;
+  }
+
+.chatbot-img { 
+    width: 80px;
+    height: 80px;
+}
+
+
+/*
+    footer : 홈페이지 정보
+    .bottom-menu : footer 내부 요소 묶음
+        .copyright : 카피라이트
+        .bottom-menu-list : 하단 메뉴 묶음(개별)
+*/
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    margin: auto;
+    text-align: center;
+    width : 100%;
+}
+
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+
+.bottom-menu-list::before {
+    content: " | ";
+}
+
+.bottom-menu-list:nth-of-type(2)::before {
+    content: "";
+}
+
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+    /* footer에 있는 챗봇 메뉴 */
+#chat{
+    display: none;
+}
+/* 반응형 */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    /* footer에 있는 챗봇 메뉴 */
+    #chat{ 
+        display: inline;
+    }
+
+    /* 모바일일경우 pc버전에 표시되는 우측 하단 챗봇 이미지 제거 */
+    .chatbot{
+        display: none;
+    }
+    .speech-bubble{
+        display: none;
+    }
+
+    .bottom-menu-list:nth-of-type(1)::before {
+    content: "";
+    }
+
+    .bottom-menu-list:nth-of-type(2)::before {
+    content: " | ";
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* -----------------------------------------------챗봇 추가중------------------------------------------------------- */
+
+/* -----------------------------------------------챗봇 추가중------------------------------------------------------- */
+
+/* ✅ PC 기본 챗봇 아이콘 */
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+.chatbot-icon img {
+  width: 100px;
+  height: 100px;
+}
+
+/* ✅ 챗봇 창 (PC 기본) */
+.chatbot-window {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  z-index: 9998;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.chatbot-header {
+  background: #16ce25;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 6px;
+  font-size: 14px;
+}
+
+.chatbot-input button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* 💬 말풍선 메시지 스타일 */
+.chat-message {
+  display: flex;
+  margin: 8px 0;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+.chat-message.bot {
+  justify-content: flex-start;
+}
+
+.chat-bubble {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.chat-message.user .chat-bubble {
+  background-color: #109ef0;
+  color: #000;
+  border-bottom-right-radius: 0;
+}
+
+.chat-message.bot .chat-bubble {
+  background-color: #45e614;
+  color: #000;
+  border-bottom-left-radius: 0;
+}
+
+/* ✅ 반응형: 모바일에서는 전체화면 챗봇 + 아이콘 숨김 + 푸터 챗봇 표시 */
+@media (max-width: 768px) {
+  /* 푸터 텍스트 챗봇 메뉴 보이기 */
+  #chat {
+    display: inline;
+  }
+
+  /* PC용 챗봇 아이콘은 모바일에서 숨김 */
+  .chatbot-icon {
+    display: none;
+  }
+
+  /* 챗봇 전체화면화 */
+  .chatbot-window {
+    width: 100%;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    display: none;
+    flex-direction: column;
+    z-index: 9999;
+  }
+
+  /* 챗봇 닫기 버튼은 모바일에서 숨김 (필요 시 다시 표시 가능) */
+  #chatbotClose {
+    display: none;
+  }
+
+  /* 기존 우측 말풍선 챗봇은 모바일에서 숨김 */
+  .chatbot,
+  .speech-bubble {
+    display: none;
+  }
+}

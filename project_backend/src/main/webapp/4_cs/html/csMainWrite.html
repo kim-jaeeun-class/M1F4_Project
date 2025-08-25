@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>고객센터:: 공지사항 :: 글 작성</title>
+    <link rel="stylesheet" href="../../0_templete/asset/templete.css" />
+    <link rel="stylesheet" href="../../4_cs/asset/csMainWrite.css" />
+    <script src="../../0_templete/asset/templete.js"></script>
+    <script src="../../0_templete/asset/chatbot.js"></script>
+    <script src="../../0_templete/headfooter.js"></script>
+</head>
+
+<body>
+    <div class="head"></div>
+
+    <div class="body">
+        <div class="nav">
+            <a href="csMain.html" class="navFirst">고객센터</a>
+            <a href="csQnA.html" class="navSecond"> &gt; 공지사항</a> &gt; 공지사항 글쓰기
+        </div>
+
+        <div class="csCategory">
+            <div class="csCategory-list"><a class="notice active" href="csMain.html">공지사항</a></div>|
+            <div class="csCategory-list"><a class="faq" href="csFAQ.html">FAQ</a></div>|
+            <div class="csCategory-list"><a class="qna" href="csQnA.html">Q&A</a></div>
+        </div>
+
+        <div class="writeForm">
+            <form class="postForm" name="postForm">
+                <input type="text" id="writeTitle" name="writeTitle" placeholder="제목을 입력해주세요" required />
+                <div class="author">
+                    <div class="index">작성자</div>
+                    <div class="index-con" id="authorName">관리자</div>
+                </div>
+                <div class="date">
+                    <div class="index">작성일</div>
+                    <div class="index-con" id="writeTime"></div>
+                </div>
+                <textarea id="content" name="content" placeholder="내용을 입력해주세요" required></textarea>
+                <div class="bottom-btn-list">
+                    <button type="button" class="input-btn" id="cancel"><a href="csMain.html">취소</a></button>
+                    <button type="submit" class="input-btn" id="input">작성</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+    <script src="../../4_cs/asset/csMainWrite.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot Widget</title>
+  <style>
+    /* 챗봇 아이콘 */
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.chatbot-icon img {
+  width: 100px;  
+  height: 100px; 
+}
+
+
+/* 챗봇 창 */
+.chatbot-window {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  z-index: 9998;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.chatbot-header {
+  background: #f0f0f0;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 6px;
+  font-size: 14px;
+}
+
+.chatbot-input button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+
+}
+
+/* 
+gpt나 제미니를 연동하여 학습 시킬것
+모바일일 경우 일단 폰트 사이즈와 이미지 사이즈를 키울것
+모바일 화면을 꽉 채우는 화면일것
+*/
+
+
+
+</style>
+</head>
+<body>
+
+  <!-- 챗봇 위젯 아이콘 -->
+  <div class="chatbot-icon" id="chatbotToggle">
+    <img src="../img/baeT.png" alt="Chatbot Icon" />
+  </div>
+
+  <!-- 챗봇 창 -->
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <button id="chatbotClose">×</button>
+    </div>
+    <div class="chatbot-body">
+      <p>안녕하세요! 무엇이 궁금하신가요?</p>
+      <!-- 여기에 챗봇 메시지 추가 -->
+    </div>
+    <div class="chatbot-input">
+      <input type="text" placeholder="질문을 입력하세요..." />
+      <button>전송</button>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+<script>
+const toggleBtn = document.getElementById('chatbotToggle');
+const closeBtn = document.getElementById('chatbotClose');
+const chatbotWindow = document.getElementById('chatbotWindow');
+const inputBox = document.querySelector('.chatbot-input input');
+const sendBtn = document.querySelector('.chatbot-input button');
+const chatbotBody = document.querySelector('.chatbot-body');
+
+// 정해진 응답 사전
+const responses = {
+  '안녕': '안녕하세요! 무엇이 궁금하신가요?',
+  '이름': '저는 책을 좋아하는 배선생 이예요!',
+  '도움': '도움이 필요하시면 "문의" 또는 "질문"이라고 입력해보세요.',
+  '문의': '문의는 support@example.com 으로 해주세요.',
+  '시간': `현재 시간은 ${new Date().toLocaleTimeString()} 입니다.`,
+};
+
+toggleBtn.addEventListener('click', () => {
+  chatbotWindow.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+  chatbotWindow.style.display = 'none';
+});
+
+sendBtn.addEventListener('click', () => {
+  const message = inputBox.value.trim();
+  if (!message) return;
+
+  appendMessage('user', message);
+  inputBox.value = '';
+
+  const response = getResponse(message);
+  typeResponse('bot', response);
+});
+
+function appendMessage(sender, text) {
+  const p = document.createElement('p');
+  p.classList.add(`${sender}-message`);
+  p.textContent = `${sender === 'user' ? '👤' : '🐢'} ${text}`;
+  chatbotBody.appendChild(p);
+  chatbotBody.scrollTop = chatbotBody.scrollHeight;
+}
+
+function typeResponse(sender, fullText) {
+  const p = document.createElement('p');
+  p.classList.add(`${sender}-message`);
+  p.textContent = `${sender === 'user' ? '👤' : '🐢'} `;
+  chatbotBody.appendChild(p);
+  chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
+  let index = 0;
+
+  const typingInterval = setInterval(() => {
+    if (index < fullText.length) {
+      p.textContent += fullText.charAt(index);
+      index++;
+      chatbotBody.scrollTop = chatbotBody.scrollHeight;
+    } else {
+      clearInterval(typingInterval);
+    }
+  }, 30); // 속도 조절 가능 (ms당 글자 수)
+}
+
+function getResponse(input) {
+  input = input.toLowerCase();
+
+  for (const key in responses) {
+    if (input.includes(key)) {
+      return responses[key];
+    }
+  }
+  return '죄송해요, 이해하지 못했어요!';
+}
+
+
+    </script>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>수강내역</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
+        <link rel="stylesheet" href="/3_mypage/asset/studylist.css">
+        <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+        
+        
+        <!-- 1. templete.js: bind 정의 -->
+        <script src="../../0_templete/asset/templete.js"></script>
+
+        <!-- 2. chatbot.js: initChatbot 정의 -->
+        <script src="../../0_templete/asset/chatbot.js"></script>
+
+        <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+        <script src="../../0_templete/headfooter.js"></script>
+    </head>
+    <body>
+        <div class="head"></div>
+        <div class="body">
+            <!-- 이 안에 원하는 내용 넣어주세요-->
+            <div class="my_back">
+                <div class="tab">
+                    <div class="tab_1">
+                        수강내역
+                    </div>
+                    <div class="tab_2">
+                        회원정보 수정
+                    </div>
+                </div>
+                <div class="main hidden">
+                    <div class="nav">
+                        <a class="nav_text" href="/3_mypage/html/studylist.html">마이페이지</a> > 수강내역
+                    </div>
+                    <div class="list_tab">
+                        <div class="past_list" data-tab="past">
+                            지난 수강내역
+                        </div>
+                        <div class="ing_list active" data-tab="ing">
+                            진행 중인 수강내역
+                        </div>  
+                    </div>
+                    <div class="contents-line active" id="ing">
+                        <div class="contents-card ing">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card ing">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card ing">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card ing">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card ing">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contents-line" id="past">
+                        <div class="contents-card past">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">[종료]강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card past">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">[종료]강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card past">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">[종료]강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card past">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">[종료]강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card past">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">[종료]강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card past">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">[종료]강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="contents-card past">
+                            <a href="/2_lecture/html/2_lecture_child.html">
+                            <div class="card-img"></div>
+                            <div class="card-info">
+                                <div class="card-name">[종료]강의명</div>
+                                <div class="card-loc">장소</div>
+                                <div class="card-pnum">수강 정원</div>
+                                <div class="card-outline">강의 개요 요약</div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div class="pagination">
+                        <ul id="pagination">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <!-- 템플릿 js 파일. 파일에 맞게 링크 바꿔주세요-->
+        <script src="/3_mypage/asset/studylist.js"></script>
+    </body>
+</html>

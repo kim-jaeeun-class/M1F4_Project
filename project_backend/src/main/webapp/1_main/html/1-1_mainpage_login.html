@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>배워보다</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="../asset/1-1_mainpage_login.css">
+    </head>
+    <body>
+        <!--코드 설명-->
+        <!-- 
+        1. 클래스명
+            1) head
+                (1) 로고(홈페이지명 포함)
+                (2) category : 수강신청, 강의 요청, 마이페이지 
+            3) banner-list : 배너, 로그인 영역 
+            4) contents-list : 강의 카드 출력. 기본 2*3. 
+            5) footer : 홈페이지 정보 2. 링크는 나중에 넣기
+        2. 현재 미구현 사항
+            1) 배너 슬라이드 이미지
+            2) 사이즈 조정        
+        -->
+        <div class="head">
+            <div class="main-logo">
+                <a href = "1_mainpage.html">
+                    <img style="width: 50px;" src="https://i.postimg.cc/bwVSjJHH/KGQDu4R.png">
+                    <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png">
+                </a>
+            </div>
+            <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+            <div class="category" id="category-menu">
+                <div class="category-list reg">
+                    <a href="../../2_lecture/html/2_lecture_main.html">수강 신청</a>
+                </div>
+                <div class="category-list lec-require">
+                    <a href="../../2_lecture/html/2_lecture_require.html">강의 요청</a>
+                </div>
+                <div class="category-list community">
+                    <a href="../../5_community/html/project.html">커뮤니티</a>
+                </div>
+                <div class="category-list mypage">
+                    <a href="../../3_mypage/html/mypage_main.html">마이 페이지</a>
+                </div>
+            </div>
+        </div>
+        <!--여기에서 헤더 부분 마감-->
+        <div class="banner-list">
+            <div class="banner-block">
+                <div class="img1"></div>
+                <div class="img2"></div>
+                <div class="img3"></div>
+                <button id="prevBtn" class="slide-btn prev-btn">◀</button>
+                <button id="nextBtn" class="slide-btn next-btn">▶</button>
+            </div>
+            <form class="login">
+                <div class="login-done">
+                    <div class = "login-done-pic"></div>
+                    <div class = "login-done-info">
+                        <div class = "hello">
+                            ID(level ex 관리자)님 안녕하세요!<br>
+                            여기에 뭘 더 써야 했더라...<br>
+                            생각나면 추가합니다.
+                        </div>
+                        <a href = "1_mainpage.html"><div class = "logout">로그아웃</div></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="contents-list">
+            <div class="contents-title">최근 갱신된 강의</div>
+            <div class="contents-line">
+                <div class="contents-card">
+                    <a href="../../2_lecture/html/2_lecture_child.html">
+                        <div class="card-img"></div>
+                        <div class="card-info">
+                            <div class="card-name">강의명</div>
+                            <div class="card-loc">장소</div>
+                            <div class="card-pnum">수강 정원</div>
+                            <div class="card-outline">강의 개요 요약</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="contents-card">
+                    <a href="../../2_lecture/html/2_lecture_child.html">
+                        <div class="card-img"></div>
+                        <div class="card-info">
+                            <div class="card-name">강의명</div>
+                            <div class="card-loc">장소</div>
+                            <div class="card-pnum">수강 정원</div>
+                            <div class="card-outline">강의 개요 요약</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="contents-card">
+                    <a href="../../2_lecture/html/2_lecture_child.html">
+                        <div class="card-img"></div>
+                        <div class="card-info">
+                            <div class="card-name">강의명</div>
+                            <div class="card-loc">장소</div>
+                            <div class="card-pnum">수강 정원</div>
+                            <div class="card-outline">강의 개요 요약</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="contents-card">
+                    <a href="../../2_lecture/html/2_lecture_child.html">
+                        <div class="card-img"></div>
+                        <div class="card-info">
+                            <div class="card-name">강의명</div>
+                            <div class="card-loc">장소</div>
+                            <div class="card-pnum">수강 정원</div>
+                            <div class="card-outline">강의 개요 요약</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="contents-card">
+                    <a href="../../2_lecture/html/2_lecture_child.html">
+                        <div class="card-img"></div>
+                        <div class="card-info">
+                            <div class="card-name">강의명</div>
+                            <div class="card-loc">장소</div>
+                            <div class="card-pnum">수강 정원</div>
+                            <div class="card-outline">강의 개요 요약</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="contents-card">
+                    <a href="../../2_lecture/html/2_lecture_child.html">
+                        <div class="card-img"></div>
+                        <div class="card-info">
+                            <div class="card-name">강의명</div>
+                            <div class="card-loc">장소</div>
+                            <div class="card-pnum">수강 정원</div>
+                            <div class="card-outline">강의 개요 요약</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--footer 시작-->
+        <div class="footer">
+            <div class = "speech-bubble">도움이 필요하다면 절 눌러주세요!</div>
+            <div class = "chatbot">
+                <a href="../../6_chatbot/chatbot_v3.html"><img src = "https://i.postimg.cc/bwVSjJHH/KGQDu4R.png" class= "chatbot-img"></a>     
+            </div>
+            <ul type="none" class="bottom-menu">
+                <a href="../../6_chatbot/chatbot_v3.html"><li class="bottom-menu-list">챗봇</li></a>
+                <li class="bottom-menu-list">
+                    <a href="../../4_cs/html/csMain.html">고객센터</a>
+                </li>
+                <li class="bottom-menu-list">광고 문의</li>
+                <li class="bottom-menu-list">개인 정보 이용 방침</li>
+            </ul>
+            <div class = "copyright">© 2025 M1F4</div>
+        </div>
+        <script src="../asset/1-1_mainpage_login.js"></script>
+    </body>
+</html>

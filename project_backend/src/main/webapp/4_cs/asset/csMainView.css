@@ -1,0 +1,253 @@
+/* -------------------- [1] 기본 설정 -------------------- */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 또는 height: 100% */
+}
+
+.wrapper {
+    flex: 1; /* 남는 높이 다 차지 */
+    display: flex;
+    flex-direction: column;
+}
+
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #3e6b3e;
+}
+
+a:active {
+    color: #5b9b5b;
+}
+
+
+/* -------------------- [2] 헤더 -------------------- */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-logo img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.category-list {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+
+/* -------------------- [3] 본문 -------------------- */
+.body {
+    flex: 1;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 10px 50px 10px;
+}
+
+/* 네비게이션 */
+.nav {
+    width: 80%;
+    margin: 40px auto;
+}
+.nav a.navFirst {
+    color: #5b9b5b;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.nav a.navSecond {
+    color: #aacda6;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.navFirst:hover, .navSecond:hover {
+    color: #3e6b3e;
+    text-decoration: underline;
+}
+
+/* 카테고리 탭 */
+.csCategory {
+    text-align: center;
+    font-size: 1.7rem;
+}
+.csCategory-list {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 20px;
+}
+.csCategory-list a {
+    color: black;
+}
+.csCategory-list a.active {
+    color: #5b9b5b;
+}
+
+/* 공지 상세 */
+.form {
+    width: 75%;
+    margin: 5% auto 0;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px dotted #aacda6;
+    padding: 3%;
+}
+.title, .author, .date {
+    display: flex;
+    width: 90%;
+    margin: 3% auto;
+    gap: 30px;
+}
+.index {
+    width: 10%;
+    font-weight: 600;
+}
+.index-con {
+    width: 70%;
+}
+.index, .index-con {
+    line-height: 1.8em;
+}
+.content {
+    line-height: 1.8em;
+    text-align: justify;
+    width: 90%;
+    margin: 5% auto;
+}
+.tabs {
+    margin-top: 10px;
+    text-align: right;
+}
+.tabs button {
+    width: 10%;
+    border: none;
+    border-radius: 10px;
+    background-color: #5b9b5b;
+    color: white;
+    cursor: pointer;
+    line-height: 3em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.tabs button:hover {
+    background-color: #3e6b3e;
+}
+
+
+/* -------------------- [4] 푸터 -------------------- */
+.footer {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bottom-menu {
+    gap: 15px;
+    font-size: 0.9em;
+    margin: 3% auto;
+}
+
+.copyright {
+    display: block;
+    margin: 3% auto;
+}
+
+.bottom-menu-list {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline;
+}
+.bottom-menu-list:first-child::before {
+    content: " ";
+}
+.bottom-menu-list::before {
+    content: " | ";
+}
+.bottom-menu-list:hover {
+    color: #5b9b5b;
+}
+
+
+/* -------------------- [5] 반응형 -------------------- */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        font-size: 28px;
+        margin-left: auto;
+        margin-top: 10px;
+        position: absolute;
+        top: 13px;
+        right: 5%;
+        z-index: 1000;
+    }
+
+    .category {
+        display: none;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        margin: 5% auto;
+        gap: 30px;
+        padding: 20px 0;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .category.show {
+        display: flex;
+    }
+
+    .body {
+        padding-bottom: 100px; /* 모바일 하단 공간 확보 */
+    }
+}

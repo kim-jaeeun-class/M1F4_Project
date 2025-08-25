@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>배워보다 - 로그인</title>
+  <link rel="stylesheet" href="../asset/3_login.css"/>
+</head>
+<body>
+  <div class="login_main">
+    <div class="logo">
+      <a href="../html/1_mainpage.html">
+        <img style="width:200px;height:50px;" src="https://i.imgur.com/yOfFX9f.png">
+      </a>
+    </div>
+
+    <div class="login">
+      <div class="login_h2">로그인</div>
+      <p>맞춤형 정보 제공을 위해 로그인이 필요합니다.</p>
+
+      <div class="id_pw">
+        <div><input class="id" type="text" placeholder="아이디"></div>
+        <div><input class="pw" type="password" placeholder="비밀번호"></div>
+      </div>
+
+      <div class="keep_check">
+        <input type="checkbox" id="keep_login">로그인 상태 유지
+      </div>
+
+      <!-- form이 없으니 submit 대신 button으로! -->
+      <button id="btnLogin" type="button">로그인</button>
+    </div>
+
+    <ul class="find">
+      <li><a href="../html/3_find_pw.html">비밀번호 찾기</a></li>
+      <li><a href="../html/3_find_id.html">아이디 찾기</a></li>
+      <li><a href="../html/2_make_account_v3.html">회원가입</a></li>
+    </ul>
+
+    <div class="banner">교육 안내 배너</div>
+  </div>
+
+  <div class="footer">© 2025 배워보다</div>
+
+  <script src="../asset/3_login.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="no-referrer">
+        <title>회원정보 수정</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!-- href 부분 각 파일에 맞게 바꿔줘야 합니다!!! -->
+        <link rel="stylesheet" href="/3_mypage/asset/info_edit.css">
+        <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+                  <!-- 1. templete.js: bind 정의 -->
+        <script src="../../0_templete/asset/templete.js"></script>
+
+        <!-- 2. chatbot.js: initChatbot 정의 -->
+        <script src="../../0_templete/asset/chatbot.js"></script>
+
+        <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+        <script src="../../0_templete/headfooter.js"></script>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    </head>
+    <body>
+        <div class="head"></div>
+        <div class="body">
+            <!-- 이 안에 원하는 내용 넣어주세요-->
+            <div class="my_back">
+                <div class="tab">
+                    <div class="tab_1">
+                        수강내역
+                    </div>
+                    <div class="tab_2">
+                        회원정보 수정
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="nav">
+                        <a class="nav_text" href="/3_mypage/html/studylist.html">마이페이지</a> > 회원정보 수정
+                    </div>
+                    <div class="edit">
+                        회원정보 수정
+                    </div>
+                    <div class="center">
+                        <div class="left">
+                            <div class="profile"></div>
+                            <div class="profile_button">
+                                <button type="button">프로필 사진 변경</button>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="id_name">
+                                <div class="id_box">    
+                                    <div class="text">
+                                        아이디
+                                    </div>
+                                    <div class="second_box">
+                                        <input type="text" id="fix_id" disabled>   
+                                    </div>
+                                </div>
+                                <div class="nickname_box">
+                                    <div class="text">
+                                        닉네임
+                                    </div>
+                                    <div class="box">
+                                        <input type="text" class="nickname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pw">
+                                <div class="text">
+                                    비밀번호
+                                </div>
+                                <input type="password" class="password">
+                            </div>
+                            <div class="field">
+                                <div class="text">
+                                    흥미
+                                </div>
+                                <div class="second_box">
+                                    <select class="interest">
+                                        <option>선택</option>
+                                        <option>스포츠</option>
+                                        <option>여행</option>
+                                        <option>캠핑</option>
+                                        <option>음악</option>
+                                        <option>독서</option>
+                                    </select>
+                                </div>
+                                <div class="text">
+                                    지역
+                                </div>
+                                <div class="box">
+                                    <select class="region">
+                                        <option>선택</option>
+                                        <option>서울</option>
+                                        <option>충남</option>
+                                        <option>충북</option>
+                                        <option>제주</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="zip_code_box">
+                                <div class="text">
+                                    우편번호
+                                </div>
+                                <div class="zip_code">
+                                    <input type="text" class="zipcode" disabled>
+                                </div>
+                                <div class="btn_box">
+                                    <button type="button" class="zipBtn">우편번호 확인</button>
+                                </div>
+                            </div>
+                            <div class="zip_code_box">
+                                <div class="text">                      
+                                    주소
+                                </div>
+                                <div class="address_box">
+                                    <input type="text" class="address">
+                                </div>
+                                <div class="detail_box">
+                                    <input type="text" class="detail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="save">
+                            <button type="submit">저장하기</button>
+                        </div>
+                    </div>
+                    <div class="quit">
+                        <button type="submit" >회원탈퇴</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <script src="/3_mypage/asset/info_edit.js"></script>
+    </body>
+</html>

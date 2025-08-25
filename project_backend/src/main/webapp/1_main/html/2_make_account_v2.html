@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="../../0_templete/asset/templete.css">
+  <!-- 1. templete.js: bind 정의 -->
+  <script src="../../0_templete/asset/templete.js"></script>
+
+  <!-- 2. chatbot.js: initChatbot 정의 -->
+  <script src="../../0_templete/asset/chatbot.js"></script>
+
+  <!-- 3. headfooter.js: templete 삽입 + bind/initChatbot 실행 -->
+  <script src="../../0_templete/headfooter.js"></script>
+
+  <title>회원 가입</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 500px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    hr {
+      margin: 10px 0 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .checkbox-group, .birth-group, .email-group, .phone-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .checkbox-group input,
+    .birth-group select,
+    .email-group input,
+    .email-group select,
+    .phone-group input {
+      padding: 5px;
+      font-size: 14px;
+    }
+    .agree_text {
+      margin-left: 24px;
+      font-size: 14px;
+      color: #555;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input[type="text"],
+    select {
+      width: 200px;
+    }
+    .button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    h2 {
+      margin-bottom: 10px;
+      background-color: #3cb371;
+      height: 50px;
+      line-height: 50px;
+      color: white;
+      text-align: center;
+      margin: 0;
+    }
+    .pw input {
+      display: block;
+      margin: 5px 0;
+    }
+    .pw-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-end;
+    }
+    .pw-item {
+      display: flex;
+      flex-direction: column;
+      min-width: 150px;
+      flex: 1 1 200px;
+    }
+    .pw-toggle {
+      flex: 0 0 auto;
+      padding-top: 25px;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+      width: 200px; /* 또는 px로 고정 */
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- <div class="head"></div> -->
+   <a href="/1_main/html/1_mainpage.html">
+                <img style="width: 200px; height: 50px;"  src="https://i.imgur.com/yOfFX9f.png">
+            </a>
+  <div class="container">
+    <h2>약관 동의</h2>
+    <hr>
+    <div class="section">
+      <label><input type="checkbox" class="all_agree"> 전부 동의</label>
+      <p style="font-size: 14px; color: #555;">
+        실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.
+      </p>
+      <br><hr>
+      <ul>
+        <li>
+          <label><input type="checkbox" class="term"> 약관 1</label>
+          <div class="agree_text">실명 인증된 아이디로 가입...</div>
+        </li>
+        <li>
+          <label><input type="checkbox" class="term"> 약관 2</label>
+          <div class="agree_text">실명 인증된 아이디로 가입...</div>
+        </li>
+        <li>
+          <label><input type="checkbox" class="term"> 약관 3</label>
+          <div class="agree_text">실명 인증된 아이디로 가입...</div>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- <div class="footer"></div> -->
+  </div>
+
+  <script>
+    // 비밀번호 보기
+    document.getElementById("togglePassword").addEventListener("change", function () {
+      const pwInput = document.getElementById("password");
+      const pwConfirm = document.getElementById("password_confirm");
+      pwInput.type = this.checked ? "text" : "password";
+      pwConfirm.type = this.checked ? "text" : "password";
+    });
+
+    // 약관 동의 체크
+    const allAgree = document.querySelector('.all_agree');
+    const terms = document.querySelectorAll('.term');
+
+    allAgree.addEventListener('change', function () {
+      terms.forEach(term => term.checked = allAgree.checked);
+    });
+
+    terms.forEach(term => {
+      term.addEventListener('change', function () {
+        allAgree.checked = Array.from(terms).every(t => t.checked);
+      });
+    });
+
+    // 이메일 도메인 자동 입력
+    document.getElementById('email_domain_select').addEventListener('change', function () {
+      const domainInput = document.getElementById('domain_address');
+      const domainMap = {
+        naver: "naver.com",
+        google: "gmail.com",
+        daum: "daum.net"
+      };
+      const selected = this.value;
+
+      if (domainMap[selected]) {
+        domainInput.value = domainMap[selected];
+        domainInput.readOnly = true;
+      } else {
+        domainInput.value = "";
+        domainInput.readOnly = false;
+      }
+    });
+
+    // 전화번호 인증 UI 표시
+    document.getElementById("phoneVerifyBtn").addEventListener("click", function () {
+      document.getElementById("phoneVerifyBox").style.display = "flex";
+    });
+
+    // 인증번호 확인
+    document.getElementById("phoneVerifyConfirmBtn").addEventListener("click", function () {
+      const codes = document.querySelectorAll(".verify-code");
+      const inputCode = Array.from(codes).map(c => c.value).join("");
+
+      if (inputCode.length === 3) {
+        alert("입력한 인증번호: " + inputCode);
+      } else {
+        alert("인증번호를 모두 입력해주세요.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  <title>커뮤니티 게시판</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+  <link rel="stylesheet" href="../asset/moimWriterView.css" />
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <div class="head">
+    <div class="main-logo">
+      <a href="../../1_main/html/1_mainpage.html">
+        <img style="width: 50px;" src="https://i.imgur.com/KGQDu4R.png" alt="로고" />
+        <img style="width: 100px" src="https://i.imgur.com/yOfFX9f.png" alt="로고텍스트" />
+      </a>
+    </div>
+    <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+    <div class="category" id="category-menu">
+      <div class="category-list reg"><a href="/2_lecture/html/2_lecture_main.html">수강 신청</a></div>
+      <div class="category-list lec-require"><a href="/2_lecture/html/2_lecture_require.html">강의 요청</a></div>
+      <div class="category-list community"><a href="/5_community/html/project.html">커뮤니티</a></div>
+      <div class="category-list mypage"><a href="/3_mypage/html/mypage_main.html">마이 페이지</a></div>
+    </div>
+  </div>
+
+  <!-- 본문 -->
+  <div class="body">
+    <div class="nav"><a href="/1_main/html/1_mainpage.html" class = "navFirst">메인</a> &gt; <a href="/5_community/html/project.html" class = "navSecond">커뮤니티</a> &gt; 모임상세 게시판</div>
+    <div class="wrapper">
+
+      <div class="board-title">모임상세 게시판</div>
+
+      <div class="community-inner">
+
+        <!-- 모임 소개 -->
+        <div class="main-content">
+          <div class="input-row">
+            <label for="group-name">#모임명</label>
+            <input type="text" id="group-name" name="group-name" placeholder="모임 이름을 입력하세요" class="text-input" />
+          </div>
+
+          <div class="upload-confirm-wrapper">
+            <button class="green-button" onclick="location.href='/5_community/html/moimView.html'">업로드버튼</button>
+          </div>
+
+          <div class="input-row">
+            <label for="activity-content">#활동내용</label>
+            <input type="text" id="activity-content" name="activity-content" placeholder="활동 내용을 입력하세요" class="text-input" />
+          </div>
+
+          <div class="group-intro">
+            <button id="uploadBtn" class="green-button" type="button">모임 사진 업로드(사진 포함 가능)</button>
+            <input type="file" id="photoInput" accept="image/*" style="display:none" />
+            <img id="groupPhoto" src="" alt="모임 사진" style="display:none; max-width: 200px; margin-top: 10px;" />
+          </div>
+        </div>
+
+        <!-- 새롭게 추가할 업로드 완료 버튼 -->
+
+        <!-- 신청 리스트와 승인자 -->
+        <div class="side-section">
+          <div class="application-list">
+            <h4>#신청 리스트</h4>
+            <form>
+              <label><input type="checkbox" /> 신청자 1</label>
+              <label><input type="checkbox" /> 신청자 2</label>
+              <label><input type="checkbox" /> 신청자 3</label>
+              <label><input type="checkbox" /> 신청자 4</label>
+              <label><input type="checkbox" /> 신청자 5</label>
+              <label><input type="checkbox" /> 신청자 6</label>
+              <label><input type="checkbox" /> 신청자 7</label>
+              <label><input type="checkbox" /> 신청자 8</label>
+              <label><input type="checkbox" /> 신청자 9</label>
+              <label><input type="checkbox" /> 신청자 10</label>
+              <label><input type="checkbox" /> 신청자 11</label>
+              <label><input type="checkbox" /> 신청자 12</label>
+              <label><input type="checkbox" /> 신청자 13</label>
+              <label><input type="checkbox" /> 신청자 14</label>
+              <label><input type="checkbox" /> 신청자 15</label>
+            </form>
+            <div class="buttons">
+              <button class="approve-btn">승인</button>
+              <button class="reject-btn">거부</button>
+            </div>
+            <!-- 초기화 버튼 추가 -->
+            <div class="reset-wrapper">
+              <button class="reset-btn">초기화버튼</button>
+            </div>
+          </div>
+
+          <div class="approved-list">
+            <h4>#승인된 신청자</h4>
+            <div id="approved-users"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <div class="speech-bubble">도움이 필요하다면 절 눌러주세요!</div>
+    <div class="chatbot">
+      <a href="../../6_chatbot/chatbot_v3.html">
+        <img src="https://i.postimg.cc/bwVSjJHH/KGQDu4R.png" class="chatbot-img" alt="챗봇" />
+      </a>
+    </div>
+    <ul type="none" class="bottom-menu">
+      <a href="../../6_chatbot/chatbot_v3.html"><li class="bottom-menu-list">챗봇</li></a>
+      <li class="bottom-menu-list"><a href="../../4_cs/html/csMain.html">고객센터</a></li>
+      <li class="bottom-menu-list">광고 문의</li>
+      <li class="bottom-menu-list">개인 정보 이용 방침</li>
+    </ul>
+    <div class="copyright">© 2025 M1F4</div>
+  </div>
+
+  <!-- JS 경로 넣기 -->
+  <script src="/0_templete/asset/templete.js"></script>
+  <script src="../asset/moimWriterView.js"></script>
+</body>
+</html>

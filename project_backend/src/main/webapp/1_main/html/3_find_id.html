@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>아이디 / 비밀번호 찾기</title>
+    <link rel="stylesheet" href="/1_main/asset/3_find_id_pw.css">
+</head>
+<body>
+    <div>
+        <div class="login_main">
+            <div class="logo">
+                <a href="/1_main/html/1_mainpage.html">
+                <img style="width: 370px; height: 100px; margin: auto;" src="https://i.imgur.com/yOfFX9f.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="find_back">
+        <div class="title">
+            아이디 / 비밀번호 찾기
+        </div>
+        <div>
+            <div class="find">
+                <div class="find_id active">
+                    아이디 찾기
+                </div>
+                <div class="find_pw">
+                    <a href="/1_main/html/3_find_pw.html">비밀번호 찾기</a>
+                </div>
+            </div>
+            <div class="h3">
+                아이디가 기억나지 않는다면?<br>
+            </div>
+        </div>
+        <div class="find_id_content">
+            <div class="phone">
+                <ul class="id_li_1">
+                    <li>
+                        <div class="id">
+                            <div class="id_id_1">
+                                이름 
+                            </div>
+                            <div  class="id_1_text">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="id">
+                            <div class="id_2">
+                                휴대폰
+                            </div>
+                            <div class="id_2_1">
+                                <select class="id_2_sel">
+                                    <option>010</option>
+                                    <option>011</option>
+                                    <option>017</option>
+                                </select>
+                                <div class="id_2_text">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="button_box">
+                <button type="button" class="before">뒤로가기</button>
+                <button type="submit" class="next">다음</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        @ 2025 배워보다
+    </div>
+    <script src="/1_main/asset/users.js"></script>
+    <script>
+       
+    // 사용자 찾기 함수
+    function findUser(name, phoneNumber) {
+
+        for (let i = 0; i < users.length; i++) {
+
+            const user = users[i];
+
+            const cleanPhone = user.phone.split('-').join('');
+
+            if (user.name === name && cleanPhone === phoneNumber) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    // 입력
+    const nameInput = document.querySelector('.id_1_text input');
+    const phoneSelect = document.querySelector('.id_2_sel');
+    const phoneInput = document.querySelector('.id_2_text input');
+    const submitBtn = document.querySelector('.next');
+    const backBtn = document.querySelector('.before')
+
+    // 뒤로가기 버튼
+    backBtn.addEventListener('click', function () {
+        window.location.href = '/1_main/html/3_login.html';
+    });
+    
+
+
+    // 아이디 찾기 동작 함수 
+    function findId() {
+        const enteredName = nameInput.value.trim();
+        const phonePrefix = phoneSelect.value;
+        const phoneRest = phoneInput.value.trim().replace(/[^0-9]/g, '');
+        const fullPhone = phonePrefix + phoneRest;
+
+        if (!enteredName || !phoneRest) {
+            alert('이름과 휴대폰 번호를 모두 입력해주세요.');
+            return;
+        }
+
+        const user = findUser(enteredName, fullPhone);
+
+        if (user) {
+            alert(`아이디는 "${user.id}" 입니다.`);
+        } else {
+            alert('입력하신 정보와 일치하는 사용자를 찾을 수 없습니다.');
+        }
+    }
+
+    // 버튼 클릭 시 실행
+    submitBtn.addEventListener('click', function (e) {
+
+        e.preventDefault();
+        findId();
+    });
+
+    // 엔터키 눌렀을 때
+    document.addEventListener('keydown', function (e) {
+
+        if (e.key === 'Enter') {
+            findId();
+        }
+    });
+    </script>
+</body>
+</html>
