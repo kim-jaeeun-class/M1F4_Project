@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배워보다 대시보드</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      display: flex;
+      background-color: #f0f4f8;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #5b9b5b;
+      color: white;
+      height: 100vh;
+      padding-top: 30px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar h2 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      padding: 15px 20px;
+      cursor: pointer;
+    }
+    .sidebar li:hover {
+      background-color: #34495e;
+    }
+    .main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+    .main-content h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+    .filters {
+      text-align: center;
+      margin: 10px 0;
+    }
+    select {
+      padding: 8px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .card {
+      flex: 1;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .card.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+}
+    .card h3 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+      font-size: 20px;
+      text-align: center;
+    }
+    canvas {
+  width: 100% !important;
+  height: calc(100vh - 180px) !important;
+  display: block;
+}
+
+#chatbotCard canvas,
+#roleChangeCard canvas {
+  aspect-ratio: 1 / 1;
+  max-width: 400px;
+  margin: 0 auto;
+  height: auto !important;
+  width: 100% !important;
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>대시보드 메뉴</h2>
+    <ul>
+      <li onclick="showChart('usersCard')">월간 사용자 수</li>
+      <li onclick="showChart('topLecturesCard')">강의 신청 TOP 5</li>
+      <li onclick="showChart('roleChangeCard')">역할 전환 비율</li>
+      <li onclick="showChart('chatbotCard')">챗봇 문의 카테고리</li>
+      <li onclick="showChart('realViewCard')">실질적 게시판 조회수</li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <h1>배워보다 관리자 대시보드</h1>
+    <div class="filters">
+      <label for="yearSelect">년도:</label>
+      <select id="yearSelect">
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025" selected>2025</option>
+      </select>
+      <label for="monthSelect">월:</label>
+      <select id="monthSelect">
+        <option value="7" selected>7월</option>
+        <option value="8">8월</option>
+      </select>
+    </div>
+    <div id="usersCard" class="card active">
+      <h3>월간 사용자 수</h3>
+      <canvas id="usersChart"></canvas>
+    </div>
+    <div id="topLecturesCard" class="card">
+      <h3>강의 신청 TOP 5</h3>
+      <canvas id="topLecturesChart"></canvas>
+    </div>
+    <div id="roleChangeCard" class="card">
+      <h3>역할 전환 비율</h3>
+      <canvas id="roleChangeChart"></canvas>
+    </div>
+    <div id="chatbotCard" class="card">
+      <h3>챗봇 문의 카테고리</h3>
+      <canvas id="chatbotChart"></canvas>
+    </div>
+    <div id="realViewCard" class="card">
+      <h3>실질적 게시판 조회수 비교</h3>
+      <canvas id="realViewChart"></canvas>
+    </div>
+  </div>
+  <script>
+    function showChart(id) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    new Chart(document.getElementById('usersChart'), {
+      type: 'line',
+      data: {
+        labels: ['4월', '5월', '6월', '7월', '8월'],
+        datasets: [{
+          label: '사용자 수',
+          data: [120, 180, 240, 320, 400],
+          borderColor: '#4e79a7',
+          fill: false
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    new Chart(document.getElementById('topLecturesChart'), {
+      type: 'bar',
+      data: {
+        labels: ['스마트폰 기초', '한글 배우기', '생활 영어', '인터넷 활용', '사진 편집'],
+        datasets: [{
+          label: '신청 수',
+          data: [42, 38, 31, 25, 20],
+          backgroundColor: '#f28e2b'
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    new Chart(document.getElementById('roleChangeChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['수강생 전용', '강사 경험 있음'],
+        datasets: [{
+          data: [70, 30],
+          backgroundColor: ['#e15759', '#76b7b2']
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    new Chart(document.getElementById('chatbotChart'), {
+      type: 'pie',
+      data: {
+        labels: ['강의 신청 방법', '비밀번호 찾기', '스터디 문의', '기타'],
+        datasets: [{
+          data: [45, 25, 15, 15],
+          backgroundColor: ['#59a14f', '#edc948', '#af7aa1', '#ff9da7']
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    const realViewChartCtx = document.getElementById('realViewChart').getContext('2d');
+    const chartDataByMonth = {
+      '2025': {
+        '7': {
+          labels: ['7월 1주', '7월 2주', '7월 3주', '7월 4주'],
+          totalViews: [150, 180, 200, 170],
+          realViews: [110, 140, 160, 130]
+        },
+        '8': {
+          labels: ['8월 1주', '8월 2주', '8월 3주'],
+          totalViews: [190, 175, 200],
+          realViews: [155, 145, 175]
+        }
+      }
+    };
+    let realViewChart;
+    function updateRealViewChart(year, month) {
+      const data = chartDataByMonth[year]?.[month];
+      if (!data) return;
+      if (realViewChart) realViewChart.destroy();
+      realViewChart = new Chart(realViewChartCtx, {
+        type: 'bar',
+        data: {
+          labels: data.labels,
+          datasets: [
+            { label: '전체 조회수', data: data.totalViews, backgroundColor: 'rgba(78, 121, 167, 0.6)' },
+            { label: '실질적 조회수', data: data.realViews, backgroundColor: 'rgba(242, 142, 43, 0.7)' }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'bottom' } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+    updateRealViewChart('2025', '7');
+    document.getElementById('yearSelect').addEventListener('change', function() {
+      updateRealViewChart(this.value, document.getElementById('monthSelect').value);
+    });
+    document.getElementById('monthSelect').addEventListener('change', function() {
+      updateRealViewChart(document.getElementById('yearSelect').value, this.value);
+    });
+  </script>
+</body>
+</html>
