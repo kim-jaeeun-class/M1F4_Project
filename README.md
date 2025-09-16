@@ -86,5 +86,6 @@
 ---
 
 ## 3. 연락처  
-- **윤성연** : datascience123@naver.com  
+- **윤성연** : datascience123@naver.com
+- **김재은** : wodmsdl0117@gmail.com
 - (그 외 팀원 연락처는 각자 기입)  
